@@ -91,7 +91,7 @@
         <table class="definition">
         <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/description">dct:description</a></th></tr></thead>
         <tbody>
-        <tr><td class="prop">Definition:</td><td>Beschreibung des Katalogs als Freitext</td></tr>
+        <tr><td class="prop">Definition:</td><td>Beschreibung des Katalogs, Freitext</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>
         </td></tr>
@@ -104,7 +104,7 @@
           <table class="definition">
             <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Definition:</td><td>Titel des Katalogs</td></tr>
+            <tr><td class="prop">Definition:</td><td>Name / Bezeichnung des Katalogs, Freitext</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>
             </tbody>
@@ -130,7 +130,7 @@
           <table class="definition">
           <thead><tr><th>RDF Property:</th><th><a href="http://xmlns.com/foaf/0.1/homepage">foaf:homepage</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Definition:</td><td>Die Homepage eines Katalogs (Webdokument, idR als HTML verfügbar).</td></tr>
+          <tr><td class="prop">Definition:</td><td>Homepage des Katalogs (Webdokument, idR als HTML verfügbar)</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Document"><code>foaf:Document</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td><a href="http://xmlns.com/foaf/0.1/homepage"><code>foaf:homepage</code></a> ist eine "inverse functional property" (IFP). Das bedeutet, dass sie eineindeutig die
             Webseite für die Resource definiert.<em class="rfc2119" title="MUST">MUSS</em>. Diese Eigenschaft gibt die kanonische Webseite an.
@@ -168,7 +168,7 @@
           <table class="definition">
           <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/language">dct:language</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Definition:</td><td>Sprache des Katalogs, in der die Textelemente der Metadaten verfasst sind (z.B. Titel, Beschreibung)</td></tr>
+          <tr><td class="prop">Definition:</td><td>Sprache des Katalogs, in der die Textelemente der Metadaten verfasst sind (z.B. Titel, Beschreibung).</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td>
           <p><a href="http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a></p></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Eigenschaft wird wiederholt, wenn der Katalog in mehreren Sprachen vorhanden ist.</td></tr>
@@ -225,7 +225,7 @@
             <table class="definition">
                 <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
                 <tbody>
-                <tr><td class="prop">Definition:</td><td>Der Titel des Katalogeintrages</td></tr>
+                <tr><td class="prop">Definition:</td><td>Name / Bezeichnung des Katalogeintrages, Freitext</td></tr>
                 <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
                 </tbody>
             </table>
@@ -275,7 +275,7 @@
           <table class="definition">
           <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Definition:</td><td>Titel des Datensatzes</td></tr>
+          <tr><td class="prop">Definition:</td><td>Name / Bezeichnung des Datensatzes, Freitext</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
           </tbody>
           </table>
@@ -319,7 +319,7 @@
           <table class="definition">
           <thead><tr><th>RDF Property:</th><th>plu:pluProedureState</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Definition:</td><td>Diese Eigenschaft bestimmt den Status in dem sich ein Verfahren befindet.</td></tr>
+          <tr><td class="prop">Definition:</td><td>Status in dem sich ein Verfahren befindet</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><code>rdfs:Literal</code></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird der Status eines Verfahrens kategorisiert, z.B. "geplant", "laufend" oder "abgeschlossen".
             Die möglichen Stati sind in einer <a href="#codelist-pluProcedureState">Codeliste</a> festgelegt.</td></tr>
@@ -333,9 +333,9 @@
           <table class="definition">
               <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#theme">dcat:theme</a></th></tr></thead>
               <tbody>
-              <tr><td class="prop">Definition:</td><td>Hauptkategorie des Datensatzes. Ein Datensatz kann mehreren Kategorien angehören.</td></tr>
+              <tr><td class="prop">Definition:</td><td>Hauptkategorie des Datensatzes</td></tr>
               <tr><td class="prop">Range:</td><td><a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a></td></tr>
-              <tr><td class="prop">Anwendungshinweis:</td><td>Der Satz von <a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a>s die den Datensatz kategorisieren sind in einem
+              <tr><td class="prop">Anwendungshinweis:</td><td>Ein Datensatz kann mehreren Kategorien angehören. Der Satz von <a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a>s die den Datensatz kategorisieren sind in einem
                  <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme"><code>skos:ConceptScheme</code></a> organisiert, das alle Kategorien im Katalog beschreibt.</td></tr>
              </tbody>
           </table>
@@ -357,7 +357,7 @@
          <table class="definition">
          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/modified">dct:modified</a></th></tr></thead>
          <tbody>
-         <tr><td class="prop">Definition:</td><td>Datum, an dem der Datensatz zuletzt verändert oder aktualisiert wurde.</td></tr>
+         <tr><td class="prop">Definition:</td><td>Aktualisierungs- bzw. Veränderungsdatum des Datensatzes</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a>
          </tbody>
          </table>
@@ -368,7 +368,7 @@
          <table class="definition">
          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/identifier">dct:identifier</a></th></tr></thead>
          <tbody>
-         <tr><td class="prop">Definition:</td><td>Ein eineindeutiger Identifikator des Datensatzes</td></tr>
+         <tr><td class="prop">Definition:</td><td>Eineindeutiger Identifikator des Datensatzes</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Der Identifikator kennzeichnet den Datensatz eineindeutig.</td></tr>
          </tbody>
@@ -406,7 +406,7 @@
         <table class="definition">
         <thead><tr><th>RDF Property:</th><th>eia:prelimAssessment</th></tr></thead>
         <tbody>
-        <tr><td class="prop">Definition:</td><td>Erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht</td></tr>
+        <tr><td class="prop">Definition:</td><td>Erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> (?) </a></td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>Eine Vorprüfung dient der Feststellung der UVP-Pflicht. 
           Mit dieser Eigenschaft wird erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
@@ -434,7 +434,7 @@
        <table class="definition">
           <thead><tr><th>RDF class:</th><th><a href="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Definition:</td><td>Eine spezifische Representation eines Datensatzes. </td></tr>
+          <tr><td class="prop">Definition:</td><td>Spezifische Representation eines Datensatzes</td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Die Distribution stellt die generelle Verfügbarkeit eines Datensatzes dar aber beinhaltet nicht zwangsweise eine Zugangsmöglichkeit zu den Daten wie z.B.durch direkten
               Download, <abbr title="Application Programming Interface">API</abbr>, oder durch eine Internetseite.
               Die Benutzung der Eigenschaft <a href="#Property:distribution_download_url"><code>dcat:downloadURL</code></a> zeigt eine direkt herunterladebare Distribution an.</td></tr>
@@ -462,7 +462,7 @@
         <table class="definition">
             <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Definition:</td><td>Ein Name der Distribution</td></tr>
+            <tr><td class="prop">Definition:</td><td>Name / Bezeichnung der Distribution, Freitext</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
             </tbody>
         </table>
@@ -472,7 +472,7 @@
          <table class="definition">
             <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/description">dct:description</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Definition:</td><td>Eine Beschreibung der Distribution. Freitext.</td></tr>
+            <tr><td class="prop">Definition:</td><td>Beschreibung der Distribution, Freitext</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
             </tbody>
          </table>
@@ -483,7 +483,7 @@
          <table class="definition">
             <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung der Distribution.</td></tr>
+            <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung der Distribution</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft <em class="rfc2119" title="SHOULD">SOLLTE</em> mit dem Datum der ersten bekannten Veröffentlichung belegt sein.</td></tr>
             </tbody>
@@ -495,9 +495,8 @@
          <table class="definition">
             <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/modified">dct:modified</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Definition:</td><td>Datum, an dem der Datensatz zuletzt verändert, aktualisiert oder modifiziert wurde.</td></tr>
+            <tr><td class="prop">Definition:</td><td>Aktualisierungs- bzw. Veränderungsdatum der Distribution</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
-            <tr><td class="prop">Anwendungshinweis:</td>><td>...</td></tr>
             </tbody>
          </table>
        </section>
@@ -516,7 +515,7 @@
        </section>
 
        <section id="Property:plu_document_Type">
-        <h4 id="property-plu-document-Type">Eigenschaft: Dokumententyp ...-Dokumente</h4>
+        <h4 id="property-plu-document-Type">Eigenschaft: Dokumententyp raumbezogene Verfahren</h4>
         <table class="definition">
           <thead><tr><th>RDF Property:</th><th>plu:pluDocType</th></tr></thead>
           <tbody>
@@ -556,7 +555,7 @@
          <table class="definition">
          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/identifier">dct:identifier</a></th></tr></thead>
          <tbody>
-         <tr><td class="prop">Definition:</td><td>Ein eineindeutiger Identifikator des Verfahrensschrittes</td></tr>
+         <tr><td class="prop">Definition:</td><td>Eineindeutiger Identifikator des Verfahrensschrittes</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>...</td></tr>
          </tbody>
@@ -598,7 +597,7 @@
           <thead><tr><th>RDF Class:</th><th><a title="http://purl.org/dc/terms/PeriodOfTime" href="http://dublincore.org/documents/dcmi-terms/#terms-PeriodOfTime">dct:PeriodOfTime</a></th></tr></thead>
           <tbody>
             <tr>
-               <td class="prop">Definition:</td><td>Ein Zeitraum der durch seinen Anfang und sein Ende definiert ist.</td>
+               <td class="prop">Definition:</td><td>Zeitraum der durch seinen Anfang und sein Ende definiert ist.</td>
             </tr>
             <tr>
                <td class="prop">Anwendungshinweis:</td>
