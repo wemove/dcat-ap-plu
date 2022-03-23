@@ -382,7 +382,7 @@
         <tbody>
         <tr><td class="prop">Definition:</td><td>UVP Nummer nach UVPG</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
-        <tr><td class="prop">Anwendungshinweis:</td><td>Eine UVP Nummer ist für UVP Verfahren verpflichtend aus einer Codeliste auszuwählen.</td></tr>
+        <tr><td class="prop">Anwendungshinweis:</td><td>Eine UVP Nummer ist für UVP Verfahren verpflichtend aus einer Liste auszuwählen.</td></tr>
         </tbody>
         </table>
       </section>
@@ -509,7 +509,7 @@
            <tbody>
            <tr><td class="prop">Definition:</td><td>Art eines Dokuments im Zusammenhang mit UVP-Verfahren</td></tr>
            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
-           <tr><td class="prop">Anwendungshinweis:</td><td>Über den Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem UVP-Verfahren zur Verfügung gestellt werden können,
+           <tr><td class="prop">Anwendungshinweis:</td><td>Über die Eigenschaft Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem UVP-Verfahren zur Verfügung gestellt werden können,
               wie z.B. Auslegungsinformationen ("announcement"), Berichte und Emfpehlungen ("reportsRecommendation") oder Entscheidungen ("decision")</td></tr>
           </tbody>
         </table>
@@ -564,13 +564,14 @@
        </section>
 
        <section id="Property:eia_Process_Step_Type">
-         <h4 id="property-eia-process-step-type">Eigenschaft: Prozesschritt-Typ</h4>
+         <h4 id="property-eia-process-step-type">Eigenschaft: Art des Prozessschrittes UVP</h4>
          <table class="definition">
          <thead><tr><th>RDF Property:</th><th>eia:eiaProcessStepType</th></tr></thead>
          <tbody>
          <tr><td class="prop">Definition:</td><td>Art des Prozessschrittes bei UVP Verfahren</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
-         <tr><td class="prop">Anwendungshinweis:</td><td>...</td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Prozessschrittes bei UVP-Verfahren beschrieben. Die möglichen Arten 
+           von Prozessschritten sind durch eine <a href="#codelist-eiaProcessStepType">Codeliste</a> definiert. </td></tr>
          </tbody>
          </table>
        </section>
@@ -582,7 +583,8 @@
          <tbody>
          <tr><td class="prop">Definition:</td><td>Art des Prozesschrittes bei raumbezogenen Planwerken</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
-         <tr><td class="prop">Anwendungshinweis:</td><td>...</td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Prozessschrittes bei Verfahren zu raumbezogenen Planwerken 
+           beschrieben. Die Arten von Prozesschritten sind durch eine <a href="#codelist-pluProcessStepType">Codeliste</a> definiert.</td></tr>
          </tbody>
          </table>
        </section>
@@ -699,6 +701,32 @@
           <tr><td>0004</td> <td>Weitere Unterlagen</td></tr>
           <tr><td>0005</td> <td>Informationen zum Erörterungstermin</td></tr>
           <tr><td>0006</td> <td>Entscheidung</td></tr>
+          </tbody>
+        </table>
+
+      </section>
+
+      <section id="codelist-eiaProcessStepType">
+        <h3 id="codelist-eiaProcessStepType">Codeliste für Arten von Verfahrensschritten bei UVP-Verfahren<a class="self-link" href="#codelist-eiaProcessStepType"></a></h3>
+        <table>
+          <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+          <tr><td>0001</td> <td>Öffentliche Auslegung</td></tr>
+          <tr><td>0002</td> <td>Erörterungstermin</td></tr>
+          <tr><td>0003</td> <td>Entscheidung über die Zulassung</td></tr>
+          </tbody>
+        </table>
+
+      </section>
+
+      <section id="codelist-pluProcessStepType">
+        <h3 id="codelist-pluProcessStepType">Codeliste für Arten von Verfahrensschritten bei raumbezogenen Verfahren<a class="self-link" href="#codelist-pluProcessStepType"></a></h3>
+        <table>
+          <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+          <tr><td>0001</td> <td></td></tr>
+          <tr><td>0002</td> <td></td></tr>
+          <tr><td>0003</td> <td></td></tr>
           </tbody>
         </table>
 
