@@ -51,8 +51,7 @@
      <h2 id="namespaces">Namensräume</h2>
 
       <p>Das entwickelte Metadatenmodell baut auf das europäische Metadatenaustauschschema DCAT-AP auf und erweitert dieses mit einzelnen Klassen und Eigenschaften.
-      In DCAT bzw. DCAT-AP wird auf Klassen und Eigenschaften vieler anderer Vokabulare zurückgegriffen, insbesondere Dublin Core
-      [<cite><a class="bibref" data-link-type="biblio" href="#bib-dcterms" title="DCMI Metadata Terms">DCTERMS</a></cite>].
+      In DCAT bzw. DCAT-AP wird auf Klassen und Eigenschaften vieler anderer Vokabulare zurückgegriffen, insbesondere Dublin Core DCTERMS.
       Eine kleine Anzahl an Klassen und Eigenschaften werden in DCAT-AP zusätzlich definiert.</p>
       <p>Namensräume und Prefixe auf die im vorliegenden Datenmodell zurückgegriffen wird, sind in der folgenden Tabelle aufgelistet.</p>
       <table id="table-namespaces">
@@ -228,7 +227,7 @@
             <thead><tr><th>RDF Class:</th><th><a href="http://www.w3.org/ns/dcat#CatalogRecord">dcat:CatalogRecord</a></th></tr></thead>
             <tbody>
             <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
-            <tr><td class="prop">Definition:</td><td>Ein Katalogeintrag, der die Erfassung einer einzelnen <a href="#Class:Resource"><code>dcat:Resource</code></a>beschreibt.</td></tr>
+            <tr><td class="prop">Definition:</td><td>Ein Katalogeintrag, der die Erfassung einer einzelnen <code>dcat:Resource</code>beschreibt.</td></tr>
             <tr><td class="prop">Anwendungshinweis</td><td>Diese Klasse ist optional. Sie wird vor allem in Katalogen verwendet, bei denen es wichtig ist, zwischen den Metadaten <em>über die Katalogeinträge</em> und den Metadaten
               <em>über die eigentlichen Datensätze</em> zu unterscheiden. So beschreibt z.B. das <em>Veröffentlichungsdatum</em> des Datensatzes das Datum, wann die Daten vom Bereitsteller veröffentlicht wurden,
               während das <em>Veröffentlichungsdatum</em> des Katalogeintrags beschreibt, wann der Datensatz zum Katalog hinzugefügt wurde. </td></tr>
@@ -470,7 +469,7 @@
           <tr><td class="prop">Definition:</td><td>Spezifische Representation eines Datensatzes</td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Die Distribution stellt die generelle Verfügbarkeit eines Datensatzes dar aber beinhaltet nicht zwangsweise eine Zugangsmöglichkeit zu den Daten wie z.B.durch direkten
               Download, <abbr title="Application Programming Interface">API</abbr>, oder durch eine Internetseite.
-              Die Benutzung der Eigenschaft <a href="#Property:distribution_download_url"><code>dcat:downloadURL</code></a> zeigt eine direkt herunterladebare Distribution an.</td></tr>
+              Die Benutzung der Eigenschaft <code>dcat:downloadURL</code> zeigt eine direkt herunterladebare Distribution an.</td></tr>
           </tbody>
        </table>
        <section id="Property:distribution_access_url">
@@ -482,9 +481,9 @@
             <tr><td class="prop">Definition:</td><td>URL der Resource die den Zugang zu einer Distribution des Datensatzes bietet. (Z.B. landing page, feed, SPARQL endpoint. ?!?)</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>
-            <p><a href="#Property:distribution_access_url"><code>dcat:accessURL</code></a> <em class="rfc2119" title="SHOULD">SOLLTE</em> für die URL eines Services oder eines Ortes benutzt werden, der Zugang zu dieser
+            <p><code>dcat:accessURL</code> <em class="rfc2119" title="SHOULD">SOLLTE</em> für die URL eines Services oder eines Ortes benutzt werden, der Zugang zu dieser
               Distribution bietet, typischerweise durch ein digitales Formular, Anfrage oder <abbr title="Application Programming Interface">API</abbr> Abruf.</p>
-            <p><a href="#Property:distribution_download_url"><code>dcat:downloadURL</code></a> ist zu bevorzugen für direkte Links zu herunterladbaren Resourcen.</p>
+            <p><code>dcat:downloadURL</code> ist zu bevorzugen für direkte Links zu herunterladbaren Resourcen.</p>
             <p>Falls die Distribution(en) nur durch eine landing page erreichbar sind (d.h. direkte download URLs sind nicht bekannt), dann <em class="rfc2119" title="SHOULD">SOLLTE</em> die laning page URL, die mit dem <code>dcat:Dataset</code> assoziiert ist
               als access URL einer Distribution dupliziert  werden.</p></td></tr>
             </tbody>
@@ -646,10 +645,10 @@
             <tr>
                <td class="prop">Anwendungshinweis:</td>
                <td>Start und Ende des Zeitraums <em class="rfc2119" title="SHOULD">SOLLTEN</em> durch die Eigenschaften
-                <a href="#Property:period_start_date"><code title="http://www.w3.org/ns/dcat#startDate">dcat:startDate</code></a>
-                oder <a href="#Property:period_has_beginning"><code title="http://www.w3.org/2006/time#hasBeginning">time:hasBeginning</code></a>,
-                und  <a href="#Property:period_end_date"><code title="http://www.w3.org/ns/dcat#endDate">dcat:endDate</code></a>
-                oder <a href="#Property:period_has_end"><code title="http://www.w3.org/2006/time#hasEnd">time:hasEnd</code></a> beschrieben werden.
+                <code title="http://www.w3.org/ns/dcat#startDate">dcat:startDate</code>
+                oder <code title="http://www.w3.org/2006/time#hasBeginning">time:hasBeginning</code>,
+                und  <code title="http://www.w3.org/ns/dcat#endDate">dcat:endDate</code>
+                oder <code title="http://www.w3.org/2006/time#hasEnd">time:hasEnd</code> beschrieben werden.
                 Das Intervall kann auch offen sein, d.h. nur ein Start- oder nur ein Enddatum haben.</td>
             </tr>
           </tbody>
@@ -664,7 +663,7 @@
               <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
               <tr><td class="prop">Definition:</td><td>Startdatum des Zeitraums</td></tr>
               <tr><td class="prop">Domain:</td><td><a href="#Class:Period_of_Time"><code title="http://purl.org/dc/terms/PeriodOfTime">dct:PeriodOfTime</code></a></td></tr>
-              <tr><td class="prop">Range:</td><td><a title="http://www.w3.org/2000/01/rdf-schema#Literal" href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code>rdfs:Literal</code></a> encoded using the relevant <abbr title="International Organization for Standardization">ISO</abbr> 8601 Date and Time compliant string [<cite><a class="bibref" data-link-type="biblio" href="#bib-datetime" title="Date and Time Formats">DATETIME</a></cite>] and typed using the appropriate XML Schema datatype [<cite><a class="bibref" data-link-type="biblio" href="#bib-xmlschema11-2" title="W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes">XMLSCHEMA11-2</a></cite>] (<a href="https://www.w3.org/TR/xmlschema11-2/#gYear"><code>xsd:gYear</code></a>, <a href="https://www.w3.org/TR/xmlschema11-2/#gYearMonth"><code>xsd:gYearMonth</code></a>, <a href="https://www.w3.org/TR/xmlschema11-2/#date"><code>xsd:date</code></a>, or <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime"><code>xsd:dateTime</code></a>).</td></tr>
+              <tr><td class="prop">Range:</td><td><a title="http://www.w3.org/2000/01/rdf-schema#Literal" href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code>rdfs:Literal</code></a> encoded using the relevant <abbr title="International Organization for Standardization">ISO</abbr> 8601 Date and Time compliant string DATETIME and typed using the appropriate XML Schema datatype XMLSCHEMA11-2 (<a href="https://www.w3.org/TR/xmlschema11-2/#gYear"><code>xsd:gYear</code></a>, <a href="https://www.w3.org/TR/xmlschema11-2/#gYearMonth"><code>xsd:gYearMonth</code></a>, <a href="https://www.w3.org/TR/xmlschema11-2/#date"><code>xsd:date</code></a>, or <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime"><code>xsd:dateTime</code></a>).</td></tr>
               </tbody>
             </table>
 
@@ -679,7 +678,7 @@
               <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
               <tr><td class="prop">Definition:</td><td>Enddatum des Zeitraums</td></tr>
               <tr><td class="prop">Domain:</td><td><a href="#Class:Period_of_Time"><code title="http://purl.org/dc/terms/PeriodOfTime">dct:PeriodOfTime</code></a></td></tr>
-              <tr><td class="prop">Range:</td><td><a title="http://www.w3.org/2000/01/rdf-schema#Literal" href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code>rdfs:Literal</code></a> encoded using the relevant <abbr title="International Organization for Standardization">ISO</abbr> 8601 Date and Time compliant string [<cite><a class="bibref" data-link-type="biblio" href="#bib-datetime" title="Date and Time Formats">DATETIME</a></cite>] and typed using the appropriate XML Schema datatype [<cite><a class="bibref" data-link-type="biblio" href="#bib-xmlschema11-2" title="W3C XML Schema Definition Language (XSD) 1.1 Part 2: Datatypes">XMLSCHEMA11-2</a></cite>]</td></tr>
+              <tr><td class="prop">Range:</td><td><a title="http://www.w3.org/2000/01/rdf-schema#Literal" href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code>rdfs:Literal</code></a> encoded using the relevant <abbr title="International Organization for Standardization">ISO</abbr> 8601 Date and Time compliant string DATETIME and typed using the appropriate XML Schema datatype XMLSCHEMA11-2</td></tr>
               </tbody>
             </table>
         </section>
