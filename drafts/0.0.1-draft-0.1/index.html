@@ -756,7 +756,25 @@
               </tbody>
             </table>
           </section>
-
+        
+          <aside class="example" title="Beispiel Ortsbezug">
+            <pre class="js">
+              <code>
+                dcterms:spatial
+                 dcterms:Location
+                  skos:prefLabel Bundesrepublik Deutschland skos:prefLabel
+                  locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json"
+                    {"type": "Polygon", "coordinates": [[[6.098034, 55.054344], [15.578555, 55.054344], [15.578555, 47.23942], [6.098034, 47.23942], [6.098034, 55.054344]]]}
+                   /locn:geometry
+                  locn:geometry rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral"
+                    POLYGON ((6.098034 55.054344, 15.578555 55.054344, 15.578555 47.23942, 6.098034 47.23942, 6.098034 55.054344))
+                  /locn:geometry
+                 /dcterms:Location
+                /dcterms:spatial
+              </code>
+            </pre>
+          </aside>
+        
       </section>
 
     </section>
