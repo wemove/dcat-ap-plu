@@ -85,7 +85,7 @@
           <thead><tr><th>RDF Class:</th><th><a href="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</a></th></tr></thead>
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
-          <tr><td class="prop">Definition:</td><td>Verwaltete Sammlung von Metadaten über Resourcen (z.B. Datensätze und Datendienste)</td></tr>
+          <tr><td class="prop">Definition:</td><td>Verwaltete Sammlung von Metadaten über Ressourcen (z.B. Datensätze und Datendienste)</td></tr>
           <tr><td class="prop">Unterklasse von:</td><td><a href="#Class:Dataset"><code>dcat:Dataset</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Ein web-basierter Datenkatalog wird i.d.R. durch eine Instanz dieser Klasse repräsentiert.</td></tr>
          </tbody>
@@ -127,7 +127,7 @@
               <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
               <tr><td class="prop">Definition:</td><td>Diejenige Stelle / Organisation, die für die Bereitstellung des Katalogs verantwortlich ist.</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a></td></tr>
-              <tr><td class="prop">Anwendungshinweis:</td><td>Es wird empfohlen, Resourcen vom Typ <a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a>
+              <tr><td class="prop">Anwendungshinweis:</td><td>Es wird empfohlen, Ressourcen vom Typ <a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a>
                   für diese Eigenschaft zu verwenden.</td></tr>
                 </tbody>
           </table>
@@ -142,7 +142,7 @@
           <tr><td class="prop">Definition:</td><td>Homepage des Katalogs (Webdokument, idR als HTML verfügbar)</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Document"><code>foaf:Document</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td><a href="http://xmlns.com/foaf/0.1/homepage"><code>foaf:homepage</code></a> ist eine "inverse functional property" (IFP). Das bedeutet, dass sie eineindeutig die
-            Webseite für die Resource definieren <em class="rfc2119" title="MUST">MUSS</em>. Diese Eigenschaft gibt die kanonische Webseite an.
+            Webseite für die Ressource definieren <em class="rfc2119" title="MUST">MUSS</em>. Diese Eigenschaft gibt die kanonische Webseite an.
           </td></tr>
           </tbody>
           </table>
@@ -496,12 +496,12 @@
             <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#accessURL">dcat:accessURL</a></th></tr></thead>
             <tbody>
             <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
-            <tr><td class="prop">Definition:</td><td>URL der Resource die den Zugang zu einer Distribution des Datensatzes bietet. (Z.B. landing page, feed, SPARQL endpoint. ?!?)</td></tr>
+            <tr><td class="prop">Definition:</td><td>URL der Ressource die den Zugang zu einer Distribution des Datensatzes bietet. (Z.B. landing page, feed, SPARQL endpoint. ?!?)</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>
             <p><code>dcat:accessURL</code> <em class="rfc2119" title="SHOULD">SOLLTE</em> für die URL eines Services oder eines Ortes benutzt werden, der Zugang zu dieser
               Distribution bietet, typischerweise durch ein digitales Formular, Anfrage oder <abbr title="Application Programming Interface">API</abbr> Abruf.</p>
-            <p><code>dcat:downloadURL</code> ist zu bevorzugen für direkte Links zu herunterladbaren Resourcen.</p>
+            <p><code>dcat:downloadURL</code> ist zu bevorzugen für direkte Links zu herunterladbaren Ressourcen.</p>
             <p>Falls die Distribution(en) nur durch eine landing page erreichbar sind (d.h. direkte download URLs sind nicht bekannt), dann <em class="rfc2119" title="SHOULD">SOLLTE</em> die laning page URL, die mit dem <code>dcat:Dataset</code> assoziiert ist
               als access URL einer Distribution dupliziert  werden.</p></td></tr>
             </tbody>
@@ -681,7 +681,7 @@
               <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
               <tr><td class="prop">Definition:</td><td>Startdatum des Zeitraums</td></tr>
               <tr><td class="prop">Domain:</td><td><a href="#Class:Period_of_Time"><code title="http://purl.org/dc/terms/PeriodOfTime">dct:PeriodOfTime</code></a></td></tr>
-              <tr><td class="prop">Range:</td><td><a title="http://www.w3.org/2000/01/rdf-schema#Literal" href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code>rdfs:Literal</code></a> encoded using the relevant <abbr title="International Organization for Standardization">ISO</abbr> 8601 Date and Time compliant string DATETIME and typed using the appropriate XML Schema datatype XMLSCHEMA11-2 (<a href="https://www.w3.org/TR/xmlschema11-2/#gYear"><code>xsd:gYear</code></a>, <a href="https://www.w3.org/TR/xmlschema11-2/#gYearMonth"><code>xsd:gYearMonth</code></a>, <a href="https://www.w3.org/TR/xmlschema11-2/#date"><code>xsd:date</code></a>, or <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime"><code>xsd:dateTime</code></a>).</td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td><a title="http://www.w3.org/2000/01/rdf-schema#Literal" href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code>rdfs:Literal</code></a> encoded using the relevant <abbr title="International Organization for Standardization">ISO</abbr> 8601 Date and Time compliant string DATETIME and typed using the appropriate XML Schema datatype XMLSCHEMA11-2 (<a href="https://www.w3.org/TR/xmlschema11-2/#gYear"><code>xsd:gYear</code></a>, <a href="https://www.w3.org/TR/xmlschema11-2/#gYearMonth"><code>xsd:gYearMonth</code></a>, <a href="https://www.w3.org/TR/xmlschema11-2/#date"><code>xsd:date</code></a>, or <a href="https://www.w3.org/TR/xmlschema11-2/#dateTime"><code>xsd:dateTime</code></a>).</td></tr>
               </tbody>
             </table>
 
@@ -696,10 +696,66 @@
               <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
               <tr><td class="prop">Definition:</td><td>Enddatum des Zeitraums</td></tr>
               <tr><td class="prop">Domain:</td><td><a href="#Class:Period_of_Time"><code title="http://purl.org/dc/terms/PeriodOfTime">dct:PeriodOfTime</code></a></td></tr>
-              <tr><td class="prop">Range:</td><td><a title="http://www.w3.org/2000/01/rdf-schema#Literal" href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code>rdfs:Literal</code></a> encoded using the relevant <abbr title="International Organization for Standardization">ISO</abbr> 8601 Date and Time compliant string DATETIME and typed using the appropriate XML Schema datatype XMLSCHEMA11-2</td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td><a title="http://www.w3.org/2000/01/rdf-schema#Literal" href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code>rdfs:Literal</code></a> encoded using the relevant <abbr title="International Organization for Standardization">ISO</abbr> 8601 Date and Time compliant string DATETIME and typed using the appropriate XML Schema datatype XMLSCHEMA11-2</td></tr>
               </tbody>
             </table>
         </section>
+
+      </section>
+
+      <section id="Class:Location">
+        <h3 id="class-location">Klasse: Ortsbezug</h3>
+
+        <table class="definition">
+          <thead><tr><th>RDF Class:</th><th><a title="http://purl.org/dc/terms/Location" href="http://dublincore.org/documents/dcmi-terms/#terms-Location">dct:Location</a></th></tr></thead>
+          <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Definition:</td><td>Ein räumlicher Bereich oder ein bezeichneter Ort.</td></tr>
+            <tr><td class="prop">Anwendungshinweis:</td><td>Die Eigenschaft kann durch ein kontrolliertes Vokabular oder mit geographischen Koordinaten repräsentiert werden.</td> </tr>
+          </tbody>
+        </table>
+
+        <section id="Property:location_geometry">
+            <h4 id="property-geometry">Eigenschaft: Geometrie</h4>
+
+            <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a title="http://www.w3.org/ns/locn#geometry" href="http://www.w3.org/ns/locn#geometry">locn:geometry</a></th></tr></thead>
+              <tbody>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+              <tr><td class="prop">Definition:</td><td>Beschreibt die Geometrie einer Ressource.</td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
+              <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-geosparql" title="GeoSPARQL - A Geographic Query Language for RDF Data">GeoSPARQL</a></cite>]) kodiert werden.</td></tr>
+              </tbody>
+            </table>
+        </section>
+
+        <section id="Property:location_bbox">
+            <h4 id="property-bounding-box">Eigenschaft: Bounding Box</h4>
+
+            <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#bbox" title="http://www.w3.org/ns/dcat#centroid">dcat:bbox</a></th></tr></thead>
+              <tbody>
+                <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+                <tr><td class="prop">Definition:</td><td>Die Bounding Box einer Ressource.</td></tr>
+                <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
+                <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-geosparql" title="GeoSPARQL - A Geographic Query Language for RDF Data">GeoSPARQL</a></cite>]) kodiert werden.</td></tr>
+              </tbody>
+            </table>
+         </section>
+
+         <section id="Property:location_centroid">
+            <h4 id="property-centroid">Eigenschaft: Geografisches Zentrum</h4>
+
+            <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#centroid" title="http://www.w3.org/ns/dcat#centroid">dcat:centroid</a></th></tr></thead>
+              <tbody>
+                <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+                <tr><td class="prop">Definition:</td><td>Das geografische Zentrum (Schwerpunkt) einer Ressource.</td></tr>
+                <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
+                <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a> [<cite><a class="bibref" data-link-type="biblio" href="#bib-geosparql" title="GeoSPARQL - A Geographic Query Language for RDF Data">GeoSPARQL</a></cite>]) kodiert werden.</td></tr>
+              </tbody>
+            </table>
+          </section>
 
       </section>
 
