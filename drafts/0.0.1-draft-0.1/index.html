@@ -124,7 +124,7 @@
           <table class="definition">
               <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/publisher">dct:publisher</a></th></tr></thead>
               <tbody>
-              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
               <tr><td class="prop">Definition:</td><td>Diejenige Stelle / Organisation, die für die Bereitstellung des Katalogs verantwortlich ist.</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a></td></tr>
               <tr><td class="prop">Anwendungshinweis:</td><td>Es wird empfohlen, Ressourcen vom Typ <a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a>
@@ -138,11 +138,11 @@
           <table class="definition">
           <thead><tr><th>RDF Property:</th><th><a href="http://xmlns.com/foaf/0.1/homepage">foaf:homepage</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
           <tr><td class="prop">Definition:</td><td>Homepage des Katalogs (Webdokument, idR als HTML verfügbar)</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Document"><code>foaf:Document</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td><a href="http://xmlns.com/foaf/0.1/homepage"><code>foaf:homepage</code></a> ist eine "inverse functional property" (IFP). Das bedeutet, dass sie eineindeutig die
-            Webseite für die Ressource definieren <em class="rfc2119" title="MUST">MUSS</em>. Diese Eigenschaft gibt die kanonische Webseite an.
+            Webseite für die Ressource definieren <em class="rfc2119" title="MUST">MUSS</em>. Diese Eigenschaft verweist auf eine Homepage, welche die zentrale Homepage des Kataloges ist.
           </td></tr>
           </tbody>
           </table>
@@ -216,7 +216,7 @@
           <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#dataset">dcat:dataset</a></th></tr></thead>
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
-          <tr><td class="prop">Definition:</td><td>Verknüpft den Katalog mit den Datensätzen, die im Katalog aufgelistet werden.</td></tr>
+          <tr><td class="prop">Definition:</td><td>Eine logische Entität, welche die veröffentlichten Informationen repräsentiert.</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="#Class:Dataset"><code>dcat:Dataset</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td> ... </td></tr>
           </tbody>
@@ -331,7 +331,7 @@
           <table class="definition">
           <thead><tr><th>RDF Property:</th><th>plu:pluProedureType</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Art des Verfahrens bei raumbezogenen Planwerken</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><code>rdfs:Literal</code></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. "Vereinfachtess Verfahren", "Normales Verfahren".
@@ -345,7 +345,7 @@
           <table class="definition">
           <thead><tr><th>RDF Property:</th><th>plu:pluProedureState</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Status in dem sich ein Verfahren befindet</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><code>rdfs:Literal</code></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird der Status eines Verfahrens kategorisiert, z.B. "geplant", "laufend" oder "abgeschlossen".
@@ -359,7 +359,7 @@
           <table class="definition">
           <thead><tr><th>RDF Property:</th><th>plu:pluPlanType</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Art des raumbezogenen Plans</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><code>rdfs:Literal</code></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des raumbezogenen Planwerks ausgedrückt, z.B. Bebauungsplan, Regionalplan.
@@ -412,7 +412,7 @@
          <table class="definition">
          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/identifier">dct:identifier</a></th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
          <tr><td class="prop">Definition:</td><td>Eineindeutiger Identifikator des Datensatzes</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Der Identifikator kennzeichnet den Datensatz eineindeutig.</td></tr>
@@ -425,7 +425,7 @@
         <table class="definition">
         <thead><tr><th>RDF Property:</th><th>eia:eiaNumber</th></tr></thead>
         <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
         <tr><td class="prop">Definition:</td><td>UVP Nummer nach UVPG</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>Eine UVP Nummer ist für UVP Verfahren verpflichtend aus einer Liste auszuwählen.</td></tr>
@@ -436,9 +436,9 @@
       <section id="Property:eiaProcedure_Type">
         <h4 id="property-eaiProcedure-Type">Eigenschaft: UVP Verfahrensart</h4>
         <table class="definition">
-        <thead><tr><th>RDF Property:</th><th></th></tr></thead>
+        <thead><tr><th>RDF Property:</th><th>eia:eiaProocedureType</th></tr></thead>
         <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
         <tr><td class="prop">Definition:</td><td>Art des UVP Verfahrens</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. Linienbestimmung, Zulassungsverfahren.
@@ -453,7 +453,7 @@
         <table class="definition">
         <thead><tr><th>RDF Property:</th><th>eia:prelimAssessment</th></tr></thead>
         <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
         <tr><td class="prop">Definition:</td><td>Erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> (?) </a></td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>Eine Vorprüfung dient der Feststellung der UVP-Pflicht. 
@@ -467,14 +467,13 @@
         <table class="definition">
         <thead><tr><th>RDF Property:</th><th>eia:receiptDate</th></tr></thead>
         <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
         <tr><td class="prop">Definition:</td><td>Eingangsdatum des Antrages</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>Das Eingangsdatum stellt das Datum dar, an dem der Antrag eingegangen ist.</td></tr>
         </tbody>
         </table>
       </section>
-
 
      </section>
 
@@ -495,8 +494,8 @@
          <table class="definition">
             <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#accessURL">dcat:accessURL</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
-            <tr><td class="prop">Definition:</td><td>URL der Ressource die den Zugang zu einer Distribution des Datensatzes bietet. (Z.B. landing page, feed, SPARQL endpoint. ?!?)</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Definition:</td><td>URL der Ressource die den Zugang zu einer Distribution des Datensatzes bietet. (Z.B. landing page)</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>
             <p><code>dcat:accessURL</code> <em class="rfc2119" title="SHOULD">SOLLTE</em> für die URL eines Services oder eines Ortes benutzt werden, der Zugang zu dieser
@@ -536,7 +535,7 @@
          <table class="definition">
             <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
             <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung der Distribution</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft <em class="rfc2119" title="SHOULD">SOLLTE</em> mit dem Datum der ersten bekannten Veröffentlichung belegt sein.</td></tr>
@@ -561,7 +560,7 @@
          <table class="definition">
            <thead><tr><th>RDF Property:</th><th>eia:eiaDocType</th></tr></thead>
            <tbody>
-           <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
            <tr><td class="prop">Definition:</td><td>Art eines Dokuments im Zusammenhang mit UVP-Verfahren</td></tr>
            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
            <tr><td class="prop">Anwendungshinweis:</td><td>Über die Eigenschaft Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem UVP-Verfahren zur Verfügung gestellt werden können,
@@ -575,7 +574,7 @@
         <table class="definition">
           <thead><tr><th>RDF Property:</th><th>plu:pluDocType</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
           <tr><td class="prop">Definition:</td><td>Art eines Dokuments im Zusammenhang mit raumbezogenen Planwerken</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Über den Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem raumbezogenen Planwerk zur Verfügung gestellt werden können,
@@ -589,9 +588,9 @@
          <table class="definition">
            <thead><tr><th>RDF Property:</th><th>eia:validUntil</th></tr></thead>
            <tbody>
-           <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
            <tr><td class="prop">Definition:</td><td>Datum, bis zu dem die Distribution gültig bzw. veröffentlicht ist.</td></tr>
-           <tr><td class="prop">Typ/Wertebereich:</td><td>...</td></tr>
+           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
            </tbody>
          </table>
         </section>
@@ -603,7 +602,7 @@
        <table class="definition">
           <thead><tr><th>RDF Class:</th><th>plu:ProcessStep</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Recommended</td></tr>
           <tr><td class="prop">Definition:</td><td>Verfahrensschritt</td></tr>
           <tr><td class="prop">Anwendungshinweis</td><td>Eine Instanz dieser Klasse bildet einen Verfahrensschritte ab.</td></tr>
           </tbody>
@@ -627,7 +626,7 @@
          <table class="definition">
          <thead><tr><th>RDF Property:</th><th>eia:eiaProcessStepType</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
          <tr><td class="prop">Definition:</td><td>Art des Prozessschrittes bei UVP Verfahren</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Prozessschrittes bei UVP-Verfahren beschrieben. Die möglichen Arten 
@@ -641,7 +640,7 @@
          <table class="definition">
          <thead><tr><th>RDF Property:</th><th>plu:pluProcessStepType</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
          <tr><td class="prop">Definition:</td><td>Art des Prozesschrittes bei raumbezogenen Planwerken</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Prozessschrittes bei Verfahren zu raumbezogenen Planwerken 
@@ -779,7 +778,7 @@
               <code>
                 dcterms:spatial
                  dcterms:Location
-                  skos:prefLabel Bundesrepublik Deutschland skos:prefLabel
+                  skos:prefLabel Bundesrepublik Deutschland /skos:prefLabel
                   locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json"
                     {"type": "Polygon", "coordinates": [[[6.098034, 55.054344], [15.578555, 55.054344], [15.578555, 47.23942], [6.098034, 47.23942], [6.098034, 55.054344]]]}
                    /locn:geometry
