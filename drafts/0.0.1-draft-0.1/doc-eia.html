@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Beschreibung Metadatenmodell UVP-Verfahren</title>
+    <script src="https://www.w3.org/Tools/respec/respec-w3c"class="remove" defer></script>
+
+    <script class='remove'>
+      var respecConfig = {
+      latestVersion: "https://github.com/wemove/dcat-ap-plu/tree/main/drafts",
+      specStatus: "unofficial",
+      shortName: "DCAT-EIA",
+      editors: [{
+      name: "Ilona Westram",
+      company: "wemove digital solutions GmbH",
+      },
+      {name: "Joachim Müller",
+      company: "wemove digital solutions GmbH",},
+    ],
+      };
+     </script>
+
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/small.css" media="only all and (max-width: 649px)">
+  </head>
+
+  <body>
+    <section id="abstract" class="informative">
+      <h2 id="introduction">Zusammenfassung</h2>
+      <p>Die vorliegende Spezifikation eines Metadatenmodells wurde für die Beschreibung verschiedener Verfahren entwickelt - zum einen Umweltverträglichkeitsprüfungen zum anderen raumbezogene Planwerke und entsprechende Beteiligungsverfahren.
+        Als Basis dienen die Standards von DCAT-AP sowie DCAT-AP.de. Soweit Begriffe aus existierenden Vokabularen mit adequaten Bedeutungen existieren, wurden diese verwendet, wie z.B. dct:title und foaf:homepage.
+      </p>
+    </section>
+
+    <section id="sotd" class="introductory">
+      <p>Dieses Dokument ist ein Entwurf einer potentiellen Spezifikation zur Beschreibung von Metadaten raumbezogener Planwerke, UVP-Verfahren sowie Beteiligungsverfahren zum Aufstellen raumbezogener Planwerke.</p>
+    </section>
+
+    <section id="einfuehrung" class="informative">
+      <h2>Einführung</h2>
+      <p>Das Online-Zugangsgesetz (OZG) aus dem Jahr 2017 verpflichtet Bund, Länder und Gemeinden bis spätestens Ende 2022 ihre Verwaltungsleistungen auch elektronisch über Verwaltungsportale anzubieten
+        und diese miteinander zu einem Portalverbund zu verknüpfen. Im Rahmen der OZG Verwaltungsleistungen "Beteiligungsverfahren nach dem Baugesetzbuch, dem Raumordnungsgesetz und
+        in der Planfeststellung" und "Einstellen von raumbezogenen Planwerken in das Internet" wird eine Metadaten-Infrastruktur entwickelt, um Planwerke des allgemeinen und des besonderen
+        Städtebaurechtes, der Raumordnung bzw. Planwerke, die Vorhaben beschreiben, die einer Planfeststellung bedürfen manuell und automatisiert verwalten zu können. Das hier beschriebene Metadatenmodell stellt die Basis
+        für die Metadaten-Infrastruktur dar.
+       </p>
+     </section>
+    </section>
+
+    <section id="definitions">
+     <h2 id="definitions">Definitionen und Terminologie</h2>
+     <p></p>
+    </section>
+    <section id="namespaces">
+     <h2 id="namespaces">Namensräume</h2>
+
+      <p>Das entwickelte Metadatenmodell baut auf das europäische Metadatenaustauschschema DCAT-AP auf und erweitert dieses mit einzelnen Klassen und Eigenschaften.
+      In DCAT bzw. DCAT-AP wird auf Klassen und Eigenschaften vieler anderer Vokabulare zurückgegriffen, insbesondere Dublin Core DCTERMS.
+      Eine kleine Anzahl an Klassen und Eigenschaften werden in DCAT-AP zusätzlich definiert.</p>
+      <p>Namensräume und Prefixe auf die im vorliegenden Datenmodell zurückgegriffen wird, sind in der folgenden Tabelle aufgelistet.</p>
+      <table id="table-namespaces">
+        <thead><tr><th>Prefix</th><th>Namensraum</th></tr></thead>
+        <tbody>
+        <tr><td><code>dcat</code></td><td><code>http://www.w3.org/ns/dcat#</code></td></tr>
+        <tr><td><code>dct</code></td><td><code>http://purl.org/dc/terms/</code></td></tr>
+        <tr><td><code>dctype</code></td><td><code>http://purl.org/dc/dcmitype/</code></td></tr>
+        <tr><td><code>foaf</code></td><td><code>http://xmlns.com/foaf/0.1/</code></td></tr>
+        <tr><td><code>locn</code></td><td><code>http://www.w3.org/ns/locn#</code></td></tr>
+        <tr><td><code>rdf</code></td><td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td></tr>
+        <tr><td><code>rdfs</code></td><td><code>http://www.w3.org/2000/01/rdf-schema#</code></td></tr>
+        <tr><td><code>skos</code></td><td><code>http://www.w3.org/2004/02/skos/core#</code></td></tr>
+        <tr><td><code>time</code></td><td><code>http://www.w3.org/2006/time#</code></td></tr>
+        <tr><td><code>xsd</code></td><td><code>http://www.w3.org/2001/XMLSchema#</code></td></tr>
+        <tr><td><code>adms</code></td><td><code>https://www.w3.org/ns/adms#</code></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="vocabulary-specification">
+      <h2 id="vocabulary-specification">Spezifikation des Vokabulars</h2>
+
+      <section id="Class:Catalog">
+        <h3 id="class-catalog">Klasse: Katalog</h3>
+        <table class="definition">
+          <thead><tr><th>RDF Class:</th><th><a href="http://www.w3.org/ns/dcat#Catalog">dcat:Catalog</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Definition:</td><td>Verwaltete Sammlung von Metadaten über Ressourcen (z.B. Datensätze und Datendienste)</td></tr>
+          <tr><td class="prop">Unterklasse von:</td><td><a href="#Class:Dataset"><code>dcat:Dataset</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Ein web-basierter Datenkatalog wird i.d.R. durch eine Instanz dieser Klasse repräsentiert.</td></tr>
+         </tbody>
+      </table>
+
+        <section id="Property:catalog_description">
+        <h4 id="property-catalog-description">Eigenschaft: Beschreibung</h4>
+        <table class="definition">
+        <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/description">dct:description</a></th></tr></thead>
+        <tbody>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+        <tr><td class="prop">Definition:</td><td>Beschreibung des Katalogs, Freitext</td></tr>
+        <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+        <tr><td class="prop">Anwendungshinweis:</td><td>
+        </td></tr>
+        </tbody>
+        </table>
+        </section>
+
+        <section id="Property:catalog_title">
+          <h4 id="property-catalog-title">Eigenschaft: Titel</h4>
+          <table class="definition">
+            <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
+            <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Definition:</td><td>Name / Bezeichnung des Katalogs, Freitext</td></tr>
+            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+            <tr><td class="prop">Anwendungshinweis:</td><td>
+            </tbody>
+            </table>
+          </section>
+
+        <section id="Property:catalog_publisher">
+          <h4 id="property-catalog-publisher">Eigenschaft: Herausgeber</h4>
+
+          <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/publisher">dct:publisher</a></th></tr></thead>
+              <tbody>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+              <tr><td class="prop">Definition:</td><td>Diejenige Stelle / Organisation, die für die Bereitstellung des Katalogs verantwortlich ist.</td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a></td></tr>
+              <tr><td class="prop">Anwendungshinweis:</td><td>Es wird empfohlen, Ressourcen vom Typ <a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a>
+                  für diese Eigenschaft zu verwenden.</td></tr>
+                </tbody>
+          </table>
+      </section>
+
+        <section id="Property:catalog_homepage">
+          <h4 id="property-homepage">Eigenschaft: Homepage</h4>
+          <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://xmlns.com/foaf/0.1/homepage">foaf:homepage</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Homepage des Katalogs (Webdokument, idR als HTML verfügbar)</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Document"><code>foaf:Document</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td><a href="http://xmlns.com/foaf/0.1/homepage"><code>foaf:homepage</code></a> ist eine "inverse functional property" (IFP). Das bedeutet, dass sie eineindeutig die
+            Webseite für die Ressource definieren <em class="rfc2119" title="MUST">MUSS</em>. Diese Eigenschaft verweist auf eine Homepage, welche die zentrale Homepage des Kataloges ist.
+          </td></tr>
+          </tbody>
+          </table>
+        </section>
+
+        <section id="Property:catalog_release_date">
+          <h4 id="property-catalog-release-date">Eigenschaft: Veröffentlichungsdatum</h4>
+          <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung des Katalogs</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft <em class="rfc2119" title="SHOULD">SOLLTE</em> mit dem Datum der ersten bekannten Veröffentlichung belegt sein.</td></tr>
+          </tbody>
+          </table>
+        </section>
+
+        <section id="Property:catalog_update_date">
+          <h4 id="property-catalog-update-date">Eigenschaft: Veränderungsdatum</h4>
+          <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/modified">dct:modified</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Definition:</td><td>Datum, an dem der Katalog zuletzt verändert, aktualisiert oder modifiziert wrude.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a>
+           </tbody>
+          </table>
+        </section>
+
+        <section id="Property:resource_language">
+          <h4 id="property-language">Eigenschaft: Sprache</h4>
+
+          <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/language">dct:language</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Definition:</td><td>Sprache des Katalogs, in der die Textelemente der Metadaten verfasst sind (z.B. Titel, Beschreibung).</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td>
+          <p><a href="http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a></p></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Eigenschaft wird wiederholt, wenn der Katalog in mehreren Sprachen vorhanden ist.</td></tr>
+          </tbody>
+          </table>
+        </section>
+
+        <section id="Property:catalog_themes">
+          <h4 id="property-themes">Eigenschaft: Kategorien</h4>
+
+          <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#themeTaxonomy">dcat:themeTaxonomy</a></th></tr></thead>
+              <tbody>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+              <tr><td class="prop">Definition:</td><td>Schema zur Klassifizierung der im Katalog verzeichneten Datensätze</td></tr>
+              <tr><td class="prop">Domain:</td><td><a href="#Class:Catalog"><code>dcat:Catalog</code></a></td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+              <tr><td class="prop">Anwendungshinweis:</td><td>
+                <p>Diese Eigenschaft verweist auf das eingesetzte Schema zur Klassifizierung der dem Katalog 
+                zugewiesenen Datenstrukturen in Form von Kategorien.</p>
+                <p>Es wird empfohlen, die Systematik in einem <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme"><code>skos:ConceptScheme</code></a>,
+                einer <a href="http://www.w3.org/2004/02/skos/core#Collection"><code>skos:Collection</code></a>, einer <a href="http://www.w3.org/2002/07/owl#Ontology"><code>owl:Ontology</code></a> oder ähnlich
+                zu organisieren, damit die Inhalte durch eine IRI bezeichnet und als Linked Data publiziert werden können.</p>
+                </td></tr>
+              </tbody>
+          </table>
+        </section>
+
+        <section id="Property:catalog_dataset">
+          <h4 id="property-dataset">Eigenschaft: Dataset</h4>
+
+          <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#dataset">dcat:dataset</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Definition:</td><td>Eine logische Entität, welche die veröffentlichten Informationen repräsentiert.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="#Class:Dataset"><code>dcat:Dataset</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td> ... </td></tr>
+          </tbody>
+          </table>
+         </section>
+      </section>
+
+      <section id="Class:Dataset">
+        <h3 id="class-dataset">Klasse: Datensatz</h3>
+        <table class="definition">
+          <thead><tr><th>RDF Class:</th><th><a href="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Definition:</td><td>Eine logische Entität, welche die veröffentlichten Informationen repräsentiert</td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Klasse beschreibt die konzeptuelle Datenstruktur. Eine oder mehrere Arten in verschiedenen Formaten
+            oder schematischen Layouts können verfügbar sein. Diese Klasse beschreibt die tatsächliche Datenstruktur so wie sie vom Bereitsteller zur Verfügung gestellt wird.</td></tr>
+          </tbody>
+      </table>
+
+        <section id="Property:title">
+          <h4 id="property-title">Eigenschaft: Titel</h4>
+          <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Definition:</td><td>Name / Bezeichnung des Datensatzes, Freitext</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+          </tbody>
+          </table>
+        </section>
+        <section id="Property:description">
+          <h4 id="property-description">Eigenschaft: Beschreibung</h4>
+          <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/description">dct:description</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Definition:</td><td>Beschreibung des Datensatzes, Freitext</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+          </tbody>
+          </table>
+        </section>
+        <section id="Property:resource_keyword">
+          <h4 id="property-keyword-tag">Eigenschaft: Schlagworte</h4>
+          <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#keyword">dcat:keyword</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Definition:</td><td>Ein oder mehrere Schlagworte, die den Datensatz beschreiben.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+          </tbody>
+          </table>
+        </section>
+
+        <section id="Property:resource_theme">
+          <h4 id="property-theme-category">Eigenschaft: Thema / Kategorie <a class="self-link" aria-label="§" href="#Property:resource_theme"></a></h4>
+
+          <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#theme">dcat:theme</a></th></tr></thead>
+              <tbody>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+              <tr><td class="prop">Definition:</td><td>Hauptkategorie des Datensatzes</td></tr>
+              <tr><td class="prop">Range:</td><td><a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a></td></tr>
+              <tr><td class="prop">Anwendungshinweis:</td><td>Ein Datensatz kann mehreren Kategorien angehören. Der Satz von <a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a>s die den Datensatz kategorisieren sind in einem
+                 <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme"><code>skos:ConceptScheme</code></a> organisiert, das alle Kategorien im Katalog beschreibt.</td></tr>
+             </tbody>
+          </table>
+        </section>
+
+        <section id="Property:distribution_release_date">
+          <h4 id="property-release-date">Eigenschaft: Veröffentlichungsdatum</h4>
+          <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung des Datensatzes</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft <em class="rfc2119" title="SHOULD">SOLLTE</em> das Datum der ersten bekannten Veröffentlichung darstellen.</td></tr>
+          </tbody>
+          </table>
+       </section>
+       <section id="Property:distribution_update_date">
+         <h4 id="roperty-update-modification-date">Eigenschaft: Aktualisierungs- oder Veränderungsdatum</h4>
+         <table class="definition">
+         <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/modified">dct:modified</a></th></tr></thead>
+         <tbody>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Definition:</td><td>Aktualisierungs- bzw. Veränderungsdatum des Datensatzes</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a>
+         </tbody>
+         </table>
+       </section>
+
+       <section id="Property:resource_identifier">
+         <h4 id="property-identifier">Eigenschaft: Identifikator</h4>
+         <table class="definition">
+         <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/identifier">dct:identifier</a></th></tr></thead>
+         <tbody>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Definition:</td><td>Eineindeutiger Identifikator des Datensatzes</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Der Identifikator kennzeichnet den Datensatz eineindeutig.</td></tr>
+         </tbody>
+         </table>
+       </section>
+
+       <section id="Property:eia_number">
+        <h4 id="property-eia-number">Eigenschaft: UVP Nummer</h4>
+        <table class="definition">
+        <thead><tr><th>RDF Property:</th><th>eia:eiaNumber</th></tr></thead>
+        <tbody>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+        <tr><td class="prop">Definition:</td><td>UVP Nummer nach UVPG</td></tr>
+        <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+        <tr><td class="prop">Anwendungshinweis:</td><td>Eine UVP Nummer ist für UVP Verfahren verpflichtend aus einer Liste auszuwählen.</td></tr>
+        </tbody>
+        </table>
+      </section>
+
+      <section id="Property:eiaProcedure_Type">
+        <h4 id="property-eaiProcedure-Type">Eigenschaft: UVP Verfahrensart</h4>
+        <table class="definition">
+        <thead><tr><th>RDF Property:</th><th>eia:eiaProocedureType</th></tr></thead>
+        <tbody>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+        <tr><td class="prop">Definition:</td><td>Art des UVP Verfahrens</td></tr>
+        <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+        <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. Linienbestimmung, Zulassungsverfahren.
+          Die möglichen Verfahrensarten sind durch eine <a href="#codelist-eiaProcedureType">Codeliste</a> festgelegt.
+        </td></tr>
+        </tbody>
+        </table>
+      </section>
+
+      <section id="Property:prelim_assessment">
+        <h4 id="property-prelim-assessment">Eigenschaft: Vorprüfung durchgeführt</h4>
+        <table class="definition">
+        <thead><tr><th>RDF Property:</th><th>eia:prelimAssessment</th></tr></thead>
+        <tbody>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+        <tr><td class="prop">Definition:</td><td>Erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
+        <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> (?) </a></td></tr>
+        <tr><td class="prop">Anwendungshinweis:</td><td>Eine Vorprüfung dient der Feststellung der UVP-Pflicht. 
+          Mit dieser Eigenschaft wird erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
+        </tbody>
+        </table>
+      </section>
+
+      <section id="Property:receipt_date">
+        <h4 id="property-receipt-date">Eigenschaft: Eingangsdatum</h4>
+        <table class="definition">
+        <thead><tr><th>RDF Property:</th><th>eia:receiptDate</th></tr></thead>
+        <tbody>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+        <tr><td class="prop">Definition:</td><td>Eingangsdatum des Antrages</td></tr>
+        <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
+        <tr><td class="prop">Anwendungshinweis:</td><td>Das Eingangsdatum stellt das Datum dar, an dem der Antrag eingegangen ist.</td></tr>
+        </tbody>
+        </table>
+      </section>
+
+     </section>
+
+     <section id="Class:Distribution">
+       <h3 id="class-distribution">Klasse: Distribution</h3>
+       <table class="definition">
+          <thead><tr><th>RDF class:</th><th><a href="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</a></th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Definition:</td><td>Spezifische Representation eines Datensatzes</td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Die Distribution stellt die generelle Verfügbarkeit eines Datensatzes dar aber beinhaltet nicht zwangsweise eine Zugangsmöglichkeit zu den Daten wie z.B.durch direkten
+              Download, <abbr title="Application Programming Interface">API</abbr>, oder durch eine Internetseite.
+              Die Benutzung der Eigenschaft <code>dcat:downloadURL</code> zeigt eine direkt herunterladebare Distribution an.</td></tr>
+          </tbody>
+       </table>
+       <section id="Property:distribution_access_url">
+         <h4 id="property-access-url">Eigenschaft: access URL</h4>
+         <table class="definition">
+            <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#accessURL">dcat:accessURL</a></th></tr></thead>
+            <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Definition:</td><td>URL der Ressource die den Zugang zu einer Distribution des Datensatzes bietet. (Z.B. landing page)</td></tr>
+            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+            <tr><td class="prop">Anwendungshinweis:</td><td>
+            <p><code>dcat:accessURL</code> <em class="rfc2119" title="SHOULD">SOLLTE</em> für die URL eines Services oder eines Ortes benutzt werden, der Zugang zu dieser
+              Distribution bietet, typischerweise durch ein digitales Formular, Anfrage oder <abbr title="Application Programming Interface">API</abbr> Abruf.</p>
+            <p><code>dcat:downloadURL</code> ist zu bevorzugen für direkte Links zu herunterladbaren Ressourcen.</p>
+            <p>Falls die Distribution(en) nur durch eine landing page erreichbar sind (d.h. direkte download URLs sind nicht bekannt), dann <em class="rfc2119" title="SHOULD">SOLLTE</em> die laning page URL, die mit dem <code>dcat:Dataset</code> assoziiert ist
+              als access URL einer Distribution dupliziert  werden.</p></td></tr>
+            </tbody>
+         </table>
+       </section>
+
+       <section id="Property:distribution_title">
+        <h4 id="property-dist-title">Eigenschaft: Titel</h4>
+        <table class="definition">
+            <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
+            <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+            <tr><td class="prop">Definition:</td><td>Name / Bezeichnung der Distribution, Freitext</td></tr>
+            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+            </tbody>
+        </table>
+       </section>
+       <section id="Property:distribution_description">
+         <h4 id="property-description">Eigenschaft: Beschreibung</h4>
+         <table class="definition">
+            <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/description">dct:description</a></th></tr></thead>
+            <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+            <tr><td class="prop">Definition:</td><td>Beschreibung der Distribution, Freitext</td></tr>
+            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+            </tbody>
+         </table>
+       </section>
+
+       <section id="Property:distribution_release_date">
+         <h4 id="property-release-date">Eigenschaft: Veröffentlichungsdatum</h4>
+         <table class="definition">
+            <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
+            <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+            <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung der Distribution</td></tr>
+            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
+            <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft <em class="rfc2119" title="SHOULD">SOLLTE</em> mit dem Datum der ersten bekannten Veröffentlichung belegt sein.</td></tr>
+            </tbody>
+         </table>
+       </section>
+
+       <section id="Property:distribution_update_date">
+         <h4 id="property-distribution-update-date">Eigenschaft: Veränderungsdatum</h4>
+         <table class="definition">
+            <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/modified">dct:modified</a></th></tr></thead>
+            <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+            <tr><td class="prop">Definition:</td><td>Aktualisierungs- bzw. Veränderungsdatum der Distribution</td></tr>
+            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
+            </tbody>
+         </table>
+       </section>
+
+       <section id="Property:eia_document_Type">
+         <h4 id="property-eia-document-Type">Eigenschaft: Dokumententyp UVP-Dokumente</h4>
+         <table class="definition">
+           <thead><tr><th>RDF Property:</th><th>eia:eiaDocType</th></tr></thead>
+           <tbody>
+           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+           <tr><td class="prop">Definition:</td><td>Art eines Dokuments im Zusammenhang mit UVP-Verfahren</td></tr>
+           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+           <tr><td class="prop">Anwendungshinweis:</td><td>Über die Eigenschaft Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem UVP-Verfahren zur Verfügung gestellt werden können,
+              wie z.B. Auslegungsinformationen ("announcement"), Berichte und Emfpehlungen ("reportsRecommendation") oder Entscheidungen ("decision")</td></tr>
+          </tbody>
+        </table>
+       </section>
+
+       <section id="Property:validUntil">
+         <h4 id="property-valid-Until">Eigenschaft: Gültig bis</h4>
+         <table class="definition">
+           <thead><tr><th>RDF Property:</th><th>eia:validUntil</th></tr></thead>
+           <tbody>
+           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+           <tr><td class="prop">Definition:</td><td>Datum, bis zu dem die Distribution gültig bzw. veröffentlicht ist.</td></tr>
+           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
+           </tbody>
+         </table>
+        </section>
+      </section>
+
+      <section id="Class:Process_Step">
+       <h3 id="class-process-step">Klasse: Verfahrensschritt</h3>
+
+       <table class="definition">
+          <thead><tr><th>RDF Class:</th><th>eia:ProcessStep</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Recommended</td></tr>
+          <tr><td class="prop">Definition:</td><td>Verfahrensschritt</td></tr>
+          <tr><td class="prop">Anwendungshinweis</td><td>Eine Instanz dieser Klasse bildet einen Verfahrensschritte ab.</td></tr>
+          </tbody>
+       </table>
+
+       <section id="Property:resource_identifier">
+         <h4 id="property-identifier">Eigenschaft: Identifikator</h4>
+         <table class="definition">
+         <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/identifier">dct:identifier</a></th></tr></thead>
+         <tbody>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+         <tr><td class="prop">Definition:</td><td>Eineindeutiger Identifikator des Verfahrensschrittes</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>...</td></tr>
+         </tbody>
+         </table>
+       </section>
+
+       <section id="Property:eia_Process_Step_Type">
+         <h4 id="property-eia-process-step-type">Eigenschaft: Art des Prozessschrittes UVP</h4>
+         <table class="definition">
+         <thead><tr><th>RDF Property:</th><th>eia:eiaProcessStepType</th></tr></thead>
+         <tbody>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+         <tr><td class="prop">Definition:</td><td>Art des Prozessschrittes bei UVP Verfahren</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Prozessschrittes bei UVP-Verfahren beschrieben. Die möglichen Arten 
+           von Prozessschritten sind durch eine <a href="#codelist-eiaProcessStepType">Codeliste</a> definiert. </td></tr>
+         </tbody>
+         </table>
+       </section>
+
+      </section>
+
+      <section id="Class:Period_of_Time">
+        <h3 id="class-period-of-time">Klasse: Zeitraum</h3>
+
+        <table class="definition">
+          <thead><tr><th>RDF Class:</th><th><a title="http://purl.org/dc/terms/PeriodOfTime" href="http://dublincore.org/documents/dcmi-terms/#terms-PeriodOfTime">dct:PeriodOfTime</a></th></tr></thead>
+          <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+            <tr><td class="prop">Definition:</td><td>Zeitraum der durch seinen Anfang und sein Ende definiert ist.</td></tr>
+            <tr>
+               <td class="prop">Anwendungshinweis:</td>
+               <td>Start und Ende des Zeitraums <em class="rfc2119" title="SHOULD">SOLLTEN</em> durch die Eigenschaften
+                <code title="http://www.w3.org/ns/dcat#startDate">dcat:startDate</code>
+                oder <code title="http://www.w3.org/2006/time#hasBeginning">time:hasBeginning</code>,
+                und  <code title="http://www.w3.org/ns/dcat#endDate">dcat:endDate</code>
+                oder <code title="http://www.w3.org/2006/time#hasEnd">time:hasEnd</code> beschrieben werden.
+                Das Intervall kann auch offen sein, d.h. nur ein Start- oder nur ein Enddatum haben.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <section id="Property:period_start_date">
+            <h4 id="property-start-date">Eigenschaft: Startdatum</h4>
+
+            <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#startDate" title="http://www.w3.org/ns/dcat#startDate">dcat:startDate</a></th></tr></thead>
+              <tbody>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+              <tr><td class="prop">Definition:</td><td>Startdatum des Zeitraums</td></tr>
+              <tr><td class="prop">Domain:</td><td><a href="#Class:Period_of_Time"><code title="http://purl.org/dc/terms/PeriodOfTime">dct:PeriodOfTime</code></a></td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td>rdfs:Literal getyped als xsd:gYear, xsd:gYearMonth, xsd:date oder xsd:dateTime.</td></tr>
+              </tbody>
+            </table>
+
+        </section>
+
+        <section id="Property:period_end_date">
+            <h4 id="property-end-date">Eigenschaft: Enddatum</h4>
+
+            <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#endDate" title="http://www.w3.org/ns/dcat#endDate">dcat:endDate</a></th></tr></thead>
+              <tbody>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+              <tr><td class="prop">Definition:</td><td>Enddatum des Zeitraums</td></tr>
+              <tr><td class="prop">Domain:</td><td><a href="#Class:Period_of_Time"><code title="http://purl.org/dc/terms/PeriodOfTime">dct:PeriodOfTime</code></a></td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td>rdfs:Literal getyped als xsd:gYear, xsd:gYearMonth, xsd:date oder xsd:dateTime</td></tr>
+              </tbody>
+            </table>
+        </section>
+
+      </section>
+
+      <section id="Class:Location">
+        <h3 id="class-location">Klasse: Ortsbezug</h3>
+
+        <table class="definition">
+          <thead><tr><th>RDF Class:</th><th><a title="http://purl.org/dc/terms/Location" href="http://dublincore.org/documents/dcmi-terms/#terms-Location">dct:Location</a></th></tr></thead>
+          <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Definition:</td><td>Ein räumlicher Bereich oder ein bezeichneter Ort.</td></tr>
+            <tr><td class="prop">Anwendungshinweis:</td><td>Die Eigenschaft kann durch ein kontrolliertes Vokabular oder mit geographischen Koordinaten repräsentiert werden.</td> </tr>
+          </tbody>
+        </table>
+
+        <section id="Property:location_geometry">
+            <h4 id="property-geometry">Eigenschaft: Geometrie</h4>
+
+            <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a title="http://www.w3.org/ns/locn#geometry" href="http://www.w3.org/ns/locn#geometry">locn:geometry</a></th></tr></thead>
+              <tbody>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+              <tr><td class="prop">Definition:</td><td>Beschreibt die Geometrie einer Ressource.</td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
+              <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a>) kodiert werden.</td></tr>
+              </tbody>
+            </table>
+        </section>
+
+        <section id="Property:location_bbox">
+            <h4 id="property-bounding-box">Eigenschaft: Bounding Box</h4>
+
+            <table class="definition">
+              <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#bbox" title="http://www.w3.org/ns/dcat#centroid">dcat:bbox</a></th></tr></thead>
+              <tbody>
+                <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+                <tr><td class="prop">Definition:</td><td>Die Bounding Box einer Ressource.</td></tr>
+                <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
+                <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a>) kodiert werden.</td></tr>
+              </tbody>
+            </table>
+        </section>
+
+        <section id="Property:location_centroid">
+          <h4 id="property-centroid">Eigenschaft: Geografisches Zentrum</h4>
+
+          <table class="definition">
+            <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#centroid" title="http://www.w3.org/ns/dcat#centroid">dcat:centroid</a></th></tr></thead>
+            <tbody>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+              <tr><td class="prop">Definition:</td><td>Das geografische Zentrum (Schwerpunkt) einer Ressource.</td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
+              <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a>) kodiert werden.</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="Property:skos_prefLabel">
+           <h4 id="property-skos-pref-label">Eigenschaft: Benennung</h4>
+
+            <table class="definition">
+             <thead><tr><th>RDF Property:</th><th>skos:prefLabel</th></tr></thead>
+             <tbody>
+              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+              <tr><td class="prop">Definition:</td><td>Bevorzugte Bezeichnung des Ortes</td></tr>
+              <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
+              <tr><td class="prop">Anwendungshinweis:</td><td></td></tr>
+             </tbody>
+           </table>
+        </section>
+
+        <section id="examples-location">
+          <h4 id="examples-location">Beispiele für Ortsbezug</h4>
+        
+         <aside class="example">
+            <pre class="js">
+              <code>
+                dcterms:spatial
+                 dcterms:Location
+                  skos:prefLabel Bundesrepublik Deutschland /skos:prefLabel
+                  locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json"
+                    {"type": "Polygon", "coordinates": [[[6.098034, 55.054344], [15.578555, 55.054344], [15.578555, 47.23942], [6.098034, 47.23942], [6.098034, 55.054344]]]}
+                   /locn:geometry
+                  locn:geometry rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral"
+                    POLYGON ((6.098034 55.054344, 15.578555 55.054344, 15.578555 47.23942, 6.098034 47.23942, 6.098034 55.054344))
+                  /locn:geometry
+                 /dcterms:Location
+                /dcterms:spatial
+              </code>
+            </pre>
+          </aside>
+
+         </section>
+        
+      </section>
+
+      <section id="Class:Agent">
+        <h3 id="class-agent">Klasse: Organisation</h3>
+
+        <table class="definition">
+          <thead><tr><th>RDF Class:</th><th>foaf:Agent</th></tr></thead>
+          <tbody>
+            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Definition:</td><td>Eine Stelle oder Person, welche mit Katalogen und Datensätzen in unterschiedlichen Rollenausprägungen assoziiert ist.</td></tr>
+            <tr><td class="prop">Anwendungshinweis:</td><td></td> </tr>
+          </tbody>
+        </table>
+
+        <!--
+       <aside class="example" id="ex-agent-organisation" title="Organisation">
+        <pre data-include-format="text" data-include="./examples/agent.rdf"></pre>
+       </aside>
+       -->
+
+      </section>
+
+    </section>
+
+    <section id="codelists">
+      <h2 id="codelists">Verwendete Codelisten</h2>
+
+      <p>Im folgenden sind die innerhalb diese Datenmodells verwendeten Codelisten dokumentiert.</p>
+
+      <section id="codelist-eiaProcedureType">
+        <h3 id="codelist-eiaProcedureType">Codeliste für Verfahrensarten von UVP-Verfahren<a class="self-link" href="#codelist-eiaProcedureType"></a></h3>
+        <table>
+          <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+          <tr><td>0001</td> <td>Zulassungsverfahren</td></tr>
+          <tr><td>0002</td> <td>Vorgelagerte Verfahren - Raumordnungsverfahren</td></tr>
+          <tr><td>0003</td> <td>Vorgelagerte Verfahren - Linienbestimmung</td></tr>
+          <tr><td>0004</td> <td>Vorprüfung, negativ</td></tr>
+          <tr><td>0005</td> <td>Ausländische Vorhaben</td></tr>
+          </tbody>
+        </table>
+
+      </section>
+
+      <section id="codelist-eiaDocType">
+        <h3 id="codelist-eiaDocType">Codeliste für Dokumententypen von UVP-Verfahren<a class="self-link" href="#codelist-eiaDocType"></a></h3>
+        <table>
+          <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+          <tr><td>0001</td> <td>Auslegungsinformationen</td></tr>
+          <tr><td>0002</td> <td>UVP Bericht / Antragsunterlagen</td></tr>
+          <tr><td>0003</td> <td>Berichte und Empfehlungen</td></tr>
+          <tr><td>0004</td> <td>Weitere Unterlagen</td></tr>
+          <tr><td>0005</td> <td>Informationen zum Erörterungstermin</td></tr>
+          <tr><td>0006</td> <td>Entscheidung</td></tr>
+          </tbody>
+        </table>
+
+      </section>
+
+      <section id="codelist-eiaProcessStepType">
+        <h3 id="codelist-eiaProcessStepType">Codeliste für Arten von Verfahrensschritten bei UVP-Verfahren<a class="self-link" href="#codelist-eiaProcessStepType"></a></h3>
+        <table>
+          <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+          <tr><td>0001</td> <td>Öffentliche Auslegung</td></tr>
+          <tr><td>0002</td> <td>Erörterungstermin</td></tr>
+          <tr><td>0003</td> <td>Entscheidung über die Zulassung</td></tr>
+          </tbody>
+        </table>
+
+      </section>
+
+    </section>
+
+  </body>
+</html>
