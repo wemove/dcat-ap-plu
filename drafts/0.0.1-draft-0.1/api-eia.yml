@@ -1,0 +1,267 @@
+openapi: 3.0.3
+info:
+  title: UVP API
+  version: '0.0.1'
+  description: 'This is the API for the UVP Information System'.
+  contact:
+    name: wemove digital solutions GmbH
+    url: 'https://www.wemove.com'
+servers:
+  - url: 
+    description: Production server
+tags:
+  - name: Capabilities
+  - name: Data
+paths:
+  /:
+    get:
+      tags:
+        - Capabilities
+      summary: landing page
+      description: |-
+        The landing page provides links to the API definition, the conformance
+        statements and to the record collections in this dataset.
+      operationId: getLandingPage
+      responses:
+        200:
+          $ref: '#/compnents/responses/LandingPage'
+        500:
+          $ref: '#/components/responses/500GenericError'
+  /version:
+    get:
+      summary: Get version information
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+        500:
+          $ref: '#/components/responses/500GenericError'
+  /collections:
+    get:
+      tags:
+        - Capabilities
+      summary: the record collections in the dataset
+      operationId: getCollections
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Collections'
+        500:
+          $ref: '#/components/responses/500GenericError'
+  /collections/{collectionId}: 
+    get:
+      tags:
+        - Capabilities
+      summary: |-
+        describe the record collection with id `collectionId`
+      operationId: describeCollection
+      parameters:
+        - $ref: ''
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/responses/Collection'
+        404:
+          $ref: ''
+        500:
+          $ref: '#/components/responses/500GenericError'
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: query
+      name: api_key
+  parameters:
+    bbox:
+      name: bbox
+      in: query
+      description: |-
+        Only records that have a geometry that intersects the bounding box are
+        selected. The bounding box is provided as four or six numbers,
+        depending on whether the coordinate reference system includes a
+        vertical axis (height or depth):
+
+        * Lower left corner, coordinate axis 1
+        * Lower left corner, coordinate axis 2
+        * Minimum value, coordinate axis 3 (optional)
+        * Upper right corner, coordinate axis 1
+        * Upper right corner, coordinate axis 2
+        * Maximum value, coordinate axis 3 (optional)
+
+        The coordinate reference system of the values is WGS 84 long/lat
+        (http://www.opengis.net/def/crs/OGC/1.3/CRS84) unless a different
+        coordinate reference system is specified in the parameter `bbox-crs`.
+
+        For WGS 84 longitude/latitude the values are in most cases the sequence
+        of minimum longitude, minimum latitude, maximum longitude and maximum
+        latitude.
+
+        However, in cases where the box spans the antimeridian the first value
+        (west-most box edge) is larger than the third value (east-most box
+        edge).
+
+        If the vertical axis is included, the third and the sixth number are
+        the bottom and the top of the 3-dimensional bounding box.
+
+        If a record has multiple spatial geometry properties, it is the
+        decision of the server whether only a single spatial geometry property
+        is used to determine the extent or all relevant geometries.
+      required: false
+      schema:
+        type: array
+        oneOf:
+          - minItems: 4
+            maxItems: 4
+          - minItems: 6
+            maxItems: 6
+        items:
+          type: number
+      style: form
+      explode: false
+    datetime:
+      name: datetime
+      in: query
+      description: |-
+        Either a date-time or an interval, open or closed. Date and time
+        expressions adhere to RFC 3339. Open intervals are expressed using
+        double-dots.
+
+        Examples:
+
+        * A date-time: "2018-02-12T23:20:50Z"
+        * A closed interval: "2018-02-12T00:00:00Z/2018-03-18T12:31:12Z"
+        * Open intervals: "2018-02-12T00:00:00Z/.." or "../2018-03-18T12:31:12Z"
+
+        Only records that have a temporal property that intersects the value of
+        `datetime` are selected.  It is left to the decision of the server
+        whether only a single temporal property is used to determine the extent
+        or all relevant temporal properties.
+      required: false
+      schema:
+        type: string
+      style: form
+      explode: false
+    type:
+      name: type
+      in: query
+      description: The optional type parameter supports searching by resource type.  Only
+        records whose type, as indicated by the value of the type core
+        queryable, is equal to one of the listed values shall be selected.
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+      explode: false
+      style: form
+    recordId:
+      name: recordId
+      in: path
+      description: local identifier of a record
+      required: true
+      schema:
+        type: string
+  schemas:
+    Error:
+      additionalProperties: true
+    landingPage:
+      type: object
+      required:
+        - links
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/link"    
+    Version:
+      type: object
+      description: A version
+      properties:
+        build:
+          type: object
+          description: A build description
+          properties:
+            version:
+              type: string
+            date:
+              type: string
+            commit_id:
+              type: string
+          required:
+            - version
+            - date
+    collectionInfo:
+      type: object
+      required:
+        - id
+        - links
+      properties:
+        id:
+          description: identifier of the collection used, for example, in URIs
+          type: string
+        title:
+          description: human readable title of the collection
+          type: string
+        description:
+          description: a description of the records in the collection
+          type: string
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/link"
+        extent:
+          $ref: "#/components/schemas/extent"
+        itemType:
+          description: |-
+            indicator about the type of the items in the collection (the
+            default value is 'record' for OAPIR).
+          type: string
+          default: record
+        crs:
+          description: |-
+            the list of coordinate reference systems supported by the service
+          type: array
+          items:
+            type: string
+          default:
+            - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+    collections:
+      type: object
+      required:
+        - links
+        - collections
+      properties:
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/link"
+        collections:
+          type: array
+          items:
+            $ref: "#/components/schemas/collectionInfo"
+  responses:
+    400InvalidInput:
+      description: Invalid input
+    401UnauthorizedRequest:
+      description: Unauthorized request
+    404NotFound:
+      description: Not found
+    500GenericError:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
