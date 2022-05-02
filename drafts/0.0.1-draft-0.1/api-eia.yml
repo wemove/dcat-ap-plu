@@ -99,7 +99,7 @@ paths:
               schema:
                 $ref: '#/components/responses/Records'
         400:
-          $ref: '#/components/responses/InvalidParameter'
+          $ref: '#/components/responses/400InvalidInput'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
