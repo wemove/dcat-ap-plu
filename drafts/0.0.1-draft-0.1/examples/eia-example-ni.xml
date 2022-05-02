@@ -52,6 +52,10 @@
              <dcat:bbox>
               {"type": "boundingbox", "coordinates": [[[52.91,10.7], [10.7,52.93], [52.93,10.8], [10.8,52.91]]]}
              </dcat:bbox>
+             <dcat:centroid> ... </dcat:centroid>
+             <locn:geographicName> Suhlendorf </locn:geographicName>
+             <locn:geometry rdf:datatype="http://www.opengis.net/ont/geosparql#wktLiteral">
+             POLYGON ((10.7 52.91, 10.8 52.91, 10.8 52.93, 10.7 52.93))</locn:geometry>
          </dcterms:Location>
       </dcterms:spatial>
       <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-01T00:00:00.000Z</dcterms:modified>
@@ -65,6 +69,10 @@
        <dct:identifier> ... </dct:identifier>
        <eia:eiaProcessStepType> ... </eia:eiaProcessStepType>
        <dcat:distribution> ... </dcat:distribution>
+       <dct:PeriodOfTime>
+          <dcat:startDate>
+          <dcat:endDate>
+       </dct:PeriodOfTime>
     </eia:ProcessStepType>
     <dcat:Distribution rdf:about="https://uvp.niedersachsen.de/documents/ingrid-group_ige-iplug-ni/84DCE4DA-C01A-4084-82D8-BEB95BFBD3DA/Bekanntmachung%20Genehmigungsbescheid%20I20200006.doc/distribution">
        <dcterms:title xml:lang="de">
