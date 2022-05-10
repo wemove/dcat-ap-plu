@@ -27,13 +27,13 @@
   <body>
     <section id="abstract" class="informative">
       <h2 id="introduction">Zusammenfassung</h2>
-      <p>Die vorliegende Spezifikation eines Metadatenmodells wurde für die Beschreibung verschiedener Verfahren entwickelt - zum einen Umweltverträglichkeitsprüfungen zum anderen raumbezogene Planwerke und entsprechende Beteiligungsverfahren.
-        Als Basis dienen die Standards von DCAT-AP sowie DCAT-AP.de. Soweit Begriffe aus existierenden Vokabularen mit adequaten Bedeutungen existieren, wurden diese verwendet, wie z.B. dct:title und foaf:homepage.
+      <p>Die vorliegende Spezifikation eines Metadatenmodells wurde für die Beschreibung von Umweltverträglichkeitsprüfungen entwickelt, mit dem Ziel, diese über ein Metadaten-Informationssystem recherchierbar und editierbar machen zu können.
+        Als Basis dienen die Standards von DCAT-AP sowie DCAT-AP.de. Soweit Begriffe aus existierenden Vokabularen mit adequaten Bedeutungen existieren, wurden diese verwendet, wie z.B. dct:title und foaf:homepage. Sofern keine passenden Begriffe vorhanden waren, wurden eigene Begriffe ergänzt, um die speziellen Sachverhalte bei UVP-Verfahren abbilden zu können, z.B. eia:eiaNumber für die UVP-Nummer.
       </p>
     </section>
 
     <section id="sotd" class="introductory">
-      <p>Dieses Dokument ist ein Entwurf einer potentiellen Spezifikation zur Beschreibung von Metadaten raumbezogener Planwerke, UVP-Verfahren sowie Beteiligungsverfahren zum Aufstellen raumbezogener Planwerke.</p>
+      <p>Dieses Dokument ist ein Entwurf einer potentiellen Spezifikation zur Beschreibung von Metadaten zu UVP-Verfahren.</p>
     </section>
 
     <section id="einfuehrung" class="informative">
@@ -56,7 +56,7 @@
 
       <p>Das entwickelte Metadatenmodell baut auf das europäische Metadatenaustauschschema DCAT-AP auf und erweitert dieses mit einzelnen Klassen und Eigenschaften.
       In DCAT bzw. DCAT-AP wird auf Klassen und Eigenschaften vieler anderer Vokabulare zurückgegriffen, insbesondere Dublin Core DCTERMS.
-      Eine kleine Anzahl an Klassen und Eigenschaften werden in DCAT-AP zusätzlich definiert.</p>
+      Eine kleine Anzahl an Klassen und Eigenschaften werden in DCAT-AP zusätzlich definiert. Weiterhin wurde für den deutschen Nutzungskontext die standardkonforme Anpassung DCAT-AP.de entwickelt. Diese hat den Zweck des Austauschs von Metadaten offener Verwaltungsdaten für deutsche Open Data-Portale.</p>
       <p>Namensräume und Prefixe auf die im vorliegenden Datenmodell zurückgegriffen wird, sind in der folgenden Tabelle aufgelistet.</p>
       <table id="table-namespaces">
         <thead><tr><th>Prefix</th><th>Namensraum</th></tr></thead>
@@ -199,11 +199,8 @@
               <tr><td class="prop">Domain:</td><td><a href="#Class:Catalog"><code>dcat:Catalog</code></a></td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
               <tr><td class="prop">Anwendungshinweis:</td><td>
-                <p>Diese Eigenschaft verweist auf das eingesetzte Schema zur Klassifizierung der dem Katalog 
-                zugewiesenen Datenstrukturen in Form von Kategorien.</p>
-                <p>Es wird empfohlen, die Systematik in einem <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme"><code>skos:ConceptScheme</code></a>,
-                einer <a href="http://www.w3.org/2004/02/skos/core#Collection"><code>skos:Collection</code></a>, einer <a href="http://www.w3.org/2002/07/owl#Ontology"><code>owl:Ontology</code></a> oder ähnlich
-                zu organisieren, damit die Inhalte durch eine IRI bezeichnet und als Linked Data publiziert werden können.</p>
+                <p>Diese Eigenschaft verweist auf das Schema mit dem die dem Katalog 
+                zugewiesenen Datenstrukturen in Form von Kategorien klassifiziert werden.</p>
                 </td></tr>
               </tbody>
           </table>
@@ -211,14 +208,13 @@
 
         <section id="Property:catalog_dataset">
           <h4 id="property-dataset">Eigenschaft: Dataset</h4>
-
           <table class="definition">
           <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#dataset">dcat:dataset</a></th></tr></thead>
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Eine logische Entität, welche die veröffentlichten Informationen repräsentiert.</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="#Class:Dataset"><code>dcat:Dataset</code></a></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td> ... </td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Ein Datensatz beschreibt ein UVP-Verfahren egal welchen Verfahrenstyps.</td></tr>
           </tbody>
           </table>
          </section>
@@ -231,10 +227,9 @@
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Eine logische Entität, welche die veröffentlichten Informationen repräsentiert</td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Klasse beschreibt die konzeptuelle Datenstruktur. Eine oder mehrere Arten in verschiedenen Formaten
-            oder schematischen Layouts können verfügbar sein. Diese Klasse beschreibt die tatsächliche Datenstruktur so wie sie vom Bereitsteller zur Verfügung gestellt wird.</td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Ein Datensatz beschreibt ein UVP-Verfahren egal welchen Verfahrenstyps.</td></tr>
           </tbody>
-      </table>
+       </table>
 
         <section id="Property:title">
           <h4 id="property-title">Eigenschaft: Titel</h4>
@@ -322,6 +317,19 @@
          </table>
        </section>
 
+       <section id="Property:contact_point">
+         <h4 id="property-contact-point">Eigenschaft: Ansprechpartner</h4>
+         <table class="definition">
+          <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Ansprechpartner zum Datensatz. Die Benutzung von vCard wird empfohlen.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/TR/vcard-rdf/#Kind"><code>vcard:Kind</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Der Ansprechpartner stellt die verfahrensführende Behörde dar.</td></tr>
+          </tbody>
+          </table>
+       </section>
+
        <section id="Property:eia_number">
         <h4 id="property-eia-number">Eigenschaft: UVP Nummer</h4>
         <table class="definition">
@@ -333,50 +341,62 @@
         <tr><td class="prop">Anwendungshinweis:</td><td>Eine UVP Nummer ist für UVP Verfahren verpflichtend aus einer Liste auszuwählen.</td></tr>
         </tbody>
         </table>
-      </section>
+       </section>
 
-      <section id="Property:eiaProcedure_Type">
-        <h4 id="property-eaiProcedure-Type">Eigenschaft: UVP Verfahrensart</h4>
-        <table class="definition">
-        <thead><tr><th>RDF Property:</th><th>eia:eiaProocedureType</th></tr></thead>
-        <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
-        <tr><td class="prop">Definition:</td><td>Art des UVP Verfahrens</td></tr>
-        <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
-        <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. Linienbestimmung, Zulassungsverfahren.
+       <section id="Property:eiaProcedure_Type">
+         <h4 id="property-eaiProcedure-Type">Eigenschaft: UVP Verfahrensart</h4>
+         <table class="definition">
+         <thead><tr><th>RDF Property:</th><th>eia:eiaProocedureType</th></tr></thead>
+         <tbody>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Definition:</td><td>Art des UVP Verfahrens</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. Linienbestimmung, Zulassungsverfahren.
           Die möglichen Verfahrensarten sind durch eine <a href="#codelist-eiaProcedureType">Codeliste</a> festgelegt.
-        </td></tr>
-        </tbody>
-        </table>
-      </section>
+         </td></tr>
+         </tbody>
+         </table>
+       </section>
 
-      <section id="Property:prelim_assessment">
-        <h4 id="property-prelim-assessment">Eigenschaft: Vorprüfung durchgeführt</h4>
-        <table class="definition">
-        <thead><tr><th>RDF Property:</th><th>eia:prelimAssessment</th></tr></thead>
-        <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
-        <tr><td class="prop">Definition:</td><td>Erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
-        <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> (?) </a></td></tr>
-        <tr><td class="prop">Anwendungshinweis:</td><td>Eine Vorprüfung dient der Feststellung der UVP-Pflicht. 
+       <section id="Property:prelim_assessment">
+         <h4 id="property-prelim-assessment">Eigenschaft: Vorprüfung durchgeführt</h4>
+         <table class="definition">
+         <thead><tr><th>RDF Property:</th><th>eia:prelimAssessment</th></tr></thead>
+         <tbody>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Definition:</td><td>Erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> (?) </a></td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Eine Vorprüfung dient der Feststellung der UVP-Pflicht. 
           Mit dieser Eigenschaft wird erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
-        </tbody>
-        </table>
-      </section>
+         </tbody>
+         </table>
+       </section>
 
-      <section id="Property:receipt_date">
-        <h4 id="property-receipt-date">Eigenschaft: Eingangsdatum</h4>
-        <table class="definition">
-        <thead><tr><th>RDF Property:</th><th>eia:receiptDate</th></tr></thead>
-        <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
-        <tr><td class="prop">Definition:</td><td>Eingangsdatum des Antrages</td></tr>
-        <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
-        <tr><td class="prop">Anwendungshinweis:</td><td>Das Eingangsdatum stellt das Datum dar, an dem der Antrag eingegangen ist.</td></tr>
-        </tbody>
-        </table>
-      </section>
+       <section id="Property:receipt_date">
+         <h4 id="property-receipt-date">Eigenschaft: Eingangsdatum</h4>
+         <table class="definition">
+         <thead><tr><th>RDF Property:</th><th>eia:receiptDate</th></tr></thead>
+         <tbody>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Definition:</td><td>Eingangsdatum des Antrages</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Das Eingangsdatum stellt das Datum dar, an dem der Antrag eingegangen ist.</td></tr>
+         </tbody>
+         </table>
+       </section>
 
+       <section id="Property:decision_date">
+         <h4 id="property-decision-date">Eigenschaft: Datum der Entscheidung</h4>
+         <table class="definition">
+         <thead><tr><th>RDF Property:</th><th>eia:decisionDate</th></tr></thead>
+         <tbody>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Definition:</td><td>Datum der Entscheidung</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Das Datum der Entscheidung...</td></tr>
+         </tbody>
+         </table>
+       </section>
      </section>
 
      <section id="Class:Distribution">
@@ -408,6 +428,21 @@
             </tbody>
          </table>
        </section>
+
+       <section id="Property:distribution_download_url">
+        <h4 id="property-download-url">Eigenschaft: download URL</h4>
+        <table class="definition">
+           <thead><tr><th>RDF Property:</th><th><a href="http://www.w3.org/ns/dcat#accessURL">dcat:downloadURL</a></th></tr></thead>
+           <tbody>
+           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+           <tr><td class="prop">Definition:</td><td>URL der Ressource die den Zugang zu einer Distribution des Datensatzes bietet. (Z.B. landing page)</td></tr>
+           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+           <tr><td class="prop">Anwendungshinweis:</td><td>
+          ... 
+          </td></tr>
+           </tbody>
+        </table>
+      </section>
 
        <section id="Property:distribution_title">
         <h4 id="property-dist-title">Eigenschaft: Titel</h4>
@@ -483,6 +518,19 @@
          </table>
         </section>
       </section>
+      
+      <section id="Property:format">
+        <h4 id="property-format">Eigenschaft: Format</h4>
+        <table class="definition">
+          <thead><tr><th>RDF Property:</th><th>dct:format</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Definition:</td><td>Format, in dem die Daten zur Verfügung stehen.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td> ... </td></tr>
+          </tbody>
+        </table>
+       </section>
+     </section>
 
       <section id="Class:Process_Step">
        <h3 id="class-process-step">Klasse: Verfahrensschritt</h3>
@@ -490,7 +538,7 @@
        <table class="definition">
           <thead><tr><th>RDF Class:</th><th>eia:ProcessStep</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Recommended</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Verfahrensschritt</td></tr>
           <tr><td class="prop">Anwendungshinweis</td><td>Eine Instanz dieser Klasse bildet einen Verfahrensschritte ab.</td></tr>
           </tbody>
@@ -501,7 +549,7 @@
          <table class="definition">
          <thead><tr><th>RDF Property:</th><th><a href="http://purl.org/dc/terms/identifier">dct:identifier</a></th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td></td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
          <tr><td class="prop">Definition:</td><td>Eineindeutiger Identifikator des Verfahrensschrittes</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>...</td></tr>
