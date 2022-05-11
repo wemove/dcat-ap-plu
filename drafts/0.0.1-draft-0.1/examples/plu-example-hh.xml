@@ -1,0 +1,89 @@
+<rdf:RDF>
+   <dcat:Catalog rdf:about="https://www.hamburg.de/planportal/">
+     <dcat:dataset rdf:resource="https://www.hamburg.de/bebauungsplaene/7948322/hafencity-13/">
+     <dcterms:description xml:lang="de">Dies ist das Portal für die Recherche von raumbezogenen Planwerken des Landes Hamburg.</dcterms:description>
+     <dcterms:title xml:lang="de">Planportal des Landes Hamburg</dcterms:title>
+     <dcterms:publisher>
+         <foaf:Agent>
+             <foaf:name>Behörde für Stadtentwicklung und Wohnen (BSW)</foaf:name>
+         </foaf:Agent>
+     </dcterms:publisher>
+     <foaf:homepage rdf:resource="https://www.hamburg.de/planportal/"/>
+     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-01T00:00:00.000Z</dcterms:modified>
+     <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-01T00:00:00.000Z</dcterms:issued>
+   </dcat:Catalog>
+
+   <dcat:Dataset rdf:about="https://www.hamburg.de/bebauungsplaene/7948322/hafencity-13/">
+      <dcterms:title xml:lang="de">Bebauungsplan-Entwurf HafenCity 13</dcterms:title>
+      <dcterms:description xml:lang="de">
+      Plangebiet
+      
+      Gebiet am östlichen Eingang zur HafenCity um den Kopf des Baakenhafens zwischen den Bahntrassen im Norden und Osten und der Norderelbe im Süden (Bezirk Hamburg-Mitte, Ortsteil 104). Im Westen grenzt das Plangebiet an die Plangebiete der Bebauungspläne HafenCity 11 und HafenCity 14 für das Quartier Baakenhafen.
+      
+      Planungsziel
+      
+      Das Quartier Elbbrücken wird mit den U- und S-Bahn-Haltestellen Elbbrücken sehr gut an den ÖPNV angebunden und soll neben dem Überseequartier das zweite urbane Zentrum der HafenCity bilden.
+      
+      Der Bebauungsplan HafenCity 13 schafft die planungsrechtlichen Voraussetzungen für die Entwicklung des westlichen Teils des gemischt genutzten Quartiers Elbbrücken um den Kopf des Baakenhafens zu einem hochverdichteten Geschäfts- und Wohnstandort. Im Plangebiet sollen insbesondere Büros, ca. 1.100 Wohnungen, ein Präventionszentrum, Hotels, Kindertagesstätten und publikumsbezogene Erdgeschossnutzungen, wie kleinflächiger Einzelhandel und Gastronomie, entstehen. Zentral am Kopf des Baakenhafens soll der größte Platzraum der HafenCity, der Amerigo-Vespucci-Platz, planungsrechtlich gesichert werden. Um den Baakenhafen und an der Norderelbe sollen Promenaden und an der Norderelbe zudem eine Parkanlage den öffentlichen Zugang zu den Wasserflächen sichern.
+      
+      An der östlichen Spitze des Quartiers Elbbrücken zwischen den Elbbrücken an der Zweibrückenstraße ist ein Hochhausstandort geplant. Für dieses Gebiet soll zu einem späteren Zeitpunkt ein Bebauungsplan aufgestellt werden.
+      </dcterms:description>
+      <dcat:contactPoint>
+         <vcard:Organization>
+         <vcard:fn>Amt für Landesplanung und Stadtentwicklung
+          Verfahrensmanagement
+          Freie und Hansestadt Hamburg
+          Behörde für Stadtentwicklung und Wohnen </vcard:fn>
+         <vcard:hasPostalCode>21109</vcard:hasPostalCode>
+         <vcard:hasStreetAddress>Neuenfelder Straße 19</vcard:hasStreetAddress>
+         <vcard:hasLocality>Hamburg</vcard:hasLocality>
+         <vcard:hasCountryName>Deutschland</vcard:hasCountryName>
+         <vcard:hasEmail rdf:resource="Bauleitplanung-LP@bsw.hamburg.de"/>
+         <vcard:hasTelephoneNumber> </vcard:hasTelephoneNumber>
+         </vcard:Organization>
+       </dcat:contactPoint>
+      <dcat:distribution rdf:resource="https://www.hamburg.de/contentblob/8006506/f66b3fe23c28068c8ab8b2ad28178a16/data/planzeichnung-juli-2020.pdf/distribution"/>
+      <dcterms:identifier>xxxx-xxxx-xxxx-xxxx</dcterms:identifier>
+      <dcterms:spatial>
+         <dcterms:Location>
+             <dcat:bbox> ... </dcat:bbox>
+             <dcat:centroid> ... </dcat:centroid>
+             <locn:geographicName> HafenCity 13 </locn:geographicName>
+         </dcterms:Location>
+      </dcterms:spatial>
+      <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-01T00:00:00.000Z</dcterms:modified>
+      <plu:pluPlanType rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanType/Bebauungsplan-Entwurf"/>
+      <plu:pluProcedureState rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureState/tbd"/>
+      <plu:pluProcedureType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureType/tbd"/>
+      <plu:ProcessStep rdf:about="http://publications.informationgrid.eu/resource/authority/ProcessStep/tbd"/>
+ </dcat:Dataset>
+
+   <plu:ProcessStep rdf:about="http://publications.informationgrid.eu/resource/authority/ProcessStep/tbd">
+       <dcterms:identifier> 0000-0000-0000-0000 </dcterms:identifier>
+       <plu:ProcessStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/tbd"/>
+       <dcat:distribution rdf:about="https://www.hamburg.de/contentblob/8006506/f66b3fe23c28068c8ab8b2ad28178a16/data/planzeichnung-juli-2020.pdf/distribution">
+       <dcterms:temporal>
+          <dcterms:PeriodOfTime>
+               <schema:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-01T00:00:00.000Z</schema:startDate>
+               <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-01T00:00:00.000Z</schema:endDate>
+          </dcterms:PeriodOfTime>
+       </dcterms:temporal>
+  </plu:ProcessStep>
+    
+    <dcat:Distribution rdf:about="https://www.hamburg.de/contentblob/8006506/f66b3fe23c28068c8ab8b2ad28178a16/data/   planzeichnung-juli-2020.pdf/distribution">
+       <dcterms:title xml:lang="de">Planzeichnung des Bebauungsplans HafenCity 13</dcterms:title>
+       <dcterms:description> ... </dcterms:description>
+       <dcat:accessURL rdf:resource="https://www.hamburg.de/contentblob/8006506/f66b3fe23c28068c8ab8b2ad28178a16/data/planzeichnung-juli-2020.pdf"/>
+       <dcterms:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/PDF"/>
+       <dcat:downloadURL rdf:resource="https://www.hamburg.de/contentblob/8006506/f66b3fe23c28068c8ab8b2ad28178a16/data/planzeichnung-juli-2020.pdf"/>
+       <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-01T00:00:00.000Z</dcterms:modified>
+       <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-01T00:00:00.000Z</dcterms:issued>
+       <plu:pluDocType rdf:resource="http://publications.informationgrid.eu/resource/authority/DocType/AnnouncementDocs"/>
+       <dcterms:temporal>
+          <dcterms:PeriodOfTime>
+               <schema:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-01T00:00:00.000Z</schema:startDate>
+               <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-01T00:00:00.000Z</schema:endDate>
+          </dcterms:PeriodOfTime>
+       </dcterms:temporal>
+    </dcat:Distribution>
+</rdf:RDF>
