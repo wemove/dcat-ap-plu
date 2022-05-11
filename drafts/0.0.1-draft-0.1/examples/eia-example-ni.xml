@@ -73,7 +73,7 @@
                <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-01T00:00:00.000Z</schema:endDate>
           </dcterms:PeriodOfTime>
        </dcterms:temporal>
-    </eia:ProcessStepType>
+    </eia:ProcessStep>
     <dcat:Distribution rdf:about="https://uvp.niedersachsen.de/documents/ingrid-group_ige-iplug-ni/84DCE4DA-C01A-4084-82D8-BEB95BFBD3DA/Bekanntmachung%20Genehmigungsbescheid%20I20200006.doc/distribution">
        <dcterms:title xml:lang="de">Auslegungsinformationen</dcterms:title>
        <dcterms:description> ( Bekanntmachung Genehmigungsbescheid I20200006.doc 51.7 kB ) </dcterms:description>
