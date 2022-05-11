@@ -27,13 +27,13 @@
   <body>
     <section id="abstract" class="informative">
       <h2 id="introduction">Zusammenfassung</h2>
-      <p>Die vorliegende Spezifikation eines Metadatenmodells wurde für die Beschreibung verschiedener Verfahren entwickelt - zum einen Umweltverträglichkeitsprüfungen zum anderen raumbezogene Planwerke und entsprechende Beteiligungsverfahren.
-        Als Basis dienen die Standards von DCAT-AP sowie DCAT-AP.de. Soweit Begriffe aus existierenden Vokabularen mit adequaten Bedeutungen existieren, wurden diese verwendet, wie z.B. dct:title und foaf:homepage.
+      <p>Die vorliegende Spezifikation eines Metadatenmodells wurde für die Beschreibung von raumbezogenen Planwerken und Beteiligungsverfahren zu raumbezogenen Planwerken entwickelt, mit dem Ziel, diese über ein Metadaten-Informationssystem recherchierbar und editierbar machen zu können.
+        Als Basis dienen die Standards von DCAT-AP sowie DCAT-AP.de. Soweit Begriffe aus existierenden Vokabularen mit adequaten Bedeutungen existieren, wurden diese verwendet, wie z.B. dct:title und foaf:homepage. Sofern keine passenden Begriffe vorhanden waren, wurden eigene Begriffe ergänzt, um die speziellen Sachverhalte bei raumbezogenen Planwerken abbilden zu können, z.B. plu:pluPlanType für die Art des raumbezogenen Planwerkes.
       </p>
     </section>
 
     <section id="sotd" class="introductory">
-      <p>Dieses Dokument ist ein Entwurf einer potentiellen Spezifikation zur Beschreibung von Metadaten raumbezogener Planwerke, UVP-Verfahren sowie Beteiligungsverfahren zum Aufstellen raumbezogener Planwerke.</p>
+      <p>Dieses Dokument ist ein Entwurf einer potentiellen Spezifikation zur Beschreibung von Metadaten raumbezogener Planwerke sowie Beteiligungsverfahren zur Aufstellung raumbezogener Planwerke.</p>
     </section>
 
     <section id="einfuehrung" class="informative">
@@ -55,8 +55,8 @@
      <h2 id="namespaces">Namensräume</h2>
 
       <p>Das entwickelte Metadatenmodell baut auf das europäische Metadatenaustauschschema DCAT-AP auf und erweitert dieses mit einzelnen Klassen und Eigenschaften.
-      In DCAT bzw. DCAT-AP wird auf Klassen und Eigenschaften vieler anderer Vokabulare zurückgegriffen, insbesondere Dublin Core DCTERMS.
-      Eine kleine Anzahl an Klassen und Eigenschaften werden in DCAT-AP zusätzlich definiert.</p>
+        In DCAT bzw. DCAT-AP wird auf Klassen und Eigenschaften vieler anderer Vokabulare zurückgegriffen, insbesondere Dublin Core DCTERMS.
+        Eine kleine Anzahl an Klassen und Eigenschaften werden in DCAT-AP zusätzlich definiert. Weiterhin wurde für den deutschen Nutzungskontext die standardkonforme Anpassung DCAT-AP.de entwickelt. Diese hat den Zweck des Austauschs von Metadaten offener Verwaltungsdaten für deutsche Open Data-Portale.</p>
       <p>Namensräume und Prefixe auf die im vorliegenden Datenmodell zurückgegriffen wird, sind in der folgenden Tabelle aufgelistet.</p>
       <table id="table-namespaces">
         <thead><tr><th>Prefix</th><th>Namensraum</th></tr></thead>
@@ -378,6 +378,7 @@
               Die Benutzung der Eigenschaft <code>dcat:downloadURL</code> zeigt eine direkt herunterladebare Distribution an.</td></tr>
           </tbody>
        </table>
+
        <section id="Property:distribution_access_url">
          <h4 id="property-access-url">Eigenschaft: access URL</h4>
          <table class="definition">
@@ -407,6 +408,7 @@
             </tbody>
         </table>
        </section>
+
        <section id="Property:distribution_description">
          <h4 id="property-description">Eigenschaft: Beschreibung</h4>
          <table class="definition">
@@ -452,11 +454,23 @@
           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
           <tr><td class="prop">Definition:</td><td>Art eines Dokuments im Zusammenhang mit raumbezogenen Planwerken</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Über den Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem raumbezogenen Planwerk zur Verfügung gestellt werden können,
-             wie z.B. ...</td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Über den Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem raumbezogenen Planwerk zur Verfügung gestellt werden können, wie z.B. ... Die Arten von Dokumenten sind durch eine <a href="#codelist-pluDocType">Codeliste</a> definiert.</td></tr>
          </tbody>
        </table>
        </section>
+
+       <section id="Property:distribution_format">
+        <h4 id="property-distribution-format">Eigenschaft: Format</h4>
+        <table class="definition">
+          <thead><tr><th>RDF Property:</th><th>dct:format</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Definition:</td><td>Format, in dem die Dateien zur Verfügung stehen.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td> dct:MediaTypeOrExtent </td></tr>
+          </tbody>
+        </table>
+       </section>
+     </section>
 
       <section id="Class:Process_Step">
        <h3 id="class-process-step">Klasse: Verfahrensschritt</h3>
@@ -688,8 +702,8 @@
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
-          <tr><td>0001</td> <td>in Aufstellung/td></tr>
-          <tr><td>0002</td> <td>festgestetzt</td></tr>
+          <tr><td>0001</td> <td>in Aufstellung</td></tr>
+          <tr><td>0002</td> <td>festgesetzt</td></tr>
           <tr><td>0003</td> <td>wirksamn (FNP / Landschaftsplanung)</td></tr>
           <tr><td>0004</td> <td>in Kraft getreten (Raumordnung)</td></tr>
           <tr><td>0005</td> <td>aufgehoben (Der Plan wurde durch ein förmliches Verfahren aufgehoben)/td></tr>
@@ -758,6 +772,18 @@
           </tbody>
         </table>
 
+      </section>
+      
+      <section id="codelist-pluDocType">
+        <h3 id="codelist-pluDocType">Codeliste für Arten von Dokumenten<a class="self-link" href="#codelist-pluDocType"></a></h3>
+        <table>
+          <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+          <tr><td>0001</td> <td>Auslegungsinformationen</td></tr>
+          <tr><td>0002</td> <td>...</td></tr>
+          <tr><td>0003</td> <td>...</td></tr>
+          </tbody>
+        </table>
       </section>
 
     </section>
