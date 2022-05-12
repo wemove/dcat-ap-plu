@@ -37,6 +37,7 @@
          </vcard:Organization>
       </dcat:contactPoint>
       <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
+      <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f/distribution">
       <dcterms:identifier>17b94f6a-28ba-11e7-af94-0050568a354d</dcterms:identifier>
       <dcterms:spatial>
          <dcterms:Location>
@@ -70,11 +71,13 @@
        <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
        <dcterms:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/PDF"/>
        <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
-       <dcterms:temporal>
-          <dcterms:PeriodOfTime>
-               <schema:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-01T00:00:00.000Z</schema:startDate>
-               <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-01T00:00:00.000Z</schema:endDate>
-          </dcterms:PeriodOfTime>
-       </dcterms:temporal>
+    </dcat:Distribution>
+
+    <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f/distribution">
+       <dcterms:title xml:lang="de">Verordnung</dcterms:title>
+       <dcterms:description>Hier finden Sie die Verordnung über den Bebauungsplan Altona-Nord 27 / Bahrenfeld 72.</dcterms:description>
+       <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
+       <dcterms:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/PDF"/>
+       <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
     </dcat:Distribution>
 </rdf:RDF>
