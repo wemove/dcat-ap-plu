@@ -29,6 +29,21 @@ paths:
           $ref: '#/components/responses/LandingPage'
         500:
           $ref: '#/components/responses/500GenericError'
+  /conformance':
+    get:
+      tags:
+        - Capabilities
+      summary: information about specifications that this API conforms to
+      description: |-
+        A list of all conformance classes specified in a standard that the
+        server conforms to.
+      operationId: getConformanceDeclaration
+      responses:
+        200:
+          description: Successful operation
+          $ref: '#/components/responses/ConformanceDeclaration'
+        500:
+          $ref: '#/components/responses/500GenericError'
   /version:
     get:
       summary: Get version information
@@ -112,14 +127,22 @@ paths:
         - Data
       summary: post a new record
       description: |-
-        post a record into the collection with id 'collectionID'. 
-      operationID: postRecord
+        post a record into the collection with id 'collectionID'.
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/recordEIA'      
+              $ref: '#/components/schemas/recordEIA'
+      responses:
+        200:
+          description: Successful operation
+        400:
+          $ref: '#/components/responses/400InvalidInput'
+        500:
+          $ref: '#/components/responses/500GenericError'
   /collections/{collectionId}/items/{recordId}:
     get:
       tags:
@@ -251,73 +274,6 @@ components:
         type: string
         minLength: 3
   schemas:
-    Error:
-      additionalProperties: true # tbd
-    featureCollectionGeoJSON:
-      type: object
-      required:
-        - type
-        - features
-      properties:
-        type:
-          type: string
-          enum:
-            - FeatureCollection
-        features:
-          type: array
-          items:
-            $ref: "#/components/schemas/recordEIA"
-        links:
-          type: array
-          items:
-            $ref: "#/components/schemas/link"
-    landingPage:
-      type: object
-      required:
-        - links
-      properties:
-        title:
-          type: string
-        description:
-          type: string
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/link'
-    link:
-      type: object
-      required:
-        - href
-      properties:
-        href:
-          type: string
-        rel:
-          type: string
-        type:
-          type: string
-        hreflang:
-          type: string
-        title:
-          type: string
-        length:
-          type: integer
-    Version:
-      type: object
-      description: A version
-      properties:
-        build:
-          type: object
-          description: A build description
-          properties:
-            version:
-              type: string
-            date:
-              type: string
-            commit_id:
-              type: string
-          required:
-            - version
-            - date
     collectionInfo:
       type: object
       required:
@@ -344,10 +300,12 @@ components:
             indicator about the type of the items in the collection (the
             default value is 'record' for OAPIR).
           type: string
-          default: record
+          enum:
+            - collection
+            - record
         crs:
           description: |-
-            the list of coordinate reference systems supported by the service
+            the list of coordinate reference systems supported by the API
           type: array
           items:
             type: string
@@ -356,8 +314,8 @@ components:
     collections:
       type: object
       required:
-        - links
-        - collections
+       - links
+       - collections
       properties:
         links:
           type: array
@@ -367,6 +325,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/collectionInfo'
+    confClasses: 
+      type: object
+      required:
+        - conformsTo
+      properties:
+        conformsTo:
+          type: array
+          items:
+            type: string
+    Error:
+      additionalProperties: true # tbd
     extent:
       type: object
       description: |-
@@ -482,6 +451,54 @@ components:
               enum:
                 - 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
               default: 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
+    featureCollectionGeoJSON:
+      type: object
+      required:
+        - type
+        - features
+      properties:
+        type:
+          type: string
+          enum:
+            - FeatureCollection
+        features:
+          type: array
+          items:
+            $ref: "#/components/schemas/recordEIA"
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/link"
+    landingPage:
+      type: object
+      required:
+        - links
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        links:
+          type: array
+          items:
+            $ref: '#/components/schemas/link'
+    link:
+      type: object
+      required:
+        - href
+      properties:
+        href:
+          type: string
+        rel:
+          type: string
+        type:
+          type: string
+        hreflang:
+          type: string
+        title:
+          type: string
+        length:
+          type: integer
     recordEIA:
       type: object
       required:
@@ -545,19 +562,47 @@ components:
               items:
                 $ref: "#/components/schemas/link"
           additionalProperties: true
+    Version:
+      type: object
+      description: A version
+      properties:
+        build:
+          type: object
+          description: A build description
+          properties:
+            version:
+              type: string
+            date:
+              type: string
+            commit_id:
+              type: string
+          required:
+            - version
+            - date
   responses:
-    LandingPage:
+    Collection:
       description: |-
-        The landing page provides links to the API definition
-        (link relations `service-desc` and `service-doc`),
-        the Conformance declaration (path `/conformance`,
-        link relation `conformance`), and the Record
-        Collections (path `/collections`, link relation
-        `data`).
+        Information about the record collection with id `collectionId`.
+        The response contains a link to the items in the collection
+        (path `/collections/{collectionId}/items`, link relation `items`)
+        as well as key information about the collection. This information
+        includes:
+        * A local identifier for the collection that is unique for the +
+          catalogue;
+        * A list of coordinate reference systems (CRS) in which geometries +
+          may be returned by the server. The first CRS is the default +
+          coordinate reference system (the default is always WGS 84 with +
+          axis order longitude/latitude);
+        * An optional title and description for the collection;
+        * An optional extent that can be used to provide an indication of +
+          the spatial and temporal extent of the collection - typically +
+          derived from the data;
+        * An optional indicator about the type of the items in the collection +
+          (the default value, if the indicator is not provided, is 'record').
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/landingPage'
+            $ref: '#/components/schemas/collectionInfo'
         text/html:
           schema:
             type: string
@@ -590,32 +635,28 @@ components:
         text/html:
           schema:
             type: string   
-    Collection:
+    ConformanceDeclaration:
       description: |-
-        Information about the record collection with id `collectionId`.
-        The response contains a link to the items in the collection
-        (path `/collections/{collectionId}/items`, link relation `items`)
-        as well as key information about the collection. This information
-        includes:
-        * A local identifier for the collection that is unique for the +
-          catalogue;
-        * A list of coordinate reference systems (CRS) in which geometries +
-          may be returned by the server. The first CRS is the default +
-          coordinate reference system (the default is always WGS 84 with +
-          axis order longitude/latitude);
-        * An optional title and description for the collection;
-        * An optional extent that can be used to provide an indication of +
-          the spatial and temporal extent of the collection - typically +
-          derived from the data;
-        * An optional indicator about the type of the items in the collection +
-          (the default value, if the indicator is not provided, is 'record').
+       The URIs of all conformance classes supported by the server. To support "generic" clients that want to access multiple OGC API Records implementations - and not "just" a specific API / server, the server declares the conformance classes it implements and conforms to.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/collectionInfo'
+            $ref: '#/components/schemas/confClasses'
         text/html:
           schema:
-            type: string    
+            type: string
+    LandingPage:
+      description: |-
+        The landing page provides links to the API definition and the Record
+        Collections (path `/collections`, link relation
+        `data`).
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/landingPage'
+        text/html:
+          schema:
+            type: string
     Record:
       description: |-
         Fetch the record with id `recordId` in the record collection
