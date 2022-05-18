@@ -29,7 +29,7 @@ paths:
           $ref: '#/components/responses/LandingPage'
         500:
           $ref: '#/components/responses/500GenericError'
-  /conformance':
+  /conformance:
     get:
       tags:
         - Capabilities
