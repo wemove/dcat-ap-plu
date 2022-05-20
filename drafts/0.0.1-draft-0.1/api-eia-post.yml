@@ -156,6 +156,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/recordId'
+        - $ref: '#/components/parameters/title'
       responses:
         200:
           description: Successful operation
@@ -241,14 +242,12 @@ components:
     type:
       name: type
       in: query
-      description: The optional type parameter supports searching by resource type.  Only
-        records whose type, as indicated by the value of the type core
-        queryable, is equal to one of the listed values shall be selected.
+      description: The optional type parameter supports searching by procedure type.  Only
+        procedures whose type is equal to one of the listed values shall be selected.
       required: false
       schema:
-        type: array
-        items:
-          type: string
+        type: string
+        enum: [Zulassungsvefahren, Raumordnungsverfahren, Linienbestimmung, negative Vorprüfung, Ausländisches Vorhaben]
       explode: false
       style: form
     collectionId:
@@ -258,13 +257,15 @@ components:
       required: true
       schema:
         type: string
+        example: HE
     recordId:
       name: recordId
       in: path
-      description: local identifier of a record
+      description: local identifier of a procedure
       required: true
       schema:
         type: string
+        example: f08a255e-2c11-49dd-bdf9-88a0dcbe2aa6
     q:
       name: q
       in: query
@@ -273,6 +274,15 @@ components:
       schema:
         type: string
         minLength: 3
+        example: Windkraft
+    title:
+      name: title
+      in: query
+      description: the title of the procedure
+      required: false 
+      schema:
+        type: string
+        example: Errichtung und Betrieb von drei Windkraftanlagen
   schemas:
     collectionInfo:
       type: object
@@ -283,6 +293,7 @@ components:
         id:
           description: identifier of the collection used, for example, in URIs
           type: string
+          example: HE
         title:
           description: human readable title of the collection
           type: string
@@ -293,16 +304,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/link'
-        extent:
-          $ref: '#/components/schemas/extent'
-        itemType:
-          description: |-
-            indicator about the type of the items in the collection (the
-            default value is 'record' for OAPIR).
-          type: string
-          enum:
-            - collection
-            - record
         crs:
           description: |-
             the list of coordinate reference systems supported by the API
@@ -451,7 +452,7 @@ components:
               enum:
                 - 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
               default: 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
-    featureCollectionGeoJSON:
+    recordsEIA:
       type: object
       required:
         - type
@@ -503,21 +504,19 @@ components:
       type: object
       required:
         - id
-        - type
+        - geometry
         - properties
       properties:
         id:
           type: string
           description: A unique identifier of the catalogue record.
           format: uri
-        type:
-          type: string
-          enum:
-            - Feature
+        geometry:
+          $ref: "#/components/schemas/polygonEIA"
         properties:
           type: object
           required:
-            - description
+            - type
             - title
           properties:
             recordCreated:
@@ -530,14 +529,14 @@ components:
               format: date-time
             type:
               type: string
-              description: The nature or genre of the resource.
+              description: The type of EIA procedure.
               format: uri
             title:
               type: string
-              description: A human-readable name given to the resource.
+              description: Title of the EIA procedure.
             description:
               type: string
-              description: A free-text account of the resource.
+              description: A free-text description of the EIA procedure.
             formats:
               type: array
               description: A list of available distributions of the resource.
@@ -546,7 +545,7 @@ components:
             contactPoint:
               type: string
               description: |-
-                 Link to relevant contact information.  Recommended best
+                 Link to relevant contact information. Recommended best
                  practice is to use a VCard
                  (see https://www.w3.org/TR/vcard-rdf/).
               format: uri
@@ -562,6 +561,26 @@ components:
               items:
                 $ref: "#/components/schemas/link"
           additionalProperties: true
+    polygonEIA:
+      type: object
+      required:
+        - type
+        - coordinates
+      properties:
+        type:
+          type: string
+          enum:
+            - Polygon
+        coordinates:
+          type: array
+          items:
+            type: array
+            minItems: 4
+            items:
+              type: array
+              minItems: 2
+              items:
+                type: number
     Version:
       type: object
       description: A version
@@ -692,7 +711,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/featureCollectionGeoJSON'
+            $ref: '#/components/schemas/recordsEIA'
         text/html:
           schema:
             type: string
