@@ -83,12 +83,11 @@
       <section id="Class:Catalog">
         <h3 id="class-catalog">Klasse: Katalog</h3>
         <table class="definition">
-          <thead><tr><th>URI:</th><th><a href="https://www.w3.org/ns/dcat#Catalog">dcat:Catalog</a></th></tr></thead>
+          <thead><tr><th>URI der Klasse:</th><th><a href="https://www.w3.org/ns/dcat#Catalog">dcat:Catalog</a></th></tr></thead>
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Eine Sammlung oder Quelle, welche die beschriebenen Datensätze, Datenservices oder Kataloge zur Verfügung stellt</td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Ein web-basierter Datenkatalog wird i.d.R. durch eine Instanz dieser Klasse repräsentiert.</td></tr>
-          <tr><td class="prop">Weiterführende Informationen:</td><td>https://www.w3.org/TR/vocab-dcat-2/#Class:Catalog</td></tr>
           </tbody>
         </table>
 
@@ -157,7 +156,7 @@
           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung des Katalogs</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft enthält das Datum der Herausgabe/Emission (z.B. in Forma einer Veröffentlichung) des Katalogs.</td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft enthält das Datum der Herausgabe/Emission (z.B. in Form einer Veröffentlichung) des Katalogs.</td></tr>
           </tbody>
           </table>
         </section>
@@ -445,7 +444,7 @@
           <thead><tr><th>URI der Klasse:</th><th><a href="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</a></th></tr></thead>
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
-          <tr><td class="prop">Definition:</td><td>Eine Representation eines Datensatzes in einem bestimmten Format</td></tr>
+          <tr><td class="prop">Definition:</td><td>Eine Repräsentation eines Datensatzes in einem bestimmten Format</td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Die Distribution stellt die generelle Verfügbarkeit eines Datensatzes dar aber beinhaltet nicht zwangsweise eine Zugangsmöglichkeit zu den Daten wie z.B.durch direkten
           Download, <abbr title="Application Programming Interface">API</abbr>, oder durch eine Internetseite.
           Die Benutzung der Eigenschaft <code>dcat:downloadURL</code> zeigt eine direkt herunterladebare Distribution an.</td></tr>
@@ -483,7 +482,7 @@
           </td></tr>
            </tbody>
         </table>
-      </section>
+       </section>
 
        <section id="Property:distribution_title">
          <h4 id="property-dist-title">Eigenschaft: Titel</h4>
@@ -559,9 +558,8 @@
            </tbody>
          </table>
         </section>
-      </section>
       
-      <section id="Property:distribution_format">
+       <section id="Property:distribution_format">
         <h4 id="property-distribution-format">Eigenschaft: Format</h4>
         <table class="definition">
           <thead><tr><th>URI:</th><th>dct:format</th></tr></thead>
@@ -572,17 +570,17 @@
           </tbody>
         </table>
        </section>
-     </section>
+      </section>
 
       <section id="Class:Process_Step">
        <h3 id="class-process-step">Klasse: Verfahrensschritt</h3>
 
        <table class="definition">
-          <thead><tr><th>RDF Class:</th><th>eia:ProcessStep</th></tr></thead>
+          <thead><tr><th>URI der Klasse:</th><th>eia:ProcessStep</th></tr></thead>
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Verfahrensschritt</td></tr>
-          <tr><td class="prop">Anwendungshinweis</td><td>Eine Instanz dieser Klasse bildet einen Verfahrensschritte ab.</td></tr>
+          <tr><td class="prop">Anwendungshinweis</td><td>Eine Instanz dieser Klasse bildet einen Verfahrensschritt ab.</td></tr>
           </tbody>
        </table>
 
@@ -683,8 +681,8 @@
           <thead><tr><th>URI der Klasse:</th><th><a title="http://purl.org/dc/terms/Location" href="http://dublincore.org/documents/dcmi-terms/#terms-Location">dct:Location</a></th></tr></thead>
           <tbody>
             <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
-            <tr><td class="prop">Definition:</td><td>Raumbezug</td></tr>
-            <tr><td class="prop">Anwendungshinweis:</td><td>Ein räumlicher Bereich oder ein bezeichneter Ort. Die Eigenschaft kann durch ein kontrolliertes Vokabular oder mit geographischen Koordinaten repräsentiert werden.</td></tr>
+            <tr><td class="prop">Definition:</td><td>Ein räumlicher Bereich oder ein bezeichneter Ort.</td></tr>
+            <tr><td class="prop">Anwendungshinweis:</td><td>Die Eigenschaft kann durch ein kontrolliertes Vokabular oder mit geographischen Koordinaten repräsentiert werden.</td></tr>
           </tbody>
         </table>
 
@@ -749,7 +747,7 @@
         <h3 id="class-agent">Klasse: Organisation</h3>
 
         <table class="definition">
-          <thead><tr><th>RDF Class:</th><th>foaf:Agent</th></tr></thead>
+          <thead><tr><th>URI der Klasse:</th><th>foaf:Agent</th></tr></thead>
           <tbody>
             <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
             <tr><td class="prop">Definition:</td><td>Eine Stelle oder Person, welche mit Katalogen und Datensätzen in unterschiedlichen Rollenausprägungen assoziiert ist.</td></tr>
