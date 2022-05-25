@@ -107,9 +107,9 @@ paths:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/bbox'
         - $ref: '#/components/parameters/datetime'
-        - $ref: '#/components/parameters/type'
+        - $ref: '#/components/parameters/pluProcedureState'
         - $ref: '#/components/parameters/q'
-        - $ref: '#/components/parameters/pluPlanTye'
+        - $ref: '#/components/parameters/pluPlanType'
       responses:
         200:
           description: Successful operation
@@ -572,7 +572,7 @@ components:
               items:
                 $ref: "#/components/schemas/link"
           additionalProperties: true
-    polygonEIA:
+    polygonPLU:
       type: object
       required:
         - type
@@ -695,7 +695,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/recordEIA'
+            $ref: '#/components/schemas/recordPLU'
         text/html:
           schema:
             type: string
@@ -722,7 +722,7 @@ components:
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/recordsEIA'
+            $ref: '#/components/schemas/recordsPLU'
         text/html:
           schema:
             type: string
