@@ -461,7 +461,11 @@ components:
         type:
           type: string
           enum:
-            - FeatureCollection
+            - Zulassungsverfahren
+            - Ausländisches Verfahren
+            - Raumordnungsverfahren
+            - Linienbestimmung
+            - Negative Vorprüfung
         features:
           type: array
           items:
