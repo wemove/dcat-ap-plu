@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  title: UVP API
+  title: EIA API
   version: 0.0.1
   description: This is the API for the UVP Information System.
   contact:
