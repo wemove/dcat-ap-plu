@@ -383,7 +383,7 @@
         </section>
 
         <section id="Property:relation">
-          <h4 id="property-relation">Eigenschaft: Verknüpfung</h4>
+          <h4 id="property-relation">Eigenschaft: Verweis</h4>
           <table class="definition">
           <thead><tr><th>URI:</th><th>dct:relation</th></tr></thead>
           <tbody>
@@ -394,6 +394,63 @@
           </tbody>
           </table>
         </section>
+
+        <section id="Property:publisher">
+          <h4 id="property-publisher">Eigenschaft: Herausgeber</h4>
+          <table class="definition">
+          <thead><tr><th>URI:</th><th>dct:publisher</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Herausgeber des Datensatzes.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verweist auf die Stelle oder Person, die für Bereitstellung
+            des Datensatzes verantwortlich ist.</td></tr>
+          </tbody>
+          </table>
+        </section>
+        
+        <section id="Property:maintainer">
+          <h4 id="property-maintainer">Eigenschaft: Verwalter</h4>
+          <table class="definition">
+          <thead><tr><th>URI:</th><th>dcatde:maintainer</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Verwalter des Datensatzes</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verweist auf die Stellen oder Personen, die Verantwortung und
+            Rechenschaftspflicht für die Daten und ihre angemessene Pflege übernehmen.</td></tr>
+          </tbody>
+          </table>
+        </section>
+        
+        <section id="Property:creator">
+          <h4 id="property-creator">Eigenschaft: Autor</h4>
+          <table class="definition">
+          <thead><tr><th>URI:</th><th>dct:creator</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Autor des Datensatzes.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verweist auf Stellen oder Personen, die die Daten erstellt
+            haben.</td></tr>
+          </tbody>
+          </table>
+        </section>
+        
+        <section id="Property:contributor">
+          <h4 id="property-contributor">Eigenschaft: Bearbeiter</h4>
+          <table class="definition">
+          <thead><tr><th>URI:</th><th>dct:contributor</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Bearbeiter des Datensatzes</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verweist auf Stellen oder Personen, die die Daten bearbeitet
+            haben (z.B. durch Formatierung derselben).</td></tr>
+          </tbody>
+          </table>
+        </section>
+
      </section>
 
      <section id="Class:Distribution">
