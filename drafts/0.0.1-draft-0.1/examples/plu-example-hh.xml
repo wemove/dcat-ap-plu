@@ -16,17 +16,17 @@
    <dcat:Dataset rdf:about="https://www.hamburg.de/bebauungsplaene/7948322/hafencity-13/">
       <dcterms:title xml:lang="de">Bebauungsplan-Entwurf HafenCity 13</dcterms:title>
       <dcterms:description xml:lang="de">
-      Plangebiet
+       Plangebiet
       
-      Gebiet am östlichen Eingang zur HafenCity um den Kopf des Baakenhafens zwischen den Bahntrassen im Norden und Osten und der Norderelbe im Süden (Bezirk Hamburg-Mitte, Ortsteil 104). Im Westen grenzt das Plangebiet an die Plangebiete der Bebauungspläne HafenCity 11 und HafenCity 14 für das Quartier Baakenhafen.
+       Gebiet am östlichen Eingang zur HafenCity um den Kopf des Baakenhafens zwischen den Bahntrassen im Norden und Osten und der Norderelbe im Süden (Bezirk Hamburg-Mitte, Ortsteil 104). Im Westen grenzt das Plangebiet an die Plangebiete der Bebauungspläne HafenCity 11 und HafenCity 14 für das Quartier Baakenhafen.
       
-      Planungsziel
+       Planungsziel
       
-      Das Quartier Elbbrücken wird mit den U- und S-Bahn-Haltestellen Elbbrücken sehr gut an den ÖPNV angebunden und soll neben dem Überseequartier das zweite urbane Zentrum der HafenCity bilden.
+       Das Quartier Elbbrücken wird mit den U- und S-Bahn-Haltestellen Elbbrücken sehr gut an den ÖPNV angebunden und soll neben dem Überseequartier das zweite urbane Zentrum der HafenCity bilden.
       
-      Der Bebauungsplan HafenCity 13 schafft die planungsrechtlichen Voraussetzungen für die Entwicklung des westlichen Teils des gemischt genutzten Quartiers Elbbrücken um den Kopf des Baakenhafens zu einem hochverdichteten Geschäfts- und Wohnstandort. Im Plangebiet sollen insbesondere Büros, ca. 1.100 Wohnungen, ein Präventionszentrum, Hotels, Kindertagesstätten und publikumsbezogene Erdgeschossnutzungen, wie kleinflächiger Einzelhandel und Gastronomie, entstehen. Zentral am Kopf des Baakenhafens soll der größte Platzraum der HafenCity, der Amerigo-Vespucci-Platz, planungsrechtlich gesichert werden. Um den Baakenhafen und an der Norderelbe sollen Promenaden und an der Norderelbe zudem eine Parkanlage den öffentlichen Zugang zu den Wasserflächen sichern.
+       Der Bebauungsplan HafenCity 13 schafft die planungsrechtlichen Voraussetzungen für die Entwicklung des westlichen Teils des gemischt genutzten Quartiers Elbbrücken um den Kopf des Baakenhafens zu einem hochverdichteten Geschäfts- und Wohnstandort. Im Plangebiet sollen insbesondere Büros, ca. 1.100 Wohnungen, ein Präventionszentrum, Hotels, Kindertagesstätten und publikumsbezogene Erdgeschossnutzungen, wie kleinflächiger Einzelhandel und Gastronomie, entstehen. Zentral am Kopf des Baakenhafens soll der größte Platzraum der HafenCity, der Amerigo-Vespucci-Platz, planungsrechtlich gesichert werden. Um den Baakenhafen und an der Norderelbe sollen Promenaden und an der Norderelbe zudem eine Parkanlage den öffentlichen Zugang zu den Wasserflächen sichern.
       
-      An der östlichen Spitze des Quartiers Elbbrücken zwischen den Elbbrücken an der Zweibrückenstraße ist ein Hochhausstandort geplant. Für dieses Gebiet soll zu einem späteren Zeitpunkt ein Bebauungsplan aufgestellt werden.
+       An der östlichen Spitze des Quartiers Elbbrücken zwischen den Elbbrücken an der Zweibrückenstraße ist ein Hochhausstandort geplant. Für dieses Gebiet soll zu einem späteren Zeitpunkt ein Bebauungsplan aufgestellt werden.
       </dcterms:description>
       <dcat:contactPoint>
          <vcard:Organization>
@@ -70,7 +70,7 @@
        </dcterms:temporal>
   </plu:ProcessStep>
     
-    <dcat:Distribution rdf:about="https://www.hamburg.de/contentblob/8006506/f66b3fe23c28068c8ab8b2ad28178a16/data/   planzeichnung-juli-2020.pdf/distribution">
+   <dcat:Distribution rdf:about="https://www.hamburg.de/contentblob/8006506/f66b3fe23c28068c8ab8b2ad28178a16/data/   planzeichnung-juli-2020.pdf/distribution">
        <dcterms:title xml:lang="de">Planzeichnung des Bebauungsplans HafenCity 13</dcterms:title>
        <dcterms:description> ... </dcterms:description>
        <dcat:accessURL rdf:resource="https://www.hamburg.de/contentblob/8006506/f66b3fe23c28068c8ab8b2ad28178a16/data/planzeichnung-juli-2020.pdf"/>
@@ -85,5 +85,5 @@
                <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-01T00:00:00.000Z</schema:endDate>
           </dcterms:PeriodOfTime>
        </dcterms:temporal>
-    </dcat:Distribution>
+  </dcat:Distribution>
 </rdf:RDF>
