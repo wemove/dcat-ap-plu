@@ -25,7 +25,6 @@ paths:
       operationId: getLandingPage
       responses:
         200:
-          description: Successful operation
           $ref: '#/components/responses/LandingPage'
         500:
           $ref: '#/components/responses/500GenericError'
@@ -40,7 +39,6 @@ paths:
       operationId: getConformanceDeclaration
       responses:
         200:
-          description: Successful operation
           $ref: '#/components/responses/ConformanceDeclaration'
         500:
           $ref: '#/components/responses/500GenericError'
@@ -109,6 +107,8 @@ paths:
         - $ref: '#/components/parameters/datetime'
         - $ref: '#/components/parameters/type'
         - $ref: '#/components/parameters/q'
+        - $ref: '#/components/parameters/location'
+        - $ref: '#/components/parameters/eianumber'
       responses:
         200:
           description: Successful operation
@@ -270,11 +270,18 @@ components:
       name: q
       in: query
       description: the search term
-      required: true
+      required: false
       schema:
         type: string
         minLength: 3
         example: Windkraft
+    limit: # noch nicht fertig
+      name: limit
+      in: query
+      description: limits the number of returned items
+      required: true
+      schema:
+        type: integer
     title:
       name: title
       in: query
@@ -283,6 +290,23 @@ components:
       schema:
         type: string
         example: Errichtung und Betrieb von drei Windkraftanlagen
+    location:
+      name: location
+      in: query
+      description: the location of the procedure
+      required: false 
+      schema:
+        type: string
+        minLength: 3
+        example: Frankfurt
+    eianumber:
+      name: eianumber
+      in: query
+      description: the eia number of the procedure
+      required: false 
+      schema:
+        type: string
+        example: UVPG 1.1.1
   schemas:
     collectionInfo:
       type: object
@@ -297,10 +321,12 @@ components:
         title:
           description: human readable title of the collection
           type: string
+          example: UVP Katalog des Bundeslandes Hessen
         description:
           description: a description of the records in the collection
           type: string
         links:
+          description: # tbd
           type: array
           items:
             $ref: '#/components/schemas/link'
@@ -456,7 +482,7 @@ components:
       type: object
       required:
         - type
-        - features
+        - features # oder records?
       properties:
         type:
           type: string
@@ -466,7 +492,7 @@ components:
             - Raumordnungsverfahren
             - Linienbestimmung
             - Negative Vorprüfung
-        features:
+        features: # oder records?
           type: array
           items:
             $ref: "#/components/schemas/recordEIA"
@@ -700,10 +726,9 @@ components:
         larger collections without overloading the client, the API supports
         paged access with links to the next page, if more records are selected
         that the page size.
-        The `bbox` and `datetime` parameter can be used to select only a
-        subset of the records in the collection (the records that are in the
-        bounding box or time interval). The `bbox` parameter matches all records
-        in the collection that are not associated with a location, too. The
+        Different parameters can be used to select only a
+        subset of the records in the collection.
+        The `bbox` parameter matches all records in the collection that are not associated with a location, too. The
         `datetime` parameter matches all records in the collection that are
         not associated with a time stamp or interval, too.
         The `limit` parameter may be used to control the subset of the
