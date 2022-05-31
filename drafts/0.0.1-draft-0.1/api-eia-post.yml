@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: EIA API
   version: 0.0.1
-  description: This is the API for the UVP Information System.
+  description: This is the API for the UVP Information System. Basic structure was taken from https://github.com/opengeospatial/ogcapi-records/blob/master/core/examples/yaml/ogcapi-record-1-example1.yaml
   contact:
     name: wemove digital solutions GmbH
     url: https://www.wemove.com
@@ -12,7 +12,8 @@ servers:
     description: Development server
 tags:
   - name: Capabilities
-  - name: Data
+  - name: Collections
+  - name: Records
 paths:
   /:
     get:
@@ -42,7 +43,7 @@ paths:
           $ref: '#/components/responses/ConformanceDeclaration'
         500:
           $ref: '#/components/responses/500GenericError'
-  /version:
+  /version: # brauchen wir die überhaupt?
     get:
       summary: Get version information
       responses:
@@ -57,8 +58,8 @@ paths:
   /collections:
     get:
       tags:
-        - Capabilities
-      summary: the record collections in the dataset
+        - Collections
+      summary: the record collections in the dataset # mehrere collections in einem dataset??
       operationId: getCollections
       responses:
         200:
@@ -72,7 +73,7 @@ paths:
   /collections/{collectionId}: 
     get:
       tags:
-        - Capabilities
+        - Collections
       summary: |-
         describe the record collection with id `collectionId`
       operationId: describeCollection
@@ -89,10 +90,11 @@ paths:
           $ref: '#/components/responses/404NotFound'
         500:
           $ref: '#/components/responses/500GenericError'
-  /collections/{collectionId}/items:
+  # brauchen wir das noch: /collections/{collectionId}/sortables
+  /collections/{collectionId}/items: # oder "/search"? Siehe https://github.com/opengeospatial/ogcapi-records
     get:
       tags:
-        - Data
+        - Records
       summary: fetch records
       description: |-
         Fetch records of the record collection with id `collectionId`.
@@ -115,7 +117,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/responses/Records'
+                $ref: '#/components/responses/RecordsEIA'
         400:
           $ref: '#/components/responses/400InvalidInput'
         404:
@@ -124,7 +126,7 @@ paths:
           $ref: '#/components/responses/500GenericError'
     post: 
       tags:
-        - Data
+        - Records
       summary: post a new record
       description: |-
         post a record into the collection with id 'collectionID'.
@@ -146,7 +148,7 @@ paths:
   /collections/{collectionId}/items/{recordId}:
     get:
       tags:
-        - Data
+        - Records
       summary: fetch a single record
       description: |-
         Fetch the record with id `recordId` in the record collection
@@ -163,7 +165,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/responses/Record'
+                $ref: '#/components/responses/RecordEIA'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -269,20 +271,27 @@ components:
     q:
       name: q
       in: query
-      description: the search term
+      description: The optional q parameter supports keyword searching.  Only records whose text fields contain one or more of the specified search terms are selected.  The specific set of text keys/fields/properties of a record to which the q operator is applied is up to the description of the server.   Implementations should, however, apply the q operator to the title, description and keywords keys/fields/properties.
       required: false
       schema:
-        type: string
-        minLength: 3
+        type: array
+        items:
+          type: string
+          minLength: 3
         example: Windkraft
-    limit: # noch nicht fertig
+    limit:
       name: limit
       in: query
-      description: limits the number of returned items
-      required: true
+      description: The optional limit parameter limits the number of items that are presented in the response document. Only items are counted that are on the first level of the collection in the response document. Nested objects contained within the explicitly requested items shall not be counted.
+      required: false 
       schema:
         type: integer
-    title:
+        minimum: 1
+        maximum: 1000
+        default: 10
+      explode: false
+      style: form
+    title: # brauchen wir das? oder über q abgedeckt?
       name: title
       in: query
       description: the title of the procedure
@@ -299,7 +308,7 @@ components:
         type: string
         minLength: 3
         example: Frankfurt
-    eianumber:
+    eianumber: # brauchen wir das? oder über q abgedeckt?
       name: eianumber
       in: query
       description: the eia number of the procedure
@@ -520,6 +529,7 @@ components:
       properties:
         href:
           type: string
+          format: url
         rel:
           type: string
         type:
@@ -696,9 +706,8 @@ components:
             type: string
     LandingPage:
       description: |-
-        The landing page provides links to the API definition and the Record
-        Collections (path `/collections`, link relation
-        `data`).
+        The OGC API landing page for the EIA metadata information system. The landing page provides links to the API definition and the Record
+        Collections (path `/collections`), the conformance declatartion (path '/conformance') and other resources in the API.
       content:
         application/json:
           schema:
@@ -706,7 +715,7 @@ components:
         text/html:
           schema:
             type: string
-    Record:
+    RecordEIA:
       description: |-
         Fetch the record with id `recordId` in the record collection
         with id `collectionId`.  The XML representation of a record
@@ -718,7 +727,7 @@ components:
         text/html:
           schema:
             type: string
-    Records:
+    RecordsEIA:
       description: |-
         The response is a document consisting of records in the collection.
         The records included in the response are determined by the server
