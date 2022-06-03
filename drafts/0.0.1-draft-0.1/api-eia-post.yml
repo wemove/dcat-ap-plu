@@ -59,7 +59,7 @@ paths:
     get:
       tags:
         - Collections
-      summary: the record collections in the dataset # mehrere collections in einem dataset??
+      summary: the record collections accessible through this API
       operationId: getCollections
       responses:
         200:
@@ -91,7 +91,8 @@ paths:
         500:
           $ref: '#/components/responses/500GenericError'
   # brauchen wir das noch: /collections/{collectionId}/sortables
-  /collections/{collectionId}/items: # oder "/search"? Siehe https://github.com/opengeospatial/ogcapi-records
+  # evtl. /collections/{collectionId}/queryables
+  /collections/{collectionId}/items:
     get:
       tags:
         - Records
@@ -135,7 +136,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          application/rdf+xml:
             schema:
               $ref: '#/components/schemas/recordEIA'
       responses:
@@ -163,7 +164,7 @@ paths:
         200:
           description: Successful operation
           content:
-            application/json:
+            application/rdf+xml:
               schema:
                 $ref: '#/components/responses/RecordEIA'
         404:
@@ -491,7 +492,7 @@ components:
       type: object
       required:
         - type
-        - features # oder records?
+        - records
       properties:
         type:
           type: string
@@ -501,7 +502,7 @@ components:
             - Raumordnungsverfahren
             - Linienbestimmung
             - Negative Vorprüfung
-        features: # oder records?
+        records:
           type: array
           items:
             $ref: "#/components/schemas/recordEIA"
@@ -563,17 +564,26 @@ components:
               type: string
               description: Date of creation of this record.
               format: date-time
+              xml:
+                name: 'dct:issued'
             recordUpdated:
               type: string
               description: The most recent date on which the record was changed.
               format: date-time
+              xml:
+                name: 'dct:modified'
             type:
               type: string
               description: The type of EIA procedure.
-              format: uri
+              format: uri # hmmm...
+              xml:
+                name: 'eia:eiaProcedureType'
             title:
               type: string
               description: Title of the EIA procedure.
+              xml:
+                name: 'dct:title'
+              example: Errichtung und Betrieb von drei Windkraftanlagen
             description:
               type: string
               description: A free-text description of the EIA procedure.
@@ -601,6 +611,8 @@ components:
               items:
                 $ref: "#/components/schemas/link"
           additionalProperties: true
+      xml:
+        name: 'dcat:dataset'
     polygonEIA:
       type: object
       required:
@@ -721,7 +733,7 @@ components:
         with id `collectionId`.  The XML representation of a record
         is an ATOM entry.
       content:
-        application/json:
+        application/rdf+xml:
           schema:
             $ref: '#/components/schemas/recordEIA'
         text/html:
