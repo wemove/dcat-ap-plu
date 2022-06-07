@@ -250,7 +250,7 @@ components:
       required: false
       schema:
         type: string
-        enum: [Zulassungsvefahren, Raumordnungsverfahren, Linienbestimmung, negative Vorprüfung, Ausländisches Vorhaben]
+        enum: [Zulassungsvefahren, Raumordnungsverfahren, Linienbestimmung, Negative Vorprüfung, Ausländisches Vorhaben]
       explode: false
       style: form
     collectionId:
@@ -292,7 +292,7 @@ components:
         default: 10
       explode: false
       style: form
-    title: # brauchen wir das? oder über q abgedeckt?
+    title:
       name: title
       in: query
       description: the title of the procedure
@@ -309,7 +309,7 @@ components:
         type: string
         minLength: 3
         example: Frankfurt
-    eianumber: # brauchen wir das? oder über q abgedeckt?
+    eianumber:
       name: eianumber
       in: query
       description: the eia number of the procedure
@@ -317,6 +317,14 @@ components:
       schema:
         type: string
         example: UVPG 1.1.1
+    prelimAssessment:
+      name: prelimAssessment
+      in: query
+      description: the information, whether a preliminary assessment was conducted or not
+      required: false
+      schema:
+        type: string
+        enum: [ja, nein, null]
   schemas:
     collectionInfo:
       type: object
