@@ -69,9 +69,9 @@ paths:
         200:
           description: Successful operation
           content:
-            application/json:
+            application/xml:
               schema:
-                $ref: '#/components/responses/Collections'
+                $ref: '#/components/schemas/collections'
         500:
           $ref: '#/components/responses/500GenericError'
   /collections/{collectionId}: 
@@ -87,9 +87,9 @@ paths:
         200:
           description: Successful operation
           content:
-            application/json:
+            application/xml:
               schema:
-                $ref: '#/components/responses/Collection'
+                $ref: '#/components/schemas/collectionInfo'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -103,10 +103,22 @@ paths:
       summary: fetch records
       description: |-
         Fetch records of the record collection with id `collectionId`.
-        Every record in a dataset belongs to a collection. A dataset may
-        consist of multiple record collections. A record collection is often a
-        collection of records of a similar type, based on a common schema.
-        Use content negotiation to request HTML or GeoJSON.
+        The response is a document consisting of records in the collection.
+        The records included in the response are determined by the server
+        based on the query parameters of the request. To support access to
+        larger collections without overloading the client, the API supports
+        paged access with links to the next page, if more records are selected
+        that the page size.
+        Different parameters can be used to select only a
+        subset of the records in the collection.
+        The `bbox` parameter matches all records in the collection that are not associated with a location, too. The
+        `datetime` parameter matches all records in the collection that are
+        not associated with a time stamp or interval, too.
+        The `limit` parameter may be used to control the subset of the
+        selected records that should be returned in the response, the page size.
+        Each page may include information about the number of selected and
+        returned records (`numberMatched` and `numberReturned`) as well as
+        links to support paging (link relation `next`).
       operationId: getRecords
       parameters:
         - $ref: '#/components/parameters/collectionId'
@@ -116,13 +128,15 @@ paths:
         - $ref: '#/components/parameters/q'
         - $ref: '#/components/parameters/location'
         - $ref: '#/components/parameters/eianumber'
+        - $ref: '#/components/parameters/prelimAssessment'
+        - $ref: '#/components/parameters/procsteptype'
       responses:
         200:
           description: Successful operation
           content:
-            application/json:
+            application/xml:
               schema:
-                $ref: '#/components/responses/RecordsEIA'
+                $ref: '#/components/schemas/recordsEIA'
         400:
           $ref: '#/components/responses/400InvalidInput'
         404:
@@ -169,7 +183,7 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/responses/RecordEIA'
+                $ref: '#/components/schemas/recordEIA'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -320,6 +334,7 @@ components:
       schema:
         type: string
         enum: [UVPG-1.1.1, UVPG-1.1.2, UVPG-1.2.1, UVPG-1.2.2.1, UVPG-1.2.2.2, UVPG-1.2.3.1, UVPG-1.2.3.2, UVPG-1.2.4.1, UVPG-1.2.4.2, UVPG-1.4.1.1, UVPG-1.4.1.1, UVPG-1.4.1.2, UVPG-1.4.1.3, UVPG-1.4.2.1, UVPG-1.4.2.2, UVPG-1.4.2.3, UVPG-1.6.1, UVPG-1.6.2, UVPG-1.6.3, UVPG-1.7, UVPG-1.8.1, UVPG-1.8.2, UVPG-1.9.1, UVPG-1.9.2, UVPG-1.10.1, UVPG-1.10.2, UVPG-1.10.3, UVPG-1.11.1.1, UVPG-1.11.1.2, UVPG-1.11.2.1, UVPG-1.11.2.2]
+        example: UVPG-1.1.1
     prelimAssessment:
       name: prelimAssessment
       in: query
@@ -329,7 +344,7 @@ components:
         type: string
         enum: [ja, nein, null]
     procsteptype:
-      name: processsteptype
+      name: procsteptype
       in: query
       description: type of the process step
       required: false 
@@ -338,6 +353,17 @@ components:
         enum: [Öffentliche Auslegung, Erörterungstermin, Entscheidung über die Zulassung]
   schemas:
     collectionInfo:
+      description: |-
+        Information about the record collection with id `collectionId`.
+        The response contains a link to the items in the collection
+        (path `/collections/{collectionId}/items`, link relation `items`)
+        as well as key information about the collection. This information
+        includes:
+        * A local identifier for the collection that is unique for the +
+          catalogue;
+        * An optional title and description for the collection;
+        * An optional indicator about the type of the items in the collection +
+          (the default value, if the indicator is not provided, is 'record').
       type: object
       required:
         - id
@@ -347,26 +373,47 @@ components:
           description: identifier of the collection used, for example, in URIs
           type: string
           example: HE
+          xml:
+            name: 'dct:identifier'
         title:
           description: human readable title of the collection
           type: string
           example: UVP Katalog des Bundeslandes Hessen
+          xml:
+            name: 'dct:title'
         description:
           description: a description of the records in the collection
           type: string
+          xml:
+            name: 'dct:description'
         links:
           type: array
           items:
             $ref: '#/components/schemas/link'
-        crs:
-          description: |-
-            the list of coordinate reference systems supported by the API
-          type: array
-          items:
-            type: string
-          default:
-            - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      xml: 
+        name: 'dcat:Catalog'
     collections:
+      description: |-
+        The record collections shared by this API.
+        Catalogues are organized as one or more record collections. This
+        resource provides information about and access to these collections.
+        The response contains the list of record collections (itemType=record).
+        For each record collection, a link to the items in the collection
+        (path `/collections/{collectionId}/items`, link relation `items`) as
+        well as key information about the collection. This information
+        includes...
+        * A local identifier for the collection that is unique for the +
+          catalogue;
+        * A list of coordinate reference systems (CRS) in which geometries +
+          may be returned by the server. The first CRS is the default +
+          coordinate reference system (the default is always WGS 84 with axis +
+          order longitude/latitude);
+        * An optional title and description for the collection;
+        * An optional extent that can be used to provide an indication of the +
+          spatial and temporal extent of the collection - typically derived +
+          from the data;
+        * An optional indicator about the type of the items in the collection +
+          (the default value, if the indicator is not provided, is 'record'). 
       type: object
       required:
        - links
@@ -464,6 +511,8 @@ components:
               enum:
                 - 'http://www.opengis.net/def/crs/OGC/1.3/CRS84'
               default: 'http://www.opengis.net/def/crs/OGC/1.3/CRS84'
+          xml:
+            name: "dct:spatial"    
         temporal:
           description: |-
             The temporal extent of the records in the collection.
@@ -506,6 +555,8 @@ components:
               enum:
                 - 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
               default: 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
+          xml:
+            name: 'dct:temporal'    
     landingPage:
       type: object
       required:
@@ -527,6 +578,7 @@ components:
         href:
           type: string
           format: url
+          example: 'https://dcat-ap-eia.info/resource/1234-abcd-5678-efgh/test.pdf'
         rel:
           type: string
         type:
@@ -551,6 +603,8 @@ components:
             - Raumordnungsverfahren
             - Linienbestimmung
             - Negative Vorprüfung
+          xml: 
+            name: 'eia:eiaProcedureType'
         records:
           type: array
           items:
@@ -617,6 +671,8 @@ components:
               description: A list of available distributions of the resource.
               items:
                 type: string
+              xml:
+                name: 'dct:format' # oder "dcat:distribution"
             contactPoint:
               type: string
               description: |-
@@ -624,8 +680,15 @@ components:
                  practice is to use a VCard
                  (see https://www.w3.org/TR/vcard-rdf/).
               format: uri
+              xml:
+                name: 'dcat:contactPoint'
             extent:
               $ref: "#/components/schemas/extent"
+            eianumber:
+              type: string
+              description: The EIA number according to UVPG.
+              xml:
+                name: 'eia:eiaNumber'
             associations:
               type: array
               description: |-
@@ -635,6 +698,14 @@ components:
                 this resource.
               items:
                 $ref: "#/components/schemas/link"
+              xml:
+                name: 'dcat:distribution'
+              example: 'https://dcat-ap-eia.info/resource/0123-abcd-4567-efgh/test.pdf'
+            decisionDate:
+              type: string
+              description: Date of the decision of the procedure.
+              xml:
+                name: 'eia:decisionDate'
           additionalProperties: true
       xml:
         name: 'dcat:dataset'
@@ -676,61 +747,6 @@ components:
             - version
             - date
   responses:
-    Collection:
-      description: |-
-        Information about the record collection with id `collectionId`.
-        The response contains a link to the items in the collection
-        (path `/collections/{collectionId}/items`, link relation `items`)
-        as well as key information about the collection. This information
-        includes:
-        * A local identifier for the collection that is unique for the +
-          catalogue;
-        * A list of coordinate reference systems (CRS) in which geometries +
-          may be returned by the server. The first CRS is the default +
-          coordinate reference system (the default is always WGS 84 with +
-          axis order longitude/latitude);
-        * An optional title and description for the collection;
-        * An optional extent that can be used to provide an indication of +
-          the spatial and temporal extent of the collection - typically +
-          derived from the data;
-        * An optional indicator about the type of the items in the collection +
-          (the default value, if the indicator is not provided, is 'record').
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/collectionInfo'
-        text/html:
-          schema:
-            type: string
-    Collections:
-      description: |-
-        The record collections shared by this API.
-        Catalogues are organized as one or more record collections. This
-        resource provides information about and access to these collections.
-        The response contains the list of record collections (itemType=record).
-        For each record collection, a link to the items in the collection
-        (path `/collections/{collectionId}/items`, link relation `items`) as
-        well as key information about the collection. This information
-        includes...
-        * A local identifier for the collection that is unique for the +
-          catalogue;
-        * A list of coordinate reference systems (CRS) in which geometries +
-          may be returned by the server. The first CRS is the default +
-          coordinate reference system (the default is always WGS 84 with axis +
-          order longitude/latitude);
-        * An optional title and description for the collection;
-        * An optional extent that can be used to provide an indication of the +
-          spatial and temporal extent of the collection - typically derived +
-          from the data;
-        * An optional indicator about the type of the items in the collection +
-          (the default value, if the indicator is not provided, is 'record').
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/collections'
-        text/html:
-          schema:
-            type: string   
     ConformanceDeclaration:
       description: |-
        The URIs of all conformance classes supported by the server. To support "generic" clients that want to access multiple OGC API Records implementations - and not "just" a specific API / server, the server declares the conformance classes it implements and conforms to.
@@ -749,41 +765,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/landingPage'
-        text/html:
-          schema:
-            type: string
-    RecordEIA:
-      description: |-
-        Fetch the record with id `recordId` in the record collection
-        with id `collectionId`.  The XML representation of a record
-        is an ATOM entry.
-      content:
-        application/xml:
-          schema:
-            $ref: '#/components/schemas/recordEIA'
-    RecordsEIA:
-      description: |-
-        The response is a document consisting of records in the collection.
-        The records included in the response are determined by the server
-        based on the query parameters of the request. To support access to
-        larger collections without overloading the client, the API supports
-        paged access with links to the next page, if more records are selected
-        that the page size.
-        Different parameters can be used to select only a
-        subset of the records in the collection.
-        The `bbox` parameter matches all records in the collection that are not associated with a location, too. The
-        `datetime` parameter matches all records in the collection that are
-        not associated with a time stamp or interval, too.
-        The `limit` parameter may be used to control the subset of the
-        selected records that should be returned in the response, the page size.
-        Each page may include information about the number of selected and
-        returned records (`numberMatched` and `numberReturned`) as well as
-        links to support paging (link relation `next`).
-        The XML representation of the response document is an ATOM feed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/recordsEIA'
         text/html:
           schema:
             type: string
