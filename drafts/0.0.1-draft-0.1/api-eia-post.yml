@@ -26,7 +26,7 @@ paths:
       summary: landing page
       description: |-
         The landing page provides links to the API definition, the conformance
-        statements and to the record collections in this dataset.
+        statements and to the catalogs and data sets available.
       operationId: getLandingPage
       responses:
         200:
@@ -63,7 +63,7 @@ paths:
     get:
       tags:
         - Collections
-      summary: the record collections accessible through this API
+      summary: the catalogs accessible through this API
       operationId: getCollections
       responses:
         200:
@@ -79,7 +79,7 @@ paths:
       tags:
         - Collections
       summary: |-
-        describe the record collection with id `collectionId`
+        describe the catalog with id `collectionId`
       operationId: describeCollection
       parameters:
         - $ref: '#/components/parameters/collectionId'
@@ -102,17 +102,17 @@ paths:
         - Records
       summary: fetch records
       description: |-
-        Fetch records of the record collection with id `collectionId`.
-        The response is a document consisting of records in the collection.
+        Fetch records of the catalog with id `collectionId`.
+        The response is a document consisting of records in the catalog.
         The records included in the response are determined by the server
         based on the query parameters of the request. To support access to
         larger collections without overloading the client, the API supports
         paged access with links to the next page, if more records are selected
         that the page size.
         Different parameters can be used to select only a
-        subset of the records in the collection.
-        The `bbox` parameter matches all records in the collection that are not associated with a location, too. The
-        `datetime` parameter matches all records in the collection that are
+        subset of the records in the catalog.
+        The `bbox` parameter matches all records in the catalog that are not associated with a location, too. The
+        `datetime` parameter matches all records in the catalog that are
         not associated with a time stamp or interval, too.
         The `limit` parameter may be used to control the subset of the
         selected records that should be returned in the response, the page size.
@@ -170,9 +170,8 @@ paths:
         - Records
       summary: fetch a single record
       description: |-
-        Fetch the record with id `recordId` in the record collection
+        Fetch the record with id `recordId` in the catalog
         with id `collectionId`.
-        Use content negotiation to request HTML or GeoJSON.
       operationId: getRecord
       parameters:
         - $ref: '#/components/parameters/collectionId'
@@ -273,7 +272,7 @@ components:
     collectionId:
       name: collectionId
       in: path
-      description: local identifier of a collection
+      description: local identifier of a catalog
       required: true
       schema:
         type: string
@@ -342,7 +341,7 @@ components:
       required: false
       schema:
         type: string
-        enum: [ja, nein, null]
+        enum: [ja, nein]
     procsteptype:
       name: procsteptype
       in: query
@@ -354,15 +353,15 @@ components:
   schemas:
     collectionInfo:
       description: |-
-        Information about the record collection with id `collectionId`.
-        The response contains a link to the items in the collection
+        Information about the catalog with id `collectionId`.
+        The response contains a link to the items in the catalog
         (path `/collections/{collectionId}/items`, link relation `items`)
-        as well as key information about the collection. This information
+        as well as key information about the catalog. This information
         includes:
-        * A local identifier for the collection that is unique for the +
+        * A local identifier for the catalog that is unique for the +
           catalogue;
-        * An optional title and description for the collection;
-        * An optional indicator about the type of the items in the collection +
+        * An optional title and description for the catalog;
+        * An optional indicator about the type of the items in the catalog +
           (the default value, if the indicator is not provided, is 'record').
       type: object
       required:
@@ -370,7 +369,7 @@ components:
         - links
       properties:
         id:
-          description: identifier of the collection used, for example, in URIs
+          description: identifier of the catalog used, for example, in URIs
           type: string
           example: HE
           xml:
@@ -394,25 +393,20 @@ components:
         name: 'dcat:Catalog'
     collections:
       description: |-
-        The record collections shared by this API.
-        Catalogues are organized as one or more record collections. This
-        resource provides information about and access to these collections.
-        The response contains the list of record collections (itemType=record).
-        For each record collection, a link to the items in the collection
+        The catalogs shared by this API.
+        This resource provides information about and access to these catalogs.
+        The response contains the list of catalogs (itemType=record).
+        For each catalog, a link to the items in the catalog
         (path `/collections/{collectionId}/items`, link relation `items`) as
-        well as key information about the collection. This information
+        well as key information about the catalog. This information
         includes...
-        * A local identifier for the collection that is unique for the +
+        * A local identifier for the catalog that is unique for the +
           catalogue;
-        * A list of coordinate reference systems (CRS) in which geometries +
-          may be returned by the server. The first CRS is the default +
-          coordinate reference system (the default is always WGS 84 with axis +
-          order longitude/latitude);
-        * An optional title and description for the collection;
+        * An optional title and description for the catalog;
         * An optional extent that can be used to provide an indication of the +
-          spatial and temporal extent of the collection - typically derived +
+          spatial and temporal extent of the catalog - typically derived +
           from the data;
-        * An optional indicator about the type of the items in the collection +
+        * An optional indicator about the type of the items in the catalog +
           (the default value, if the indicator is not provided, is 'record'). 
       type: object
       required:
@@ -441,10 +435,8 @@ components:
     extent:
       type: object
       description: |-
-        The extent of the records in the collection. In the Core only spatial
-        and temporal extents are specified. Extensions may add additional
-        members to represent other extents, for example, thermal or pressure
-        ranges.
+        The extent of the records in the catalog. In the Core only spatial
+        and temporal extents are specified.
       properties:
         spatial:
           description: |-
