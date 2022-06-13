@@ -46,7 +46,7 @@ paths:
           $ref: '#/components/responses/ConformanceDeclaration'
         500:
           $ref: '#/components/responses/500GenericError'
-  /version: # brauchen wir die überhaupt?
+  /version:
     get:
       summary: Get version information
       responses:
