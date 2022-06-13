@@ -2,8 +2,7 @@ openapi: 3.0.3
 info:
   title: EIA API
   version: 0.0.1
-  description: 'This is the API for the UVP Information System. Find information on environmental impact assessments ("UVP") and their respective status. Look for UVPs taking place in your city or state.
-  The structure is based on https://github.com/opengeospatial/ogcapi-records/blob/master/core/examples/yaml/ogcapi-record-1-example1.yaml'
+  description: 'This is the API for the UVP Information System. Find information on environmental impact assessments ("UVP") and their respective status. Look for UVPs taking place in your city or state. The structure is based on https://github.com/opengeospatial/ogcapi-records/blob/master/core/examples/yaml/ogcapi-record-1-example1.yaml'
   contact:
     name: wemove digital solutions GmbH
     url: https://www.wemove.com
@@ -106,7 +105,7 @@ paths:
         The response is a document consisting of records in the catalog.
         The records included in the response are determined by the server
         based on the query parameters of the request. To support access to
-        larger collections without overloading the client, the API supports
+        larger catalogs without overloading the client, the API supports
         paged access with links to the next page, if more records are selected
         that the page size.
         Different parameters can be used to select only a
@@ -196,15 +195,12 @@ paths:
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/recordId'
-        - $ref: '#/components/parameters/title'
-        - $ref: '#/components/parameters/type'
-        - $ref: '#/components/parameters/procsteptype'
       requestBody:
         required: true
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/recordEIA'
+              $ref: '#/components/schemas/updateRecordEIA'
       responses:
         200:
           description: Successful operation
@@ -643,14 +639,109 @@ components:
           example: 'abcd-1234-efgh-5678'
           xml:
             name: 'dct:identifier'
-        geometry:
-          $ref: "#/components/schemas/polygonEIA"
         properties:
           type: object
           required:
             - type
             - title
+            - description
+            - extent
           properties:
+            geometry:
+              $ref: "#/components/schemas/polygonEIA"
+            recordCreated:
+              type: string
+              description: Date of creation of this record.
+              format: date-time
+              example: '2022-06-07T12:22:11Z'
+              xml:
+                name: 'dct:issued'
+            recordUpdated:
+              type: string
+              description: The most recent date on which the record was changed.
+              format: date-time
+              example: '2022-06-07T12:22:11Z'
+              xml:
+                name: 'dct:modified'
+            type:
+              type: string
+              description: The type of EIA procedure.
+              example: 'Zulassungsverfahren'
+              xml:
+                name: 'eia:eiaProcedureType'
+            title:
+              type: string
+              description: Title of the EIA procedure.
+              xml:
+                name: 'dct:title'
+              example: 'Errichtung und Betrieb von drei Windkraftanlagen'
+            description:
+              type: string
+              description: A free-text description of the EIA procedure.
+              xml:
+                name: 'dct:description'
+              example: 'Hier steht eine Beschreibung des UVP Vorhabens.'
+            formats:
+              type: array
+              description: A list of available distributions of the resource.
+              items:
+                type: string
+              xml:
+                name: 'dct:format' # oder "dcat:distribution"
+            contactPoint:
+              type: string
+              description: |-
+                 Link to relevant contact information. Recommended best
+                 practice is to use a VCard
+                 (see https://www.w3.org/TR/vcard-rdf/).
+              format: uri
+              xml:
+                name: 'dcat:contactPoint'
+            extent:
+              $ref: "#/components/schemas/extent"
+            eianumber:
+              type: string
+              description: The EIA number according to UVPG.
+              xml:
+                name: 'eia:eiaNumber'
+            associations:
+              type: array
+              description: |-
+                A list of links for accessing the resource (e.g. download
+                link, access link) in one of the supported distribution
+                formats and/or links to other resources associated with
+                this resource.
+              items:
+                $ref: "#/components/schemas/link"
+              xml:
+                name: 'dcat:distribution'
+              example: 'https://dcat-ap-eia.info/resource/0123-abcd-4567-efgh/test.pdf'
+            decisionDate:
+              type: string
+              description: Date of the decision of the procedure.
+              xml:
+                name: 'eia:decisionDate'
+          additionalProperties: true
+      xml:
+        name: 'dcat:dataset'
+    updateRecordEIA:
+      type: object
+      required:
+        - id
+        - properties
+      properties:
+        id:
+          type: string
+          description: A unique identifier of the catalogue record.
+          format: uri
+          example: 'abcd-1234-efgh-5678'
+          xml:
+            name: 'dct:identifier'
+        properties:
+          type: object
+          properties:
+            geometry:
+              $ref: "#/components/schemas/polygonEIA"
             recordCreated:
               type: string
               description: Date of creation of this record.
