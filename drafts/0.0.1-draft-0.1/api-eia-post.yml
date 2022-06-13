@@ -47,7 +47,7 @@ paths:
           $ref: '#/components/responses/ConformanceDeclaration'
         500:
           $ref: '#/components/responses/500GenericError'
-  /version: # brauchen wir die überhaupt?
+  /version:
     get:
       summary: Get version information
       responses:
@@ -187,7 +187,7 @@ paths:
           $ref: '#/components/responses/404NotFound'
         500:
           $ref: '#/components/responses/500GenericError'
-    post: 
+    put: 
       tags:
         - Records
       summary: update an existing record
@@ -199,7 +199,6 @@ paths:
         - $ref: '#/components/parameters/title'
         - $ref: '#/components/parameters/type'
         - $ref: '#/components/parameters/procsteptype'
-                
       requestBody:
         required: true
         content:
@@ -457,7 +456,7 @@ components:
           items:
             type: string
     Error:
-      additionalProperties: true # tbd
+      additionalProperties: true
     extent:
       type: object
       description: |-
