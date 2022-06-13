@@ -2,17 +2,21 @@ openapi: 3.0.3
 info:
   title: PLU API
   version: 0.0.1
-  description: This is the API for the PLU Information System.
+  description: 'This is the API for the Information System on Planned Land Use. Find information on different types of space-related plans and procedures for the production of space-related plans.'
   contact:
     name: wemove digital solutions GmbH
     url: https://www.wemove.com
     email: contact@wemove.dom
+  license: 
+    name: "tbd"
+    url: "https://dcat-ap-plu.info/tbd"
 servers:
   - url: '{baseUrl}/v1'
     description: Development server
 tags:
   - name: Capabilities
-  - name: Data
+  - name: Collections
+  - name: Records
 paths:
   /:
     get:
@@ -21,11 +25,10 @@ paths:
       summary: landing page
       description: |-
         The landing page provides links to the API definition, the conformance
-        statements and to the record collections in this dataset.
+        statements and to the catalogs and datasets available.
       operationId: getLandingPage
       responses:
         200:
-          description: Successful operation
           $ref: '#/components/responses/LandingPage'
         500:
           $ref: '#/components/responses/500GenericError'
@@ -40,11 +43,10 @@ paths:
       operationId: getConformanceDeclaration
       responses:
         200:
-          description: Successful operation
           $ref: '#/components/responses/ConformanceDeclaration'
         500:
           $ref: '#/components/responses/500GenericError'
-  /version:
+  /version: # brauchen wir die überhaupt?
     get:
       summary: Get version information
       responses:
@@ -59,24 +61,24 @@ paths:
   /collections:
     get:
       tags:
-        - Capabilities
-      summary: the record collections in the dataset
+        - Collections
+      summary: the catalogs accessible through this API
       operationId: getCollections
       responses:
         200:
           description: Successful operation
           content:
-            application/json:
+            application/xml:
               schema:
-                $ref: '#/components/responses/Collections'
+                $ref: '#/components/schemas/collections'
         500:
           $ref: '#/components/responses/500GenericError'
   /collections/{collectionId}: 
     get:
       tags:
-        - Capabilities
+        - Collections
       summary: |-
-        describe the record collection with id `collectionId`
+        describe the catalog with id `collectionId`
       operationId: describeCollection
       parameters:
         - $ref: '#/components/parameters/collectionId'
@@ -84,39 +86,54 @@ paths:
         200:
           description: Successful operation
           content:
-            application/json:
+            application/xml:
               schema:
-                $ref: '#/components/responses/Collection'
+                $ref: '#/components/schemas/collectionInfo'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
           $ref: '#/components/responses/500GenericError'
+  # brauchen wir das noch: /collections/{collectionId}/sortables
+  # evtl. /collections/{collectionId}/queryables
   /collections/{collectionId}/items:
     get:
       tags:
-        - Data
+        - Records
       summary: fetch records
       description: |-
-        Fetch records of the record collection with id `collectionId`.
-        Every record in a dataset belongs to a collection. A dataset may
-        consist of multiple record collections. A record collection is often a
-        collection of records of a similar type, based on a common schema.
-        Use content negotiation to request HTML or GeoJSON.
+        Fetch records of the catalog with id `collectionId`.
+        The response is a document consisting of records in the catalog.
+        The records included in the response are determined by the server
+        based on the query parameters of the request. To support access to
+        larger collections without overloading the client, the API supports
+        paged access with links to the next page, if more records are selected
+        that the page size.
+        Different parameters can be used to select only a
+        subset of the records in the catalog.
+        The `bbox` parameter matches all records in the catalog that are not associated with a location, too. The
+        `datetime` parameter matches all records in the catalog that are
+        not associated with a time stamp or interval, too.
+        The `limit` parameter may be used to control the subset of the
+        selected records that should be returned in the response, the page size.
+        Each page may include information about the number of selected and
+        returned records (`numberMatched` and `numberReturned`) as well as
+        links to support paging (link relation `next`).
       operationId: getRecords
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/bbox'
         - $ref: '#/components/parameters/datetime'
-        - $ref: '#/components/parameters/pluProcedureState'
+        - $ref: '#/components/parameters/type'
         - $ref: '#/components/parameters/q'
-        - $ref: '#/components/parameters/pluPlanType'
+        - $ref: '#/components/parameters/location'
+        - $ref: '#/components/parameters/procsteptype'
       responses:
         200:
           description: Successful operation
           content:
-            application/json:
+            application/xml:
               schema:
-                $ref: '#/components/responses/Records'
+                $ref: '#/components/schemas/recordsPLU'
         400:
           $ref: '#/components/responses/400InvalidInput'
         404:
@@ -125,7 +142,7 @@ paths:
           $ref: '#/components/responses/500GenericError'
     post: 
       tags:
-        - Data
+        - Records
       summary: post a new record
       description: |-
         post a record into the collection with id 'collectionID'.
@@ -134,7 +151,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          application/xml:
             schema:
               $ref: '#/components/schemas/recordPLU'
       responses:
@@ -147,24 +164,22 @@ paths:
   /collections/{collectionId}/items/{recordId}:
     get:
       tags:
-        - Data
+        - Records
       summary: fetch a single record
       description: |-
-        Fetch the record with id `recordId` in the record collection
+        Fetch the record with id `recordId` in the catalog
         with id `collectionId`.
-        Use content negotiation to request HTML or GeoJSON.
       operationId: getRecord
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/recordId'
-        - $ref: '#/components/parameters/title'
       responses:
         200:
           description: Successful operation
           content:
-            application/json:
+            application/xml:
               schema:
-                $ref: '#/components/responses/Record'
+                $ref: '#/components/schemas/recordPLU'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -240,21 +255,21 @@ components:
         type: string
       style: form
       explode: false
-    pluProcedureState:
-      name: pluProcState
+    type:
+      name: type
       in: query
-      description: The optional parameter supports searching by state of the procedure.  Only
-        states that are equal to one of the listed values shall be selected.
+      description: The optional type parameter supports searching by plan type.  Only
+        procedures whose type is equal to one of the listed values shall be selected.
       required: false
       schema:
         type: string
-        enum: [in Aufstellung, festgesetzt, wirksam, in Kraft getreten, aufgehoben, außer Kraft]
+        enum: [Bebauungspläne, Raumordnungspläne, Regionalpläne, Landschaftspläne]
       explode: false
       style: form
     collectionId:
       name: collectionId
       in: path
-      description: local identifier of a collection
+      description: local identifier of a catalog
       required: true
       schema:
         type: string
@@ -262,7 +277,7 @@ components:
     recordId:
       name: recordId
       in: path
-      description: local identifier of a procedure
+      description: local identifier of a spatial-related plan or procedure
       required: true
       schema:
         type: string
@@ -270,12 +285,26 @@ components:
     q:
       name: q
       in: query
-      description: the search term
-      required: true
+      description: The optional q parameter supports keyword searching.  Only records whose text fields contain one or more of the specified search terms are selected.  The specific set of text keys/fields/properties of a record to which the q operator is applied is up to the description of the server.   Implementations should, however, apply the q operator to the title, description and keywords keys/fields/properties.
+      required: false
       schema:
-        type: string
-        minLength: 3
-        example: Windkraft
+        type: array
+        items:
+          type: string
+          minLength: 3
+        example: Hafen-City
+    limit:
+      name: limit
+      in: query
+      description: The optional limit parameter limits the number of items that are presented in the response document. Only items are counted that are on the first level of the collection in the response document. Nested objects contained within the explicitly requested items shall not be counted.
+      required: false 
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 1000
+        default: 10
+      explode: false
+      style: form
     title:
       name: title
       in: query
@@ -283,47 +312,82 @@ components:
       required: false 
       schema:
         type: string
-        example: Aufstellung eines Bebauungsplanes
-    pluPlanType:
-      name: pluPlanType
+        example: Bebauungsplan-Entwurf HafenCity 13
+    location:
+      name: location
       in: query
-      description: the type of the plan
+      description: the location of the spatial-related plan or procedure
       required: false 
       schema:
         type: string
-        enum: [Bebauungsplan, Regionalplan, Flächennutzungsplan]
-      explode: false 
-      style: form
+        minLength: 3
+        example: Hamburg
+    procsteptype:
+      name: procsteptype
+      in: query
+      description: type of the process step
+      required: false 
+      schema:
+        type: string
+        enum: [Frühzeitige Behördenbeteiligung, Frühzeitige Öffentlichkeitsbeteiligung, Beteiligung der Träger öffentlicher Belange, Öffentliche Auslegung, interne Bearbeitung]
   schemas:
     collectionInfo:
+      description: |-
+        Information about the catalog with id `collectionId`.
+        The response contains a link to the items in the catalog
+        (path `/collections/{collectionId}/items`, link relation `items`)
+        as well as key information about the catalog. This information
+        includes:
+        * A local identifier for the catalog that is unique for the +
+          catalogue;
+        * An optional title and description for the catalog;
+        * An optional indicator about the type of the items in the catalog +
+          (the default value, if the indicator is not provided, is 'record').
       type: object
       required:
         - id
         - links
       properties:
         id:
-          description: identifier of the collection used, for example, in URIs
+          description: identifier of the catalog used, for example, in URIs
           type: string
           example: HH
+          xml:
+            name: 'dct:identifier'
         title:
-          description: human readable title of the collection
+          description: human readable title of the catalog
           type: string
+          example: Stadt- und Landschaftsplanung Online (Planportal)
+          xml:
+            name: 'dct:title'
         description:
-          description: a description of the records in the collection
+          description: a description of the records in the catalog
           type: string
+          xml:
+            name: 'dct:description'
         links:
           type: array
           items:
             $ref: '#/components/schemas/link'
-        crs:
-          description: |-
-            the list of coordinate reference systems supported by the API
-          type: array
-          items:
-            type: string
-          default:
-            - http://www.opengis.net/def/crs/OGC/1.3/CRS84
+      xml: 
+        name: 'dcat:Catalog'
     collections:
+      description: |-
+        The catalogs shared by this API.
+        This resource provides information about and access to these catalogs.
+        The response contains the list of catalogs (itemType=record).
+        For each catalog, a link to the items in the catalog
+        (path `/collections/{collectionId}/items`, link relation `items`) as
+        well as key information about the catalog. This information
+        includes...
+        * A local identifier for the catalog that is unique for the +
+          catalogue;
+        * An optional title and description for the catalog;
+        * An optional extent that can be used to provide an indication of the +
+          spatial and temporal extent of the catalog - typically derived +
+          from the data;
+        * An optional indicator about the type of the items in the catalog +
+          (the default value, if the indicator is not provided, is 'record'). 
       type: object
       required:
        - links
@@ -351,10 +415,8 @@ components:
     extent:
       type: object
       description: |-
-        The extent of the records in the collection. In the Core only spatial
-        and temporal extents are specified. Extensions may add additional
-        members to represent other extents, for example, thermal or pressure
-        ranges.
+        The extent of the records in the catalog. In the Core only spatial
+        and temporal extents are specified.
       properties:
         spatial:
           description: |-
@@ -421,6 +483,8 @@ components:
               enum:
                 - 'http://www.opengis.net/def/crs/OGC/1.3/CRS84'
               default: 'http://www.opengis.net/def/crs/OGC/1.3/CRS84'
+          xml:
+            name: "dct:spatial"    
         temporal:
           description: |-
             The temporal extent of the records in the collection.
@@ -463,24 +527,8 @@ components:
               enum:
                 - 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
               default: 'http://www.opengis.net/def/uom/ISO-8601/0/Gregorian'
-    recordsPLU:
-      type: object
-      required:
-        - type
-        - features
-      properties:
-        type:
-          type: string
-          enum:
-            - FeatureCollection
-        features:
-          type: array
-          items:
-            $ref: "#/components/schemas/recordPLU"
-        links:
-          type: array
-          items:
-            $ref: "#/components/schemas/link"
+          xml:
+            name: 'dct:temporal'    
     landingPage:
       type: object
       required:
@@ -501,6 +549,8 @@ components:
       properties:
         href:
           type: string
+          format: url
+          example: 'https://dcat-ap-plu.info/resource/1234-abcd-5678-efgh/test.pdf'
         rel:
           type: string
         type:
@@ -511,17 +561,42 @@ components:
           type: string
         length:
           type: integer
+    recordsPLU:
+      type: object
+      required:
+        - type
+        - records
+      properties:
+        type:
+          type: string
+          enum:
+            - Bebauungspläne
+            - Regionalpläne
+            - Raumordnungspläne
+            - Landschaftspläne
+          xml: 
+            name: 'plu:pluPlanType'
+        records:
+          type: array
+          items:
+            $ref: "#/components/schemas/recordPLU"
+        links:
+          type: array
+          items:
+            $ref: "#/components/schemas/link"    
     recordPLU:
       type: object
       required:
         - id
-        - geometry
         - properties
       properties:
         id:
           type: string
-          description: A unique identifier of the catalogue record.
+          description: A unique identifier of the catalog record.
           format: uri
+          example: 'abcd-1234-efgh-5678'
+          xml:
+            name: 'dct:identifier'
         geometry:
           $ref: "#/components/schemas/polygonPLU"
         properties:
@@ -534,25 +609,41 @@ components:
               type: string
               description: Date of creation of this record.
               format: date-time
+              example: '2022-06-07T12:22:11Z'
+              xml:
+                name: 'dct:issued'
             recordUpdated:
               type: string
               description: The most recent date on which the record was changed.
               format: date-time
+              example: '2022-06-07T12:22:11Z'
+              xml:
+                name: 'dct:modified'
             type:
               type: string
-              description: The type of EIA procedure.
-              format: uri
+              description: The type of spatial-related plan.
+              example: 'Bebauungsplan'
+              xml:
+                name: 'plu:pluPlanType'
             title:
               type: string
-              description: Title of the EIA procedure.
+              description: Title of the spatial-related plan or procedure.
+              xml:
+                name: 'dct:title'
+              example: 'Bebauungsplan-Entwurf HafenCity 18 - Bürogebäude nördlich Heizwerk'
             description:
               type: string
-              description: A free-text description of the EIA procedure.
+              description: A free-text description of the spatial-related plan or procedure.
+              xml:
+                name: 'dct:description'
+              example: 'Der Bebauungsplan schafft die planungsrechtlichen Voraussetzungen für ein Bürogebäude nördlich des bestehenden Heizwerkes, das zukunftsweisend als Null-Emissionsgebäude konzipiert ist. Zur nachhaltigen Energieversorgung von Kreuzfahrtschiffen wird im Untergeschoss des Gebäudes die Umspannstation für den Landstromanschluss des Kreuzfahrtterminals HafenCity integriert.'
             formats:
               type: array
               description: A list of available distributions of the resource.
               items:
                 type: string
+              xml:
+                name: 'dct:format' # oder "dcat:distribution"
             contactPoint:
               type: string
               description: |-
@@ -560,6 +651,8 @@ components:
                  practice is to use a VCard
                  (see https://www.w3.org/TR/vcard-rdf/).
               format: uri
+              xml:
+                name: 'dcat:contactPoint'
             extent:
               $ref: "#/components/schemas/extent"
             associations:
@@ -571,7 +664,12 @@ components:
                 this resource.
               items:
                 $ref: "#/components/schemas/link"
+              xml:
+                name: 'dcat:distribution'
+              example: 'https://dcat-ap-plu.info/resource/0123-abcd-4567-efgh/test.pdf'
           additionalProperties: true
+      xml:
+        name: 'dcat:dataset'
     polygonPLU:
       type: object
       required:
@@ -610,61 +708,6 @@ components:
             - version
             - date
   responses:
-    Collection:
-      description: |-
-        Information about the record collection with id `collectionId`.
-        The response contains a link to the items in the collection
-        (path `/collections/{collectionId}/items`, link relation `items`)
-        as well as key information about the collection. This information
-        includes:
-        * A local identifier for the collection that is unique for the +
-          catalogue;
-        * A list of coordinate reference systems (CRS) in which geometries +
-          may be returned by the server. The first CRS is the default +
-          coordinate reference system (the default is always WGS 84 with +
-          axis order longitude/latitude);
-        * An optional title and description for the collection;
-        * An optional extent that can be used to provide an indication of +
-          the spatial and temporal extent of the collection - typically +
-          derived from the data;
-        * An optional indicator about the type of the items in the collection +
-          (the default value, if the indicator is not provided, is 'record').
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/collectionInfo'
-        text/html:
-          schema:
-            type: string
-    Collections:
-      description: |-
-        The record collections shared by this API.
-        Catalogues are organized as one or more record collections. This
-        resource provides information about and access to these collections.
-        The response contains the list of record collections (itemType=record).
-        For each record collection, a link to the items in the collection
-        (path `/collections/{collectionId}/items`, link relation `items`) as
-        well as key information about the collection. This information
-        includes...
-        * A local identifier for the collection that is unique for the +
-          catalogue;
-        * A list of coordinate reference systems (CRS) in which geometries +
-          may be returned by the server. The first CRS is the default +
-          coordinate reference system (the default is always WGS 84 with axis +
-          order longitude/latitude);
-        * An optional title and description for the collection;
-        * An optional extent that can be used to provide an indication of the +
-          spatial and temporal extent of the collection - typically derived +
-          from the data;
-        * An optional indicator about the type of the items in the collection +
-          (the default value, if the indicator is not provided, is 'record').
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/collections'
-        text/html:
-          schema:
-            type: string   
     ConformanceDeclaration:
       description: |-
        The URIs of all conformance classes supported by the server. To support "generic" clients that want to access multiple OGC API Records implementations - and not "just" a specific API / server, the server declares the conformance classes it implements and conforms to.
@@ -677,52 +720,12 @@ components:
             type: string
     LandingPage:
       description: |-
-        The landing page provides links to the API definition and the Record
-        Collections (path `/collections`, link relation
-        `data`).
+        The OGC API landing page for the EIA metadata information system. The landing page provides links to the API definition and the Record
+        Collections (path `/collections`), the conformance declatartion (path '/conformance') and other resources in the API.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/landingPage'
-        text/html:
-          schema:
-            type: string
-    Record:
-      description: |-
-        Fetch the record with id `recordId` in the record collection
-        with id `collectionId`.  The XML representation of a record
-        is an ATOM entry.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/recordPLU'
-        text/html:
-          schema:
-            type: string
-    Records:
-      description: |-
-        The response is a document consisting of records in the collection.
-        The records included in the response are determined by the server
-        based on the query parameters of the request. To support access to
-        larger collections without overloading the client, the API supports
-        paged access with links to the next page, if more records are selected
-        that the page size.
-        The `bbox` and `datetime` parameter can be used to select only a
-        subset of the records in the collection (the records that are in the
-        bounding box or time interval). The `bbox` parameter matches all records
-        in the collection that are not associated with a location, too. The
-        `datetime` parameter matches all records in the collection that are
-        not associated with a time stamp or interval, too.
-        The `limit` parameter may be used to control the subset of the
-        selected records that should be returned in the response, the page size.
-        Each page may include information about the number of selected and
-        returned records (`numberMatched` and `numberReturned`) as well as
-        links to support paging (link relation `next`).
-        The XML representation of the response document is an ATOM feed.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/recordsPLU'
         text/html:
           schema:
             type: string
