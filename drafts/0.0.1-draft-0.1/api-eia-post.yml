@@ -161,6 +161,8 @@ paths:
           description: Successful operation
         400:
           $ref: '#/components/responses/400InvalidInput'
+        404:
+          $ref: '#/components/responses/404NotFound'
         500:
           $ref: '#/components/responses/500GenericError'
   /collections/{collectionId}/items/{recordId}:
@@ -461,16 +463,14 @@ components:
       properties:
         spatial:
           description: |-
-            The spatial extent of the records in the collection.
+            The spatial extent of the records in the catalog.
           type: object
           properties:
             bbox:
               description: |-
-                One or more bounding boxes that describe the spatial extent of
-                the dataset. In the Core only a single bounding box is
-                supported. Extensions may support additional areas. If multiple
-                areas are provided, the union of the bounding boxes describes
-                the spatial extent.
+                A bounding box that describes the spatial extent of
+                the dataset. For EIAs only a single bounding box is
+                supported for each record.
               type: array
               minItems: 1
               items:
@@ -528,7 +528,7 @@ components:
             name: "dct:spatial"    
         temporal:
           description: |-
-            The temporal extent of the records in the collection.
+            The temporal extent of the records in the catalog.
           type: object
           properties:
             interval:
@@ -647,22 +647,6 @@ components:
             - description
             - extent
           properties:
-            geometry:
-              $ref: "#/components/schemas/polygonEIA"
-            recordCreated:
-              type: string
-              description: Date of creation of this record.
-              format: date-time
-              example: '2022-06-07T12:22:11Z'
-              xml:
-                name: 'dct:issued'
-            recordUpdated:
-              type: string
-              description: The most recent date on which the record was changed.
-              format: date-time
-              example: '2022-06-07T12:22:11Z'
-              xml:
-                name: 'dct:modified'
             type:
               type: string
               description: The type of EIA procedure.
@@ -681,6 +665,22 @@ components:
               xml:
                 name: 'dct:description'
               example: 'Hier steht eine Beschreibung des UVP Vorhabens.'
+            extent:
+              $ref: "#/components/schemas/extent"
+            recordCreated:
+              type: string
+              description: Date of creation of this record.
+              format: date-time
+              example: '2022-06-07T12:22:11Z'
+              xml:
+                name: 'dct:issued'
+            recordUpdated:
+              type: string
+              description: The most recent date on which the record was changed.
+              format: date-time
+              example: '2022-06-07T12:22:11Z'
+              xml:
+                name: 'dct:modified'
             formats:
               type: array
               description: A list of available distributions of the resource.
@@ -697,8 +697,6 @@ components:
               format: uri
               xml:
                 name: 'dcat:contactPoint'
-            extent:
-              $ref: "#/components/schemas/extent"
             eianumber:
               type: string
               description: The EIA number according to UVPG.
@@ -742,13 +740,6 @@ components:
           properties:
             geometry:
               $ref: "#/components/schemas/polygonEIA"
-            recordCreated:
-              type: string
-              description: Date of creation of this record.
-              format: date-time
-              example: '2022-06-07T12:22:11Z'
-              xml:
-                name: 'dct:issued'
             recordUpdated:
               type: string
               description: The most recent date on which the record was changed.
@@ -817,26 +808,6 @@ components:
           additionalProperties: true
       xml:
         name: 'dcat:dataset'
-    polygonEIA:
-      type: object
-      required:
-        - type
-        - coordinates
-      properties:
-        type:
-          type: string
-          enum:
-            - Polygon
-        coordinates:
-          type: array
-          items:
-            type: array
-            minItems: 4
-            items:
-              type: array
-              minItems: 2
-              items:
-                type: number
     Version:
       type: object
       description: A version
