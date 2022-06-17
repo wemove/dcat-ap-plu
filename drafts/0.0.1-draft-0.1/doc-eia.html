@@ -48,33 +48,41 @@
 
     <section id="definitions">
      <h2 id="definitions">Definitionen und Terminologie</h2>
-     <p></p>
+
+     <section id="namespaces">
+       <h3 id="namespaces">Verwendete Spezifikationen</h3>
+
+        <p>Das vorliegende Metadatenmodell baut auf das europäische Metadatenaustauschschema DCAT-AP auf und erweitert dieses mit einzelnen Klassen und Eigenschaften.
+        In DCAT bzw. DCAT-AP wird auf Klassen und Eigenschaften vieler anderer Vokabulare zurückgegriffen, insbesondere Dublin Core DCTERMS.
+        Weiterhin wurde für den deutschen Nutzungskontext die standardkonforme Anpassung DCAT-AP.de entwickelt. Diese hat den Zweck des Austauschs von Metadaten offener Verwaltungsdaten für deutsche Open Data-Portale (https://www.dcat-ap.de).
+        Im vorliegenden Modell wird, soweit vorhanden, auf Klassen und Eigenschaften zurückgegriffen, wie sie in der aktuellen <a href="https://www.dcat-ap.de/def/dcatde/2.0/spec/specification.pdf">Spezifikation</a> dcat-ap.de definiert sind.</p>
+        <p>Namensräume und Prefixe auf die im vorliegenden Datenmodell zurückgegriffen wird, sind in der folgenden Tabelle aufgelistet.</p>
+        <table id="table-namespaces">
+          <thead><tr><th>Prefix</th><th>Namensraum</th></tr></thead>
+          <tbody>
+          <tr><td><code>dcat</code></td><td><code>http://www.w3.org/ns/dcat#</code></td></tr>
+          <tr><td><code>dct</code></td><td><code>http://purl.org/dc/terms/</code></td></tr>
+          <tr><td><code>dctype</code></td><td><code>http://purl.org/dc/dcmitype/</code></td></tr>
+          <tr><td><code>foaf</code></td><td><code>http://xmlns.com/foaf/0.1/</code></td></tr>
+          <tr><td><code>locn</code></td><td><code>http://www.w3.org/ns/locn#</code></td></tr>
+          <tr><td><code>rdf</code></td><td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td></tr>
+          <tr><td><code>rdfs</code></td><td><code>http://www.w3.org/2000/01/rdf-schema#</code></td></tr>
+          <tr><td><code>skos</code></td><td><code>http://www.w3.org/2004/02/skos/core#</code></td></tr>
+          <tr><td><code>time</code></td><td><code>http://www.w3.org/2006/time#</code></td></tr>
+          <tr><td><code>xsd</code></td><td><code>http://www.w3.org/2001/XMLSchema#</code></td></tr>
+          <tr><td><code>adms</code></td><td><code>https://www.w3.org/ns/adms#</code></td></tr>
+          </tbody>
+        </table>
+     </section>
     </section>
 
-    <section id="namespaces">
-     <h2 id="namespaces">Namensräume</h2>
-
-      <p>Das vorliegende Metadatenmodell baut auf das europäische Metadatenaustauschschema DCAT-AP auf und erweitert dieses mit einzelnen Klassen und Eigenschaften.
-      In DCAT bzw. DCAT-AP wird auf Klassen und Eigenschaften vieler anderer Vokabulare zurückgegriffen, insbesondere Dublin Core DCTERMS.
-      Weiterhin wurde für den deutschen Nutzungskontext die standardkonforme Anpassung DCAT-AP.de entwickelt. Diese hat den Zweck des Austauschs von Metadaten offener Verwaltungsdaten für deutsche Open Data-Portale (https://www.dcat-ap.de).
-      Im vorliegenden Modell wird, soweit vorhanden, auf Klassen und Eigenschaften zurückgegriffen, wie sie in der aktuellen <a href="https://www.dcat-ap.de/def/dcatde/2.0/spec/specification.pdf">Spezifikation</a> dcat-ap.de definiert sind.</p>
-      <p>Namensräume und Prefixe auf die im vorliegenden Datenmodell zurückgegriffen wird, sind in der folgenden Tabelle aufgelistet.</p>
-      <table id="table-namespaces">
-        <thead><tr><th>Prefix</th><th>Namensraum</th></tr></thead>
-        <tbody>
-        <tr><td><code>dcat</code></td><td><code>http://www.w3.org/ns/dcat#</code></td></tr>
-        <tr><td><code>dct</code></td><td><code>http://purl.org/dc/terms/</code></td></tr>
-        <tr><td><code>dctype</code></td><td><code>http://purl.org/dc/dcmitype/</code></td></tr>
-        <tr><td><code>foaf</code></td><td><code>http://xmlns.com/foaf/0.1/</code></td></tr>
-        <tr><td><code>locn</code></td><td><code>http://www.w3.org/ns/locn#</code></td></tr>
-        <tr><td><code>rdf</code></td><td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td></tr>
-        <tr><td><code>rdfs</code></td><td><code>http://www.w3.org/2000/01/rdf-schema#</code></td></tr>
-        <tr><td><code>skos</code></td><td><code>http://www.w3.org/2004/02/skos/core#</code></td></tr>
-        <tr><td><code>time</code></td><td><code>http://www.w3.org/2006/time#</code></td></tr>
-        <tr><td><code>xsd</code></td><td><code>http://www.w3.org/2001/XMLSchema#</code></td></tr>
-        <tr><td><code>adms</code></td><td><code>https://www.w3.org/ns/adms#</code></td></tr>
-        </tbody>
-      </table>
+    <section id="uml-diagram">
+      <h2 id="definitions">UML-Diagramm</h2>
+      <p>Das UML-Diagramm des DCAT-EIA enthält alle Klassen, welche auch in DCAT-AP enthalten sind.</p>
+      <figure id="pic-id-uml">
+        <a href="DCAT-AP-EIA.JPG" target="_blank"><img src="DCAT-AP-EIA.JPG" alt="UML-Diagramm aller DCAT-AP-Klassen einschließlich der DCAT-EIA Erweiterungen " width="1907" height="1684"></a>
+        <figcaption span class="fig-title">UML-Diagramm aller DCAT-AP-Klassen einschließlich der DCAT-EIA Erweiterungen</span></figcaption>
+      </figure>
     </section>
 
     <section id="vocabulary-specification">
