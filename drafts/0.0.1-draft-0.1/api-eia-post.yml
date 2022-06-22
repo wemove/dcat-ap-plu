@@ -191,9 +191,9 @@ paths:
     put: 
       tags:
         - Records
-      summary: update an existing record
+      summary: update an existing record (existing record is replaced completely)
       description: |-
-        update an existing record with 'recordID' into the catalog with id 'collectionID'.
+        update an existing record with 'recordID' into the catalog with id 'collectionID'. The complete record is replaced by the updated record.
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/recordId'
@@ -202,7 +202,7 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/updateRecordEIA'
+              $ref: '#/components/schemas/recordEIA'
       responses:
         200:
           description: Successful operation
@@ -213,7 +213,7 @@ paths:
     patch: 
       tags:
         - Records
-      summary: update a property of an existing record
+      summary: update a property of an existing record (other properties remain as-is)
       description: |-
         update some property of an existing record with 'recordID' into the catalog with id 'collectionID'.
       parameters:
@@ -224,7 +224,7 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/updateRecordEIA' # evtl neues Schema notwendig
+              $ref: '#/components/schemas/updateRecordEIA'
       responses:
         200:
           description: Successful operation
