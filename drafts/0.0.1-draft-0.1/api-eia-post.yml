@@ -210,6 +210,28 @@ paths:
           $ref: '#/components/responses/400InvalidInput'
         500:
           $ref: '#/components/responses/500GenericError'
+    patch: 
+      tags:
+        - Records
+      summary: update a property of an existing record
+      description: |-
+        update some property of an existing record with 'recordID' into the catalog with id 'collectionID'.
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/recordId'
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/updateRecordEIA' # evtl neues Schema notwendig
+      responses:
+        200:
+          description: Successful operation
+        400:
+          $ref: '#/components/responses/400InvalidInput'
+        500:
+          $ref: '#/components/responses/500GenericError'
 components:
   parameters:
     bbox:
@@ -738,8 +760,6 @@ components:
         properties:
           type: object
           properties:
-            geometry:
-              $ref: "#/components/schemas/polygonEIA"
             recordUpdated:
               type: string
               description: The most recent date on which the record was changed.
