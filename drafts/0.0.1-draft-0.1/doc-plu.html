@@ -353,8 +353,8 @@
           </table>
         </section>
 
-        <section id="Property:pluPanType">
-          <h4 id="property-pluPlan-type">Eigenschaft: Plantyp</h4>
+        <section id="Property:pluPlanType">
+          <h4 id="property-pluPlan-type">Eigenschaft: Art des Plans</h4>
           <table class="definition">
           <thead><tr><th>URI:</th><th>plu:pluPlanType</th></tr></thead>
           <tbody>
@@ -832,12 +832,24 @@
       </section>
 
       <section id="codelist-pluProcedureState">
-        <h3 id="codelist-pluProcedureState">Codeliste für Verfahrensstatus<a class="self-link" href="#codelist-pluProcedureState"></a></h3>
+        <h3 id="codelist-pluPlanState">Codeliste für Status eines Plans<a class="self-link" href="#codelist-pluPlanState"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
-          <tr><td>2001</td> <td>in Aufstellung</td></tr>
-          <tr><td>2002</td> <td>festgesetzt</td></tr>
+          <tr><td>2001</td> <td>geplant</td></tr>
+          <tr><td>2002</td> <td>laufend</td></tr>
+          <tr><td>2003</td> <td>abgeschlossen</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="codelist-pluPlanState">
+        <h3 id="codelist-pluPlanState">Codeliste für Status eines Plans<a class="self-link" href="#codelist-pluPlanState"></a></h3>
+        <table>
+          <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+          <tr><td>3001</td> <td>in Aufstellung</td></tr>
+          <tr><td>3002</td> <td>festgesetzt</td></tr>
           </tbody>
         </table>
       </section>
@@ -890,7 +902,7 @@
       </section>
 
       <section id="codelist-pluProcessStepType">
-        <h3 id="codelist-pluProcessStepType">Codeliste für Arten von Verfahrensschritten bei raumbezogenen Verfahren<a class="self-link" href="#codelist-pluProcessStepType"></a></h3>
+        <h3 id="codelist-pluProcessStepType">Codeliste für Arten von Verfahrensschritten bei raumbezogenen Verfahren<a class="self-link" href="#codelist-pluProcessStepType"></a></h3> <!--ist das auch als Status des Verfahrens zu verstehen?-->
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
