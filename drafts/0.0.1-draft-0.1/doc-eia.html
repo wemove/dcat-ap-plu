@@ -266,33 +266,6 @@
           </table>
         </section>
 
-        <section id="Property:resource_keyword">
-          <h4 id="property-keyword-tag">Eigenschaft: Schlagworte</h4>
-          <table class="definition">
-          <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#keyword">dcat:keyword</a></th></tr></thead>
-          <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
-          <tr><td class="prop">Definition:</td><td>Ein oder mehrere Schlagworte oder Schlüsselbegriffe, die den Datensatz beschreiben</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
-          </tbody>
-          </table>
-        </section>
-
-        <section id="Property:resource_theme">
-          <h4 id="property-theme-category">Eigenschaft: Thema / Kategorie <a class="self-link" aria-label="§" href="#Property:resource_theme"></a></h4>
-
-          <table class="definition">
-              <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#theme">dcat:theme</a></th></tr></thead>
-              <tbody>
-              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
-              <tr><td class="prop">Definition:</td><td>Hauptkategorie des Datensatzes</td></tr>
-              <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a></td></tr>
-              <tr><td class="prop">Anwendungshinweis:</td><td>Ein Datensatz kann mehreren Kategorien angehören. Der Satz von <a href="http://www.w3.org/2004/02/skos/core#Concept"><code>skos:Concept</code></a>s die den Datensatz kategorisieren sind in einem
-                 <a href="http://www.w3.org/2004/02/skos/core#ConceptScheme"><code>skos:ConceptScheme</code></a> organisiert, das alle Kategorien im Katalog beschreibt.</td></tr>
-              </tbody>
-          </table>
-        </section>
-
         <section id="Property:distribution_release_date">
           <h4 id="property-release-date">Eigenschaft: Veröffentlichungsdatum</h4>
           <table class="definition">
@@ -323,7 +296,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/identifier">dct:identifier</a></th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Eineindeutiger Identifikator des Datensatzes im Kontext des jeweiligen Katalogs</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          </tbody>
@@ -361,7 +334,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th>eia:eiaProcedureType</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Art des UVP Verfahrens</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. Linienbestimmung, Zulassungsverfahren. Die möglichen Verfahrensarten sind durch eine <a href="#codelist-eiaProcedureType">Codeliste</a> festgelegt.
@@ -375,7 +348,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th>eia:prelimAssessment</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Eine Vorprüfung dient der Feststellung der UVP-Pflicht. Mit dieser Eigenschaft wird erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
@@ -593,6 +566,20 @@
           </tbody>
         </table>
        </section>
+
+       <section id="Property:periodOfTime">
+        <h4 id="property-period-of-time">Eigenschaft: Zeitbezug</h4>
+        <table class="definition">
+        <thead><tr><th>URI:</th><th>dct:PeriodOfTime</th></tr></thead>
+        <tbody>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+        <tr><td class="prop">Definition:</td><td>Zeitbezug der Distribution</td></tr>
+        <tr><td class="prop">Typ/Wertebereich:</td>dct:temporal</td></tr>
+        <tr><td class="prop">Anwendungshinweis:</td><td>Über diese Eigenschaft kann der Zeitraum, in dem eine Distribution verfügbar sein soll, definiert werden.</td></tr>
+        </tbody>
+        </table>
+       </section>
+
       </section>
 
       <section id="Class:Process_Step">
@@ -644,6 +631,19 @@
          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verknüpft den Verfahrensschritt mit einer verfügbaren Distribution.</td></tr>
          </tbody>
          </table>
+       </section>
+
+       <section id="Property:periodOfTime">
+        <h4 id="property-period-of-time">Eigenschaft: Zeitbezug</h4>
+        <table class="definition">
+        <thead><tr><th>URI:</th><th>dct:PeriodOfTime</th></tr></thead>
+        <tbody>
+        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+        <tr><td class="prop">Definition:</td><td>Zeitbezug des Verfahrensschrittes</td></tr>
+        <tr><td class="prop">Typ/Wertebereich:</td>dct:temporal</td></tr>
+        <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verknüpft den Verfahrensschritt mit einem Zeitraum.</td></tr>
+        </tbody>
+        </table>
        </section>
 
       </section>
@@ -725,7 +725,6 @@
 
         <section id="Property:location_bbox">
             <h4 id="property-bounding-box">Eigenschaft: Bounding Box</h4>
-
             <table class="definition">
               <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#bbox" title="http://www.w3.org/ns/dcat#centroid">dcat:bbox</a></th></tr></thead>
               <tbody>
