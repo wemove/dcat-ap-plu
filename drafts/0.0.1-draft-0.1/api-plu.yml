@@ -575,7 +575,7 @@ components:
             - Raumordnungspläne
             - Landschaftspläne
           xml: 
-            name: 'plu:pluPlanType'
+            name: 'plu:planType'
         records:
           type: array
           items:
@@ -624,7 +624,7 @@ components:
               description: The type of spatial-related plan.
               example: 'Bebauungsplan'
               xml:
-                name: 'plu:pluPlanType'
+                name: 'plu:planType'
             title:
               type: string
               description: Title of the spatial-related plan or procedure.

@@ -50,21 +50,21 @@
       </dcterms:spatial>
       <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-01T00:00:00.000Z</dcterms:issued>
       <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-01T00:00:00.000Z</dcterms:modified>
-      <plu:pluPlanState rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanState/festgesetzt"/>
-      <plu:pluProcedureState rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureState/laufend"/>
+      <plu:planState rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanState/festgesetzt"/>
+      <plu:procedureState rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureState/laufend"/>
       <plu:procedureStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-04-01T00:00:00.000Z</plu:procedureStartDate>
       <dcterms:relation rdf:resource:"http://uvp-verbund.de/trefferanzeige?docuuid=D33223C6-F4A3-40B5-9E69-CED36D2A69A2">UVP Verfahren</dcterms:relation>
-      <plu:pluPlanType rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanType/Bebauungsplan"/>
-      <plu:pluPlanTypeFine rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanType/EinfachBP"/>
-      <plu:pluProcedureType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureType/normal"/>
-      <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
-      <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123"/>
-      <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123"/>
+      <plu:planType rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanType/Bebauungsplan"/>
+      <plu:planTypeFine rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanType/EinfachBP"/>
+      <plu:procedureType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureType/normal"/>
+      <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
+      <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123"/>
+      <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123"/>
    </dcat:Dataset>
 
-   <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
+   <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
        <dcterms:identifier> ProcStep-0123 </dcterms:identifier>
-       <plu:ProcessStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/OeffAusl"/>
+       <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/OeffAusl"/>
        <dcat:distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
        <dcterms:temporal>
           <dcterms:PeriodOfTime>
@@ -72,11 +72,11 @@
                <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-11</schema:endDate>
           </dcterms:PeriodOfTime>
        </dcterms:temporal>
-    </plu:ProcessStep>
+    </plu:processStep>
 
-    <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123">
+    <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123">
        <dcterms:identifier> ProcStep-1123 </dcterms:identifier>
-       <plu:ProcessStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/Eroert"/>
+       <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/Eroert"/>
        <dcat:distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
        <dcterms:temporal>
           <dcterms:PeriodOfTime>
@@ -84,11 +84,11 @@
                <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-12</schema:endDate>
           </dcterms:PeriodOfTime>
        </dcterms:temporal>
-    </plu:ProcessStep>
+    </plu:processStep>
 
-    <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123">
+    <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123">
        <dcterms:identifier> ProcStep-2123 </dcterms:identifier>
-       <plu:ProcessStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/FruehBetOeff"/>
+       <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/FruehBetOeff"/>
        <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
        <dcterms:temporal>
           <dcterms:PeriodOfTime>
@@ -96,7 +96,7 @@
                <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-06-13</schema:endDate>
           </dcterms:PeriodOfTime>
        </dcterms:temporal>
-    </plu:ProcessStep>
+    </plu:processStep>
     
     <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
        <dcterms:title xml:lang="de">Planzeichnung</dcterms:title>
@@ -104,7 +104,7 @@
        <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
        <dcterms:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/PDF"/>
        <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
-       <plu:pluDocType rdf:resource="http://publications.informationgrid.eu/resource/authority/pluDocType/Planzeichnung">
+       <plu:docType rdf:resource="http://publications.informationgrid.eu/resource/authority/pluDocType/Planzeichnung">
         <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-01T00:00:00.000Z</dcterms:modified>
     </dcat:Distribution>
 
@@ -114,7 +114,7 @@
        <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
        <dcterms:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/PDF"/>
        <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
-       <plu:pluDocType rdf:resource="http://publications.informationgrid.eu/resource/authority/pluDocType/Planzeichnung">
+       <plu:docType rdf:resource="http://publications.informationgrid.eu/resource/authority/pluDocType/Planzeichnung">
         <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-01T00:00:00.000Z</dcterms:modified>
     </dcat:Distribution>
 </rdf:RDF>

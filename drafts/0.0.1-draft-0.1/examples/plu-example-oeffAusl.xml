@@ -47,15 +47,15 @@
          </dcterms:Location>
       </dcterms:spatial>
       <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-01T00:00:00.000Z</dcterms:modified>
-      <plu:pluPlanType rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanType/Bebauungsplan-Entwurf"/>
-      <plu:pluProcedureState rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureState/tbd"/>
-      <plu:pluProcedureType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureType/tbd"/>
-      <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/processStep"/>
+      <plu:planType rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanType/Bebauungsplan-Entwurf"/>
+      <plu:procedureState rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureState/tbd"/>
+      <plu:procedureType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureType/tbd"/>
+      <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/processStep"/>
    </dcat:Dataset>
 
-   <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/processStep">
+   <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/processStep">
        <dcterms:identifier> 0000-0000-0000-0000 </dcterms:identifier>
-       <plu:ProcessStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/OeffAusl"/>
+       <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/OeffAusl"/>
        <dcat:distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
        <dcterms:temporal>
           <dcterms:PeriodOfTime>
@@ -63,7 +63,7 @@
                <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-11</schema:endDate>
           </dcterms:PeriodOfTime>
        </dcterms:temporal>
-  </plu:ProcessStep>
+  </plu:processStep>
     
     <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
        <dcterms:title xml:lang="de">Planzeichnung</dcterms:title>
