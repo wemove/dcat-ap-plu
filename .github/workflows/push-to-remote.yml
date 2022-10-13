@@ -1,0 +1,21 @@
+name: Execute ls-remote on remote git repo
+on: [ workflow_dispatch ]
+#name: Push to remote repo on incoming push to this repo
+#on: [ workflow_dispatch, push ]
+jobs:
+  push-to-remote:
+    runs-on: ubuntu-latest
+    steps:
+#      - uses: actions/checkout@v3
+#        with:
+#          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of the personal access token.
+#          fetch-depth: 0  # otherwise, there would be errors pushing refs to the destination repository.
+      - name: List remote repo contents
+#      - name: Push checked out repo to remote
+        env:
+          URL: ${{ secrets.REMOTE_URL }}
+          PAT: ${{ secrets.REMOTE_PAT }}
+        run: |
+          echo "A test"
+          git -c http.extraheader "Authorization: Basic $PAT" ls-remote $URL
+#          git -c http.extraheader "Authorization: Basic $PAT" push --all --force-with-lease $URL
