@@ -3,6 +3,7 @@ on: [ push, workflow_dispatch ]
 jobs:
   push-to-remote:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' # run this job only for the main branch
     steps:
       - uses: actions/checkout@v3
         with:
