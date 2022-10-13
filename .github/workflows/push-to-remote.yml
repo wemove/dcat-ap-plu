@@ -22,4 +22,4 @@ jobs:
           ls -l
           echo "\n* Push main branch to remote repo"
           echo "---"
-          git -c http.extraheader="Authorization: Basic $PAT" push --force-with-lease $URL main
+          git -c http.extraheader="Authorization: Basic $PAT" push --force $URL main
