@@ -17,5 +17,5 @@ jobs:
           PAT: ${{ secrets.REMOTE_PAT }}
         run: |
           echo "A test"
-          git -c http.extraheader "Authorization: Basic $PAT" ls-remote $URL
-#          git -c http.extraheader "Authorization: Basic $PAT" push --all --force-with-lease $URL
+          git -c http.extraheader="Authorization: Basic $PAT" ls-remote $URL
+#          git -c http.extraheader="Authorization: Basic $PAT" push --all --force-with-lease $URL
