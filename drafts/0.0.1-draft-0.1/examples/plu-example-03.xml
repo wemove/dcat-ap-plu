@@ -1,120 +1,145 @@
-<rdf:RDF>
-   <dcat:Catalog rdf:about="https://bauleitplanung.hamburg.de/">
-     <dcat:dataset rdf:resource="https://bauleitplanung.hamburg.de/verfahren/17b94f6a-28ba-11e7-af94-0050568a354d/public/detail">
-     <dcterms:description xml:lang="de">Dies ist das Portal für die Recherche von Bauleitplanungen des Landes Hamburg. Hier finden Sie viele Informationen rund um das Themenfeld der Stadt- und Bauleitplanung. Zudem haben wir Ihnen verschiedene Hilfestellungen und Anleitungen für die Arbeit mit Bauleitplanung online bereitgestellt. </dcterms:description>
-     <dcterms:title xml:lang="de">Bauleitplanung online</dcterms:title>
-     <dcterms:publisher>
-         <foaf:Agent>
-             <foaf:name>Freie und Hansestadt Hamburg</foaf:name>
-             <dct:type>Herausgeber</dct:type>
-         </foaf:Agent>
-     </dcterms:publisher>
-     <foaf:homepage rdf:resource="https://bauleitplanung.hamburg.de/"/>
-     <dcat:themeTaxonomy>...</dcat:themeTaxonomy>
-   </dcat:Catalog>
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:locn="http://www.w3.org/ns/locn#"
+    xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+    <dcat:Catalog rdf:about="https://bauleitplanung.hamburg.de/">
+        <dcat:dataset rdf:resource="https://bauleitplanung.hamburg.de/verfahren/17b94f6a-28ba-11e7-af94-0050568a354d/public/detail" />
+        <dct:description xml:lang="de">Dies ist das Portal für die Recherche von Bauleitplanungen des Landes Hamburg. Hier finden Sie viele Informationen rund um das Themenfeld der Stadt- und Bauleitplanung. Zudem haben wir Ihnen verschiedene Hilfestellungen und Anleitungen für die Arbeit mit Bauleitplanung online bereitgestellt. </dct:description>
+        <dct:title xml:lang="de">Bauleitplanung online</dct:title>
+        <dct:publisher>
+            <foaf:Agent>
+                <foaf:name>Freie und Hansestadt Hamburg</foaf:name>
+                <dct:type>Herausgeber</dct:type>
+            </foaf:Agent>
+        </dct:publisher>
+        <foaf:homepage rdf:resource="https://bauleitplanung.hamburg.de/"/>
+    </dcat:Catalog>
 
-   <dcat:Dataset rdf:about="https://bauleitplanung.hamburg.de/verfahren/17b94f6a-28ba-11e7-af94-0050568a354d/public/detail">
-      <dcterms:title xml:lang="de">Altona-Nord27-Bahrenfeld72</dcterms:title>
-      <dcterms:description xml:lang="de">
-      Planungsanlass
-      Der Bebauungsplan Altona-Nord 27 / Bahrenfeld 72 soll ergänzend zu einem Planfeststellungsbeschluss für Bahnbetriebs- und Verkehrsanlagen die planungsrechtlichen Voraussetzungen für die Entwicklung eines Empfangsgebäudes für den neuen Fern- und Regionalbahnhof schaffen. Darüber hinaus sollen öffentliche Vorplatzflächen sowie die notwendigen Flächen zur Herstellung der äußeren Verkehrserschließung des Bahnhofs planungsrechtlich gesichert werden.
-      
-      Aktuelle Mitteilungen
-      Der Bebauungsplan-Entwurf Altona-Nord 27 / Bahrenfeld 72 wird vom
-      03. März 2022 bis 11. April 2022
-      öffentlich ausgelegt. Alle relevanten Informationen können Sie hier einsehen. Sie finden hier zudem den Veröffentlichungstext aus dem Amtlichen Anzeiger zur öffentlichen Auslegung des Bebauungsplan-Entwurfs als PDF-Dokument (Link oben rechts in diesem Feld). Diesem können Sie allgemeine Informationen zum Bebauungsplanverfahren sowie den Auslegungsort im Bezirksamt mit Sprechzeiten vor Ort entnehmen.
-      </dcterms:description>
-      <dcat:contactPoint>
-         <vcard:Organization>
-         <vcard:fn>Behörde für Stadtentwicklung und Wohnen
-          Amt für Landesplanung und Stadtentwicklung
-          Projektgruppe Planung Mitte Altona
-           </vcard:fn>
-         <vcard:hasPostalCode>21109</vcard:hasPostalCode>
-         <vcard:hasStreetAddress>Neuenfelder Straße 19</vcard:hasStreetAddress>
-         <vcard:hasLocality>Hamburg</vcard:hasLocality>
-         <vcard:hasCountryName>Deutschland</vcard:hasCountryName>
-         <vcard:hasEmail rdf:resource="info@bsw.hamburg.de"/>
-         </vcard:Organization>
-      </dcat:contactPoint>
-      <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
-      <dcat:distribution rdf:about="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f/distribution">
-      <dcterms:identifier>17b94f6a-28ba-11e7-af94-0050568a354d</dcterms:identifier>
-      <dcterms:spatial>
-         <dcterms:Location>
-             <locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
-              {"type": "Polygon", "coordinates": [[[9.97, 53.54], [10, 53.54], [10, 53.56], [9.97, 53.56], [9.97, 53.54]]]}
-             </locn:geometry>
-             <locn:geographicName> Altona Nord 27 / Bahrenfeld 72 </locn:geographicName>
-         </dcterms:Location>
-      </dcterms:spatial>
-      <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-05-01T00:00:00.000Z</dcterms:issued>
-      <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-01T00:00:00.000Z</dcterms:modified>
-      <plu:planState rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanState/festgesetzt"/>
-      <plu:procedureState rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureState/laufend"/>
-      <plu:procedureStartDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-04-01T00:00:00.000Z</plu:procedureStartDate>
-      <dcterms:relation rdf:resource:"http://uvp-verbund.de/trefferanzeige?docuuid=D33223C6-F4A3-40B5-9E69-CED36D2A69A2">UVP Verfahren</dcterms:relation>
-      <plu:planType rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanType/Bebauungsplan"/>
-      <plu:planTypeFine rdf:resource="http://publications.informationgrid.eu/resource/authority/PlanType/EinfachBP"/>
-      <plu:procedureType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcedureType/normal"/>
-      <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
-      <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123"/>
-      <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123"/>
-   </dcat:Dataset>
+    <dcat:Dataset rdf:about="https://bauleitplanung.hamburg.de/verfahren/17b94f6a-28ba-11e7-af94-0050568a354d/public/detail">
+        <dct:title xml:lang="de">Altona-Nord27-Bahrenfeld72</dct:title>
+        <dct:description xml:lang="de">
+        Planungsanlass
+        Der Bebauungsplan Altona-Nord 27 / Bahrenfeld 72 soll ergänzend zu einem Planfeststellungsbeschluss für Bahnbetriebs- und Verkehrsanlagen die planungsrechtlichen Voraussetzungen für die Entwicklung eines Empfangsgebäudes für den neuen Fern- und Regionalbahnhof schaffen. Darüber hinaus sollen öffentliche Vorplatzflächen sowie die notwendigen Flächen zur Herstellung der äußeren Verkehrserschließung des Bahnhofs planungsrechtlich gesichert werden.
 
-   <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
-       <dcterms:identifier> ProcStep-0123 </dcterms:identifier>
-       <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/OeffAusl"/>
-       <dcat:distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
-       <dcterms:temporal>
-          <dcterms:PeriodOfTime>
-               <schema:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-03-03</schema:startDate>
-               <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-11</schema:endDate>
-          </dcterms:PeriodOfTime>
-       </dcterms:temporal>
+        Aktuelle Mitteilungen
+        Der Bebauungsplan-Entwurf Altona-Nord 27 / Bahrenfeld 72 wird vom
+        03. März 2022 bis 11. April 2022
+        öffentlich ausgelegt. Alle relevanten Informationen können Sie hier einsehen. Sie finden hier zudem den Veröffentlichungstext aus dem Amtlichen Anzeiger zur öffentlichen Auslegung des Bebauungsplan-Entwurfs als PDF-Dokument (Link oben rechts in diesem Feld). Diesem können Sie allgemeine Informationen zum Bebauungsplanverfahren sowie den Auslegungsort im Bezirksamt mit Sprechzeiten vor Ort entnehmen.
+        </dct:description>
+        <dcat:contactPoint>
+            <vcard:Organization>
+                <vcard:fn>Behörde für Stadtentwicklung und Wohnen
+                Amt für Landesplanung und Stadtentwicklung
+                Projektgruppe Planung Mitte Altona
+                </vcard:fn>
+                <vcard:hasPostalCode>21109</vcard:hasPostalCode>
+                <vcard:hasStreetAddress>Neuenfelder Straße 19</vcard:hasStreetAddress>
+                <vcard:hasLocality>Hamburg</vcard:hasLocality>
+                <vcard:hasCountryName>Deutschland</vcard:hasCountryName>
+                <vcard:hasEmail>info@bsw.hamburg.de</vcard:hasEmail>
+            </vcard:Organization>
+        </dcat:contactPoint>
+        <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
+        <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f/distribution"/>
+        <dct:identifier>17b94f6a-28ba-11e7-af94-0050568a354d</dct:identifier>
+        <dct:spatial>
+            <dct:Location>
+                <dcat:bbox>
+                    <gml:Polygon>
+                        <gml:exterior>
+                            <gml:LinearRing>
+                                <gml:posList>9.97 53.54 10 53.54 10 53.56 9.97 53.56 9.97 53.54</gml:posList>
+                            </gml:LinearRing>
+                        </gml:exterior>
+                    </gml:Polygon>
+                </dcat:bbox>
+                <locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
+                    {"type": "Polygon", "coordinates": [[[9.97, 53.54], [10, 53.54], [10, 53.56], [9.97, 53.56], [9.97, 53.54]]]}
+                </locn:geometry>
+                <dcat:centroid>
+                    <dcat:centroid>
+                        <gml:Point>
+                            <gml:pos>9.985 53.55</gml:pos>
+                        </gml:Point>
+                    </dcat:centroid>
+                </dcat:centroid>
+                <locn:geographicName>Altona Nord 27 / Bahrenfeld 72</locn:geographicName>
+            </dct:Location>
+        </dct:spatial>
+        <dct:issued>2022-05-01T00:00:00.000Z</dct:issued>
+        <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
+        <plu:planState>3002</plu:planState>
+        <plu:procedureState>2002</plu:procedureState>
+        <plu:procedureStartDate>2022-04-01T00:00:00.000Z</plu:procedureStartDate>
+        <dct:relation rdf:resource="http://uvp-verbund.de/trefferanzeige?docuuid=D33223C6-F4A3-40B5-9E69-CED36D2A69A2">UVP Verfahren</dct:relation>
+        <plu:planType>1000</plu:planType>
+        <plu:planTypeFine>1100</plu:planTypeFine>
+        <plu:procedureType>1001</plu:procedureType>
+        <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123"/>
+        <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123"/>
+        <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123"/>
+    </dcat:Dataset>
+
+    <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
+        <dct:identifier>ProcStep-0123</dct:identifier>
+        <plu:processStepType>3004</plu:processStepType>
+        <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
+        <dct:temporal>
+            <dct:PeriodOfTime>
+                <dcat:startDate>2022-03-03</dcat:startDate>
+                <dcat:endDate>2022-05-11</dcat:endDate>
+            </dct:PeriodOfTime>
+        </dct:temporal>
     </plu:processStep>
 
     <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123">
-       <dcterms:identifier> ProcStep-1123 </dcterms:identifier>
-       <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/Eroert"/>
-       <dcat:distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
-       <dcterms:temporal>
-          <dcterms:PeriodOfTime>
-               <schema:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-12</schema:startDate>
-               <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-12</schema:endDate>
-          </dcterms:PeriodOfTime>
-       </dcterms:temporal>
+        <dct:identifier>ProcStep-1123</dct:identifier>
+        <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/Eroert"/>
+        <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
+        <dct:temporal>
+            <dct:PeriodOfTime>
+                <dcat:startDate>2022-05-12</dcat:startDate>
+                <dcat:endDate>2022-05-12</dcat:endDate>
+            </dct:PeriodOfTime>
+        </dct:temporal>
     </plu:processStep>
 
     <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123">
-       <dcterms:identifier> ProcStep-2123 </dcterms:identifier>
-       <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/FruehBetOeff"/>
-       <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
-       <dcterms:temporal>
-          <dcterms:PeriodOfTime>
-               <schema:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-05-13</schema:startDate>
-               <schema:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-06-13</schema:endDate>
-          </dcterms:PeriodOfTime>
-       </dcterms:temporal>
+        <dct:identifier> ProcStep-2123 </dct:identifier>
+        <plu:processStepType>3002</plu:processStepType>
+        <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
+        <dct:temporal>
+            <dct:PeriodOfTime>
+                <dcat:startDate>2022-05-13</dcat:startDate>
+                <dcat:endDate>2022-06-13</dcat:endDate>
+            </dct:PeriodOfTime>
+        </dct:temporal>
     </plu:processStep>
-    
+     
     <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
-       <dcterms:title xml:lang="de">Planzeichnung</dcterms:title>
-       <dcterms:description> Planzeichnung </dcterms:description>
-       <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
-       <dcterms:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/PDF"/>
-       <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
-       <plu:docType rdf:resource="http://publications.informationgrid.eu/resource/authority/pluDocType/Planzeichnung">
-        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-01T00:00:00.000Z</dcterms:modified>
+        <dct:title xml:lang="de">Planzeichnung</dct:title>
+        <dct:description> Planzeichnung </dct:description>
+        <dcat:accessURL>https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f</dcat:accessURL>
+        <dct:format>application/pdf</dct:format>
+        <dcat:downloadURL>https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f</dcat:downloadURL>
+        <plu:docType>4003</plu:docType>
+        <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
 
     <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f/distribution">
-       <dcterms:title xml:lang="de">Verordnung</dcterms:title>
-       <dcterms:description>Hier finden Sie die Verordnung über den Bebauungsplan Altona-Nord 27 / Bahrenfeld 72.</dcterms:description>
-       <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
-       <dcterms:format rdf:resource="http://publications.europa.eu/resource/authority/file-type/PDF"/>
-       <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
-       <plu:docType rdf:resource="http://publications.informationgrid.eu/resource/authority/pluDocType/Planzeichnung">
-        <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2022-06-01T00:00:00.000Z</dcterms:modified>
+        <dct:title xml:lang="de">Verordnung</dct:title>
+        <dct:description>Hier finden Sie die Verordnung über den Bebauungsplan Altona-Nord 27 / Bahrenfeld 72.</dct:description>
+        <dcat:accessURL>https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f</dcat:accessURL>
+        <dct:format>application/pdf</dct:format>
+        <dcat:downloadURL>https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f</dcat:downloadURL>
+        <plu:docType>4004</plu:docType>
+        <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
 </rdf:RDF>
