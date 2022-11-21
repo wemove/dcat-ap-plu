@@ -73,6 +73,11 @@
                 <locn:geographicName>Altona Nord 27 / Bahrenfeld 72</locn:geographicName>
             </dct:Location>
         </dct:spatial>
+        <dct:publisher>
+            <foaf:Agent>
+                <foaf:name>Freie und Hansestadt Hamburg</foaf:name>
+            </foaf:Agent>
+        </dct:publisher>
         <dct:issued>2022-05-01T00:00:00.000Z</dct:issued>
         <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
         <plu:planState>3002</plu:planState>
