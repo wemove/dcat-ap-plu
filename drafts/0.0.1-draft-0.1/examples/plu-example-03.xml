@@ -16,7 +16,7 @@
         <dct:publisher>
             <foaf:Agent>
                 <foaf:name>Freie und Hansestadt Hamburg</foaf:name>
-                <dct:type>Herausgeber</dct:type>
+                <dct:type>http://purl.org/adms/publishertype/LocalAuthority</dct:type>
             </foaf:Agent>
         </dct:publisher>
         <foaf:homepage rdf:resource="https://bauleitplanung.hamburg.de/"/>
@@ -76,6 +76,7 @@
         <dct:publisher>
             <foaf:Agent>
                 <foaf:name>Freie und Hansestadt Hamburg</foaf:name>
+                <dct:type>http://purl.org/adms/publishertype/LocalAuthority</dct:type>
             </foaf:Agent>
         </dct:publisher>
         <dct:issued>2022-05-01T00:00:00.000Z</dct:issued>
