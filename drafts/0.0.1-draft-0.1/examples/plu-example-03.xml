@@ -86,7 +86,7 @@
         <plu:procedureStartDate>2022-04-01T00:00:00.000Z</plu:procedureStartDate>
         <dct:relation rdf:resource="http://uvp-verbund.de/trefferanzeige?docuuid=D33223C6-F4A3-40B5-9E69-CED36D2A69A2">UVP Verfahren</dct:relation>
         <plu:planType>1000</plu:planType>
-        <plu:planTypeFine>1100</plu:planTypeFine>
+        <plu:planTypeFine>6_3_EinfacherBPlan</plu:planTypeFine>
         <plu:procedureType>1001</plu:procedureType>
         <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123"/>
         <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123"/>
