@@ -184,6 +184,24 @@ paths:
           $ref: '#/components/responses/404NotFound'
         500:
           $ref: '#/components/responses/500GenericError'
+    delete:
+      tags:
+        - Records
+      summary: delete a single record
+      description: |-
+        Delete the record with id `recordId` in the catalog
+        with id `collectionId`.
+      operationId: deleteRecord
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/recordId'
+      responses:
+        200:
+          description: Successful operation
+        404:
+          $ref: '#/components/responses/404NotFound'
+        500:
+          $ref: '#/components/responses/500GenericError'
 components:
   parameters:
     bbox:
