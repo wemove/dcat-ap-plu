@@ -28,7 +28,7 @@
     <section id="abstract" class="informative">
       <h2 id="introduction">Zusammenfassung</h2>
       <p>Die vorliegende Spezifikation eines Metadatenmodells wurde für die Beschreibung von Umweltverträglichkeitsprüfungen entwickelt, mit dem Ziel, diese über ein Metadaten-Informationssystem recherchierbar und editierbar machen zu können.
-      Als Basis dienen die Standards von DCAT-AP sowie DCAT-AP.de. Soweit Begriffe aus existierenden Vokabularen mit adequaten Bedeutungen existieren, wurden diese verwendet, wie z.B. dct:title und foaf:homepage. Sofern keine passenden Begriffe vorhanden waren, wurden eigene Begriffe ergänzt, um die speziellen Sachverhalte bei UVP-Verfahren abbilden zu können, z.B. eia:Number für die UVP-Nummern.
+      Als Basis dienen die Standards von DCAT-AP sowie DCAT-AP.de. Soweit Begriffe aus existierenden Vokabularen mit adequaten Bedeutungen existieren, wurden diese verwendet, wie z.B. dct:title und foaf:homepage. Sofern keine passenden Begriffe vorhanden waren, wurden eigene Begriffe ergänzt, um die speziellen Sachverhalte bei UVP-Verfahren abbilden zu können, z.B. eia:number für die UVP-Nummern.
       </p>
     </section>
 
@@ -95,7 +95,7 @@
         <table class="definition">
           <thead><tr><th>URI der Klasse:</th><th><a href="https://www.w3.org/ns/dcat#Catalog">dcat:Catalog</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Eine Sammlung oder Quelle, welche die beschriebenen Datensätze, Datenservices oder Kataloge zur Verfügung stellt</td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Ein web-basierter Datenkatalog wird i.d.R. durch eine Instanz dieser Klasse repräsentiert.</td></tr>
           </tbody>
@@ -106,7 +106,7 @@
           <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
             <tr><td class="prop">Definition:</td><td>Name / Bezeichnung des Katalogs, Freitext</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft bezeichnet den einem Katalog zugewiesenen Titel. Sie kann für parallele Sprachversionen des Katalogtitels wiederholt werden.
@@ -120,7 +120,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/description">dct:description</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Beschreibung des Katalogs, Freitext</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft enthält eine Beschreibung des Kataloges als Freitext. Sie kann für parallel existierende Sprachversionen der Katalogbeschreibung wiederholt werden.
@@ -135,7 +135,7 @@
           <table class="definition">
               <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/publisher">dct:publisher</a></th></tr></thead>
               <tbody>
-              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+              <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
               <tr><td class="prop">Definition:</td><td>Diejenige Stelle / Organisation, die für die Bereitstellung des Katalogs verantwortlich ist.</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a></td></tr>
               <tr><td class="prop">Anwendungshinweis:</td><td>Es wird empfohlen, Ressourcen vom Typ <a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a>
@@ -149,7 +149,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://xmlns.com/foaf/0.1/homepage">foaf:homepage</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
           <tr><td class="prop">Definition:</td><td>Homepage des Katalogs (Webdokument, idR als HTML verfügbar)</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Document"><code>foaf:Document</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verweist auf eine Homepage, welche die zentrale Homepage des Kataloges ist.
@@ -163,7 +163,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung des Katalogs</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a>
           <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft enthält das Datum der Herausgabe/Emission (z.B. in Form einer Veröffentlichung) des Katalogs.</td></tr>
@@ -176,7 +176,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/modified">dct:modified</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Datum, an dem der Katalog zuletzt verändert, aktualisiert oder modifiziert wrude.</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a>
            </tbody>
@@ -189,7 +189,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/language">dct:language</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Sprache des Katalogs, in der die Textelemente der Metadaten verfasst sind (z.B. Titel, Beschreibung).</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td>
           <p><a href="http://purl.org/dc/terms/LinguisticSystem"><code>dct:LinguisticSystem</code></a></p></td></tr>
@@ -205,7 +205,7 @@
           <table class="definition">
               <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#themeTaxonomy">dcat:themeTaxonomy</a></th></tr></thead>
               <tbody>
-              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+              <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
               <tr><td class="prop">Definition:</td><td>Schema zur Klassifizierung der im Katalog verzeichneten Datensätze</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2004/02/skos/core#ConceptScheme"><code>skos:ConceptScheme</code></a></td></tr>
               <tr><td class="prop">Anwendungshinweis:</td><td>
@@ -221,7 +221,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#dataset">dcat:dataset</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Eine logische Entität, welche die veröffentlichten Informationen repräsentiert. Verknüpft den Katalog mit einem Datensatz, welcher somit Teil des Katalogs wird.</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="#Class:Dataset"><code>dcat:Dataset</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Ein Datensatz beschreibt ein UVP-Verfahren egal welchen Verfahrenstyps.</td></tr>
@@ -235,7 +235,7 @@
         <table class="definition">
           <thead><tr><th>URI der Klasse:</th><th><a href="http://www.w3.org/ns/dcat#CatalogRecord">dcat:CatalogRecord</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
           <tr><td class="prop">Definition:</td><td>Die Beschreibung des Eintrags in einem Katalog.</td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Diese optionale Klasse kann verwendet werden für Kataloge, bei denen eine Unterscheidung gemacht werden soll oder muss zwischen den Metadaten eines Datensatzes und Metadaten über den Eintrag des Datensatzes in den Katalog.</td></tr>
          </tbody>
@@ -246,7 +246,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/modified">dct:modified</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Datum der letzten Aktualisierung oder Modifikation des Katalogeintrags</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a></td></tr>
           </tbody>
@@ -258,7 +258,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/modified">foaf:primaryTopic</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Diese Eigenschaft verknüpft den Katalogeintrag mit dem im Eintrag beschriebenen dcat:Dataset</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td>dcat:Dataset</td></tr>
           </tbody>
@@ -270,7 +270,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Name / Bezeichnung des Katalogeintrags als Freitext</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
           </tbody>
@@ -282,7 +282,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Datum an dem der Katalogeintrag erstellt wurde</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft enthält das Datum an dem der Katalogeintrag im Katalog erstellt wurde.</td></tr>
@@ -298,7 +298,7 @@
         <table class="definition">
           <thead><tr><th>URI der Klasse:</th><th><a href="http://www.w3.org/ns/dcat#Dataset">dcat:Dataset</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Eine logische Entität, welche die veröffentlichten Informationen repräsentiert</td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Im vorliegenden Anwendungsfall beschreibt ein Datensatz ein UVP-Verfahren egal welchen Verfahrenstyps.</td></tr>
           </tbody>
@@ -309,7 +309,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Name / Bezeichnung des Datensatzes als Freitext</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
           </tbody>
@@ -321,7 +321,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/description">dct:description</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Beschreibung des Datensatzes als Freitext</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
           </tbody>
@@ -333,7 +333,7 @@
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
           <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung des Datensatzes</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft enthält das Datum der Herausgabe/Emission (z.B. in Form einer Veröffentlichung) des Datensatzes</td></tr>
@@ -346,7 +346,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/modified">dct:modified</a></th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
          <tr><td class="prop">Definition:</td><td>Datum der letzten Aktualisierung oder Modifikation des Datensatzes</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a>
          </tbody>
@@ -358,7 +358,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/identifier">dct:identifier</a></th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Eineindeutiger Identifikator des Datensatzes im Kontext des jeweiligen Katalogs</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          </tbody>
@@ -370,7 +370,7 @@
          <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Ansprechpartner zum Datensatz. Die Benutzung von vCard wird empfohlen.</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/TR/vcard-rdf/#Kind"><code>vcard:Kind</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Der Ansprechpartner stellt im UVP Anwendungsfall die verfahrensführende Behörde dar.</td></tr>
@@ -381,9 +381,9 @@
        <section id="Property:eia_number">
         <h4 id="property-eia-number">Eigenschaft: UVP Nummer</h4>
         <table class="definition">
-        <thead><tr><th>URI:</th><th>eia:Number</th></tr></thead>
+        <thead><tr><th>URI:</th><th>eia:number</th></tr></thead>
         <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+        <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
         <tr><td class="prop">Definition:</td><td>UVP Nummer nach UVPG</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>Eine UVP Nummer ist für UVP Verfahren verpflichtend anzugeben.</td></tr>
@@ -394,9 +394,9 @@
        <section id="Property:eiaProcedure_Type">
          <h4 id="property-eaiProcedure-Type">Eigenschaft: UVP Verfahrensart</h4>
          <table class="definition">
-         <thead><tr><th>URI:</th><th>eia:ProcedureType</th></tr></thead>
+         <thead><tr><th>URI:</th><th>eia:procedureType</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Art des UVP Verfahrens</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. Linienbestimmung, Zulassungsverfahren. Die möglichen Verfahrensarten sind durch eine <a href="#codelist-eiaProcedureType">Codeliste</a> festgelegt.
@@ -410,7 +410,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th>eia:prelimAssessment</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Eine Vorprüfung dient der Feststellung der UVP-Pflicht. Mit dieser Eigenschaft wird erfasst, ob eine Vorprüfung durchgeführt wurde oder nicht.</td></tr>
@@ -423,7 +423,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th>eia:decisionDate</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
          <tr><td class="prop">Definition:</td><td>Datum der Entscheidung über die Zulassung oder Ablehnung des Vorhabens</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
          </tbody>
@@ -435,7 +435,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th>eia:receiptDate</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
          <tr><td class="prop">Definition:</td><td>Datum an dem der Antrag eingegangen ist</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
          </tbody>
@@ -447,7 +447,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th>dct:spatial</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Raumbezug des Datensatzes</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://purl.org/dc/terms/Location"><code>dct:Location</code></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Ein räumlicher Bereich oder ein bezeichneter Ort. Er kann durch ein kontrolliertes Vokabular oder mit geographischen Koordinaten repräsentiert werden. Im letzteren Fall wird die Verwendung des Core Location Vocabulary empfohlen, wie in der GeoDCAT-AP-Spezifikation beschrieben</td></tr>
@@ -460,7 +460,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th>dcat:distribution</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
          <tr><td class="prop">Definition:</td><td>Distribution</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/ns/dcat#Distribution"><code>dcat:Distribution</code></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verknüpft den Datensatz mit einer verfügbaren Distribution.</td></tr>
@@ -473,9 +473,9 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th>eia:processStep</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
          <tr><td class="prop">Definition:</td><td>Verfahrensschritt</td></tr>
-         <tr><td class="prop">Typ/Wertebereich:</td><td>eia:ProcessStep</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td>eia:processStep</td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verknüpft den Datensatz (das UVP Vorhaben) mit einem Verfahrensschritt.</td></tr>
          </tbody>
          </table>
@@ -486,7 +486,7 @@
         <table class="definition">
         <thead><tr><th>URI:</th><th>dct:relation</th></tr></thead>
         <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+        <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
         <tr><td class="prop">Definition:</td><td>Verweis auf einen anderen Datensatz.</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>Über diese Eigenschaft kann eine Verknüpfung mit einem anderen Verfahren dargestellt werden.</td></tr>
@@ -501,7 +501,7 @@
        <table class="definition">
           <thead><tr><th>URI der Klasse:</th><th><a href="http://www.w3.org/ns/dcat#Distribution">dcat:Distribution</a></th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Eine Repräsentation eines Datensatzes in einem bestimmten Format</td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Die Distribution stellt die generelle Verfügbarkeit eines Datensatzes dar aber beinhaltet nicht zwangsweise eine Zugangsmöglichkeit zu den Daten wie z.B.durch direkten
           Download, <abbr title="Application Programming Interface">API</abbr>, oder durch eine Internetseite.
@@ -514,7 +514,7 @@
          <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#accessURL">dcat:accessURL</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
             <tr><td class="prop">Definition:</td><td>URL der Ressource die den Zugang zu einer Distribution des Datensatzes bietet (z.B. landing page)</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>
@@ -532,7 +532,7 @@
         <table class="definition">
            <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#accessURL">dcat:downloadURL</a></th></tr></thead>
            <tbody>
-           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+           <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
            <tr><td class="prop">Definition:</td><td>URL der Ressource die den Zugang zu einer Distribution des Datensatzes bietet. (Z.B. landing page)</td></tr>
            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
            <tr><td class="prop">Anwendungshinweis:</td><td>
@@ -547,7 +547,7 @@
          <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
             <tr><td class="prop">Definition:</td><td>Titel / Bezeichnung der Distribution als Freitext</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
             </tbody>
@@ -559,7 +559,7 @@
          <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/description">dct:description</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
             <tr><td class="prop">Definition:</td><td>Beschreibung der Distribution als Freitext</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
             </tbody>
@@ -571,7 +571,7 @@
          <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
             <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung der Distribution</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft enthält das Datum der Herausgabe/Emission (z.B. in Form einer Veröffentlichung) der Distribution.</td></tr>
@@ -584,7 +584,7 @@
          <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/modified">dct:modified</a></th></tr></thead>
             <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
             <tr><td class="prop">Definition:</td><td>Aktualisierungs- bzw. Veränderungsdatum der Distribution</td></tr>
             <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft erfasst das Datum der letzten Aktualisierung bzw. Modifikation der Distribution. </td></tr>  
@@ -597,7 +597,7 @@
          <table class="definition">
            <thead><tr><th>URI:</th><th>eia:DocType</th></tr></thead>
            <tbody>
-           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+           <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
            <tr><td class="prop">Definition:</td><td>Art eines Dokuments im Zusammenhang mit UVP-Verfahren</td></tr>
            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
            <tr><td class="prop">Anwendungshinweis:</td><td>Über diese Eigenschaft wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem UVP-Verfahren zur Verfügung gestellt werden können, wie z.B. Auslegungsinformationen ("announcement"), Berichte und Emfpehlungen ("reportsRecommendation") oder Entscheidungen ("decision"). Die möglichen Dokumententypen sind durch eine <a href="#codelist-eiaDocType">Codeliste </a> festgelegt.</td></tr>
@@ -610,7 +610,7 @@
          <table class="definition">
            <thead><tr><th>URI:</th><th>eia:validUntil</th></tr></thead>
            <tbody>
-           <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+           <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
            <tr><td class="prop">Definition:</td><td>Datum, bis zu dem die Distribution gültig bzw. veröffentlicht ist.</td></tr>
            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
            </tbody>
@@ -622,7 +622,7 @@
         <table class="definition">
           <thead><tr><th>URI:</th><th>dct:format</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Format, in dem die Distribution zur Verfügung steht.</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td> dct:MediaTypeOrExtent </td></tr>
           </tbody>
@@ -632,11 +632,11 @@
        <section id="Property:periodOfTime">
         <h4 id="property-period-of-time">Eigenschaft: Zeitbezug</h4>
         <table class="definition">
-        <thead><tr><th>URI:</th><th>dct:PeriodOfTime</th></tr></thead>
+        <thead><tr><th>URI:</th><th>dct:periodOfTime</th></tr></thead>
         <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+        <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
         <tr><td class="prop">Definition:</td><td>Zeitbezug der Distribution</td></tr>
-        <tr><td class="prop">Typ/Wertebereich:</td>dct:temporal</td></tr>
+        <tr><td class="prop">Typ/Wertebereich:</td><td>dct:temporal</td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>Über diese Eigenschaft kann der Zeitraum, in dem eine Distribution verfügbar sein soll, definiert werden.</td></tr>
         </tbody>
         </table>
@@ -650,7 +650,7 @@
        <table class="definition">
           <thead><tr><th>URI der Klasse:</th><th>eia:ProcessStep</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Verfahrensschritt</td></tr>
           <tr><td class="prop">Anwendungshinweis</td><td>Eine Instanz dieser Klasse bildet einen Verfahrensschritt ab.</td></tr>
           </tbody>
@@ -672,9 +672,9 @@
        <section id="Property:eia_Process_Step_Type">
          <h4 id="property-eia-process-step-type">Eigenschaft: Art des Prozessschrittes</h4>
          <table class="definition">
-         <thead><tr><th>URI:</th><th>eia:ProcessStepType</th></tr></thead>
+         <thead><tr><th>URI:</th><th>eia:processStepType</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Art des Verfahrensschrittes bei UVP Verfahren</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Verfahrensschrittes bei UVP-Verfahren beschrieben. Die möglichen Arten von Verfahrensschritten sind durch eine <a href="#codelist-eiaProcessStepType">Codeliste</a> definiert. </td></tr>
@@ -687,7 +687,7 @@
          <table class="definition">
          <thead><tr><th>URI:</th><th>dcat:distribution</th></tr></thead>
          <tbody>
-         <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+         <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
          <tr><td class="prop">Definition:</td><td>Distribution</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/ns/dcat#Distribution"><code>dcat:Distribution</code></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verknüpft den Verfahrensschritt mit einer verfügbaren Distribution.</td></tr>
@@ -700,7 +700,7 @@
         <table class="definition">
         <thead><tr><th>URI:</th><th>dct:PeriodOfTime</th></tr></thead>
         <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+        <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
         <tr><td class="prop">Definition:</td><td>Zeitbezug des Verfahrensschrittes</td></tr>
         <tr><td class="prop">Typ/Wertebereich:</td>dct:temporal</td></tr>
         <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verknüpft den Verfahrensschritt mit einem Zeitraum.</td></tr>
@@ -716,7 +716,7 @@
         <table class="definition">
           <thead><tr><th>URI der Klasse:</th><th><a title="http://purl.org/dc/terms/PeriodOfTime" href="http://dublincore.org/documents/dcmi-terms/#terms-PeriodOfTime">dct:PeriodOfTime</a></th></tr></thead>
           <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
             <tr><td class="prop">Definition:</td><td>Zeitraum der durch einen Anfang und ein Ende definiert ist.</td></tr>
             <tr>
                <td class="prop">Anwendungshinweis:</td>
@@ -736,7 +736,7 @@
             <table class="definition">
               <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#startDate" title="http://www.w3.org/ns/dcat#startDate">dcat:startDate</a></th></tr></thead>
               <tbody>
-              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+              <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
               <tr><td class="prop">Definition:</td><td>Startdatum des Zeitraums</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td>rdfs:Literal als xsd:gYear, xsd:gYearMonth, xsd:date oder xsd:dateTime.</td></tr>
               </tbody>
@@ -750,7 +750,7 @@
             <table class="definition">
               <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#endDate" title="http://www.w3.org/ns/dcat#endDate">dcat:endDate</a></th></tr></thead>
               <tbody>
-              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+              <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
               <tr><td class="prop">Definition:</td><td>Enddatum des Zeitraums</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td>rdfs:Literal als xsd:gYear, xsd:gYearMonth, xsd:date oder xsd:dateTime</td></tr>
               </tbody>
@@ -765,7 +765,7 @@
         <table class="definition">
           <thead><tr><th>URI der Klasse:</th><th><a title="http://purl.org/dc/terms/Location" href="http://dublincore.org/documents/dcmi-terms/#terms-Location">dct:Location</a></th></tr></thead>
           <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
             <tr><td class="prop">Definition:</td><td>Ein räumlicher Bereich oder ein bezeichneter Ort.</td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>Die Eigenschaft kann durch ein kontrolliertes Vokabular oder mit geographischen Koordinaten repräsentiert werden.</td></tr>
           </tbody>
@@ -777,7 +777,7 @@
             <table class="definition">
               <thead><tr><th>URI:</th><th><a title="http://www.w3.org/ns/locn#geometry" href="http://www.w3.org/ns/locn#geometry">locn:geometry</a></th></tr></thead>
               <tbody>
-              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+              <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
               <tr><td class="prop">Definition:</td><td>Beschreibt die Geometrie einer Ressource.</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
               <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als WKT (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a>) kodiert werden.</td></tr>
@@ -790,7 +790,7 @@
             <table class="definition">
               <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#bbox" title="http://www.w3.org/ns/dcat#centroid">dcat:bbox</a></th></tr></thead>
               <tbody>
-                <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Empfohlen</td></tr>
+                <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
                 <tr><td class="prop">Definition:</td><td>Die Bounding Box einer Ressource.</td></tr>
                 <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
                 <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a>) kodiert werden.</td></tr>
@@ -804,7 +804,7 @@
           <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#centroid" title="http://www.w3.org/ns/dcat#centroid">dcat:centroid</a></th></tr></thead>
             <tbody>
-              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+              <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
               <tr><td class="prop">Definition:</td><td>Das geografische Zentrum (Schwerpunkt) einer Ressource.</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
               <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a>) kodiert werden.</td></tr>
@@ -818,7 +818,7 @@
             <table class="definition">
              <thead><tr><th>URI:</th><th>locn:geographicName</th></tr></thead>
              <tbody>
-              <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+              <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
               <tr><td class="prop">Definition:</td><td>Bevorzugte Bezeichnung des Ortes</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
              </tbody>
@@ -833,7 +833,7 @@
         <table class="definition">
           <thead><tr><th>URI der Klasse:</th><th>foaf:Agent</th></tr></thead>
           <tbody>
-            <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Verpflichtend</td></tr>
+            <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
             <tr><td class="prop">Definition:</td><td>Eine Stelle oder Person, welche mit Katalogen und Datensätzen in unterschiedlichen Rollenausprägungen assoziiert ist.</td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td></td> </tr>
           </tbody>
@@ -845,7 +845,7 @@
            <table class="definition">
             <thead><tr><th>URI:</th><th>foaf:Name</th></tr></thead>
             <tbody>
-             <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+             <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
              <tr><td class="prop">Definition:</td><td>Diese Eigenschaft enthält den Namen der verantwortlichen Stelle.</td></tr>
              <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
             </tbody>
@@ -858,7 +858,7 @@
            <table class="definition">
             <thead><tr><th>URI:</th><th>dct:type</th></tr></thead>
             <tbody>
-             <tr><td class="prop">Verbindlichkeit:</td>:</td><td>Optional</td></tr>
+             <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
              <tr><td class="prop">Definition:</td><td>Diese Eigenschaft bezieht sich auf den Typ der verantwortlichen Stelle,
               die die Ressource bereitstellt.</td></tr>
              <tr><td class="prop">Typ/Wertebereich:</td><td>skos:Concept</td></tr>
