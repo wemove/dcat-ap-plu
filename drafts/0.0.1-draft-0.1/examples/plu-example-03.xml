@@ -91,7 +91,7 @@
         <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123"/>
     </dcat:Dataset>
 
-    <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
+    <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
         <dct:identifier>ProcStep-0123</dct:identifier>
         <plu:processStepType>3004</plu:processStepType>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
@@ -101,9 +101,9 @@
                 <dcat:endDate>2022-05-11</dcat:endDate>
             </dct:PeriodOfTime>
         </dct:temporal>
-    </plu:processStep>
+    </plu:ProcessStep>
 
-    <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123">
+    <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123">
         <dct:identifier>ProcStep-1123</dct:identifier>
         <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/Eroert"/>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
@@ -113,9 +113,9 @@
                 <dcat:endDate>2022-05-12</dcat:endDate>
             </dct:PeriodOfTime>
         </dct:temporal>
-    </plu:processStep>
+    </plu:ProcessStep>
 
-    <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123">
+    <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123">
         <dct:identifier> ProcStep-2123 </dct:identifier>
         <plu:processStepType>3002</plu:processStepType>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
@@ -125,7 +125,7 @@
                 <dcat:endDate>2022-06-13</dcat:endDate>
             </dct:PeriodOfTime>
         </dct:temporal>
-    </plu:processStep>
+    </plu:ProcessStep>
      
     <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
         <dct:title xml:lang="de">Planzeichnung</dct:title>
