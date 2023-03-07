@@ -51,22 +51,14 @@
         <dct:identifier>17b94f6a-28ba-11e7-af94-0050568a354d</dct:identifier>
         <dct:spatial>
             <dct:Location>
-                <dcat:bbox>
-                    <gml:Polygon>
-                        <gml:exterior>
-                            <gml:LinearRing>
-                                <gml:posList>9.97 53.54 10 53.54 10 53.56 9.97 53.56 9.97 53.54</gml:posList>
-                            </gml:LinearRing>
-                        </gml:exterior>
-                    </gml:Polygon>
+                <dcat:bbox rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
+                    {"type": "Polygon", "coordinates": [[[9.97, 53.54], [10.00, 53.54], [10.00, 53.56], [9.97, 53.56], [9.97, 53.54]]]}
                 </dcat:bbox>
                 <locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
-                    {"type": "Polygon", "coordinates": [[[9.97, 53.54], [10, 53.54], [10, 53.56], [9.97, 53.56], [9.97, 53.54]]]}
+                    {"type": "Polygon", "coordinates": [[[9.97, 53.54], [10.00, 53.54], [10.00, 53.56], [9.97, 53.56], [9.97, 53.54]]]}
                 </locn:geometry>
-                <dcat:centroid>
-                    <gml:Point>
-                        <gml:pos>9.985 53.55</gml:pos>
-                    </gml:Point>
+                <dcat:centroid rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
+                    {"type": "Point", "coordinates": [9.985, 53.55] }
                 </dcat:centroid>
                 <locn:geographicName>Altona Nord 27 / Bahrenfeld 72</locn:geographicName>
             </dct:Location>
@@ -91,7 +83,7 @@
         <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123"/>
     </dcat:Dataset>
 
-    <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
+    <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
         <dct:identifier>ProcStep-0123</dct:identifier>
         <plu:processStepType>3004</plu:processStepType>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
@@ -101,9 +93,9 @@
                 <dcat:endDate>2022-05-11</dcat:endDate>
             </dct:PeriodOfTime>
         </dct:temporal>
-    </plu:processStep>
+    </plu:ProcessStep>
 
-    <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123">
+    <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123">
         <dct:identifier>ProcStep-1123</dct:identifier>
         <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/Eroert"/>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
@@ -113,9 +105,9 @@
                 <dcat:endDate>2022-05-12</dcat:endDate>
             </dct:PeriodOfTime>
         </dct:temporal>
-    </plu:processStep>
+    </plu:ProcessStep>
 
-    <plu:processStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123">
+    <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123">
         <dct:identifier> ProcStep-2123 </dct:identifier>
         <plu:processStepType>3002</plu:processStepType>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
@@ -125,7 +117,7 @@
                 <dcat:endDate>2022-06-13</dcat:endDate>
             </dct:PeriodOfTime>
         </dct:temporal>
-    </plu:processStep>
+    </plu:ProcessStep>
      
     <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
         <dct:title xml:lang="de">Planzeichnung</dct:title>
