@@ -518,8 +518,7 @@
           <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
           <tr><td class="prop">Definition:</td><td>Bearbeiter des Datensatzes</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://xmlns.com/foaf/0.1/Agent"><code>foaf:Agent</code></a></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verweist auf Stellen oder Personen, die die Daten bearbeitet
-            haben (z.B. durch Formatierung derselben).</td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verweist auf Stellen oder Personen, die die Daten bearbeitet haben (z.B. durch Formatierung derselben).</td></tr>
           </tbody>
           </table>
         </section>
@@ -536,6 +535,19 @@
           </tbody>
           </table>
         </section>
+
+        <section id="Property:dataset_development_freeze_period">
+          <h4 id="property-dev-freeze">Eigenschaft: Veränderungssperre</h4>
+          <table class="definition">
+          <thead><tr><th>URI:</th><th>plu:developmentFreezePeriod</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Zeitraum einer Veränderungssperre</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td>dct:PeriodOfTime</td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft beschreibt den Zeitraum, in dem eine Veränderugssperre wirksam ist.</td></tr>
+          </tbody>
+          </table>
+       </section>
 
      </section>
 
@@ -712,7 +724,7 @@
        </section>
 
        <section id="Property:distribution">
-         <h4 id="property-distribution">Eigenschaft: Distribution</h4>
+         <h4 id="property-distribution-2">Eigenschaft: Distribution</h4>
          <table class="definition">
          <thead><tr><th>URI:</th><th>dcat:distribution</th></tr></thead>
          <tbody>
@@ -810,7 +822,7 @@
               <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
               <tr><td class="prop">Definition:</td><td>Beschreibt die Geometrie einer Ressource.</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
-              <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code>)</a> kodiert werden.</td></tr>
+              <tr><td class="prop">Anwendungshinweis:</td><td>Die Geometrie muss im GeoJSON Format beschrieben werden.</td></tr>
               </tbody>
             </table>
         </section>
@@ -824,7 +836,7 @@
                 <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
                 <tr><td class="prop">Definition:</td><td>Die Bounding Box einer Ressource</td></tr>
                 <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
-                <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code>)</a> kodiert werden.</td></tr>
+                <tr><td class="prop">Anwendungshinweis:</td><td>Die Bounding Box muss im GeoJSON Format beschrieben werden.</td></tr>
               </tbody>
             </table>
         </section>
@@ -838,7 +850,7 @@
               <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
               <tr><td class="prop">Definition:</td><td>Das geografische Zentrum (Schwerpunkt) einer Ressource.</td></tr>
               <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title="http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a></td></tr>
-              <tr><td class="prop">Anwendungshinweis:</td><td>Bewusst generisch gehalten um verschiedene geometrische Kodierungen zu erlauben. So könnte die Geometrie z.B. als <abbr title="Well-known Text">WKT</abbr> (<a href="http://www.opengis.net/ont/geosparql#asWKT"><code title="http://www.opengis.net/ont/geosparql#asWKT">geosparql:asWKT</code></a>) kodiert werden.</td></tr>
+              <tr><td class="prop">Anwendungshinweis:</td><td>Das geografische Zentrum muss im GeoJSON Format beschrieben werden.</td></tr>
             </tbody>
           </table>
         </section>
