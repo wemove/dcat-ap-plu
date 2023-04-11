@@ -76,7 +76,12 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/collections'
+                type: object
+                properties:
+                  collections:
+                    $ref: '#/components/schemas/collections'
+                xml:
+                  name: rdf:RDF
         500:
           $ref: '#/components/responses/500GenericError'
     post:
@@ -91,7 +96,12 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/collection'
+              type: object
+              properties:
+                collection:
+                  $ref: '#/components/schemas/collection'
+              xml:
+                name: rdf:RDF
       responses:
         200:
           $ref: '#/components/responses/200Success'
@@ -114,7 +124,12 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/collection'
+                type: object
+                properties:
+                  collection:
+                    $ref: '#/components/schemas/collection'
+                xml:
+                  name: rdf:RDF
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -159,7 +174,14 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/records'
+                type: object
+                properties:
+                  collections:
+                    $ref: '#/components/schemas/collections'
+                  records:
+                    $ref: '#/components/schemas/records'
+                xml:
+                  name: rdf:RDF
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -178,7 +200,12 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/record'
+              type: object
+              properties:
+                record:
+                  $ref: '#/components/schemas/record'
+              xml:
+                name: rdf:RDF
       responses:
         200:
           $ref: '#/components/responses/200Success'
@@ -206,7 +233,12 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/record'
+                type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/record'
+                xml:
+                  name: rdf:RDF
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -227,7 +259,12 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/record'
+              type: object
+              properties:
+                record:
+                  $ref: '#/components/schemas/record'
+              xml:
+                name: rdf:RDF
       responses:
         200:
           $ref: '#/components/responses/200Success'
