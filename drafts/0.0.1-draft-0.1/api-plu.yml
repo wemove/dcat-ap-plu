@@ -356,6 +356,26 @@ components:
         type: string
         enum: [Frühzeitige Behördenbeteiligung, Frühzeitige Öffentlichkeitsbeteiligung, Beteiligung der Träger öffentlicher Belange, Öffentliche Auslegung, interne Bearbeitung]
   schemas:
+    agent:
+      description: An agent; i.e. a person or an organisation
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          description: Name of the agent (e.g. full personal name or organisation name)
+          type: string
+          example: Freie und Hansestadt Hamburg
+          xml:
+            name: foaf:name
+        type:
+          description: Type of the agent
+          type: string
+          example: http://purl.org/adms/publishertype/LocalAuthority
+          xml:
+            name: dct:type
+      xml:
+        name: foaf:Agent
     collection:
       description: |-
         Information about the catalog with id `collectionId`.
@@ -391,10 +411,47 @@ components:
           type: string
           xml:
             name: 'dct:description'
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/link'
+        themeTaxonomy:
+          description: TBD
+          type: string
+          example: TBD
+          xml: 
+            name: dcat:themeTaxonomy
+        issued:
+          description: Date of creation of this collection.
+          type: string
+          format: date-time
+          example: '2022-06-07T12:22:11Z'
+          xml:
+            name: 'dct:issued'
+        language:
+          description: The language of the collection and its records.
+          type: string
+          example: german
+          xml: 
+            name: dct:language
+        modified:
+          description: The most recent date on which the collection was changed.
+          type: string
+          format: date-time
+          example: '2022-06-07T12:22:11Z'
+          xml:
+            name: 'dct:modified'
+        homepage:
+          description: A website with additional information about this collection.
+          type: string
+          format: link
+          example: https://portal.diplanung.de/my-catalog
+          xml: 
+            name: foaf:homepage
+        publisher:
+          description: The publisher of this collection.
+          type: object
+          properties:
+            agent:
+              $ref: '#/components/schemas/agent'
+          xml:
+            name: dct:publisher
       xml: 
         name: 'dcat:Catalog'
     collections:
