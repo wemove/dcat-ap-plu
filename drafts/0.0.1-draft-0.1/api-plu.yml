@@ -806,7 +806,7 @@ components:
               example: 'https://dcat-ap-plu.info/resource/0123-abcd-4567-efgh/test.pdf'
           additionalProperties: true
       xml:
-        name: 'dcat:dataset'
+        name: 'dcat:Dataset'
     polygonPLU:
       type: object
       required:
