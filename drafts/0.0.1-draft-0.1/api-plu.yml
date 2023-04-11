@@ -79,6 +79,26 @@ paths:
                 $ref: '#/components/schemas/collections'
         500:
           $ref: '#/components/responses/500GenericError'
+    post:
+      tags:
+        - Collections
+      summary: post a new collection
+      description:
+        Add the collection specified in the request body
+      operationId: postCollection
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/collection'
+      responses:
+        200:
+          $ref: '#/components/responses/200Success'
+        400:
+          $ref: '#/components/responses/400InvalidInput'
+        500:
+          $ref: '#/components/responses/500GenericError'
   /collections/{collectionId}: 
     get:
       tags:
