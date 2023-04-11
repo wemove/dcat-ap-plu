@@ -211,6 +211,32 @@ paths:
           $ref: '#/components/responses/404NotFound'
         500:
           $ref: '#/components/responses/500GenericError'
+    put:
+      tags:
+        - Records
+      summary: overwrite an existing record
+      description: |-
+        Update an existing record with id `recordID` in the collection with id `collectionID` by overwriting it.
+        Expects a complete DCAT-AP-PLU document as payload
+      operationId: putRecord
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/recordId'
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+              $ref: '#/components/schemas/record'
+      responses:
+        200:
+          $ref: '#/components/responses/200Success'
+        400:
+          $ref: '#/components/responses/400InvalidInput'
+        404:
+          $ref: '#/components/responses/404NotFound'
+        500:
+          $ref: '#/components/responses/500GenericError'
     delete:
       tags:
         - Records
