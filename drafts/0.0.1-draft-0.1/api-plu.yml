@@ -48,7 +48,11 @@ paths:
           $ref: '#/components/responses/500GenericError'
   /version:
     get:
-      summary: Get version information
+      tags:
+        - Capabilities
+      summary: version information
+      description:
+        The version number of the current API specification for the Information System on Planned Land Use.
       responses:
         200:
           description: Successful operation
@@ -63,6 +67,8 @@ paths:
       tags:
         - Collections
       summary: the catalogs accessible through this API
+      description:
+        A list of all catalogs that are accessible through this API in DCAT-AP-PLU format via the specified file format
       operationId: getCollections
       responses:
         200:
@@ -88,7 +94,7 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/collectionInfo'
+                $ref: '#/components/schemas/collection'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -133,9 +139,7 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/recordsPLU'
-        400:
-          $ref: '#/components/responses/400InvalidInput'
+                $ref: '#/components/schemas/records'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -146,6 +150,7 @@ paths:
       summary: post a new record
       description: |-
         post a record into the collection with id 'collectionID'.
+      operationId: postRecord
       parameters:
         - $ref: '#/components/parameters/collectionId'
       requestBody:
@@ -153,12 +158,14 @@ paths:
         content:
           application/xml:
             schema:
-              $ref: '#/components/schemas/recordPLU'
+              $ref: '#/components/schemas/record'
       responses:
         200:
-          description: Successful operation
+          $ref: '#/components/responses/200Success'
         400:
           $ref: '#/components/responses/400InvalidInput'
+        404:
+          $ref: '#/components/responses/404NotFound'
         500:
           $ref: '#/components/responses/500GenericError'
   /collections/{collectionId}/items/{recordId}:
@@ -179,7 +186,7 @@ paths:
           content:
             application/xml:
               schema:
-                $ref: '#/components/schemas/recordPLU'
+                $ref: '#/components/schemas/record'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -291,7 +298,7 @@ components:
       required: true
       schema:
         type: string
-        example: HH
+        example: hh
     recordId:
       name: recordId
       in: path
@@ -349,7 +356,7 @@ components:
         type: string
         enum: [Frühzeitige Behördenbeteiligung, Frühzeitige Öffentlichkeitsbeteiligung, Beteiligung der Träger öffentlicher Belange, Öffentliche Auslegung, interne Bearbeitung]
   schemas:
-    collectionInfo:
+    collection:
       description: |-
         Information about the catalog with id `collectionId`.
         The response contains a link to the items in the catalog
@@ -363,13 +370,14 @@ components:
           (the default value, if the indicator is not provided, is 'record').
       type: object
       required:
+        - description
         - id
-        - links
+        - title
       properties:
         id:
           description: identifier of the catalog used, for example, in URIs
           type: string
-          example: HH
+          example: hh
           xml:
             name: 'dct:identifier'
         title:
@@ -406,19 +414,9 @@ components:
           from the data;
         * An optional indicator about the type of the items in the catalog +
           (the default value, if the indicator is not provided, is 'record'). 
-      type: object
-      required:
-       - links
-       - collections
-      properties:
-        links:
-          type: array
-          items:
-            $ref: '#/components/schemas/link'
-        collections:
-          type: array
-          items:
-            $ref: '#/components/schemas/collectionInfo'
+      type: array
+      items:
+        $ref: '#/components/schemas/collection'
     confClasses: 
       type: object
       required:
@@ -579,30 +577,11 @@ components:
           type: string
         length:
           type: integer
-    recordsPLU:
-      type: object
-      required:
-        - type
-        - records
-      properties:
-        type:
-          type: string
-          enum:
-            - Bebauungspläne
-            - Regionalpläne
-            - Raumordnungspläne
-            - Landschaftspläne
-          xml: 
-            name: 'plu:planType'
-        records:
-          type: array
-          items:
-            $ref: "#/components/schemas/recordPLU"
-        links:
-          type: array
-          items:
-            $ref: "#/components/schemas/link"    
-    recordPLU:
+    records:
+      type: array
+      items:
+        $ref: "#/components/schemas/record"
+    record:
       type: object
       required:
         - id
@@ -747,6 +726,8 @@ components:
         text/html:
           schema:
             type: string
+    200Success:
+      description: Successful operation
     400InvalidInput:
       description: Invalid input
     401UnauthorizedRequest:
