@@ -2,14 +2,14 @@ openapi: 3.0.3
 info:
   title: PLU API
   version: 0.0.1
-  description: 'This is the API for the Information System on Planned Land Use. Find information on different types of space-related plans and procedures for the production of space-related plans.'
+  description: This is the API for the Information System on Planned Land Use. Find information on different types of spatially-related plans and procedures for the production of spatially-related plans.
   contact:
     name: wemove digital solutions GmbH
     url: https://www.wemove.com
-    email: contact@wemove.dom
-  license: 
-    name: "tbd"
-    url: "https://dcat-ap-plu.info/tbd"
+    email: contact@wemove.com
+  license:
+    name: TODO
+    url: https://dcat-ap-plu.info/tbd
 servers:
   - url: '{baseUrl}/v1'
     description: Development server
@@ -28,9 +28,9 @@ paths:
         statements and to the catalogs and datasets available.
       operationId: getLandingPage
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/LandingPage'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
   /conformance:
     get:
@@ -42,9 +42,9 @@ paths:
         server conforms to.
       operationId: getConformanceDeclaration
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/ConformanceDeclaration'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
   /version:
     get:
@@ -54,13 +54,13 @@ paths:
       description:
         The version number of the current API specification for the Information System on Planned Land Use.
       responses:
-        200:
+        '200':
           description: Successful operation
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/Version'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
   /collections:
     get:
@@ -71,7 +71,7 @@ paths:
         A list of all catalogs that are accessible through this API in DCAT-AP-PLU format via the specified file format
       operationId: getCollections
       responses:
-        200:
+        '200':
           description: Successful operation
           content:
             application/xml:
@@ -82,7 +82,7 @@ paths:
                   properties:
                     collections:
                       $ref: '#/components/schemas/collections'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
     post:
       tags:
@@ -103,13 +103,13 @@ paths:
                     collection:
                       $ref: '#/components/schemas/collection'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/200Success'
-        400:
+        '400':
           $ref: '#/components/responses/400InvalidInput'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
-  /collections/{collectionId}: 
+  /collections/{collectionId}:
     get:
       tags:
         - Collections
@@ -119,7 +119,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/collectionId'
       responses:
-        200:
+        '200':
           description: Successful operation
           content:
             application/xml:
@@ -130,9 +130,9 @@ paths:
                   properties:
                     collection:
                       $ref: '#/components/schemas/collection'
-        404:
+        '404':
           $ref: '#/components/responses/404NotFound'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
   # brauchen wir das noch: /collections/{collectionId}/sortables
   # evtl. /collections/{collectionId}/queryables
@@ -164,7 +164,7 @@ paths:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/q'
       responses:
-        200:
+        '200':
           description: Successful operation
           content:
             application/xml:
@@ -177,16 +177,16 @@ paths:
                       $ref: '#/components/schemas/collections'
                     records:
                       $ref: '#/components/schemas/records'
-        404:
+        '404':
           $ref: '#/components/responses/404NotFound'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
-    post: 
+    post:
       tags:
         - Records
       summary: post a new record
       description: |-
-        post a record into the collection with id 'collectionID'.
+        Post a record into the collection with id `collectionId`.
       operationId: postRecord
       parameters:
         - $ref: '#/components/parameters/collectionId'
@@ -202,13 +202,13 @@ paths:
                     record:
                       $ref: '#/components/schemas/record'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/200Success'
-        400:
+        '400':
           $ref: '#/components/responses/400InvalidInput'
-        404:
+        '404':
           $ref: '#/components/responses/404NotFound'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
   /collections/{collectionId}/items/{recordId}:
     get:
@@ -223,7 +223,7 @@ paths:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/recordId'
       responses:
-        200:
+        '200':
           description: Successful operation
           content:
             application/xml:
@@ -234,17 +234,17 @@ paths:
                   properties:
                     record:
                       $ref: '#/components/schemas/record'
-        404:
+        '404':
           $ref: '#/components/responses/404NotFound'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
     put:
       tags:
         - Records
       summary: overwrite an existing record
       description: |-
-        Update an existing record with id `recordID` in the collection with id `collectionID` by overwriting it.
-        Expects a complete DCAT-AP-PLU document as payload
+        Update an existing record with id `recordId` in the collection with id `collectionId` by overwriting it.
+        Expects a complete DCAT-AP-PLU document as payload.
       operationId: putRecord
       parameters:
         - $ref: '#/components/parameters/collectionId'
@@ -261,13 +261,13 @@ paths:
                     record:
                       $ref: '#/components/schemas/record'
       responses:
-        200:
+        '200':
           $ref: '#/components/responses/200Success'
-        400:
+        '400':
           $ref: '#/components/responses/400InvalidInput'
-        404:
+        '404':
           $ref: '#/components/responses/404NotFound'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
     delete:
       tags:
@@ -281,11 +281,11 @@ paths:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/recordId'
       responses:
-        200:
-          description: Successful operation
-        404:
+        '200':
+          $ref: '#/components/responses/200Success'
+        '404':
           $ref: '#/components/responses/404NotFound'
-        500:
+        '500':
           $ref: '#/components/responses/500GenericError'
 components:
   parameters:
@@ -380,9 +380,9 @@ components:
             prefix: dct
             name: description
         themeTaxonomy:
-          description: TBD
+          description: Schema for the classification of datasets listed in the catalog
           type: string
-          example: TBD
+          example: TODO
           xml:
             prefix: dcat
             name: themeTaxonomy
@@ -542,7 +542,7 @@ components:
         msg:
           description: The error message
           type: string
-          example: "A detailed error message"
+          example: A detailed error message
     landingPage:
       type: object
       required:
@@ -758,7 +758,7 @@ components:
     records:
       type: array
       items:
-        $ref: "#/components/schemas/record"
+        $ref: '#/components/schemas/record'
     record:
       type: object
       required:
