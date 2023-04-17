@@ -76,12 +76,12 @@ paths:
           content:
             application/xml:
               schema:
-                type: object
-                properties:
-                  collections:
-                    $ref: '#/components/schemas/collections'
-                xml:
-                  name: rdf:RDF
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    collections:
+                      $ref: '#/components/schemas/collections'
         500:
           $ref: '#/components/responses/500GenericError'
     post:
@@ -96,12 +96,12 @@ paths:
         content:
           application/xml:
             schema:
-              type: object
-              properties:
-                collection:
-                  $ref: '#/components/schemas/collection'
-              xml:
-                name: rdf:RDF
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    collection:
+                      $ref: '#/components/schemas/collection'
       responses:
         200:
           $ref: '#/components/responses/200Success'
@@ -124,12 +124,12 @@ paths:
           content:
             application/xml:
               schema:
-                type: object
-                properties:
-                  collection:
-                    $ref: '#/components/schemas/collection'
-                xml:
-                  name: rdf:RDF
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    collection:
+                      $ref: '#/components/schemas/collection'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -174,14 +174,14 @@ paths:
           content:
             application/xml:
               schema:
-                type: object
-                properties:
-                  collections:
-                    $ref: '#/components/schemas/collections'
-                  records:
-                    $ref: '#/components/schemas/records'
-                xml:
-                  name: rdf:RDF
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    collections:
+                      $ref: '#/components/schemas/collections'
+                    records:
+                      $ref: '#/components/schemas/records'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -200,12 +200,12 @@ paths:
         content:
           application/xml:
             schema:
-              type: object
-              properties:
-                record:
-                  $ref: '#/components/schemas/record'
-              xml:
-                name: rdf:RDF
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    record:
+                      $ref: '#/components/schemas/record'
       responses:
         200:
           $ref: '#/components/responses/200Success'
@@ -233,12 +233,12 @@ paths:
           content:
             application/xml:
               schema:
-                type: object
-                properties:
-                  record:
-                    $ref: '#/components/schemas/record'
-                xml:
-                  name: rdf:RDF
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    record:
+                      $ref: '#/components/schemas/record'
         404:
           $ref: '#/components/responses/404NotFound'
         500:
@@ -259,12 +259,12 @@ paths:
         content:
           application/xml:
             schema:
-              type: object
-              properties:
-                record:
-                  $ref: '#/components/schemas/record'
-              xml:
-                name: rdf:RDF
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    record:
+                      $ref: '#/components/schemas/record'
       responses:
         200:
           $ref: '#/components/responses/200Success'
@@ -717,6 +717,68 @@ components:
           type: string
         length:
           type: integer
+    rdf:
+      description: The RDF root
+      type: object
+      properties:
+        namespace-dcat:
+          type: string
+          example: http://www.w3.org/ns/dcat#
+          xml:
+            name: xmlns:dcat
+            attribute: true
+        namespace-dcatde:
+          type: string
+          example: http://dcat-ap.de/def/dcatde/
+          xml:
+            name: xmlns:dcatde
+            attribute: true
+        namespace-dct:
+          type: string
+          example: http://purl.org/dc/terms/
+          xml:
+            name: xmlns:dct
+            attribute: true
+        namespace-foaf:
+          type: string
+          example: http://xmlns.com/foaf/0.1/
+          xml:
+            name: xmlns:foaf
+            attribute: true
+        namespace-gml:
+          type: string
+          example: http://www.opengis.net/gml/3.2#
+          xml:
+            name: xmlns:gml
+            attribute: true
+        namespace-locn:
+          type: string
+          example: http://www.w3.org/ns/locn#
+          xml:
+            name: xmlns:locn
+            attribute: true
+        namespace-plu:
+          type: string
+          example: http://a.placeholder.url.for.dcat-ap-plu/
+          xml:
+            name: xmlns:plu
+            attribute: true
+        namespace-vcard:
+          type: string
+          example: http://www.w3.org/2006/vcard/ns#
+          xml:
+            name: xmlns:vcard
+            attribute: true
+        namespace-spdx:
+          type: string
+          example: http://spdx.org/rdf/terms#
+          xml:
+            name: xmlns:spdx
+            attribute: true
+      xml:
+        namespace: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+        prefix: rdf
+        name: RDF
     records:
       type: array
       items:
