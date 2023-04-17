@@ -450,15 +450,18 @@ components:
           type: string
           example: Freie und Hansestadt Hamburg
           xml:
-            name: foaf:name
+            prefix: foaf
+            name: name
         type:
           description: Type of the agent
           type: string
           example: http://purl.org/adms/publishertype/LocalAuthority
           xml:
-            name: dct:type
+            prefix: dct
+            name: type
       xml:
-        name: foaf:Agent
+        prefix: foaf
+        name: Agent
     collection:
       description: |-
         Information about the catalog with id `collectionId`.
@@ -482,51 +485,59 @@ components:
           type: string
           example: hh
           xml:
-            name: 'dct:identifier'
+            prefix: dct
+            name: identifier
         title:
           description: human readable title of the catalog
           type: string
           example: Stadt- und Landschaftsplanung Online (Planportal)
           xml:
-            name: 'dct:title'
+            prefix: dct
+            name: title
         description:
           description: a description of the records in the catalog
           type: string
           xml:
-            name: 'dct:description'
+            prefix: dct
+            name: description
         themeTaxonomy:
           description: TBD
           type: string
           example: TBD
-          xml: 
-            name: dcat:themeTaxonomy
+          xml:
+            prefix: dcat
+            name: themeTaxonomy
         issued:
           description: Date of creation of this collection.
           type: string
           format: date-time
           example: '2022-06-07T12:22:11Z'
           xml:
-            name: 'dct:issued'
+            prefix: dct
+            name: issued
         language:
           description: The language of the collection and its records.
           type: string
           example: german
-          xml: 
-            name: dct:language
+          xml:
+            prefix: dct
+            name: language
         modified:
           description: The most recent date on which the collection was changed.
           type: string
           format: date-time
           example: '2022-06-07T12:22:11Z'
           xml:
-            name: 'dct:modified'
+            prefix: dct
+            name: modified
         homepage:
           description: A website with additional information about this collection.
           type: string
           format: link
           example: https://portal.diplanung.de/my-catalog
-          xml: 
-            name: foaf:homepage
+          xml:
+            prefix: foaf
+            name: homepage
         publisher:
           description: The publisher of this collection.
           type: object
@@ -534,9 +545,11 @@ components:
             agent:
               $ref: '#/components/schemas/agent'
           xml:
-            name: dct:publisher
-      xml: 
-        name: 'dcat:Catalog'
+            prefix: dct
+            name: publisher
+      xml:
+        prefix: dcat
+        name: Catalog
     collections:
       description: |-
         The catalogs shared by this API.
