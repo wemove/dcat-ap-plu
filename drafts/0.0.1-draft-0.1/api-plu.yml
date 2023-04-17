@@ -134,6 +134,52 @@ paths:
           $ref: '#/components/responses/404NotFound'
         '500':
           $ref: '#/components/responses/500GenericError'
+    put:
+      tags:
+        - Collections
+      summary: overwrite an existing collection
+      description: |-
+        Update an existing collection with id `collectionId` by overwriting it.
+        Expects a complete DCAT-AP-PLU document as payload.
+      operationId: putCollection
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+      requestBody:
+        required: true
+        content:
+          application/xml:
+            schema:
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    record:
+                      $ref: '#/components/schemas/collection'
+      responses:
+        '200':
+          $ref: '#/components/responses/200Success'
+        '400':
+          $ref: '#/components/responses/400InvalidInput'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+    delete:
+      tags:
+        - Collections
+      summary: delete a single collection
+      description: |-
+        Delete the collection with id `collectionId`.
+      operationId: deleteCollection
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+      responses:
+        '200':
+          $ref: '#/components/responses/200Success'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500GenericError'
   # brauchen wir das noch: /collections/{collectionId}/sortables
   # evtl. /collections/{collectionId}/queryables
   /collections/{collectionId}/items:
