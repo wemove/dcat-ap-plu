@@ -74,6 +74,9 @@ paths:
         '200':
           description: Successful operation
           content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/collections'
             application/xml:
               schema:
                 allOf:
@@ -98,10 +101,7 @@ paths:
             schema:
                 allOf:
                 - $ref: '#/components/schemas/rdf'
-                - type: object
-                  properties:
-                    collection:
-                      $ref: '#/components/schemas/collection'
+                - $ref: '#/components/schemas/collection'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
@@ -122,6 +122,9 @@ paths:
         '200':
           description: Successful operation
           content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/collection'
             application/xml:
               schema:
                 allOf:
