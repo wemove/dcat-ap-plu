@@ -1130,6 +1130,9 @@ components:
             xml:
               prefix: plu
               name: processStep
+      xml:
+        prefix: dcat
+        name: Dataset
     Version:
       type: object
       description: A version
