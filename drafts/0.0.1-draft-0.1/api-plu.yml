@@ -135,6 +135,8 @@ paths:
                       $ref: '#/components/schemas/collection'
         '404':
           $ref: '#/components/responses/404NotFound'
+        '415':
+          $ref: '#/components/responses/415UnsupportedMediaType'
         '500':
           $ref: '#/components/responses/500GenericError'
     put:
@@ -1180,6 +1182,8 @@ components:
       description: Unauthorized request
     404NotFound:
       description: Not found
+    415UnsupportedMediaType:
+      description: Unsupported media type
     500GenericError:
       description: Unexpected error
       content:
