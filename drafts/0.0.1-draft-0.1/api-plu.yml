@@ -603,13 +603,13 @@ components:
           type: string
     location:
       type: object
-      example: |-
+      example: >
         <dct:Location>
           <dcat:bbox rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
               {"type": "LineString", "coordinates": [[54.9, 14.5], [55.4, 15.3]]}
           </dcat:bbox>
           <locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
-              {"type": "Polygon", "coordinates": [[55.22, 14.78], [55.2, 14.96], [55.14, 15.01], [55.124, 14.91], [55.102, 14.73]]]}
+              {"type": "Polygon", "coordinates": [[[55.22, 14.78], [55.2, 14.96], [55.14, 15.01], [55.124, 14.91], [55.102, 14.73]]]}
           </locn:geometry>
           <dcat:centroid rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
               {"type": "Point", "coordinates": [55.07, 14.92] }
