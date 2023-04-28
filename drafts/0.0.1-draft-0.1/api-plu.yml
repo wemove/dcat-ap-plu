@@ -678,6 +678,75 @@ components:
       xml:
         prefix: dct
         name: Location
+    organization:
+      type: object
+      required:
+        - fn
+      properties:
+        fn:
+          type: string
+          example: Behörde für Wasserstraßen (BW) Beispielstadt
+          xml:
+            prefix: vcard
+            name: fn
+        countryName:
+          type: string
+          example: Deutschland
+          xml:
+            prefix: vcard
+            name: hasCountryName
+        locality:
+          type: string
+          example: Beispielstadt
+          xml:
+            prefix: vcard
+            name: hasLocality
+        postalCode:
+          type: string
+          example: 12345
+          xml:
+            prefix: vcard
+            name: hasPostalCode
+        region:
+          type: string
+          example: Hessen
+          xml:
+            prefix: vcard
+            name: hasRegion
+        streetAddress:
+          type: string
+          example: Beispielstraße 42
+          xml:
+            prefix: vcard
+            name: hasStreetAddress
+        email:
+          type: string
+          example: poststelle@bw.beispielstadt.de
+          xml:
+            prefix: vcard
+            name: hasEmail
+        telephone:
+          type: string
+          example: 01234 56789
+          xml:
+            prefix: vcard
+            name: hasTelephone
+        uid:
+          type: string
+          example: 62B5B8AD-DC4B-11D2-9A86-080000507261
+          xml:
+            prefix: vcard
+            name: hasUID
+        url:
+          type: string
+          format: uri
+          example: https://wassserstrassen.beispielstadt.de
+          xml:
+            prefix: vcard
+            name: hasURL
+      xml:
+        prefix: vcard
+        name: Organization
     period:
       type: object
       properties:
@@ -700,6 +769,65 @@ components:
       xml:
         prefix: dct
         name: PeriodOfTime
+    person:
+      type: object
+      required:
+        - fn
+      properties:
+        fn:
+          type: string
+          xml:
+            prefix: vcard
+            name: fn
+        countryName:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasCountryName
+        locality:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasLocality
+        postalCode:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasPostalCode
+        region:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasRegion
+        streetAddress:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasStreetAddress
+        email:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasEmail
+        telephone:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasTelephone
+        uid:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasUID
+        url:
+          type: string
+          format: uri
+          xml:
+            prefix: vcard
+            name: hasURL
+      xml:
+        prefix: vcard
+        name: Person
     processStep:
       type: object
       required:
@@ -854,13 +982,10 @@ components:
             name: procedureType
         contact:
           description: Contact for the dataset. Use of vCard is recommended
-          type: string
-          example: TODO
-          # type: object
-          # properties:
-          #   oneOf:
-          #     organization:
-          #     person:
+          type: object
+          properties:
+            organization:
+              $ref: '#/components/schemas/organization'
           xml:
             prefix: dcat
             name: contactPoint
