@@ -874,6 +874,12 @@ components:
       description: The RDF root
       type: object
       properties:
+        namespace-adms:
+          type: string
+          example: http://www.w3.org/ns/adms#
+          xml:
+            name: xmlns:adms
+            attribute: true
         namespace-dcat:
           type: string
           example: http://www.w3.org/ns/dcat#
@@ -955,7 +961,7 @@ components:
           type: string
           example: https://specs.diplanung.de/resource/authority/hh/1234-567890abd-9876
           xml:
-            prefix: amds
+            prefix: adms
             name: identifier
         planType:
           description: Type of the spatial plan
