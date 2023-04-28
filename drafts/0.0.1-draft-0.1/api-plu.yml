@@ -99,9 +99,9 @@ paths:
         content:
           application/xml:
             schema:
-                allOf:
-                - $ref: '#/components/schemas/rdf'
-                - $ref: '#/components/schemas/collection'
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - $ref: '#/components/schemas/collection'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
@@ -154,12 +154,12 @@ paths:
         content:
           application/xml:
             schema:
-                allOf:
-                - $ref: '#/components/schemas/rdf'
-                - type: object
-                  properties:
-                    record:
-                      $ref: '#/components/schemas/collection'
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/collection'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
@@ -246,12 +246,12 @@ paths:
         content:
           application/xml:
             schema:
-                allOf:
-                - $ref: '#/components/schemas/rdf'
-                - type: object
-                  properties:
-                    record:
-                      $ref: '#/components/schemas/record'
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/record'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
@@ -305,12 +305,12 @@ paths:
         content:
           application/xml:
             schema:
-                allOf:
-                - $ref: '#/components/schemas/rdf'
-                - type: object
-                  properties:
-                    record:
-                      $ref: '#/components/schemas/record'
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/record'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
