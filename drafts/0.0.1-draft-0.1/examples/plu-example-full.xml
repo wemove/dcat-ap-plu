@@ -70,12 +70,10 @@
         </dct:contributor>
         <plu:processStep rdf:resource="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123"/>
         <plu:developmentFreezePeriod>
-          <dct:temporal>
-             <dct:PeriodOfTime>
+            <dct:PeriodOfTime>
                 <dcat:startDate>2023-06-30</dcat:startDate>
                 <dcat:endDate>2023-07-31</dcat:endDate>
-             </dct:PeriodOfTime>
-          </dct:temporal>
+            </dct:PeriodOfTime>
         </plu:developmentFreezePeriod>
     </dcat:Dataset>
     <plu:ProcessStep rdf:about="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123">
