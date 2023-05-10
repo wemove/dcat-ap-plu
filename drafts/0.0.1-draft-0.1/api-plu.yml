@@ -99,9 +99,9 @@ paths:
         content:
           application/xml:
             schema:
-                allOf:
-                - $ref: '#/components/schemas/rdf'
-                - $ref: '#/components/schemas/collection'
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - $ref: '#/components/schemas/collection'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
@@ -135,6 +135,8 @@ paths:
                       $ref: '#/components/schemas/collection'
         '404':
           $ref: '#/components/responses/404NotFound'
+        '415':
+          $ref: '#/components/responses/415UnsupportedMediaType'
         '500':
           $ref: '#/components/responses/500GenericError'
     put:
@@ -152,12 +154,12 @@ paths:
         content:
           application/xml:
             schema:
-                allOf:
-                - $ref: '#/components/schemas/rdf'
-                - type: object
-                  properties:
-                    record:
-                      $ref: '#/components/schemas/collection'
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/collection'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
@@ -244,12 +246,12 @@ paths:
         content:
           application/xml:
             schema:
-                allOf:
-                - $ref: '#/components/schemas/rdf'
-                - type: object
-                  properties:
-                    record:
-                      $ref: '#/components/schemas/record'
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/record'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
@@ -303,12 +305,12 @@ paths:
         content:
           application/xml:
             schema:
-                allOf:
-                - $ref: '#/components/schemas/rdf'
-                - type: object
-                  properties:
-                    record:
-                      $ref: '#/components/schemas/record'
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/record'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
@@ -603,13 +605,13 @@ components:
           type: string
     location:
       type: object
-      example: |-
+      example: >
         <dct:Location>
           <dcat:bbox rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
               {"type": "LineString", "coordinates": [[54.9, 14.5], [55.4, 15.3]]}
           </dcat:bbox>
           <locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
-              {"type": "Polygon", "coordinates": [[55.22, 14.78], [55.2, 14.96], [55.14, 15.01], [55.124, 14.91], [55.102, 14.73]]]}
+              {"type": "Polygon", "coordinates": [[[55.22, 14.78], [55.2, 14.96], [55.14, 15.01], [55.124, 14.91], [55.102, 14.73]]]}
           </locn:geometry>
           <dcat:centroid rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
               {"type": "Point", "coordinates": [55.07, 14.92] }
@@ -678,6 +680,75 @@ components:
       xml:
         prefix: dct
         name: Location
+    organization:
+      type: object
+      required:
+        - fn
+      properties:
+        fn:
+          type: string
+          example: Behörde für Wasserstraßen (BW) Beispielstadt
+          xml:
+            prefix: vcard
+            name: fn
+        countryName:
+          type: string
+          example: Deutschland
+          xml:
+            prefix: vcard
+            name: hasCountryName
+        locality:
+          type: string
+          example: Beispielstadt
+          xml:
+            prefix: vcard
+            name: hasLocality
+        postalCode:
+          type: string
+          example: 12345
+          xml:
+            prefix: vcard
+            name: hasPostalCode
+        region:
+          type: string
+          example: Hessen
+          xml:
+            prefix: vcard
+            name: hasRegion
+        streetAddress:
+          type: string
+          example: Beispielstraße 42
+          xml:
+            prefix: vcard
+            name: hasStreetAddress
+        email:
+          type: string
+          example: poststelle@bw.beispielstadt.de
+          xml:
+            prefix: vcard
+            name: hasEmail
+        telephone:
+          type: string
+          example: 01234 56789
+          xml:
+            prefix: vcard
+            name: hasTelephone
+        uid:
+          type: string
+          example: 62B5B8AD-DC4B-11D2-9A86-080000507261
+          xml:
+            prefix: vcard
+            name: hasUID
+        url:
+          type: string
+          format: uri
+          example: https://wassserstrassen.beispielstadt.de
+          xml:
+            prefix: vcard
+            name: hasURL
+      xml:
+        prefix: vcard
+        name: Organization
     period:
       type: object
       properties:
@@ -700,6 +771,65 @@ components:
       xml:
         prefix: dct
         name: PeriodOfTime
+    person:
+      type: object
+      required:
+        - fn
+      properties:
+        fn:
+          type: string
+          xml:
+            prefix: vcard
+            name: fn
+        countryName:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasCountryName
+        locality:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasLocality
+        postalCode:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasPostalCode
+        region:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasRegion
+        streetAddress:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasStreetAddress
+        email:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasEmail
+        telephone:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasTelephone
+        uid:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasUID
+        url:
+          type: string
+          format: uri
+          xml:
+            prefix: vcard
+            name: hasURL
+      xml:
+        prefix: vcard
+        name: Person
     processStep:
       type: object
       required:
@@ -746,6 +876,12 @@ components:
       description: The RDF root
       type: object
       properties:
+        namespace-adms:
+          type: string
+          example: http://www.w3.org/ns/adms#
+          xml:
+            name: xmlns:adms
+            attribute: true
         namespace-dcat:
           type: string
           example: http://www.w3.org/ns/dcat#
@@ -827,7 +963,7 @@ components:
           type: string
           example: https://specs.diplanung.de/resource/authority/hh/1234-567890abd-9876
           xml:
-            prefix: amds
+            prefix: adms
             name: identifier
         planType:
           description: Type of the spatial plan
@@ -854,13 +990,10 @@ components:
             name: procedureType
         contact:
           description: Contact for the dataset. Use of vCard is recommended
-          type: string
-          example: TODO
-          # type: object
-          # properties:
-          #   oneOf:
-          #     organization:
-          #     person:
+          type: object
+          properties:
+            organization:
+              $ref: '#/components/schemas/organization'
           xml:
             prefix: dcat
             name: contactPoint
@@ -999,6 +1132,9 @@ components:
             xml:
               prefix: plu
               name: processStep
+      xml:
+        prefix: dcat
+        name: Dataset
     Version:
       type: object
       description: A version
@@ -1046,6 +1182,8 @@ components:
       description: Unauthorized request
     404NotFound:
       description: Not found
+    415UnsupportedMediaType:
+      description: Unsupported media type
     500GenericError:
       description: Unexpected error
       content:
