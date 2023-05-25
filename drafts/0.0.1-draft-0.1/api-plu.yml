@@ -1165,8 +1165,8 @@ components:
             type: string
     LandingPage:
       description: |-
-        The OGC API landing page for the EIA metadata information system. The landing page provides links to the API definition and the Record
-        Collections (path `/collections`), the conformance declatartion (path '/conformance') and other resources in the API.
+        The OGC API landing page for the PLU metadata information system. The landing page provides links to the API definition and the Record
+        Collections (path `/collections`), the conformance declaration (path '/conformance') and other resources in the API.
       content:
         application/json:
           schema:
