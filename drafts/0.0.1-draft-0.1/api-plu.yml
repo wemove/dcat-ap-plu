@@ -408,6 +408,7 @@ components:
       required:
         - description
         - id
+        - publisher
         - title
       properties:
         id:
