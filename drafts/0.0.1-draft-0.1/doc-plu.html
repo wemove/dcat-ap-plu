@@ -694,6 +694,7 @@
           <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Format, in dem die Distribution zur Verfügung steht.</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td> dct:MediaTypeOrExtent </td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Wenn die Distribution einen WMS darstellt, muss als Format <code>WMS</code>definiert sein.</td></tr>
           </tbody>
         </table>
        </section>
@@ -709,6 +710,19 @@
            <tr><td class="prop">Anwendungshinweis:</td><td>Über diese Eigenschaft kann der Zeitraum, in dem eine Distribution verfügbar sein soll, definiert werden.</td></tr>
            </tbody>
          </table>
+       </section>
+
+       <section id="Property:distribution_map_layer_names">
+        <h4 id="property-distribution-map-layer-names">Eigenschaft: Bezeichnung Kartenlayer</h4>
+        <table class="definition">
+          <thead><tr><th>URI:</th><th>plu:mapLayerNames</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Bezeichnung der Kartenlayer</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft können die Bezeichnungen einzelner Kartenlayer durch eine Liste von komma-separierten Layernamen mitgegeben werden, wenn die Distribution z.B. einen WMS darstellt.</td></tr>
+         </tbody>
+       </table>
        </section>
      </section>
 
@@ -914,7 +928,7 @@
           <h4 id="property-name">Eigenschaft: Name</h4>
 
            <table class="definition">
-            <thead><tr><th>URI:</th><th>foaf:Name</th></tr></thead>
+            <thead><tr><th>URI:</th><th>foaf:name</th></tr></thead>
             <tbody>
              <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
              <tr><td class="prop">Definition:</td><td>Diese Eigenschaft enthält den Namen der verantwortlichen Stelle.</td></tr>
@@ -944,55 +958,62 @@
     <section id="codelists">
       <h2 id="codelists">Verwendete Codelisten</h2>
 
-      <p>Im folgenden sind die innerhalb diese Datenmodells verwendeten Codelisten dokumentiert.</p>
+      <p>Im Folgenden sind die innerhalb dieses Datenmodells verwendeten Codelisten dokumentiert.</p>
 
       <section id="codelist-pluProcedureType">
-        <h3 id="codelist-pluProcedureType">Codeliste Arten von Verfahren zur Aufstellung raumbezogener Planwerke<a class="self-link" href="#codelist-pluProcedureType"></a></h3>
+        <h3 id="codelist-pluProcedureType">Codeliste für die Arten von Verfahren zur Aufstellung raumbezogener Planwerke<a class="self-link" href="#codelist-pluProcedureType"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
           <tr><td>1001</td> <td>normales Verfahren</td></tr>
           <tr><td>1002</td> <td>vereinfachtes Verfahren</td></tr>
           <tr><td>1003</td> <td>Bebauungsplan der Innenentwicklung</td></tr>
-          <tr><td>1004</td> <td>unbekannt</td></tr>
+          <tr><td>1004</td> <td>Einbeziehung von Außenbereichsflächen in das beschleunigte Verfahren</td></tr>
+          <tr><td>1005</td> <td>Änderung</td></tr>
+          <tr><td>1006</td> <td>Teilfortschreibung</td></tr>
+          <tr><td>1007</td> <td>Neuaufstellung</td></tr>
+          <tr><td>1008</td> <td>Gesamtfortschreibung</td></tr>
+          <tr><td>1009</td> <td>Aktualisierung</td></tr>
+          <tr><td>1010</td> <td>Neubekanntmachung</td></tr>
+          <tr><td>9000</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
 
       </section>
 
       <section id="codelist-pluProcedureState">
-        <h3 id="codelist-pluProcedureState">Codeliste für übergeordneten Status eines Verfahrens<a class="self-link" href="#codelist-pluProcedureState"></a></h3>
+        <h3 id="codelist-pluProcedureState">Codeliste für den übergeordneten Status eines Verfahrens<a class="self-link" href="#codelist-pluProcedureState"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
           <tr><td>2001</td> <td>geplant</td></tr>
           <tr><td>2002</td> <td>laufend</td></tr>
           <tr><td>2003</td> <td>abgeschlossen</td></tr>
-          <tr><td>2004</td> <td>unbekannt</td></tr>
+          <tr><td>9000</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
       </section>
 
       <section id="codelist-pluPlanState">
-        <h3 id="codelist-pluPlanState">Codeliste für Status eines Plans<a class="self-link" href="#codelist-pluPlanState"></a></h3>
+        <h3 id="codelist-pluPlanState">Codeliste für den Status eines Plans<a class="self-link" href="#codelist-pluPlanState"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
           <tr><td>3001</td> <td>in Aufstellung</td></tr>
           <tr><td>3002</td> <td>festgesetzt</td></tr>
-          <tr><td>3003</td> <td>unbekannt</td></tr>
+          <tr><td>9000</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
       </section>
 
       <section id="codelist-pluPlanType">
-        <h3 id="codelist-pluPlanType">Codeliste für Arten von raumbezogenen Planwerken<a class="self-link" href="#codelist-pluPlanType"></a></h3>
-        <table>Bebauungsplan, Flächennutzungsplan, Raumordnungsplan, Planfeststellungsverfahren.
+        <h3 id="codelist-pluPlanType">Codeliste für die Arten von raumbezogenen Planwerken<a class="self-link" href="#codelist-pluPlanType"></a></h3>
+        <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
           <tr><td>1000</td> <td>Bebauungsplan</td></tr>
           <tr><td>2000</td> <td>Flächennutzungsplan</td></tr>
-          <tr><td>3000</td> <td>städtebauliche Satzungen</td></tr>
+          <tr><td>3000</td> <td>Städtebauliche Satzungen</td></tr>
           <tr><td>4000</td> <td>Planwerke besonderes Städtebaurecht</td></tr>
           <tr><td>5000</td> <td>Planwerke der Landschaftsplanung</td></tr>
           <tr><td>6000</td> <td>Raumordnungsplan</td></tr>
@@ -1006,7 +1027,7 @@
       </section>
 
       <section id="codelist-pluProcessStepType">
-        <h3 id="codelist-pluProcessStepType">Codeliste für Arten von Verfahrensschritten bei raumbezogenen Verfahren<a class="self-link" href="#codelist-pluProcessStepType"></a></h3> <!--ist das auch als Status des Verfahrens zu verstehen?-->
+        <h3 id="codelist-pluProcessStepType">Codeliste für die Arten von Verfahrensschritten bei raumbezogenen Verfahren<a class="self-link" href="#codelist-pluProcessStepType"></a></h3> <!--ist das auch als Status des Verfahrens zu verstehen?-->
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
@@ -1016,22 +1037,21 @@
           <tr><td>3004</td> <td>Öffentliche Auslegung</td></tr>
           <tr><td>3005</td> <td>Interne Bearbeitung</td></tr>
           <tr><td>3006</td> <td>Abgeschlossen</td></tr>
+          <tr><td>9000</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
 
       </section>
       
       <section id="codelist-pluDocType">
-        <h3 id="codelist-pluDocType">Codeliste für Arten von Dokumenten<a class="self-link" href="#codelist-pluDocType"></a></h3>
+        <h3 id="codelist-pluDocType">Codeliste für die Arten von Dokumenten<a class="self-link" href="#codelist-pluDocType"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
           <tr><td>4001</td> <td>Auslegungsinformationen</td></tr>
           <tr><td>4002</td> <td>Erläuterungsbericht</td></tr>
           <tr><td>4003</td> <td>Planzeichnung</td></tr>
-          <tr><td>4004</td> <td>...</td></tr>
-          <tr><td>4005</td> <td>...</td></tr>
-          <tr><td>4006</td> <td>...</td></tr>
+          <tr><td>9000</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
       </section>

@@ -408,6 +408,7 @@ components:
       required:
         - description
         - id
+        - publisher
         - title
       properties:
         id:
@@ -540,7 +541,7 @@ components:
         docType:
           description: Type of document in relation to spatial planning or participation procedures
           type: string
-          # enum: [4001, 4002, 4003, 4004, ...]
+          # enum: [4001, 4002, 4003, ..., 9000]
           example: 4001
           xml:
             prefix: plu
@@ -845,7 +846,7 @@ components:
         processStepType:
           description: Type of the process step for spatial planning and participation procedures
           type: string
-          enum: [3001, 3002, 3003, 3004, 3005, 3006]
+          enum: [3001, 3002, 3003, 3004, 3005, 3006, 9000]
           example: 3001
           xml:
             prefix: plu
@@ -983,7 +984,7 @@ components:
         procedureType:
           description: Type of the process for the establishment of the spatial plan
           type: string
-          enum: [1001, 1002, 1003, 1004]
+          enum: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 9000]
           example: 1001
           xml:
             prefix: plu
@@ -1021,7 +1022,7 @@ components:
         planState:
           description: Status of the plan
           type: string
-          enum: [3001, 3002, 3003]
+          enum: [3001, 3002, 9000]
           example: 3001
           xml:
             prefix: plu
@@ -1029,7 +1030,7 @@ components:
         procedureState:
           description: Status of the procedure
           type: string
-          enum: [2001, 2002, 2003, 2004]
+          enum: [2001, 2002, 2003, 9000]
           example: 2002
           xml:
             prefix: plu
