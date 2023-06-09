@@ -77,7 +77,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/collections'
-            application/xml:
+            application/rdf+xml:
               schema:
                 allOf:
                 - $ref: '#/components/schemas/rdf'
@@ -97,7 +97,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/xml:
+          application/rdf+xml:
             schema:
               allOf:
               - $ref: '#/components/schemas/rdf'
@@ -125,7 +125,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/collection'
-            application/xml:
+            application/rdf+xml:
               schema:
                 allOf:
                 - $ref: '#/components/schemas/rdf'
@@ -152,7 +152,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/xml:
+          application/rdf+xml:
             schema:
               allOf:
               - $ref: '#/components/schemas/rdf'
@@ -218,7 +218,7 @@ paths:
         '200':
           description: Successful operation
           content:
-            application/xml:
+            application/rdf+xml:
               schema:
                 allOf:
                 - $ref: '#/components/schemas/rdf'
@@ -244,7 +244,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/xml:
+          application/rdf+xml:
             schema:
               allOf:
               - $ref: '#/components/schemas/rdf'
@@ -277,7 +277,7 @@ paths:
         '200':
           description: Successful operation
           content:
-            application/xml:
+            application/rdf+xml:
               schema:
                 allOf:
                 - $ref: '#/components/schemas/rdf'
@@ -303,7 +303,7 @@ paths:
       requestBody:
         required: true
         content:
-          application/xml:
+          application/rdf+xml:
             schema:
               allOf:
               - $ref: '#/components/schemas/rdf'
@@ -561,6 +561,13 @@ components:
           xml:
             prefix: dct
             name: issued
+        mapLayerNames:
+          description: Comma-separated list of layer names, e.g. in case this distribution represents a WMS
+          type: string
+          example: map_layer_name,some_other_layer_name
+          xml:
+            prefix: plu
+            name: mapLayerNames
         modified:
           description: The most recent date on which the distribution was changed
           type: string
