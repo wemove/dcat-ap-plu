@@ -97,7 +97,7 @@
 
     <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123">
         <dct:identifier>ProcStep-1123</dct:identifier>
-        <plu:processStepType rdf:resource="http://publications.informationgrid.eu/resource/authority/ProcessStepType/Eroert"/>
+        <plu:processStepType>3003</plu:processStepType>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
         <dct:temporal>
             <dct:PeriodOfTime>
