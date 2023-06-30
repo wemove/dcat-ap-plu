@@ -6,9 +6,8 @@
            elementFormDefault="qualified" attributeFormDefault="qualified">
   <xs:annotation>
     <xs:documentation xml:lang="en">
-      RDF XML Schema (relevant parts for DCAT version 2)
+      RDF XML Schema (relevant parts for DCAT-AP-PLU)
       XML Schema for http://www.w3.org/1999/02/22-rdf-syntax-ns# namespace
-      Modified 2019-10-03
     </xs:documentation>
   </xs:annotation>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>

@@ -1,46 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
-    xmlns:adms="http://www.w3.org/ns/adms#" 
-    xmlns:dct="http://purl.org/dc/terms/" 
-    xmlns:dcat="http://www.w3.org/ns/dcat#" 
-    xmlns:dcatde="http://dcat-ap.de/def/dcatde/" 
-    xmlns:foaf="http://xmlns.com/foaf/0.1/" 
-    xmlns:owl="http://www.w3.org/2002/07/owl#" 
-    xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/" 
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-    xmlns:skos="http://www.w3.org/2004/02/skos/core#" 
-    xmlns:spdx="http://spdx.org/rdf/terms#" 
-    xmlns:vcard="http://www.w3.org/2006/vcard/ns#" 
+<xs:schema
+    xmlns:adms="http://www.w3.org/ns/adms#"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+    xmlns:spdx="http://spdx.org/rdf/terms#"
+    xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://www.w3.org/ns/dcat#"
 	elementFormDefault="qualified" attributeFormDefault="qualified">
+
 	<xs:annotation>
-		<xs:documentation xml:lang="de">TODO
-		DCAT-AP 1.1 XML Schema
-		XML Schema for http://www.w3.org/ns/dcat# namespace
-
-		Description: This is an XML Schema for the DCAT-AP specification. The schema is used by GeoNetwork for storing GeoNetwork data internally. The schema adheres to a 'normalized' RDF/XML syntax that can be processed with good old XML Technology (XPath, XSLT, XQuery). The schema is not intended to be used outside GeoNetwork.
-
-		Created 2016-05-31
-		Modified 2018-06-22
-
-		Author GIM
-
+		<xs:documentation xml:lang="en">
+            DCAT-AP-PLU 0.0.1 XML Schema
+            XML Schema for http://a.placeholder.url.for.dcat-ap-plu/ namespace
 		</xs:documentation>
 	</xs:annotation>
 
-	<!-- IMPORTS -->
+	<!-- imports -->
 	<xs:import namespace="http://www.w3.org/ns/adms#" schemaLocation="adms.xsd"/>
 	<xs:import namespace="http://dcat-ap.de/def/dcatde/" schemaLocation="dcatde.xsd"/>
 	<xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
 	<xs:import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="foaf.xsd"/>
-	<xs:import namespace="http://www.w3.org/2002/07/owl#" schemaLocation="owl.xsd"/>
 	<xs:import namespace="http://a.placeholder.url.for.dcat-ap-plu/" schemaLocation="plu.xsd"/>
 	<xs:import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="skos.xsd"/>
 	<xs:import namespace="http://spdx.org/rdf/terms#" schemaLocation="spdx.xsd"/>
 	<xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
 	<xs:import namespace="http://www.w3.org/2006/vcard/ns#" schemaLocation="vcard.xsd"/>
 
-	<!-- TYPES -->
+	<!-- types -->
 	<xs:element name="Catalog" type="dcat:Catalog"/>
 	<xs:complexType name="Catalog">
 		<xs:choice maxOccurs="unbounded">
@@ -67,13 +59,8 @@
 						<xs:element ref="foaf:primaryTopic" minOccurs="1" maxOccurs="1"/>
 						<xs:element ref="dct:modified" minOccurs="1" maxOccurs="1"/>
 						<!-- recommended properties for dcat:CatalogRecord-->
-						<xs:element ref="dct:conformsTo" minOccurs="0" maxOccurs="1"/>
-						<xs:element ref="adms:status" minOccurs="0" maxOccurs="1"/>
 						<xs:element ref="dct:issued" minOccurs="0" maxOccurs="1"/>
 						<!-- optional properties for dcat:CatalogRecord-->
-						<xs:element ref="dct:description" minOccurs="0"/>
-						<xs:element ref="dct:language" maxOccurs="unbounded"/>
-						<xs:element ref="dct:source" maxOccurs="1"/>
 						<xs:element ref="dct:title" minOccurs="0" maxOccurs="1"/>
 					</xs:sequence>
 					<xs:attribute ref="rdf:about"/>
@@ -95,8 +82,7 @@
 		<xs:attribute ref="rdf:resource"/>
 	</xs:complexType>
 
-  	<!-- ELEMENTS -->
-	<xs:element name="mediaType" type="skos:Concept"/>
+  	<!-- elements -->
 	<xs:element name="startDate" type="rdf:DateOrDateTimeLiteral"/>
 	<xs:element name="endDate" type="rdf:DateOrDateTimeLiteral"/>
 	<xs:element name="bbox" type="rdf:TypedLiteral"/>
