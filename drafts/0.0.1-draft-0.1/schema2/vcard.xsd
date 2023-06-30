@@ -20,15 +20,18 @@
     <xs:sequence>
       <xs:element name="Organization">
         <xs:complexType>
-          <xs:sequence>
+          <xs:all>
             <!-- optional properties-->
             <xs:element name="fn" type="xs:string" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="organization-name" type="xs:string" minOccurs="0" maxOccurs="1"/>
-            <xs:element ref="vcard:hasAddress" minOccurs="0" maxOccurs="1"/>
-            <xs:element name="hasEmail" type="rdf:Resource" maxOccurs="1"/>
-            <xs:element name="hasURL" type="rdf:Resource" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="hasOrganizationName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="hasStreetAddress" type="xs:string" maxOccurs="1"/>
+            <xs:element name="hasLocality" type="xs:string" maxOccurs="1"/>
+            <xs:element name="hasPostalCode" type="xs:string" maxOccurs="1"/>
+            <xs:element name="hasCountryName" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="hasEmail" type="xs:string" maxOccurs="1"/>
+            <xs:element name="hasURL" type="xs:string" minOccurs="0" maxOccurs="1"/>
             <xs:element name="hasTelephone" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>
-          </xs:sequence>
+          </xs:all>
           <xs:attribute ref="rdf:about"/>
           <xs:attribute ref="rdf:nodeID"/>
         </xs:complexType>

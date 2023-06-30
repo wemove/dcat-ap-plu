@@ -1,38 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dct="http://purl.org/dc/terms/" xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:adms="http://www.w3.org/ns/adms#" targetNamespace="http://some.url.for.plu/" elementFormDefault="qualified" attributeFormDefault="qualified">
+<xs:schema
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:dct="http://purl.org/dc/terms/"
+	xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:adms="http://www.w3.org/ns/adms#"
+	targetNamespace="http://a.placeholder.url.for.dcat-ap-plu/"
+	elementFormDefault="qualified"
+	attributeFormDefault="qualified">
 	<xs:annotation>
 		<xs:documentation xml:lang="en">
       ADMS XML Schema  (relevant parts for DCAT-AP)
       http://www.w3.org/ns/adms# 
     </xs:documentation>
 	</xs:annotation>
-	<xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat.v2.xsd"/>
+	<xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat-ap-plu.xsd"/>
 	<xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
 	<xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
 	<xs:import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="skos.xsd"/>
-	<!-- adms:Identifier-->
+
 	<xs:complexType name="ProcessStep">
 		<xs:sequence>
-			<xs:element name="ProcessStep">
-				<xs:complexType>
-					<xs:sequence>
-						<xs:element ref="dct:identifier" maxOccurs="1"/>
-						<xs:element name="processStepType" type="rdf:PlainLiteral" minOccurs="1" maxOccurs="1"/>
-						<!-- <xs:element ref="dcat:distribution" maxOccurs="unbounded"/> -->
-						<xs:element ref="dct:temporal" maxOccurs="unbounded"/>
-					</xs:sequence>
-					<xs:attribute ref="rdf:about"/>
-				</xs:complexType>
-			</xs:element>
+			<xs:element ref="plu:ProcessStep" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
+		<xs:attribute ref="rdf:resource"/>
 	</xs:complexType>
+
+	<xs:element name="ProcessStep">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="dct:identifier" maxOccurs="1"/>
+				<xs:element name="processStepType" type="rdf:PlainLiteral" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="dcat:distribution" maxOccurs="unbounded"/>
+				<xs:element ref="dct:temporal" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute ref="rdf:about"/>
+		</xs:complexType>
+	</xs:element>
+
 	<!-- individual elements-->
+	<xs:element name="developmentFreezePeriod" type="dct:PeriodOfTime"/>
+	<xs:element name="docType" type="rdf:PlainLiteral"/>
+	<xs:element name="notification" type="rdf:PlainLiteral"/>
+	<xs:element name="planState" type="rdf:PlainLiteral"/>
 	<xs:element name="planType" type="rdf:PlainLiteral"/>
 	<xs:element name="planTypeFine" type="rdf:PlainLiteral"/>
-	<xs:element name="procedureType" type="rdf:PlainLiteral"/>
-	<xs:element name="planState" type="rdf:PlainLiteral"/>
-	<xs:element name="procedureState" type="rdf:PlainLiteral"/>
-	<xs:element name="notification" type="rdf:PlainLiteral"/>
 	<xs:element name="procedureStartDate" type="rdf:DateOrDateTimeLiteral"/>
-	<xs:element name="developmentFreezePeriod" type="dct:PeriodOfTime"/>
+	<xs:element name="procedureState" type="rdf:PlainLiteral"/>
+	<xs:element name="procedureType" type="rdf:PlainLiteral"/>
+
+	<xs:element name="processStep" type="plu:ProcessStep"/>
 </xs:schema>

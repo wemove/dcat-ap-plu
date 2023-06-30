@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
            xmlns:dcat="http://www.w3.org/ns/dcat#"
+           xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/"
            targetNamespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
            elementFormDefault="qualified" attributeFormDefault="qualified">
   <xs:annotation>
@@ -11,7 +12,8 @@
     </xs:documentation>
   </xs:annotation>
   <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
-  <xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat.v2.xsd"/>
+  <xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat-ap-plu.xsd"/>
+  <xs:import namespace="http://a.placeholder.url.for.dcat-ap-plu/" schemaLocation="plu.xsd"/>
   <!-- rdf:plainLiteral -->
   <xs:complexType name="PlainLiteral">
     <xs:annotation>
@@ -106,11 +108,15 @@
   </xs:complexType>
   <!-- CatalogRoot -->
   <xs:complexType name="CatalogRoot">
-    <xs:all>
+    <xs:choice maxOccurs="unbounded">
       <xs:element ref="dcat:Catalog"/>
-      <!-- <xs:element ref="dcat:CatalogRecord"/>
-      <xs:element ref="dcat:Dataset"/> -->
-    </xs:all>
+      <!-- <xs:element ref="dcat:CatalogRecord"/> -->
+      <xs:element ref="dcat:Dataset" minOccurs="1" maxOccurs="unbounded"/>
+      <!-- <xs:element name="CatalogRecord" type="dcat:CatalogRecord"/> -->
+	    <!-- <xs:element name="Dataset" type="dcat:Dataset" minOccurs="1" maxOccurs="unbounded"/> -->
+      <xs:element ref="plu:ProcessStep" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="dcat:Distribution" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:choice>
   </xs:complexType>
   <!-- individual elements -->
   <xs:element name="type" type="rdf:Resource"/>
