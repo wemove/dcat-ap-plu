@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dcatde="http://dcat-ap.de/def/dcatde/" xmlns:foaf="http://xmlns.com/foaf/0.1/" targetNamespace="http://dcat-ap.de/def/dcatde/" elementFormDefault="qualified" attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation xml:lang="en">
+		DCterms XML Schema  (relevant parts for DCAT-AP)
+		XML Schema for http://purl.org/dc/terms/ namespace
+		</xs:documentation>
+	</xs:annotation>
+	<xs:import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="foaf.xsd"/>
+	<!-- individual elements -->
+	<xs:element name="maintainer" type="foaf:Agent"/>
+</xs:schema>

@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/ns/dcat# ../dcat-ap-plu-2.xsd"
     xmlns:dcat="http://www.w3.org/ns/dcat#"
     xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
     xmlns:dct="http://purl.org/dc/terms/"
@@ -8,6 +9,7 @@
     xmlns:locn="http://www.w3.org/ns/locn#"
     xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
     xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
     <dcat:Catalog rdf:about="https://bauleitplanung.hamburg.de/">
         <dcat:dataset rdf:resource="https://bauleitplanung.hamburg.de/verfahren/17b94f6a-28ba-11e7-af94-0050568a354d/public/detail" />

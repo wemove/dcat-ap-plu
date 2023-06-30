@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <rdf:RDF
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/ns/dcat# ../dcat-ap-plu-2.xsd"
     xmlns:dcat="http://www.w3.org/ns/dcat#"
     xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
     xmlns:dct="http://purl.org/dc/terms/"
