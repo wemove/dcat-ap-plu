@@ -22,8 +22,9 @@
             <xs:element name="Organization">
                 <xs:complexType>
                     <xs:all>
+                        <!-- mandatory -->
                         <xs:element name="fn" type="xs:string"/>
-                        <!-- optional properties-->
+                        <!-- optional -->
                         <xs:element name="hasCountryName" type="xs:string" minOccurs="0"/>
                         <xs:element name="hasEmail" type="xs:string" minOccurs="0"/>
                         <xs:element name="hasLocality" type="xs:string" minOccurs="0"/>

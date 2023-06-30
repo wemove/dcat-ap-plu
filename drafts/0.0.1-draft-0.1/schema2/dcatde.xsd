@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema
-        xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
         xmlns:foaf="http://xmlns.com/foaf/0.1/"
         xmlns:xs="http://www.w3.org/2001/XMLSchema"
         targetNamespace="http://dcat-ap.de/def/dcatde/"
         elementFormDefault="qualified"
         attributeFormDefault="qualified">
 
-	<xs:annotation>
-		<xs:documentation xml:lang="en">
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
             DCAT-AP.de version 2 XML Schema (relevant parts for DCAT-AP)
             http://dcat-ap.de/def/dcatde/
-		</xs:documentation>
-	</xs:annotation>
+        </xs:documentation>
+    </xs:annotation>
 
     <!-- imports -->
-	<xs:import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="foaf.xsd"/>
+    <xs:import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="foaf.xsd"/>
 
-	<!-- elements -->
-	<xs:element name="maintainer" type="foaf:Agent"/>
+    <!-- elements -->
+    <xs:element name="maintainer" type="foaf:Agent"/>
 </xs:schema>

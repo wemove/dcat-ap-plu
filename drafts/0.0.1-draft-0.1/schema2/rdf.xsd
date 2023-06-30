@@ -1,128 +1,98 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-           xmlns:dcat="http://www.w3.org/ns/dcat#"
-           xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/"
-           targetNamespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-           elementFormDefault="qualified" attributeFormDefault="qualified">
-  <xs:annotation>
-    <xs:documentation xml:lang="en">
-      RDF XML Schema (relevant parts for DCAT-AP-PLU)
-      XML Schema for http://www.w3.org/1999/02/22-rdf-syntax-ns# namespace
-    </xs:documentation>
-  </xs:annotation>
-  <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
-  <xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat-ap-plu.xsd"/>
-  <xs:import namespace="http://a.placeholder.url.for.dcat-ap-plu/" schemaLocation="plu.xsd"/>
-  <!-- rdf:plainLiteral -->
-  <xs:complexType name="PlainLiteral">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">
-        The Resource Description Framework [RDF] is defined to have an extensible system of typed literals, based on XML
-        Schema datatypes [XSD], and also to have plain literals. In the RDF specification, plain literals differ from
-        typed literals in that plain literals have no datatype and can optionally have a language tag, indicating the
-        natural language of the content.
-      </xs:documentation>
-    </xs:annotation>
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute ref="xml:lang" use="optional"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <!-- rdf:typedLiteral -->
-  <xs:complexType name="TypedLiteral">
-    <xs:simpleContent>
-      <xs:extension base="xs:string">
-        <xs:attribute ref="rdf:datatype"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <!-- rdf:TypedLiteral dateTime -->
-  <xs:simpleType name="dateOrDateTime">
-    <xs:union memberTypes="xs:date xs:dateTime"/>
-  </xs:simpleType>
-  <xs:complexType name="DateTimeLiteral">
-    <xs:simpleContent>
-      <xs:extension base="xs:dateTime">
-        <xs:attribute ref="rdf:datatype" fixed="http://www.w3.org/2001/XMLSchema#dateTime"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="DateLiteral">
-    <xs:simpleContent>
-      <xs:extension base="xs:date">
-        <xs:attribute ref="rdf:datatype" fixed="http://www.w3.org/2001/XMLSchema#date"/>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <xs:complexType name="DateOrDateTimeLiteral">
-    <xs:simpleContent>
-      <xs:extension base="rdf:dateOrDateTime">
-        <xs:attribute name="datatype">
-          <xs:simpleType>
-            <xs:restriction base="xs:anyURI">
-              <xs:enumeration value="http://www.w3.org/2001/XMLSchema#date"/>
-              <xs:enumeration value="http://www.w3.org/2001/XMLSchema#dateTime"/>
-            </xs:restriction>
-          </xs:simpleType>
-        </xs:attribute>
-      </xs:extension>
-    </xs:simpleContent>
-  </xs:complexType>
-  <!-- rdf:Statement -->
-  <xs:complexType name="Statement">
-    <xs:sequence>
-      <xs:element name="Statement" minOccurs="1" maxOccurs="1">
-        <xs:complexType>
-          <xs:sequence>
-            <xs:element name="subject" minOccurs="1" maxOccurs="1">
-              <xs:complexType>
-                <xs:attribute ref="rdf:resource" use="required"/>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="predicate" minOccurs="1" maxOccurs="1">
-              <xs:complexType>
-                <xs:attribute ref="rdf:resource" use="required"/>
-              </xs:complexType>
-            </xs:element>
-            <xs:element name="object" minOccurs="1" maxOccurs="1">
-              <xs:complexType>
-                <xs:simpleContent>
-                  <xs:extension base="xs:string">
-                    <xs:attribute ref="rdf:datatype"/>
-                    <xs:attribute ref="rdf:resource"/>
-                  </xs:extension>
-                </xs:simpleContent>
-              </xs:complexType>
-            </xs:element>
-          </xs:sequence>
-          <xs:attribute ref="rdf:about"/>
-        </xs:complexType>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <!-- rdf:Resource-->
-  <xs:complexType name="Resource">
-    <xs:attribute ref="rdf:resource" use="required"/>
-  </xs:complexType>
-  <!-- CatalogRoot -->
-  <xs:complexType name="CatalogRoot">
-    <xs:choice maxOccurs="unbounded">
-      <xs:element ref="dcat:Catalog"/>
-      <!-- <xs:element ref="dcat:CatalogRecord"/> -->
-      <xs:element ref="dcat:Dataset" minOccurs="1" maxOccurs="unbounded"/>
-      <!-- <xs:element name="CatalogRecord" type="dcat:CatalogRecord"/> -->
-	    <!-- <xs:element name="Dataset" type="dcat:Dataset" minOccurs="1" maxOccurs="unbounded"/> -->
-      <xs:element ref="plu:ProcessStep" minOccurs="0" maxOccurs="unbounded"/>
-      <xs:element ref="dcat:Distribution" minOccurs="0" maxOccurs="unbounded"/>
-    </xs:choice>
-  </xs:complexType>
-  <!-- individual elements -->
-  <xs:element name="type" type="rdf:Resource"/>
-  <xs:attribute name="about" type="xs:anyURI"/>
-  <xs:attribute name="resource" type="xs:anyURI"/>
-  <xs:attribute name="datatype" type="xs:anyURI"/>
-  <xs:attribute name="nodeID" type="xs:NCName"/>
+<xs:schema
+        xmlns:dcat="http://www.w3.org/ns/dcat#"
+        xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        elementFormDefault="qualified" attributeFormDefault="qualified">
 
-  <xs:element name="RDF" type="rdf:CatalogRoot"/>
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
+        RDF XML Schema (relevant parts for DCAT-AP-PLU)
+        http://www.w3.org/1999/02/22-rdf-syntax-ns#
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- imports -->
+    <xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat-ap-plu.xsd"/>
+    <xs:import namespace="http://a.placeholder.url.for.dcat-ap-plu/" schemaLocation="plu.xsd"/>
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
+
+    <!-- types -->
+    <xs:simpleType name="dateOrDateTime">
+        <xs:union memberTypes="xs:date xs:dateTime"/>
+    </xs:simpleType>
+    <xs:complexType name="CatalogRoot">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element ref="dcat:Catalog" minOccurs="0"/>
+            <xs:element ref="dcat:CatalogRecord" minOccurs="0"/>
+            <xs:element ref="dcat:Dataset" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="dcat:Distribution" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element ref="plu:ProcessStep" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:complexType name="DateTimeLiteral">
+        <xs:simpleContent>
+            <xs:extension base="xs:dateTime">
+                <xs:attribute ref="rdf:datatype" fixed="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="DateLiteral">
+        <xs:simpleContent>
+            <xs:extension base="xs:date">
+                <xs:attribute ref="rdf:datatype" fixed="http://www.w3.org/2001/XMLSchema#date"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="DateOrDateTimeLiteral">
+        <xs:simpleContent>
+            <xs:extension base="rdf:dateOrDateTime">
+                <xs:attribute name="datatype">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:anyURI">
+                            <xs:enumeration value="http://www.w3.org/2001/XMLSchema#date"/>
+                            <xs:enumeration value="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="PlainLiteral">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                The Resource Description Framework [RDF] is defined to have an extensible system of typed literals, based on XML
+                Schema datatypes [XSD], and also to have plain literals. In the RDF specification, plain literals differ from
+                typed literals in that plain literals have no datatype and can optionally have a language tag, indicating the
+                natural language of the content.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute ref="xml:lang" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:complexType name="Resource">
+        <xs:attribute ref="rdf:resource" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="TypedLiteral">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute ref="rdf:datatype"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <!-- elements -->
+    <xs:element name="type" type="rdf:Resource"/>
+    <xs:element name="RDF" type="rdf:CatalogRoot"/>
+
+    <!-- attributes -->
+    <xs:attribute name="about" type="xs:anyURI"/>
+    <xs:attribute name="datatype" type="xs:anyURI"/>
+    <xs:attribute name="nodeID" type="xs:NCName"/>
+    <xs:attribute name="resource" type="xs:anyURI"/>
 </xs:schema>

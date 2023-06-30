@@ -20,20 +20,6 @@
     <xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
 
     <!-- types -->
-    <xs:complexType name="ConceptScheme">
-        <xs:sequence>
-        <xs:element name="ConceptScheme">
-            <xs:complexType>
-            <xs:sequence>
-                <!-- mandatory properties for skos:ConceptScheme-->
-                <xs:element ref="dct:title" minOccurs="1"/>
-                <!-- recommended properties for skos:ConceptScheme-->
-            </xs:sequence>
-            <xs:attribute ref="rdf:about"/>
-            </xs:complexType>
-        </xs:element>
-        </xs:sequence>
-    </xs:complexType>
     <xs:complexType name="Concept">
         <xs:sequence>
             <xs:element name="Concept" minOccurs="0">
@@ -41,7 +27,7 @@
                     <xs:sequence>
                         <xs:element ref="rdf:type" minOccurs="0" maxOccurs="unbounded"/>
                         <xs:element ref="skos:prefLabel" minOccurs="0" maxOccurs="unbounded"/>
-                        <xs:element name="inScheme" minOccurs="0" maxOccurs="1">
+                        <xs:element name="inScheme" minOccurs="0">
                             <xs:complexType>
                                 <xs:attribute ref="rdf:resource" use="required"/>
                             </xs:complexType>
@@ -52,6 +38,18 @@
             </xs:element>
         </xs:sequence>
         <xs:attribute ref="rdf:resource" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="ConceptScheme">
+        <xs:sequence>
+            <xs:element name="ConceptScheme">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element ref="dct:title"/>
+                    </xs:sequence>
+                    <xs:attribute ref="rdf:about"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
     </xs:complexType>
 
     <!-- elements-->

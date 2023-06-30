@@ -9,47 +9,50 @@
         elementFormDefault="qualified"
         attributeFormDefault="qualified">
 
-	<xs:annotation>
-		<xs:documentation xml:lang="en">
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
             PLU XML Schema
             http://a.placeholder.url.for.dcat-ap-plu/
         </xs:documentation>
-	</xs:annotation>
+    </xs:annotation>
 
     <!-- imports -->
-	<xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat-ap-plu.xsd"/>
-	<xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
-	<xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
-	<xs:import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="skos.xsd"/>
+    <xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat-ap-plu.xsd"/>
+    <xs:import namespace="http://purl.org/dc/terms/" schemaLocation="dcterms.xsd"/>
+    <xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
+    <xs:import namespace="http://www.w3.org/2004/02/skos/core#" schemaLocation="skos.xsd"/>
 
     <!-- types -->
-	<xs:complexType name="ProcessStep">
-		<xs:sequence>
-			<xs:element ref="plu:ProcessStep" minOccurs="0" maxOccurs="unbounded"/>
-		</xs:sequence>
-		<xs:attribute ref="rdf:resource"/>
-	</xs:complexType>
+    <xs:complexType name="ProcessStep">
+        <xs:sequence>
+            <xs:element ref="plu:ProcessStep" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute ref="rdf:resource"/>
+    </xs:complexType>
 
-	<!-- elements -->
-	<xs:element name="developmentFreezePeriod" type="dct:PeriodOfTime"/>
-	<xs:element name="docType" type="rdf:PlainLiteral"/>
-	<xs:element name="notification" type="rdf:PlainLiteral"/>
-	<xs:element name="planState" type="rdf:PlainLiteral"/>
-	<xs:element name="planType" type="rdf:PlainLiteral"/>
-	<xs:element name="planTypeFine" type="rdf:PlainLiteral"/>
-	<xs:element name="procedureStartDate" type="rdf:DateOrDateTimeLiteral"/>
-	<xs:element name="procedureState" type="rdf:PlainLiteral"/>
-	<xs:element name="procedureType" type="rdf:PlainLiteral"/>
-	<xs:element name="processStep" type="plu:ProcessStep"/>
-	<xs:element name="ProcessStep">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="dct:identifier" maxOccurs="1"/>
-				<xs:element name="processStepType" type="rdf:PlainLiteral" minOccurs="1" maxOccurs="1"/>
-				<xs:element ref="dcat:distribution" maxOccurs="unbounded"/>
-				<xs:element ref="dct:temporal" maxOccurs="unbounded"/>
-			</xs:sequence>
-			<xs:attribute ref="rdf:about"/>
-		</xs:complexType>
-	</xs:element>
+    <!-- elements -->
+    <xs:element name="developmentFreezePeriod" type="dct:PeriodOfTime"/>
+    <xs:element name="docType" type="rdf:PlainLiteral"/>
+    <xs:element name="mapLayerNames" type="rdf:PlainLiteral"/>
+    <xs:element name="notification" type="rdf:PlainLiteral"/>
+    <xs:element name="planState" type="rdf:PlainLiteral"/>
+    <xs:element name="planType" type="rdf:PlainLiteral"/>
+    <xs:element name="planTypeFine" type="rdf:PlainLiteral"/>
+    <xs:element name="procedureStartDate" type="rdf:DateOrDateTimeLiteral"/>
+    <xs:element name="procedureState" type="rdf:PlainLiteral"/>
+    <xs:element name="procedureType" type="rdf:PlainLiteral"/>
+    <xs:element name="processStep" type="plu:ProcessStep"/>
+    <xs:element name="ProcessStep">
+        <xs:complexType>
+            <xs:choice maxOccurs="unbounded">
+                <!-- mandatory -->
+                <xs:element name="processStepType" type="rdf:PlainLiteral"/>
+                <!-- recommended -->
+                <xs:element ref="dcat:distribution" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element ref="dct:identifier" minOccurs="0"/>
+                <xs:element ref="dct:temporal" minOccurs="0"/>
+            </xs:choice>
+            <xs:attribute ref="rdf:about"/>
+        </xs:complexType>
+    </xs:element>
 </xs:schema>
