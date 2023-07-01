@@ -11,10 +11,10 @@
         attributeFormDefault="qualified">
 
     <xs:annotation>
-            <xs:documentation xml:lang="en">
-                DCterms XML Schema (relevant parts for DCAT-AP-PLU)
-                http://purl.org/dc/terms/
-            </xs:documentation>
+        <xs:documentation xml:lang="en">
+            DCterms XML Schema (relevant parts for DCAT-AP-PLU)
+            http://purl.org/dc/terms/
+        </xs:documentation>
     </xs:annotation>
 
     <!-- imports -->
