@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+        xmlns:dcat="http://www.w3.org/ns/dcat#"
+        xmlns:dct="http://purl.org/dc/terms/"
+        xmlns:foaf="http://xmlns.com/foaf/0.1/"
+        xmlns:locn="http://www.w3.org/ns/locn#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://purl.org/dc/terms/"
+        elementFormDefault="qualified"
+        attributeFormDefault="qualified">
+
+    <xs:annotation>
+        <xs:documentation xml:lang="en">
+            DCterms XML Schema (relevant parts for DCAT-AP-PLU)
+            http://purl.org/dc/terms/
+        </xs:documentation>
+    </xs:annotation>
+
+    <!-- imports -->
+    <xs:import namespace="http://www.w3.org/ns/dcat#" schemaLocation="dcat-ap-plu.xsd"/>
+    <xs:import namespace="http://xmlns.com/foaf/0.1/" schemaLocation="foaf.xsd"/>
+    <xs:import namespace="http://www.w3.org/ns/locn#" schemaLocation="locn.xsd"/>
+    <xs:import namespace="http://www.w3.org/1999/02/22-rdf-syntax-ns#" schemaLocation="rdf.xsd"/>
+
+    <!-- types -->
+    <xs:complexType name="Location">
+        <xs:sequence>
+            <xs:element name="Location">
+                <xs:complexType>
+                    <xs:all>
+                        <!-- recommended -->
+                        <xs:element ref="dcat:bbox" minOccurs="0"/>
+                        <xs:element ref="locn:geometry" minOccurs="0"/>
+                        <!-- optional -->
+                        <xs:element ref="dcat:centroid" minOccurs="0"/>
+                        <xs:element ref="locn:geographicName" minOccurs="0"/>
+                    </xs:all>
+                    <xs:attribute ref="rdf:about"/>
+                    <xs:attribute ref="rdf:nodeID"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="PeriodOfTime">
+        <xs:sequence>
+            <xs:element name="PeriodOfTime">
+                <xs:complexType>
+                    <xs:all>
+                        <!-- recommended -->
+                        <xs:element ref="dcat:startDate" minOccurs="0"/>
+                        <xs:element ref="dcat:endDate" minOccurs="0"/>
+                    </xs:all>
+                    <xs:attribute ref="rdf:about"/>
+                    <xs:attribute ref="rdf:nodeID"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- elements -->
+    <xs:element name="contributor" type="foaf:Agent"/>
+    <xs:element name="description" type="rdf:PlainLiteral"/>
+    <xs:element name="format" type="rdf:PlainLiteral"/>
+    <xs:element name="identifier" type="rdf:PlainLiteral"/>
+    <xs:element name="issued" type="rdf:DateOrDateTimeLiteral"/>
+    <xs:element name="language" type="rdf:Resource"/>
+    <xs:element name="modified" type="rdf:DateOrDateTimeLiteral"/>
+    <xs:element name="publisher" type="foaf:Agent"/>
+    <xs:element name="relation" type="rdf:Resource"/>
+    <xs:element name="spatial" type="dct:Location"/>
+    <xs:element name="temporal" type="dct:PeriodOfTime"/>
+    <xs:element name="title" type="rdf:PlainLiteral"/>
+    <xs:element name="type" type="rdf:PlainLiteral"/>
+</xs:schema>

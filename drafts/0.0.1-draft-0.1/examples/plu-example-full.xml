@@ -4,7 +4,7 @@
     xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
     xmlns:dct="http://purl.org/dc/terms/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-    xmlns:gml="http://www.opengis.net/gml/3.2"
+    xmlns:gml="http://www.opengis.net/gml/3.2#"
     xmlns:locn="http://www.w3.org/ns/locn#"
     xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -41,7 +41,7 @@
                     {"type": "LineString", "coordinates": [[54.9, 14.5], [55.4, 15.3]]}
                 </dcat:bbox>
                 <locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
-                    {"type": "Polygon", "coordinates": [[55.22, 14.78], [55.2, 14.96], [55.14, 15.01], [55.124, 14.91], [55.102, 14.73]]]}
+                    {"type": "Polygon", "coordinates": [[[55.22, 14.78], [55.2, 14.96], [55.14, 15.01], [55.124, 14.91], [55.102, 14.73], [55.22, 14.78]]]}
                 </locn:geometry>
                 <dcat:centroid rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
                     {"type": "Point", "coordinates": [55.07, 14.92] }
@@ -70,12 +70,10 @@
         </dct:contributor>
         <plu:processStep rdf:resource="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123"/>
         <plu:developmentFreezePeriod>
-          <dct:temporal>
-             <dct:PeriodOfTime>
+            <dct:PeriodOfTime>
                 <dcat:startDate>2023-06-30</dcat:startDate>
                 <dcat:endDate>2023-07-31</dcat:endDate>
-             </dct:PeriodOfTime>
-          </dct:temporal>
+            </dct:PeriodOfTime>
         </plu:developmentFreezePeriod>
     </dcat:Dataset>
     <plu:ProcessStep rdf:about="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123">
