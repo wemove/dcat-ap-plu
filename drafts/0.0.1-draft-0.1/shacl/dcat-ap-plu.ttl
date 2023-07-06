@@ -11,15 +11,15 @@
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+#@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix plu: <http://a.placeholder.url.for.dcat-ap-plu/>
-@prefix prov: <http://www.w3.org/ns/prov#> .
+#@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix spdx: <http://spdx.org/rdf/terms#> .
-@prefix time: <http://www.w3.org/2006/time#> .
+#@prefix spdx: <http://spdx.org/rdf/terms#> .
+#@prefix time: <http://www.w3.org/2006/time#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -86,97 +86,97 @@
 :Agent_Shape
     a sh:NodeShape ;
     sh:name "Agent"@en ;
+    # mandatory
     sh:property [
+        sh:path foaf:name ;
+        sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:nodeKind sh:Literal ;
-        sh:path foaf:name ;
-    ], [
-        sh:class skos:Concept ;
-        sh:maxCount 1 ;
+    ] ;
+    # optional
+    sh:property [
         sh:path dct:type ;
+        # sh:class skos:Concept ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:maxCount 1 ;
     ] ;
     sh:targetClass foaf:Agent .
 
 :CatalogRecord_Shape
     a sh:NodeShape ;
     sh:name "Catalog Record"@en ;
+    # mandatory
     sh:property [
-        sh:minCount 1 ;
-        sh:maxCount 1 ;
-        sh:node :DcatResource_Shape ;
-        sh:path foaf:primaryTopic ;
-        sh:severity sh:Violation
-    ], [
-        sh:maxCount 1 ;
-        sh:node :DateOrDateTimeDataType_Shape ;
-        sh:path dct:issued ;
-        sh:severity sh:Violation
-    ], [
-        sh:maxCount 1 ;
-        sh:node :DateOrDateTimeDataType_Shape ;
         sh:path dct:modified ;
-        sh:severity sh:Violation
-    ], [
+        sh:node :DateOrDateTimeDataType_Shape ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:nodeKind sh:Literal ;
+    ], [
+        sh:path foaf:primaryTopic ;
+        sh:node :DcatResource_Shape ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    # recommended
+    sh:property [
+        sh:path dct:issued ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:maxCount 1 ;
+    ], [
         sh:path dct:title ;
-        sh:severity sh:Violation
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
     ] ;
     sh:targetClass dcat:CatalogRecord .
 
 :Catalog_Shape
     a sh:NodeShape ;
     sh:name "Catalog"@en ;
+    # mandatory
     sh:property [
-        sh:class dct:LinguisticSystem ;
-        sh:path dct:language ;
-        sh:severity sh:Violation
-    ], [
-        sh:maxCount 1 ;
-        sh:node :DateOrDateTimeDataType_Shape ;
-        sh:path dct:issued ;
-        sh:severity sh:Violation
-    ], [
-        sh:maxCount 1 ;
-        sh:node :DateOrDateTimeDataType_Shape ;
-        sh:path dct:modified ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dcat:CatalogRecord ;
-        sh:path dcat:record ;
-        sh:severity sh:Violation
-    ], [
-        sh:class skos:ConceptScheme ;
-        sh:path dcat:themeTaxonomy ;
-        sh:severity sh:Violation
-    ], [
+        sh:path dcat:dataset ;
         sh:class dcat:Dataset ;
         sh:minCount 1 ;
-        sh:path dcat:dataset ;
-        sh:severity sh:Violation
     ], [
-        sh:minCount 1 ;
-        sh:nodeKind sh:Literal ;
         sh:path dct:description ;
-        sh:severity sh:Violation
-    ], [
-        sh:class foaf:Agent ;
-        sh:maxCount 1 ;
-        sh:minCount 1 ;
-        sh:path dct:publisher ;
-        sh:severity sh:Violation
-    ], [
-        sh:minCount 1 ;
         sh:nodeKind sh:Literal ;
-        sh:path dct:title ;
-        sh:severity sh:Violation
+        sh:minCount 1 ;
     ], [
-        sh:class foaf:Document ;
+        sh:path dct:publisher ;
+        sh:class foaf:Agent ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
+    ], [
+        sh:path dct:title ;
+        sh:nodeKind sh:Literal ;
+        sh:minCount 1 ;
+    ] ;
+    # reommended
+    sh:property [
+        sh:path dcat:themeTaxonomy ;
+        sh:class skos:ConceptScheme ;
+        sh:maxCount 1 ;
+    ], [
+        sh:path dct:issued ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:maxCount 1 ;
+    ], [
+        sh:path dct:language ;
+        sh:class dct:LinguisticSystem ;
+    ], [
+        sh:path dct:modified ;
+        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:maxCount 1 ;
+    ] ;
+    # optional 
+    sh:property [
+        sh:path dcat:record ;
+        sh:class dcat:CatalogRecord ;
+    ], [
         sh:path foaf:homepage ;
-        sh:severity sh:Violation
+        # sh:class foaf:Document ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:maxCount 1 ;
     ] ;
     sh:targetClass dcat:Catalog .
 
@@ -195,10 +195,9 @@
     a sh:NodeShape ;
     sh:name "Category"@en ;
     sh:property [
-        sh:minCount 1 ;
-        sh:nodeKind sh:Literal ;
         sh:path skos:prefLabel ;
-        sh:severity sh:Violation
+        sh:nodeKind sh:Literal ;
+        sh:minCount 1 ;
     ] ;
     sh:targetClass skos:Concept .
 
@@ -263,117 +262,100 @@
     sh:name "Dataset"@en ;
     # mandatory
     sh:property [
-        sh:class vcard:Organization ;
         sh:path dcat:contactPoint ;
+        sh:class vcard:Organization ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ], [
-        sh:minCount 1 ;
-        sh:nodeKind sh:Literal ;
         sh:path dct:description ;
+        sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ], [
-        sh:nodeKind sh:Literal ;
         sh:path dct:identifier ;
+        sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ], [
-        sh:class foaf:Agent ;
         sh:path dct:publisher ;
+        sh:class foaf:Agent ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ], [
-        sh:class dct:Location ;
         sh:path dct:spatial ;
+        sh:class dct:Location ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ], [
-        sh:nodeKind sh:Literal ;
         sh:path dct:title ;
+        sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ], [
-        sh:nodeKind sh:Literal ;
         sh:path plu:planState ;
+        sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ], [
-        sh:nodeKind sh:Literal ;
         sh:path plu:procedureState ;
+        sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
     # recommended
     sh:property [
-        sh:class adms:Identifier ;
         sh:path adms:identifier ;
-        sh:minCount 0 ;
+        sh:class adms:Identifier ;
         sh:maxCount 1 ;
     ], [
-        sh:class dcat:Distribution ;
         sh:path dcat:distribution ;
-        sh:minCount 0 ;
+        sh:class dcat:Distribution ;
     ], [
-        sh:nodeKind sh:Literal ;
         sh:path plu:planType ;
-        sh:minCount 0 ;
+        sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ], [
-        sh:nodeKind sh:Literal ;
         sh:path plu:planTypeFine ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-    ], [
         sh:nodeKind sh:Literal ;
-        sh:path plu:procedureType ;
-        sh:minCount 0 ;
         sh:maxCount 1 ;
     ], [
-        sh:class plu:ProcessStep ;
+        sh:path plu:procedureType ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+    ], [
         sh:path plu:processStep ;
-        sh:minCount 0 ;
+        sh:class plu:ProcessStep ;
     ] ;
     # optional
     sh:property [
-        sh:class foaf:Agent ;
         sh:path dcatde:maintainer ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-    ], [
         sh:class foaf:Agent ;
+    ], [
         sh:path dct:contributor ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
+        sh:class foaf:Agent ;
     ], [
-        sh:shape :DateOrDateTimeDataType_Shape ;
         sh:path dct:issued ;
-        sh:minCount 0 ;
-        sh:maxCount 1 ;
-    ], [
         sh:shape :DateOrDateTimeDataType_Shape ;
+        sh:maxCount 1 ;
+    ], [
         sh:path dct:modified ;
-        sh:minCount 0 ;
+        sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
     ], [
-        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:path dct:relation ;
-        sh:minCount 0 ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;
     ], [
-        sh:class dct:PeriodOfTime ;
         sh:path plu:developmentFreezePeriod ;
-        sh:minCount 0 ;
+        sh:class dct:PeriodOfTime ;
         sh:maxCount 1 ;
     ], [
-        sh:nodeKind sh:Literal ;
         sh:path plu:notification ;
-        sh:minCount 0 ;
+        sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ], [
-        sh:nodeKind sh:Literal ;
         sh:path plu:procedureStartDate ;
-        sh:minCount 0 ;
+        sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ] ;
     sh:targetClass dcat:Dataset .
@@ -393,130 +375,67 @@
 
 :DcatResource_Shape
     a sh:NodeShape ;
-    rdfs:comment "the union of Catalog, Dataset and DataService" ;
+    rdfs:comment "the union of Catalog and Dataset" ;
     rdfs:label "dcat:Resource" ;
-    sh:message "The node is either a Catalog, Dataset or a DataService" ;
+    sh:message "The node is either a Catalog or Dataset" ;
     sh:or ([
             sh:class dcat:Catalog
         ]
         [
             sh:class dcat:Dataset
         ]
-        [
-            sh:class dcat:DataService
-        ]
     ) .
 
 :Distribution_Shape
     a sh:NodeShape ;
     sh:name "Distribution"@en ;
+    # mandatory
     sh:property [
-        sh:class dct:Standard ;
-        sh:path dct:conformsTo ;
-        sh:severity sh:Violation
-    ], [
-        sh:maxCount 1 ;
-        sh:shape :DateOrDateTimeDataType_Shape ;
-        sh:path dct:issued ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dct:LinguisticSystem ;
-        sh:path dct:language ;
-        sh:severity sh:Violation
-    ], [
-        sh:maxCount 1 ;
-        sh:shape :DateOrDateTimeDataType_Shape ;
-        sh:path dct:modified ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dct:RightsStatement ;
-        sh:maxCount 1 ;
-        sh:path dct:rights ;
-        sh:severity sh:Violation
-    ], [
-        sh:nodeKind sh:Literal ;
-        sh:path dct:title ;
-        sh:severity sh:Violation
-    ], [
-        sh:class spdx:Checksum ;
-        sh:maxCount 1 ;
-        sh:path spdx:checksum ;
-        sh:severity sh:Violation
-    ], [
-        sh:class skos:Concept ;
-        sh:maxCount 1 ;
-        sh:path adms:status ;
-        sh:severity sh:Violation
-    ], [
-        sh:datatype xsd:decimal ;
-        sh:maxCount 1 ;
-        sh:path dcat:byteSize ;
-        sh:severity sh:Violation
-    ], [
-        sh:nodeKind sh:BlankNodeOrIRI;
-        sh:path dcat:downloadURL ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dct:MediaType ;
-        sh:maxCount 1 ;
-        sh:path dcat:mediaType ;
-        sh:severity sh:Violation
-    ], [
-        sh:class foaf:Document ;
-        sh:path foaf:page ;
-        sh:severity sh:Violation
-    ], [
-        sh:class odrl:Policy ;
-        sh:maxCount 1 ;
-        sh:path odrl:hasPolicy ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dcat:DataService ;
-        sh:path dcat:accessService ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dct:MediaType ;
-        sh:maxCount 1 ;
-        sh:path dcat:compressFormat ;
-        sh:severity sh:Violation
-    ], [
-        sh:class dct:MediaType ;
-        sh:maxCount 1 ;
-        sh:path dcat:packageFormat ;
-        sh:severity sh:Violation
-    ], [
-        sh:datatype xsd:duration ;
-        sh:path dcat:temporalResolution ;
-        sh:severity sh:Violation
-    ], [
-        sh:datatype xsd:decimal ;
-        sh:path dcat:spatialResolutionInMeters ;
-        sh:severity sh:Violation
-    ], [
-        sh:minCount 1 ;
-        sh:nodeKind sh:BlankNodeOrIRI;
         sh:path dcat:accessURL ;
-        sh:severity sh:Violation
-    ], [
-        sh:nodeKind sh:Literal ;
-        sh:path dct:description ;
-        sh:severity sh:Violation
-    ], [
-        sh:class skos:Concept ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:minCount 1 ;
         sh:maxCount 1 ;
-        sh:path dcatap:availability ;
-        sh:severity sh:Violation
-    ], [
+    ] ;
+    # recommended
+    sh:property [
+        sh:path dct:format ;
         # sh:class dct:MediaTypeOrExtent ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;
-        sh:path dct:format ;
-        sh:severity sh:Violation
     ], [
-        sh:class dct:LicenseDocument ;
+        sh:path dct:issued ;
+        sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
-        sh:path dct:license ;
-        sh:severity sh:Violation
+    ], [
+        sh:path dct:modified ;
+        sh:shape :DateOrDateTimeDataType_Shape ;
+        sh:maxCount 1 ;
+    ], [
+        sh:path dct:temporal ;
+        sh:class dct:PeriodOfTime ;
+        sh:maxCount 1 ;
+    ], [
+        sh:path dct:title ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+    ] ;
+    # optional
+    sh:property [
+        sh:path dcat:downloadURL ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:maxCount 1 ;
+    ], [
+        sh:path dct:description ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+    ], [
+        sh:path plu:docType ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+    ], [
+        sh:path plu:mapLayerNames ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
     ] ;
     sh:targetClass dcat:Distribution .
 
@@ -524,40 +443,44 @@
     a sh:NodeShape ;
     sh:name "Identifier"@en ;
     sh:property [
-        sh:maxCount 1 ;
         sh:path skos:notation ;
-        sh:severity sh:Violation
+        sh:maxCount 1 ;
     ] ;
     sh:targetClass adms:Identifier .
 
-:LicenceDocument_Shape
-    a sh:NodeShape ;
-    sh:name "Licence Document"@en ;
-    sh:property [
-        sh:class skos:Concept ;
-        sh:path dct:type ;
-        sh:severity sh:Violation
-    ] ;
-    sh:targetClass dct:LicenseDocument .
+# :LicenceDocument_Shape
+#     a sh:NodeShape ;
+#     sh:name "Licence Document"@en ;
+#     sh:property [
+#         sh:path dct:type ;
+#         sh:class skos:Concept ;
+#     ] ;
+#     sh:closed true ;
+#     sh:ignoredProperties (rdf:type) ;
+#     sh:targetClass dct:LicenseDocument .
 
 :Location_Shape
     a sh:NodeShape ;
     sh:name "Location"@en ;
+    # recommended
     sh:property [
-        sh:maxCount 1 ;
-        sh:nodeKind sh:Literal ;
         sh:path dcat:bbox ;
-        sh:severity sh:Violation
-    ], [
-        sh:maxCount 1 ;
         sh:nodeKind sh:Literal ;
-        sh:path dcat:centroid ;
-        sh:severity sh:Violation
-    ], [
         sh:maxCount 1 ;
-        sh:nodeKind sh:Literal ;
+    ], [
         sh:path locn:geometry ;
-        sh:severity sh:Violation
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+    ] ;
+    # optional
+    sh:property [
+        sh:path dcat:centroid ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+    ], [
+        sh:path locn:geographicName ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
     ] ;
     sh:targetClass dct:Location .
 
@@ -573,26 +496,15 @@
 :PeriodOfTime_Shape
     a sh:NodeShape ;
     sh:name "PeriodOfTime"@en ;
+    # recommended
     sh:property [
-        sh:maxCount 1 ;
         sh:path dcat:endDate ;
-        sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape
-    ], [
-        sh:class time:Instant ;
+        sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
-        sh:path time:hasBeginning ;
-        sh:severity sh:Violation
     ], [
-        sh:class time:Instant ;
-        sh:maxCount 1 ;
-        sh:path time:hasEnd ;
-        sh:severity sh:Violation
-    ], [
-        sh:maxCount 1 ;
         sh:path dcat:startDate ;
-        sh:severity sh:Violation ;
-        sh:shape :DateOrDateTimeDataType_Shape
+        sh:shape :DateOrDateTimeDataType_Shape ;
+        sh:maxCount 1 ;
     ] ;
     sh:targetClass dct:PeriodOfTime .
 
@@ -601,39 +513,38 @@
     sh:name "ProcessStep"@en ;
     # mandatory
     sh:property [
-        sh:nodeKind sh:Literal ;
         sh:path plu:processStepType ;
+        sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
     # recommended
     sh:property [
-        sh:class dcat:Distribution ;
         sh:path dcat:distribution ;
+        sh:class dcat:Distribution ;
     ], [
-        sh:nodeKind sh:Literal ;
         sh:path dct:identifier ;
+        sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ], [
-        sh:class dct:PeriodOfTime ;
         sh:path dct:temporal ;
+        sh:class dct:PeriodOfTime ;
         sh:maxCount 1 ;
     ] ;
     sh:targetClass plu:ProcessStep .
 
-:Relationship_Shape
-    a sh:NodeShape ;
-    sh:name "Relationship"@en ;
-    sh:property [
-        sh:class dcat:Role ;
-        sh:minCount 1 ;
-        sh:path dct:relation ;
-        sh:severity sh:Violation
-    ], [
-        sh:minCount 1 ;
-        sh:nodeKind :DcatResource_Shape ;
-        sh:path dcat:hadRole ;
-        sh:severity sh:Violation
-    ] ;
-    sh:targetClass dcat:Relationship .
-
+# :Relationship_Shape
+#     a sh:NodeShape ;
+#     sh:name "Relationship"@en ;
+#     sh:property [
+#         sh:class dcat:Role ;
+#         sh:minCount 1 ;
+#         sh:path dct:relation ;
+#         sh:severity sh:Violation
+#     ], [
+#         sh:minCount 1 ;
+#         sh:nodeKind :DcatResource_Shape ;
+#         sh:path dcat:hadRole ;
+#         sh:severity sh:Violation
+#     ] ;
+#     sh:targetClass dcat:Relationship .
