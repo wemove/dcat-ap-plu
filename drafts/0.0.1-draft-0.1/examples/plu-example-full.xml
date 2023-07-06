@@ -4,7 +4,6 @@
     xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
     xmlns:dct="http://purl.org/dc/terms/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-    xmlns:gml="http://www.opengis.net/gml/3.2#"
     xmlns:locn="http://www.w3.org/ns/locn#"
     xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -53,19 +52,19 @@
         <dct:publisher>
             <foaf:Agent>
                 <foaf:name>Behörde für beispielhafte Bebauungspläne</foaf:name>
-                <dct:type>http://purl.org/adms/publishertype/LocalAuthority</dct:type>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/LocalAuthority"/>
             </foaf:Agent>
         </dct:publisher>
         <dcatde:maintainer>
             <foaf:Agent>
                 <foaf:name>Behörde für beispielhafte Bebauungspläne</foaf:name>
-                <dct:type>http://purl.org/adms/publishertype/LocalAuthority</dct:type>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/LocalAuthority"/>
             </foaf:Agent>
         </dcatde:maintainer>
         <dct:contributor>
             <foaf:Agent>
                 <foaf:name>Untergeordnete Einheit für bestimmte Bebauungspläne</foaf:name>
-                <dct:type>http://purl.org/adms/publishertype/LocalAuthority</dct:type>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/LocalAuthority"/>
             </foaf:Agent>
         </dct:contributor>
         <plu:processStep rdf:resource="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123"/>
@@ -89,19 +88,19 @@
     </plu:ProcessStep>
     <dcat:Distribution rdf:about="https://dev.informationgrid.eu/trefferanzeige?docuuid=e7ced9a0-1076-4aee-af39-e6a2e7ff30b/distribution">
         <dct:title>Test-Dokument</dct:title>
-        <dct:description> Test-Dokument </dct:description>
-        <dcat:accessURL>https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf</dcat:accessURL>
-        <dct:format>application/pdf</dct:format>
-        <dcat:downloadURL>https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf</dcat:downloadURL>
+        <dct:description> Test-Dokument</dct:description>
+        <dcat:accessURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
+        <dcat:downloadURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>        
+        <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
         <plu:docType>4001</plu:docType>
         <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
     <dcat:Distribution rdf:about="https://dev.informationgrid.eu/trefferanzeige?docuuid=59a5c95b-c144-4b44-afab-e170f968a12e/distribution">
         <dct:title>Test-Dokument</dct:title>
-        <dct:description> Test-Dokument </dct:description>
-        <dcat:accessURL>https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf</dcat:accessURL>
-        <dct:format>application/pdf</dct:format>
-        <dcat:downloadURL>https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf</dcat:downloadURL>
+        <dct:description> Test-Dokument</dct:description>
+        <dcat:accessURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
+        <dcat:downloadURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
+        <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
         <plu:docType>4001</plu:docType>
         <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
     </dcat:Distribution>

@@ -4,11 +4,9 @@
     xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
     xmlns:dct="http://purl.org/dc/terms/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-    xmlns:gml="http://www.opengis.net/gml/3.2#"
     xmlns:locn="http://www.w3.org/ns/locn#"
     xmlns:plu="http://a.placeholder.url.for.dcat-ap-plu/"
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
     xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
     <dcat:Catalog rdf:about="https://bauleitplanung.hamburg.de/">
         <dcat:dataset rdf:resource="https://bauleitplanung.hamburg.de/verfahren/17b94f6a-28ba-11e7-af94-0050568a354d/public/detail" />
@@ -17,7 +15,7 @@
         <dct:publisher>
             <foaf:Agent>
                 <foaf:name>Freie und Hansestadt Hamburg</foaf:name>
-                <dct:type>http://purl.org/adms/publishertype/LocalAuthority</dct:type>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/LocalAuthority"/>
             </foaf:Agent>
         </dct:publisher>
         <foaf:homepage rdf:resource="https://bauleitplanung.hamburg.de/"/>
@@ -67,7 +65,7 @@
         <dct:publisher>
             <foaf:Agent>
                 <foaf:name>Freie und Hansestadt Hamburg</foaf:name>
-                <dct:type>http://purl.org/adms/publishertype/LocalAuthority</dct:type>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/LocalAuthority"/>
             </foaf:Agent>
         </dct:publisher>
         <dct:issued>2022-05-01T00:00:00.000Z</dct:issued>
@@ -123,9 +121,9 @@
     <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution">
         <dct:title xml:lang="de">Planzeichnung</dct:title>
         <dct:description> Planzeichnung </dct:description>
-        <dcat:accessURL>https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f</dcat:accessURL>
-        <dct:format>application/pdf</dct:format>
-        <dcat:downloadURL>https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f</dcat:downloadURL>
+        <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
+        <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
+        <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
         <plu:docType>4003</plu:docType>
         <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
@@ -133,9 +131,9 @@
     <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f/distribution">
         <dct:title xml:lang="de">Verordnung</dct:title>
         <dct:description>Hier finden Sie die Verordnung über den Bebauungsplan Altona-Nord 27 / Bahrenfeld 72.</dct:description>
-        <dcat:accessURL>https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f</dcat:accessURL>
-        <dct:format>application/pdf</dct:format>
-        <dcat:downloadURL>https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f</dcat:downloadURL>
+        <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
+        <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
+        <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
         <plu:docType>4004</plu:docType>
         <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
