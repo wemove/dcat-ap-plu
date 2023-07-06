@@ -100,6 +100,8 @@
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass foaf:Agent .
 
 :CatalogRecord_Shape
@@ -127,6 +129,8 @@
         sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass dcat:CatalogRecord .
 
 :Catalog_Shape
@@ -178,6 +182,8 @@
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass dcat:Catalog .
 
 # :CategoryScheme_Shape
@@ -199,6 +205,8 @@
         sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass skos:Concept .
 
 # :Checksum_Shape
@@ -358,6 +366,8 @@
         sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass dcat:Dataset .
 
 :DateOrDateTimeDataType_Shape
@@ -371,7 +381,9 @@
         [
             sh:datatype xsd:dateTime
         ]
-    ) .
+    ) ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) .
 
 :DcatResource_Shape
     a sh:NodeShape ;
@@ -384,7 +396,9 @@
         [
             sh:class dcat:Dataset
         ]
-    ) .
+    ) ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) .
 
 :Distribution_Shape
     a sh:NodeShape ;
@@ -437,6 +451,8 @@
         sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass dcat:Distribution .
 
 :Identifier_Shape
@@ -446,6 +462,8 @@
         sh:path skos:notation ;
         sh:maxCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass adms:Identifier .
 
 # :LicenceDocument_Shape
@@ -482,6 +500,8 @@
         sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass dct:Location .
 
 # :MediaTypeOrExtent_Shape
@@ -506,6 +526,8 @@
         sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass dct:PeriodOfTime .
 
 :ProcessStep_Shape
@@ -531,6 +553,8 @@
         sh:class dct:PeriodOfTime ;
         sh:maxCount 1 ;
     ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
     sh:targetClass plu:ProcessStep .
 
 # :Relationship_Shape
