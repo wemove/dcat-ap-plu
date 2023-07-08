@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <base href=".">
+        <style>
+            body {
+                font-family: sans-serif;
+                margin: 50px;
+            }
+            ol {
+                list-style: none;
+                counter-reset: num;
+            }
+            li {
+                margin: 10px 0;
+            }
+            li::before {
+                counter-increment: num;
+                content: '§\a0 5.' counters(num, '.') ' ';
+                margin-right: 5px;
+            }
+            p {
+                margin: 24px 0;
+            }
+            p [lang] {
+                display: block;
+                line-height: 120%;
+                margin: 8px 0;
+            }
+            [lang="de"] {
+            }
+            [lang="en"] {
+                font-style: italic;
+            }
+        </style>
+        <title>DCAT-AP.PLU Codelisten-Repository / DCAT-AP.PLU Codelist Repository</title>
+    </head>
+    <body>
+        <ol>
+            <li><a href="procedureType" title="Verfahrensart / Procedure Type">
+                <span lang="de">Verfahrensart</span> / 
+                <span lang="en">Procedure Type</span>
+            </a></li>
+            <li><a href="procedureState" title="Status eines Verfahrens / Procedure State">
+                <span lang="de">Status eines Verfahrens</span> / 
+                <span lang="en">Procedure State</span>
+            </a></li>
+            <li><a href="planState" title="Planstatus / Plan State">
+                <span lang="de">Planstatus</span> / 
+                <span lang="en">Plan Status</span>
+            </a></li>
+            <li><a href="planType" title="Planart / Plan Type">
+                <span lang="de">Planart</span> / 
+                <span lang="en">Plan Type</span>
+            </a></li>
+            <li><a href="processStepType" title="Art eines Verfahrensschrittes / Procedure Step Type">
+                <span lang="de">Art eines Verfahrensschrittes</span> / 
+                <span lang="en">Procedure Step Type</span>
+            </a></li>
+            <li><a href="docType" title="Dokumententyp / Document Type">
+                <span lang="de">Dokumententyp</span> / 
+                <span lang="en">Document Type</span>
+            </a></li>
+        </ol>
+    </body>
+</html>
