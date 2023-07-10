@@ -928,7 +928,7 @@ components:
             attribute: true
         namespace-plu:
           type: string
-          example: http://a.placeholder.url.for.dcat-ap-plu/
+          example: https://specs.diplanung.de/plu/
           xml:
             name: xmlns:plu
             attribute: true
