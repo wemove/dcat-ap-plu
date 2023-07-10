@@ -70,13 +70,13 @@
         </dct:publisher>
         <dct:issued>2022-05-01T00:00:00.000Z</dct:issued>
         <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
-        <plu:planState>3002</plu:planState>
-        <plu:procedureState>2002</plu:procedureState>
+        <plu:planState rdf:resource="https://specs.diplanung.de/resource/planState#3002">3002</plu:planState>
+        <plu:procedureState rdf:resource="https://specs.diplanung.de/resource/procedureState#2002">2002</plu:procedureState>
         <plu:procedureStartDate>2022-04-01T00:00:00.000Z</plu:procedureStartDate>
         <dct:relation rdf:resource="http://uvp-verbund.de/trefferanzeige?docuuid=D33223C6-F4A3-40B5-9E69-CED36D2A69A2"/>
-        <plu:planType>1000</plu:planType>
-        <plu:planTypeFine>6_3_EinfacherBPlan</plu:planTypeFine>
-        <plu:procedureType>1001</plu:procedureType>
+        <plu:planType rdf:resource="https://specs.diplanung.de/resource/planType#1000">1000</plu:planType>
+        <plu:planTypeFine rdf:resource="https://registry.gdi-de.org/codelist/de.xleitstelle.inspire_plu/PlanTypeNameValue/6_Bebauungsplan#6_3_EinfacherBPlan">6_3_EinfacherBPlan</plu:planTypeFine>
+        <plu:procedureType rdf:resource="https://specs.diplanung.de/resource/procedureType#1001">1001</plu:procedureType>
         <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123"/>
         <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123"/>
         <plu:processStep rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123"/>
@@ -84,7 +84,7 @@
 
     <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-0123">
         <dct:identifier>ProcStep-0123</dct:identifier>
-        <plu:processStepType>3004</plu:processStepType>
+        <plu:processStepType rdf:resource="https://specs.diplanung.de/resource/processStepType#3004">3004</plu:processStepType>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
         <dct:temporal>
             <dct:PeriodOfTime>
@@ -96,7 +96,7 @@
 
     <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-1123">
         <dct:identifier>ProcStep-1123</dct:identifier>
-        <plu:processStepType>3003</plu:processStepType>
+        <plu:processStepType rdf:resource="https://specs.diplanung.de/resource/processStepType#3003">3003</plu:processStepType>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
         <dct:temporal>
             <dct:PeriodOfTime>
@@ -108,7 +108,7 @@
 
     <plu:ProcessStep rdf:about="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/ProcStep-2123">
         <dct:identifier> ProcStep-2123 </dct:identifier>
-        <plu:processStepType>3002</plu:processStepType>
+        <plu:processStepType rdf:resource="https://specs.diplanung.de/resource/processStepType#3002">3002</plu:processStepType>
         <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f/distribution"/>
         <dct:temporal>
             <dct:PeriodOfTime>
@@ -124,7 +124,7 @@
         <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
         <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
         <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
-        <plu:docType>4003</plu:docType>
+        <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#4003">4003</plu:docType>
         <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
 
@@ -134,7 +134,7 @@
         <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
         <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
         <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
-        <plu:docType>4004</plu:docType>
+        <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#4004">4004</plu:docType>
         <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
 </rdf:RDF>
