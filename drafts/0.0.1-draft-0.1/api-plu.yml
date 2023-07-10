@@ -928,7 +928,7 @@ components:
             attribute: true
         namespace-plu:
           type: string
-          example: http://a.placeholder.url.for.dcat-ap-plu/
+          example: https://specs.diplanung.de/plu/
           xml:
             name: xmlns:plu
             attribute: true
@@ -969,7 +969,7 @@ components:
             A global, catalog-agnostic identifier comprised of 
             the ID of the data management authority and the ID of the dataset
           type: string
-          example: https://specs.diplanung.de/resource/authority/hh/1234-567890abd-9876
+          example: https://specs.diplanung.de/resource/authority#hh/1234-567890abd-9876
           xml:
             prefix: adms
             name: identifier

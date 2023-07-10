@@ -61,7 +61,7 @@
           <tr><td><code>dctype</code></td><td><code>http://purl.org/dc/dcmitype/</code></td></tr>
           <tr><td><code>foaf</code></td><td><code>http://xmlns.com/foaf/0.1/</code></td></tr>
           <tr><td><code>locn</code></td><td><code>http://www.w3.org/ns/locn#</code></td></tr>
-          <tr><td><code>plu</code></td><td><code>http://a.placeholder.url.for.dcat-ap-plu/</code> <b>*(PLACEHOLDER)</b></td></tr>
+          <tr><td><code>plu</code></td><td><code>https://specs.diplanung.de/plu/</code></td></tr>
           <tr><td><code>rdf</code></td><td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td></tr>
           <tr><td><code>rdfs</code></td><td><code>http://www.w3.org/2000/01/rdf-schema#</code></td></tr>
           <tr><td><code>skos</code></td><td><code>http://www.w3.org/2004/02/skos/core#</code></td></tr>
@@ -965,17 +965,17 @@
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
-          <tr><td>1001</td> <td>normales Verfahren</td></tr>
-          <tr><td>1002</td> <td>vereinfachtes Verfahren</td></tr>
-          <tr><td>1003</td> <td>Bebauungsplan der Innenentwicklung</td></tr>
-          <tr><td>1004</td> <td>Einbeziehung von Außenbereichsflächen in das beschleunigte Verfahren</td></tr>
-          <tr><td>1005</td> <td>Änderung</td></tr>
-          <tr><td>1006</td> <td>Teilfortschreibung</td></tr>
-          <tr><td>1007</td> <td>Neuaufstellung</td></tr>
-          <tr><td>1008</td> <td>Gesamtfortschreibung</td></tr>
-          <tr><td>1009</td> <td>Aktualisierung</td></tr>
-          <tr><td>1010</td> <td>Neubekanntmachung</td></tr>
-          <tr><td>9000</td> <td>unbekannt</td></tr>
+          <tr><td>regular</td> <td>normales Verfahren</td></tr>
+          <tr><td>simplified</td> <td>vereinfachtes Verfahren</td></tr>
+          <tr><td>innerDevPlan</td> <td>Bebauungsplan der Innenentwicklung</td></tr>
+          <tr><td>outdoorArea</td> <td>Einbeziehung von Außenbereichsflächen in das beschleunigte Verfahren</td></tr>
+          <tr><td>revision</td> <td>Änderung</td></tr>
+          <tr><td>partialExtrapolation</td> <td>Teilfortschreibung</td></tr>
+          <tr><td>newPreparation</td> <td>Neuaufstellung</td></tr>
+          <tr><td>completeExtrapolation</td> <td>Gesamtfortschreibung</td></tr>
+          <tr><td>update</td> <td>Aktualisierung</td></tr>
+          <tr><td>newAnnouncement</td> <td>Neubekanntmachung</td></tr>
+          <tr><td>unknown</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
 
@@ -986,10 +986,10 @@
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
-          <tr><td>2001</td> <td>geplant</td></tr>
-          <tr><td>2002</td> <td>laufend</td></tr>
-          <tr><td>2003</td> <td>abgeschlossen</td></tr>
-          <tr><td>9000</td> <td>unbekannt</td></tr>
+          <tr><td>planned</td> <td>geplant</td></tr>
+          <tr><td>ongoing</td> <td>laufend</td></tr>
+          <tr><td>completed</td> <td>abgeschlossen</td></tr>
+          <tr><td>unknown</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
       </section>
@@ -999,9 +999,9 @@
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
-          <tr><td>3001</td> <td>in Aufstellung</td></tr>
-          <tr><td>3002</td> <td>festgesetzt</td></tr>
-          <tr><td>9000</td> <td>unbekannt</td></tr>
+          <tr><td>inPreparation</td> <td>in Aufstellung</td></tr>
+          <tr><td>fixed</td> <td>festgesetzt</td></tr>
+          <tr><td>unknown</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
       </section>
@@ -1011,16 +1011,16 @@
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
-          <tr><td>1000</td> <td>Bebauungsplan</td></tr>
-          <tr><td>2000</td> <td>Flächennutzungsplan</td></tr>
-          <tr><td>3000</td> <td>Städtebauliche Satzungen</td></tr>
-          <tr><td>4000</td> <td>Planwerke besonderes Städtebaurecht</td></tr>
-          <tr><td>5000</td> <td>Planwerke der Landschaftsplanung</td></tr>
-          <tr><td>6000</td> <td>Raumordnungsplan</td></tr>
-          <tr><td>7000</td> <td>Raumordnungsverfahren</td></tr>
-          <tr><td>8000</td> <td>Planfeststellungsverfahren</td></tr>
-          <tr><td>8500</td> <td>Sonstige raumbezogene Planwerke</td></tr>
-          <tr><td>9000</td> <td>unbekannt</td></tr>
+          <tr><td>developmentPlan</td> <td>Bebauungsplan</td></tr>
+          <tr><td>landUsePlan</td> <td>Flächennutzungsplan</td></tr>
+          <tr><td>urbanPlanningStatutes</td> <td>Städtebauliche Satzungen</td></tr>
+          <tr><td>specialUrbanPlanningLaw</td> <td>Planwerke besonderes Städtebaurecht</td></tr>
+          <tr><td>landscapePlanning</td> <td>Planwerke der Landschaftsplanung</td></tr>
+          <tr><td>spatialPlan</td> <td>Raumordnungsplan</td></tr>
+          <tr><td>spatialPlanningProcedure</td> <td>Raumordnungsverfahren</td></tr>
+          <tr><td>planApprovalProcedure</td> <td>Planfeststellungsverfahren</td></tr>
+          <tr><td>other</td> <td>Sonstige raumbezogene Planwerke</td></tr>
+          <tr><td>unknown</td> <td>unbekannt</td></tr>
           </tbody>
           </tbody>
         </table>
@@ -1031,13 +1031,13 @@
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
-          <tr><td>3001</td> <td>Frühzeitige Behördenbeteiligung</td></tr>
-          <tr><td>3002</td> <td>Frühzeitige Öffentlichkeitsbeteiligung</td></tr>
-          <tr><td>3003</td> <td>Beteiligung der Träger öffentlicher Belange</td></tr>
-          <tr><td>3004</td> <td>Öffentliche Auslegung</td></tr>
-          <tr><td>3005</td> <td>Interne Bearbeitung</td></tr>
-          <tr><td>3006</td> <td>Abgeschlossen</td></tr>
-          <tr><td>9000</td> <td>unbekannt</td></tr>
+          <tr><td>earlyInvolveAuth</td> <td>Frühzeitige Behördenbeteiligung</td></tr>
+          <tr><td>earlyPublicPart</td> <td>Frühzeitige Öffentlichkeitsbeteiligung</td></tr>
+          <tr><td>publicAgencies</td> <td>Beteiligung der Träger öffentlicher Belange</td></tr>
+          <tr><td>publicDisclosure</td> <td>Öffentliche Auslegung</td></tr>
+          <tr><td>internal</td> <td>Interne Bearbeitung</td></tr>
+          <tr><td>completed</td> <td>abgeschlossen</td></tr>
+          <tr><td>unknown</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
 
@@ -1048,10 +1048,10 @@
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
-          <tr><td>4001</td> <td>Auslegungsinformationen</td></tr>
-          <tr><td>4002</td> <td>Erläuterungsbericht</td></tr>
-          <tr><td>4003</td> <td>Planzeichnung</td></tr>
-          <tr><td>9000</td> <td>unbekannt</td></tr>
+          <tr><td>announcement</td> <td>Auslegungsinformationen</td></tr>
+          <tr><td>explanatoryReport</td> <td>Erläuterungsbericht</td></tr>
+          <tr><td>planDrawing</td> <td>Planzeichnung</td></tr>
+          <tr><td>unknown</td> <td>unbekannt</td></tr>
           </tbody>
         </table>
       </section>
