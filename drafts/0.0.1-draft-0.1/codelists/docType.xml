@@ -1,11 +1,4 @@
-<rdf:RDF xml:base="https://specs.diplanung.de/resource/docType"
-        xmlns:dc="http://purl.org/dc/elements/1.0/"
-        xmlns:dct="http://purl.org/dc/terms/"
-        xmlns:owl ="http://www.w3.org/2002/07/owl#"
-        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
-        xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#">
+<rdf:RDF xml:base="https://specs.diplanung.de/resource/docType">
     <owl:Ontology rdf:about="https://specs.diplanung.de/resource/docType">
         <owl:versionInfo>1.0</owl:versionInfo>
         <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/docType/1.0/"/>
@@ -16,62 +9,39 @@ Zur kodierten Angabe der Art eines Dokuments:
     <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/docType">
         <rdfs:label xml:lang="de">Liste der Arten von Dokumenten</rdfs:label>
         <skos:prefLabel xml:lang="de">Liste der Arten von Dokumenten</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">List of types of documents</skos:prefLabel>
         <dct:identifier>https://specs.diplanung.de/resource/docType</dct:identifier>
     </skos:ConceptScheme>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType/auslegung">
-        <dc:identifier>auslegung</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType/announcement">
+        <dc:identifier>announcement</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:prefLabel xml:lang="de">Auslegungsinformationen</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">Auslegungsinformationen</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">Auslegungsinformationen</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType/auslegung"/>
+        <skos:prefLabel xml:lang="en">Announcement documentation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType/announcement"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType/erlaeuterungsbericht">
-        <dc:identifier>erlaeuterungsbericht</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType/explanatoryReport">
+        <dc:identifier>explanatoryReport</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:prefLabel xml:lang="de">Erläuterungsbericht</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">Erläuterungsbericht</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">Erläuterungsbericht</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType/erlaeuterungsbericht"/>
+        <skos:prefLabel xml:lang="en">Explanatory report</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType/explanatoryReport"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType/planzeichnung">
-        <dc:identifier>planzeichnung</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType/planDrawing">
+        <dc:identifier>planDrawing</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:prefLabel xml:lang="de">Planzeichnung</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">Planzeichnung</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">Planzeichnung </rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType/planzeichnung"/>
+        <skos:prefLabel xml:lang="en">Plan drawing</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType/planDrawing"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType/unbekannt">
-        <dc:identifier>unbekannt</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType/unknown">
+        <dc:identifier>unknown</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">unbekannt</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">unbekannt</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType/unbekannt"/>
+        <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType/unknown"/>
     </skos:Concept>
 </rdf:RDF>
