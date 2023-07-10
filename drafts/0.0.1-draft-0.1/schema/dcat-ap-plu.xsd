@@ -34,7 +34,7 @@
     <!-- types -->
     <xs:element name="Catalog" type="dcat:Catalog"/>
     <xs:complexType name="Catalog">
-        <xs:choice maxOccurs="unbounded">
+        <xs:choice>
             <!-- mandatory -->
             <xs:element ref="dct:title" maxOccurs="unbounded"/>
             <xs:element ref="dct:description" maxOccurs="unbounded"/>
@@ -91,7 +91,7 @@
     <xs:element name="CatalogRecord" type="dcat:CatalogRecord"/>
     <xs:element name="Dataset">
         <xs:complexType>
-            <xs:choice maxOccurs="unbounded">
+            <xs:choice>
                 <!-- mandatory -->
                 <xs:element name="contactPoint" type="vcard:Organization"/>
                 <xs:element ref="dct:description"/>
@@ -123,7 +123,7 @@
     </xs:element>
     <xs:element name="Distribution">
         <xs:complexType>
-            <xs:choice maxOccurs="unbounded">
+            <xs:choice>
                 <!-- mandatory -->
                 <xs:element name="accessURL" type="xs:string"/>
                 <!-- recommended -->
