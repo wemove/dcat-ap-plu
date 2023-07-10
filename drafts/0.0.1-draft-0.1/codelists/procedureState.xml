@@ -12,36 +12,36 @@ Zur kodierten Angabe des übergeordneten Status eines Verfahrens sind folgende O
         <skos:prefLabel xml:lang="en">List of superordinate states of a procedure</skos:prefLabel>
         <dct:identifier>https://specs.diplanung.de/resource/procedureState</dct:identifier>
     </skos:ConceptScheme>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState/planned">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState#planned">
         <dc:identifier>planned</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:prefLabel xml:lang="de">geplant</skos:prefLabel>
         <skos:prefLabel xml:lang="de">planned</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState/planned"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState#planned"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState/ongoing">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState#ongoing">
         <dc:identifier>ongoing</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:prefLabel xml:lang="de">laufend</skos:prefLabel>
         <skos:prefLabel xml:lang="en">ongoing</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState/ongoing"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState#ongoing"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState/completed">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState#completed">
         <dc:identifier>completed</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:prefLabel xml:lang="de">abgeschlossen</skos:prefLabel>
         <skos:prefLabel xml:lang="en">completed</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState/completed"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState#completed"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState/unknown">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState#unknown">
         <dc:identifier>unknown</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
         <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState/unknown"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState#unknown"/>
     </skos:Concept>
 </rdf:RDF>

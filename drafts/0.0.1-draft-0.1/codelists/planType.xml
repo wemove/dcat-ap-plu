@@ -12,84 +12,84 @@ Zur kodierten Angabe der Art des raumbezogenen Planwerks:
         <skos:prefLabel xml:lang="en">List of types of spatial plans</skos:prefLabel>
         <dct:identifier>https://specs.diplanung.de/resource/planType</dct:identifier>
     </skos:ConceptScheme>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/developmentPlan">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#developmentPlan">
         <dc:identifier>developmentPlan</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">Bebauungsplan</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Development plan</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/developmentPlan"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#developmentPlan"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/landUsePlan">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#landUsePlan">
         <dc:identifier>landUsePlan</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">Flaechennutzungsplan</skos:prefLabel>
         <skos:prefLabel xml:lang="de">Land use plan</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/landUsePlan"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#landUsePlan"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/urbanPlanningStatutes">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#urbanPlanningStatutes">
         <dc:identifier>urbanPlanningStatutes</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">Städtebauliche Satzungen</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Urban planning statutes</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/urbanPlanningStatutes"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#urbanPlanningStatutes"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/specialUrbanPlanningLaw">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#specialUrbanPlanningLaw">
         <dc:identifier>specialUrbanPlanningLaw</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">Planwerke besonderes Städtebaurecht</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Plans under special urban planning law</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/specialUrbanPlanningLaw"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#specialUrbanPlanningLaw"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/landscapePlanning">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#landscapePlanning">
         <dc:identifier>landscapePlanning</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">Planwerke der Landschaftsplanung</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Landscape planning</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/landscapePlanning"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#landscapePlanning"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/spatialPlan">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#spatialPlan">
         <dc:identifier>spatialPlan</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">Raumordnungsplan</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Spatial development plan</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/spatialPlan"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#spatialPlan"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/spatialPlanningProcedure">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#spatialPlanningProcedure">
         <dc:identifier>spatialPlanningProcedure</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">Raumordnungsverfahren</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Spatial planning procedure</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/spatialPlanningProcedure"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#spatialPlanningProcedure"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/planApprovalProcedure">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#planApprovalProcedure">
         <dc:identifier>planApprovalProcedure</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">Planfeststellungsverfahren</skos:prefLabel>
         <skos:prefLabel xml:lang="de">Plan approval procedure</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/planApprovalProcedure"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#planApprovalProcedure"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/other">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#other">
         <dc:identifier>other</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">Sonstige raumbezogene Planwerke</skos:prefLabel>
         <skos:prefLabel xml:lang="de">Other spatial plans</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/other"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#other"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType/unknown">
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#unknown">
         <dc:identifier>unknown</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
         <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
         <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType/unknown"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#unknown"/>
     </skos:Concept>
 </rdf:RDF>
