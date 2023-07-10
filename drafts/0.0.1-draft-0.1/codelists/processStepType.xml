@@ -28,13 +28,13 @@ Zur kodierten Angabe der Art des Verfahrensschrittes:
         <skos:prefLabel xml:lang="en">Early public participation</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/earlyPublicPart"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/bearerPublicAffairs">
-        <dc:identifier>bearerPublicAffairs</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/publicAgencies">
+        <dc:identifier>publicAgencies</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">Beteiligung der Träger öffentlicher Belange</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Participation of the bearers of public affairs</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/bearerPublicAffairs"/>
+        <skos:prefLabel xml:lang="en">Participation of public agencies</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/publicAgencies"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/publicDisclosure">
         <dc:identifier>publicDisclosure</dc:identifier>
@@ -52,13 +52,13 @@ Zur kodierten Angabe der Art des Verfahrensschrittes:
         <skos:prefLabel xml:lang="en">Internal processing</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/internal"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/concluded">
-        <dc:identifier>concluded</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/completed">
+        <dc:identifier>completed</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">abgeschlossen</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">concluded</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/concluded"/>
+        <skos:prefLabel xml:lang="en">completed</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/completed"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/unknown">
         <dc:identifier>unknown</dc:identifier>

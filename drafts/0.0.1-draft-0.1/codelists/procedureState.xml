@@ -28,13 +28,13 @@ Zur kodierten Angabe des übergeordneten Status eines Verfahrens sind folgende O
         <skos:prefLabel xml:lang="en">ongoing</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState/ongoing"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState/concluded">
-        <dc:identifier>concluded</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState/completed">
+        <dc:identifier>completed</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
         <skos:prefLabel xml:lang="de">abgeschlossen</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">concluded</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState/concluded"/>
+        <skos:prefLabel xml:lang="en">completed</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState/completed"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState/unknown">
         <dc:identifier>unknown</dc:identifier>

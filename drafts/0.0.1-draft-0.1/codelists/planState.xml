@@ -12,13 +12,13 @@ Zur kodierten Angabe des Status eines raumbezogenen Planwerks sind folgende Opti
         <skos:prefLabel xml:lang="en">Liste of states of a spatial plan</skos:prefLabel>
         <dct:identifier>https://specs.diplanung.de/resource/planState</dct:identifier>
     </skos:ConceptScheme>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planState/preparation">
-        <dc:identifier>preparation</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planState/inPreparation">
+        <dc:identifier>inPreparation</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planState"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planState"/>
         <skos:prefLabel xml:lang="de">in Aufstellung</skos:prefLabel>
         <skos:prefLabel xml:lang="en">in preparation</skos:prefLabel>        
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planState/preparation"/>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planState/inPreparation"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/planState/fixed">
         <dc:identifier>fixed</dc:identifier>
