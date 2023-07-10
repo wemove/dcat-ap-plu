@@ -9,104 +9,63 @@ Zur kodierten Angabe der Art des Verfahrensschrittes:
     <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/processStepType">
         <rdfs:label xml:lang="de">Liste der Arten von Verfahrensschritten</rdfs:label>
         <skos:prefLabel xml:lang="de">Liste der Arten von Verfahrensschritten</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">List of types of process steps</skos:prefLabel>
         <dct:identifier>https://specs.diplanung.de/resource/processStepType</dct:identifier>
     </skos:ConceptScheme>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/fruehBehoerde">
-        <dc:identifier>fruehBehoerde</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/earlyInvolveAuth">
+        <dc:identifier>earlyInvolveAuth</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">Frühzeitige Behördenbeteiligung</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">Frühzeitige Behördenbeteiligung</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">Frühzeitige Behördenbeteiligung</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/fruehBehoerde"/>
+        <skos:prefLabel xml:lang="en">Early involvement of the authorities</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/earlyInvolveAuth"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/fruehOeffentlich">
-        <dc:identifier>fruehOeffentlich</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/earlyPublicPart">
+        <dc:identifier>earlyPublicPart</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">Frühzeitige Öffentlichkeitsbeteiligung</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">Frühzeitige Öffentlichkeitsbeteiligung</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">Frühzeitige Öffentlichkeitsbeteiligung</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/fruehOeffentlich"/>
+        <skos:prefLabel xml:lang="en">Early public participation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/earlyPublicPart"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/traegerOeffBelange">
-        <dc:identifier>traegerOeffBelange</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/bearerPublicAffairs">
+        <dc:identifier>bearerPublicAffairs</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">Beteiligung der Träger öffentlicher Belange</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">Beteiligung der Träger öffentlicher Belange</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">Beteiligung der Träger öffentlicher Belange </rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/traegerOeffBelange"/>
+        <skos:prefLabel xml:lang="en">Participation of the bearers of public affairs</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/bearerPublicAffairs"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/oeffAuslegung">
-        <dc:identifier>oeffAuslegung</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/publicDisclosure">
+        <dc:identifier>publicDisclosure</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">Öffentliche Auslegung</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">Öffentliche Auslegung</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">Öffentliche Auslegung</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/oeffAuslegung"/>
+        <skos:prefLabel xml:lang="en">Public disclosure</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/publicDisclosure"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/intern">
-        <dc:identifier>intern</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/internal">
+        <dc:identifier>interal</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">Interne Bearbeitung</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">Interne Bearbeitung</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">Interne Bearbeitung</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/intern"/>
+        <skos:prefLabel xml:lang="en">Internal processing</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/internal"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/abgeschlossen">
-        <dc:identifier>abgeschlossen</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/concluded">
+        <dc:identifier>concluded</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">abgeschlossen</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">abgeschlossen</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">abgeschlossen</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/abgeschlossen"/>
+        <skos:prefLabel xml:lang="en">concluded</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/concluded"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/unbekannt">
-        <dc:identifier>unbekannt</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType/unknown">
+        <dc:identifier>unknown</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">unbekannt</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">unbekannt</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/unbekannt"/>
+        <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType/unknown"/>
     </skos:Concept>
 </rdf:RDF>

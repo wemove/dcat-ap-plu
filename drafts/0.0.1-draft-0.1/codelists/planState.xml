@@ -9,48 +9,31 @@ Zur kodierten Angabe des Status eines raumbezogenen Planwerks sind folgende Opti
     <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/pluPlanState">
         <rdfs:label xml:lang="de">Liste der Stati eines raumbezogenen Planwerks</rdfs:label>
         <skos:prefLabel xml:lang="de">Liste der Stati eines raumbezogenen Planwerks</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Liste of states of a spatial plan</skos:prefLabel>
         <dct:identifier>https://specs.diplanung.de/resource/pluPlanState</dct:identifier>
     </skos:ConceptScheme>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/pluPlanState/aufstellung">
-        <dc:identifier>aufstellung</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/pluPlanState/preparation">
+        <dc:identifier>preparation</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/pluPlanState"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/pluPlanState"/>
         <skos:prefLabel xml:lang="de">in Aufstellung</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">in Aufstellung</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">in Aufstellung</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/pluPlanState/aufstellung"/>
+        <skos:prefLabel xml:lang="en">in preparation</skos:prefLabel>        
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/pluPlanState/preparation"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/pluPlanState/festgesetzt">
-        <dc:identifier>festgesetzt</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/pluPlanState/fixed">
+        <dc:identifier>fixed</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/pluPlanState"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/pluPlanState"/>
         <skos:prefLabel xml:lang="de">festgesetzt</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">festgesetzt</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">festgesetzt</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/pluPlanState/festgesetzt"/>
+        <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/pluPlanState/fixed"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/pluPlanState/unbekannt">
-        <dc:identifier>unbekannt</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/pluPlanState/unknown">
+        <dc:identifier>unknown</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/pluPlanState"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/pluPlanState"/>
         <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
-        <skos-xl:prefLabel>
-            <skos-xl:Label>
-                <rdf:type rdf:resource="http://www.w3.org/2008/05/skos-xl#Label"/>
-                <skos-xl:literalForm xml:lang="de">unbekannt</skos-xl:literalForm>
-                <rdfs:label xml:lang="de">unbekannt</rdfs:label>
-            </skos-xl:Label>
-        </skos-xl:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/pluPlanState/unbekannt"/>
+        <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/pluPlanState/unknown"/>
     </skos:Concept>
 </rdf:RDF>
