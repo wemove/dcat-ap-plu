@@ -28,11 +28,11 @@
                 <vcard:hasEmail>beispiel@behoerde.de</vcard:hasEmail>
             </vcard:Organization>
         </dcat:contactPoint>
-        <plu:procedureType>1001</plu:procedureType>
-        <plu:procedureState>2002</plu:procedureState>
-        <plu:planType>1000</plu:planType>
-        <plu:planTypeFine>6_3_EinfacherBPlan</plu:planTypeFine>
-        <plu:planState>3001</plu:planState>
+        <plu:procedureType rdf:resource="https://specs.diplanung.de/resource/procedureType#1001">1001</plu:procedureType>
+        <plu:procedureState rdf:resource="https://specs.diplanung.de/resource/procedureState#2002">2002</plu:procedureState>
+        <plu:planType rdf:resource="https://specs.diplanung.de/resource/planType#1000">1000</plu:planType>
+        <plu:planTypeFine rdf:resource="https://registry.gdi-de.org/codelist/de.xleitstelle.inspire_plu/PlanTypeNameValue/6_Bebauungsplan#6_3_EinfacherBPlan">6_3_EinfacherBPlan</plu:planTypeFine>
+        <plu:planState rdf:resource="https://specs.diplanung.de/resource/planState#3001">3001</plu:planState>
         <plu:procedureStartDate>2023-01-01T00:00:00.000Z</plu:procedureStartDate>
         <dct:relation rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=206f1cb5-c021-44ae-842b-8ea148172763"/>
         <dct:spatial>
@@ -78,7 +78,7 @@
     </dcat:Dataset>
     <plu:ProcessStep rdf:about="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123">
         <dct:identifier>ProcStep-0123</dct:identifier>
-        <plu:processStepType>3001</plu:processStepType>
+        <plu:processStepType rdf:resource="https://specs.diplanung.de/resource/processStepType#3001">3001</plu:processStepType>
         <dcat:distribution rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=59a5c95b-c144-4b44-afab-e170f968a12e/distribution"/>
         <dct:temporal>
             <dct:PeriodOfTime>
@@ -93,7 +93,7 @@
         <dcat:accessURL>https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf</dcat:accessURL>
         <dct:format>application/pdf</dct:format>
         <dcat:downloadURL>https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf</dcat:downloadURL>
-        <plu:docType>4001</plu:docType>
+        <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#4001">4001</plu:docType>
         <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
     <dcat:Distribution rdf:about="https://dev.informationgrid.eu/trefferanzeige?docuuid=59a5c95b-c144-4b44-afab-e170f968a12e/distribution">
@@ -102,7 +102,7 @@
         <dcat:accessURL>https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf</dcat:accessURL>
         <dct:format>application/pdf</dct:format>
         <dcat:downloadURL>https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf</dcat:downloadURL>
-        <plu:docType>4001</plu:docType>
+        <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#4001">4001</plu:docType>
         <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
 </rdf:RDF>
