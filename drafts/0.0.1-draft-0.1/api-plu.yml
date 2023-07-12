@@ -541,8 +541,8 @@ components:
         docType:
           description: Type of document in relation to spatial planning or participation procedures
           type: string
-          # enum: [4001, 4002, 4003, ..., 9000]
-          example: 4001
+          enum: [announcement, explanatoryReport, planDrawing, unknown]
+          example: announcement
           xml:
             prefix: plu
             name: docType
@@ -853,8 +853,8 @@ components:
         processStepType:
           description: Type of the process step for spatial planning and participation procedures
           type: string
-          enum: [3001, 3002, 3003, 3004, 3005, 3006, 9000]
-          example: 3001
+          enum: [earlyInvolveAuth, earlyPublicPart, publicAgencies, publicDisclosure, internal, completed, unknown]
+          example: earlyInvolveAuth
           xml:
             prefix: plu
             name: processStepType
@@ -976,8 +976,8 @@ components:
         planType:
           description: Type of the spatial plan
           type: string
-          enum: [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 8500, 9000]
-          example: 1000
+          enum: [developmentPlan, landUsePlan, urbanPlanningStatutes, specialUrbanPlanningLaw, landscapePlanning, spatialPlan, spatialPlanningProcedure, planApprovalProcedure, other, unknown]
+          example: developmentPlan
           xml:
             prefix: plu
             name: planType
@@ -989,10 +989,10 @@ components:
             prefix: plu
             name: planTypeFine
         procedureType:
-          description: Type of the process for the establishment of the spatial plan
+          description: Type of the procedure for the establishment of the spatial plan
           type: string
-          enum: [1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 9000]
-          example: 1001
+          enum: [regular, simplified, innerDevPlan, outdoorArea, revision, partialExtrapolation, newPreparation, completeExtrapolation, update, newAnnouncement, unknown]
+          example: regular
           xml:
             prefix: plu
             name: procedureType
@@ -1029,16 +1029,16 @@ components:
         planState:
           description: Status of the plan
           type: string
-          enum: [3001, 3002, 9000]
-          example: 3001
+          enum: [inPreparation, fixed, unknown]
+          example: inPreparation
           xml:
             prefix: plu
             name: planState
         procedureState:
           description: Status of the procedure
           type: string
-          enum: [2001, 2002, 2003, 9000]
-          example: 2002
+          enum: [planned, ongoing, completed, unknown]
+          example: ongoing
           xml:
             prefix: plu
             name: procedureState
