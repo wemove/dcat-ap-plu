@@ -161,15 +161,19 @@
         sh:class skos:ConceptScheme ;
         sh:maxCount 1 ;
     ], [
+        sh:path dct:identifier ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+    ], [
         sh:path dct:issued ;
-        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
     ], [
         sh:path dct:language ;
-        sh:class dct:LinguisticSystem ;
+        # sh:class dct:LinguisticSystem ;
     ], [
         sh:path dct:modified ;
-        sh:node :DateOrDateTimeDataType_Shape ;
+        sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
     ] ;
     # optional 
@@ -186,16 +190,15 @@
     sh:ignoredProperties (rdf:type) ;
     sh:targetClass dcat:Catalog .
 
-# :CategoryScheme_Shape
-#     a sh:NodeShape ;
-#     sh:name "Category Scheme"@en ;
-#     sh:property [
-#         sh:minCount 1 ;
-#         sh:nodeKind sh:Literal ;
-#         sh:path dct:title ;
-#         sh:severity sh:Violation
-#     ] ;
-#     sh:targetClass skos:ConceptScheme .
+:CategoryScheme_Shape
+    a sh:NodeShape ;
+    sh:name "Category Scheme"@en ;
+    sh:property [
+        sh:path dct:title ;
+        sh:nodeKind sh:Literal ;
+        sh:minCount 1 ;
+    ] ;
+    sh:targetClass skos:ConceptScheme .
 
 :Category_Shape
     a sh:NodeShape ;
