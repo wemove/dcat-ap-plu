@@ -397,8 +397,8 @@
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Art des Verfahrens bei der Aufstellung raumbezogener Planwerke</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><code>rdfs:Literal</code></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. "Vereinfachtes Verfahren", "Normales Verfahren". Die möglichen Verfahrensarten sind durch eine <a href="#codelist-pluProcedureType">Codeliste</a> festgelegt.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. "Vereinfachtes Verfahren", "Normales Verfahren". Die möglichen Verfahrensarten sind durch eine <a href="#codelist-pluProcedureType">Codeliste</a> festgelegt. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.diplanung.de/resource/procedureType#</code> und dem gewünschten Codelistenwert.</td></tr>
           </tbody>
           </table>
         </section>
@@ -410,8 +410,8 @@
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Status in dem sich ein Verfahren befindet</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><code>rdfs:Literal</code></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird der übergeordnete Status eines Verfahrens kategorisiert, z.B. "geplant", "laufend" oder "abgeschlossen".  Die möglichen Stati sind in einer <a href="#codelist-pluProcedureState">Codeliste</a> festgelegt.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird der übergeordnete Status eines Verfahrens kategorisiert, z.B. "geplant", "laufend" oder "abgeschlossen". Die möglichen Stati sind in einer <a href="#codelist-pluProcedureState">Codeliste</a> festgelegt. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.diplanung.de/resource/procedureState#</code> und dem gewünschten Codelistenwert.</td></tr>
           </tbody>
           </table>
         </section>
@@ -423,9 +423,8 @@
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Art des raumbezogenen Planwerks</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><code>rdfs:Literal</code></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des raumbezogenen Planwerks ausgedrückt, z.B. Bebauungsplan, Regionalplan.
-            Die möglichen Arten sind in einer <a href="#codelist-pluPlanType">Codeliste</a> festgelegt.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des raumbezogenen Planwerks ausgedrückt, z.B. Bebauungsplan, Regionalplan. Die möglichen Arten sind in einer <a href="#codelist-pluPlanType">Codeliste</a> festgelegt. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.diplanung.de/resource/planType#</code> und dem gewünschten Codelistenwert.</td></tr>
           </tbody>
           </table>
         </section>
@@ -437,9 +436,8 @@
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Art des raumbezogenen Planwerks</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><code>rdfs:Literal</code></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des raumbezogenen Planwerks auf einer detaillierteren Ebene ausgedrückt, z.B. Einfacher Bebauungsplan, Qualifizierter Bebauungsplan.
-          Die möglichen Arten sind in der INSPIRE-PLU <a href="https://registry.gdi-de.org/codelist/de.xleitstelle.inspire_plu/PlanTypeNameValue">Codeliste</a> für Plan Type Name festgelegt (die Spalte ID listet die erlaubten Werte).</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des raumbezogenen Planwerks auf einer detaillierteren Ebene ausgedrückt, z.B. Einfacher Bebauungsplan, Qualifizierter Bebauungsplan. Die möglichen Arten sind in der INSPIRE-PLU <a href="https://registry.gdi-de.org/codelist/de.xleitstelle.inspire_plu/PlanTypeNameValue">Codeliste</a> für Plan Type Name festgelegt (die Spalte ID listet die erlaubten Werte). Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://registry.gdi-de.org/codelist/de.xleitstelle.inspire_plu/PlanTypeNameValue/</code> und dem gewünschten Codelistenwert.</td></tr>
           </tbody>
           </table>
         </section>
@@ -451,8 +449,8 @@
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Status in dem sich ein Plan befindet</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><code>rdfs:Literal</code></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird der Status eines Plans kategorisiert, z.B. "in Aufstellung" oder "festgesetzt".  Die möglichen Stati sind in einer <a href="#codelist-pluPlanState">Codeliste</a> festgelegt.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird der Status eines Plans kategorisiert, z.B. "in Aufstellung" oder "festgesetzt". Die möglichen Stati sind in einer <a href="#codelist-pluPlanState">Codeliste</a> festgelegt. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.diplanung.de/resource/planState#</code> und dem gewünschten Codelistenwert.</td></tr>
           </tbody>
           </table>
         </section>
@@ -692,8 +690,8 @@
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
           <tr><td class="prop">Definition:</td><td>Art eines Dokuments im Zusammenhang mit raumbezogenen Planwerken oder Beteiligungsverfahren</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Über den Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem raumbezogenen Planwerk oder zu einem Beteiligungsverfahren zur Verfügung gestellt werden können. Die Arten von Dokumenten sind durch eine <a href="#codelist-pluDocType">Codeliste</a> definiert.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Über den Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem raumbezogenen Planwerk oder zu einem Beteiligungsverfahren zur Verfügung gestellt werden können. Die Arten von Dokumenten sind durch eine <a href="#codelist-pluDocType">Codeliste</a> definiert. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.diplanung.de/resource/docType#</code> und dem gewünschten Codelistenwert.</td></tr>
          </tbody>
        </table>
        </section>
@@ -770,9 +768,8 @@
          <tbody>
          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
          <tr><td class="prop">Definition:</td><td>Art des Prozesschrittes bei raumbezogenen Planwerken und Beteiligungsverfahren</td></tr>
-         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a></td></tr>
-         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Prozessschrittes bei raumbezogenen Planwerken und Beteiligungsverfahren
-           beschrieben. Die Arten von Prozesschritten sind durch eine <a href="#codelist-pluProcessStepType">Codeliste</a> definiert.</td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Prozessschrittes bei raumbezogenen Planwerken und Beteiligungsverfahren beschrieben. Die Arten von Prozesschritten sind durch eine <a href="#codelist-pluProcessStepType">Codeliste</a> definiert. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.diplanung.de/resource/processStepType#</code> und dem gewünschten Codelistenwert.</td></tr>
          </tbody>
          </table>
        </section>
