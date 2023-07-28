@@ -541,7 +541,7 @@ components:
         docType:
           description: Type of document in relation to spatial planning or participation procedures
           type: string
-          enum: [announcement, explanatoryReport, planDrawing, unknown]
+          enum: [announcement, explanatoryReport, planDrawing, participationURL, unknown]
           example: announcement
           xml:
             prefix: plu
@@ -850,6 +850,13 @@ components:
           xml:
             prefix: dct
             name: identifier
+        passNumber:
+          description: Pass number of the process step (e.g. in participation procedures)
+          type: string
+          example: 2
+          xml:
+            prefix: plu
+            name: passNumber
         processStepType:
           description: Type of the process step for spatial planning and participation procedures
           type: string

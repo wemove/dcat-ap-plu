@@ -556,6 +556,12 @@
         sh:class dct:PeriodOfTime ;
         sh:maxCount 1 ;
     ] ;
+    # optional
+    sh:property [
+        sh:path plu:passNumber ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+    ] ;
     sh:closed true ;
     sh:ignoredProperties (rdf:type) ;
     sh:targetClass plu:ProcessStep .
