@@ -935,7 +935,7 @@ components:
             attribute: true
         namespace-plu:
           type: string
-          example: https://specs.diplanung.de/plu/
+          example: http://specs.diplanung.de/plu/
           xml:
             name: xmlns:plu
             attribute: true
