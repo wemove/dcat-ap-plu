@@ -316,7 +316,8 @@
     # recommended
     sh:property [
         sh:path adms:identifier ;
-        sh:class adms:Identifier ;
+        # sh:class adms:Identifier ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;
     ], [
         sh:path dcat:distribution ;
