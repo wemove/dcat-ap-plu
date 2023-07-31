@@ -7,8 +7,9 @@ RUN apk add --update --no-cache lighttpd=${LIGHTTPD_VERSION} \
 
 COPY --chown=lighttpd:lighttpd ./docker/lighttpd.conf /etc/lighttpd/lighttpd.conf
 
+ENV DCATAPPLU_VERSION=0.1.0
 WORKDIR /var/www/html
-COPY --chown=lighttpd:lighttpd ./drafts/0.0.1-draft-0.1/codelists ./resource
+COPY --chown=lighttpd:lighttpd ./releases/${DCATAPPLU_VERSION}/codelists ./resource
 COPY --chown=lighttpd:lighttpd ./docker/static .
 
 EXPOSE 8080 443
