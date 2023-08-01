@@ -12,7 +12,7 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 #@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix plu: <https://specs.diplanung.de/plu/>
+@prefix plu: <http://specs.diplanung.de/plu/>
 #@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -316,7 +316,8 @@
     # recommended
     sh:property [
         sh:path adms:identifier ;
-        sh:class adms:Identifier ;
+        # sh:class adms:Identifier ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;
     ], [
         sh:path dcat:distribution ;
@@ -554,6 +555,12 @@
     ], [
         sh:path dct:temporal ;
         sh:class dct:PeriodOfTime ;
+        sh:maxCount 1 ;
+    ] ;
+    # optional
+    sh:property [
+        sh:path plu:passNumber ;
+        sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ] ;
     sh:closed true ;
