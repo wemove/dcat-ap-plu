@@ -81,6 +81,7 @@
     <plu:ProcessStep rdf:about="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123">
         <dct:identifier>ProcStep-0123</dct:identifier>
         <plu:processStepType rdf:resource="https://specs.diplanung.de/resource/processStepType#earlyInvolveAuth"/>
+        <plu:passNumber>3</plu:passNumber>
         <dcat:distribution rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=59a5c95b-c144-4b44-afab-e170f968a12e/distribution"/>
         <dct:temporal>
             <dct:PeriodOfTime>
