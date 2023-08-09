@@ -370,7 +370,7 @@
          <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/identifier"><code>adms:identifier</code></a></th></tr></thead>
          <tbody>
          <tr><td>Verbindlichkeit:</td><td>Empfohlen</td></tr>
-         <tr><td>Definition:</td><td>Diese Eigenschaft verweist auf eine katalogübergreifende ID des Datensatzes und setzt sich aus der ID der datenhaltenden Stelle (der authorityURI, z.B. "hh" für Hamburg) und der ID des Datensatzes (dct:identifier, eine uuid) zusammen.</td></tr>
+         <tr><td>Definition:</td><td>Diese Eigenschaft verweist auf eine katalogübergreifende ID des Datensatzes und setzt sich aus der ID der datenhaltenden Stelle (siehe entsprechende <a href="#codelist-pluAuthority">Codeliste</a>) und der ID des Datensatzes (dct:identifier, eine uuid) zusammen.</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>adms:Identifier</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Beispiel für die Angabe eines <code>adms:identifier</code><br> <code>https://specs.diplanung.de/resource/authority#hh/abde-efgh-0123-4567</code></td></tr>
          </tbody>
@@ -1074,6 +1074,31 @@
           <tr><td>participationURL</td> <td>Beteiligungs-URL</td></tr>
           <tr><td>procedureURL</td> <td>Planverfahrens-URL</td></tr>
           <tr><td>unknown</td> <td>unbekannt</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="codelist-pluAuthority">
+        <h3 id="codelist-pluAuthority">Codeliste für die datenhaltenden Stellen<a class="self-link" href="#codelist-pluAuthority"></a></h3>
+        <table>
+          <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+          <tr><td>bw</td> <td>Baden-Württemberg</td></tr>
+          <tr><td>by</td> <td>Bayern (Freistaat)</td></tr>
+          <tr><td>be</td> <td>Berlin</td></tr>
+          <tr><td>bb</td> <td>Brandenburg</td></tr>
+          <tr><td>hb</td> <td>Bremen (Hansestadt)</td></tr>
+          <tr><td>hh</td> <td>Hamburg (Hansestadt)</td></tr>
+          <tr><td>he</td> <td>Hessen</td></tr>
+          <tr><td>mv</td> <td>Mecklenburg-Vorpommern</td></tr>
+          <tr><td>ni</td> <td>Niedersachsen</td></tr>
+          <tr><td>nw</td> <td>Nordrhein-Westfalen</td></tr>
+          <tr><td>rp</td> <td>Rheinland-Pfalz</td></tr>
+          <tr><td>sl</td> <td>Saarland</td></tr>
+          <tr><td>sn</td> <td>Sachsen (Freistaat)</td></tr>
+          <tr><td>st</td> <td>Sachsen-Anhalt</td></tr>
+          <tr><td>sh</td> <td>Schleswig-Holstein</td></tr>
+          <tr><td>th</td> <td>Thüringen (Freistaat)</td></tr>
           </tbody>
         </table>
       </section>
