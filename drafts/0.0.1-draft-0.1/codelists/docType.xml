@@ -51,6 +51,14 @@ Zur kodierten Angabe der Art eines Dokuments:
         <skos:prefLabel xml:lang="en">Participation URL</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#participationURL"/>
     </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#procedureURL">
+        <dc:identifier>procedureURL</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Planverfahrens-URL</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Procedure URL</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#procedureURL"/>
+    </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#unknown">
         <dc:identifier>unknown</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
