@@ -21,8 +21,8 @@ Finally, update the [changelog](../../CHANGELOG.md).
 ## Release Procedure
 
 - Validate all examples using the `SHACL` shapefile
-- Create a new folder in [releases](releases), named after your new version number (semver)
-- Copy all appropriate files from [drafts](drafts) into this new folder
+- Create a new folder in [releases](../../releases), named after your new version number (semver)
+- Copy all appropriate files from [drafts/0.0.1-draft-0.1](.) into this new folder
 - In the new version folder, change the following line in `doc-plu.html` (replace `${YOUR_NEW_VERSION}` as appropriate):
     ```
     latestVersion: "https://github.com/wemove/dcat-ap-plu/tree/main/releases/${YOUR_NEW_VERSION}
