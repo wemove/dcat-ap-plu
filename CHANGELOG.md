@@ -4,6 +4,7 @@
 
 * [Codelist] Added `authority` codelist
 * [Codelist] Added `plu:docType` - `procedureURL`
+* [Codelist] Added `plu:docType` - `xplanGML`, `xplanArchive`
 
 ## 2023-08-02 - v0.1.0
 

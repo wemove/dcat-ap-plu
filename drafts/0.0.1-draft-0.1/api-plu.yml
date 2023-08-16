@@ -541,7 +541,7 @@ components:
         docType:
           description: Type of document in relation to spatial planning or participation procedures
           type: string
-          enum: [announcement, explanatoryReport, planDrawing, participationURL, procedureURL, unknown]
+          enum: [announcement, explanatoryReport, planDrawing, participationURL, procedureURL, xplanArchive, xplanGML, unknown]
           example: announcement
           xml:
             prefix: plu
