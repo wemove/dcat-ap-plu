@@ -5,6 +5,7 @@
 * [Codelist] Added `authority` codelist
 * [Codelist] Added `plu:docType` - `procedureURL`
 * [Codelist] Added `plu:docType` - `xplanGML`, `xplanArchive`
+* [Codelist] Fixed typo in `plu:procedureType` - "unkonwn" -> "unknown"
 
 ## 2023-08-02 - v0.1.0
 

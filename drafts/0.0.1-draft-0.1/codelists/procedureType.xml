@@ -99,12 +99,12 @@ Zur kodierten Angabe der jeweiligen Verfahrensart bei der Aufstellung raumbezoge
         <skos:prefLabel xml:lang="en">New announcement</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#newAnnouncement"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#unkonwn">
-        <dc:identifier>unkonwn</dc:identifier>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#unknown">
+        <dc:identifier>unknown</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
         <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">unkonwn</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#unkonwn"/>
+        <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#unknown"/>
     </skos:Concept>
 </rdf:RDF>
