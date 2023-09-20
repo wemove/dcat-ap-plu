@@ -40,15 +40,14 @@
       <h2>Einführung</h2>
       <p>Das Online-Zugangsgesetz (OZG) aus dem Jahr 2017 verpflichtet Bund, Länder und Gemeinden bis spätestens Ende 2022 ihre Verwaltungsleistungen auch elektronisch über Verwaltungsportale anzubieten und diese miteinander zu einem Portalverbund zu verknüpfen. Im Rahmen der OZG Verwaltungsleistungen "Beteiligungsverfahren nach dem Baugesetzbuch, dem Raumordnungsgesetz und in der Planfeststellung" und "Einstellen von raumbezogenen Planwerken in das Internet" wird eine Metadaten-Infrastruktur entwickelt, um Planwerke des allgemeinen und des besonderen Städtebaurechtes, der Raumordnung bzw. Planwerke, die Vorhaben beschreiben, die einer Planfeststellung bedürfen manuell und automatisiert verwalten zu können. Das hier beschriebene Metadatenmodell stellt die Basis für die Metadaten-Infrastruktur dar.
        </p>
-     </section>
     </section>
 
     <section id="definitions">
-     <h2 id="definitions">Definitionen und Terminologie</h2>
+     <h2>Definitionen und Terminologie</h2>
      <p></p>
 
       <section id="namespaces">
-       <h3 id="namespaces">Verwendete Spezifikationen</h3>
+       <h3>Verwendete Spezifikationen</h3>
 
         <p>Das vorliegende Metadatenmodell baut auf das europäische Metadatenaustauschschema DCAT-AP auf und erweitert dieses mit einzelnen Klassen und Eigenschaften. In DCAT bzw. DCAT-AP wird auf Klassen und Eigenschaften vieler anderer Vokabulare zurückgegriffen, insbesondere Dublin Core DCTERMS. Weiterhin wurde für den deutschen Nutzungskontext die standardkonforme Anpassung DCAT-AP.de entwickelt. Diese hat den Zweck des Austauschs von Metadaten offener Verwaltungsdaten für deutsche Open Data-Portale (https://www.dcat-ap.de). Im vorliegenden Modell wird, soweit vorhanden, auf Klassen und Eigenschaften zurückgegriffen, wie sie in der aktuellen Spezifikation dcat-ap.de definiert sind.</p>
         <p>Namensräume und Prefixe auf die im vorliegenden Datenmodell zurückgegriffen wird, sind in der folgenden Tabelle aufgelistet.</p>
@@ -74,17 +73,17 @@
     </section>
 
     <section id="uml-diagram">
-      <h2 id="uml-diagram">UML-Diagramm</h2>
+      <h2>UML-Diagramm</h2>
 
       <p>Das UML-Diagramm des DCAT-PLU-Datenmodells.</p>
         <figure id="pic-id-uml">
           <a href="DCAT-AP-PLU.JPG" target="_blank"><img src="DCAT-AP-PLU.JPG" alt="UML-Diagramm aller DCAT-AP-Klassen einschließlich der DCAT-PLU Erweiterungen " width="1907" height="1684"></a>
-          <figcaption span class="fig-title">UML-Diagramm der verwendeten DCAT-AP-Klassen sowie der DCAT-PLU Erweiterungen</span></figcaption>
+          <figcaption class="fig-title">UML-Diagramm der verwendeten DCAT-AP-Klassen sowie der DCAT-PLU Erweiterungen</figcaption>
         </figure>
     </section>
 
     <section id="vocabulary-specification">
-      <h2 id="vocabulary-specification">Spezifikation des Vokabulars</h2>
+      <h2>Spezifikation des Vokabulars</h2>
 
       <section id="Class:Catalog">
         <h3 id="class-catalog">Klasse: Katalog</h3>
@@ -352,8 +351,8 @@
          </table>
        </section>
 
-       <section id="Property:resource_identifier">
-         <h4 id="property-identifier">Eigenschaft: Identifikator</h4>
+       <section id="Property:dataset_identifier">
+         <h4 id="property-dataset-identifier">Eigenschaft: Identifikator</h4>
          <table class="definition">
          <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/identifier">dct:identifier</a></th></tr></thead>
          <tbody>
@@ -380,7 +379,7 @@
        <section id="Property:contact_point">
          <h4 id="property-contact-point">Eigenschaft: Ansprechpartner</h4>
          <table class="definition">
-          <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</th></tr></thead>
+          <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#contactPoint">dcat:contactPoint</a></th></tr></thead>
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Ansprechpartner zum Datensatz. Die Benutzung von vCard wird empfohlen.</td></tr>
@@ -455,8 +454,8 @@
           </table>
         </section>
 
-        <section id="Property:dataset_procedure_start_date">
-          <h4 id="property-start-date">Eigenschaft: Verfahrensbeginn</h4>
+        <section id="Property:procedureStartDate">
+          <h4 id="property-procedure-start-date">Eigenschaft: Verfahrensbeginn</h4>
           <table class="definition">
           <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/issued">plu:procedureStartDate</a></th></tr></thead>
           <tbody>
@@ -488,7 +487,7 @@
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
           <tr><td class="prop">Definition:</td><td>Raumbezug des Datensatzes</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://purl.org/dc/terms/Location"><code>dct:Location</code></td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://purl.org/dc/terms/Location"><code>dct:Location</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Ein räumlicher Bereich oder ein bezeichneter Ort. Er kann durch ein kontrolliertes Vokabular oder mit geographischen Koordinaten repräsentiert werden. Im letzteren Fall wird die Verwendung des Core Location Vocabulary empfohlen, wie in der GeoDCAT-AP-Spezifikation beschrieben.</td></tr>
           </tbody>
           </table>
@@ -501,7 +500,7 @@
           <tbody>
           <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
           <tr><td class="prop">Definition:</td><td>Distribution</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/ns/dcat#Distribution"><code>dcat:Distribution</code></td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/ns/dcat#Distribution"><code>dcat:Distribution</code></a></td></tr>
           <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verknüpft den Datensatz mit einer verfügbaren Distribution.</td></tr>
           </tbody>
           </table>
@@ -602,7 +601,7 @@
        </table>
 
        <section id="Property:distribution_access_url">
-         <h4 id="property-access-url">Eigenschaft: access URL</h4>
+         <h4 id="property-distribution-access-url">Eigenschaft: access URL</h4>
          <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#accessURL">dcat:accessURL</a></th></tr></thead>
             <tbody>
@@ -619,7 +618,7 @@
        </section>
 
        <section id="Property:distribution_download_url">
-        <h4 id="property-download-url">Eigenschaft: download URL</h4>
+        <h4 id="property-distribution-download-url">Eigenschaft: download URL</h4>
         <table class="definition">
            <thead><tr><th>URI:</th><th><a href="http://www.w3.org/ns/dcat#accessURL">dcat:downloadURL</a></th></tr></thead>
            <tbody>
@@ -634,7 +633,7 @@
        </section>
 
        <section id="Property:distribution_title">
-        <h4 id="property-dist-title">Eigenschaft: Titel</h4>
+        <h4 id="property-distribution-title">Eigenschaft: Titel</h4>
         <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/title">dct:title</a></th></tr></thead>
             <tbody>
@@ -646,7 +645,7 @@
        </section>
 
        <section id="Property:distribution_description">
-         <h4 id="property-description">Eigenschaft: Beschreibung</h4>
+         <h4 id="property-distribution-description">Eigenschaft: Beschreibung</h4>
          <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/description">dct:description</a></th></tr></thead>
             <tbody>
@@ -658,13 +657,13 @@
        </section>
 
        <section id="Property:distribution_release_date">
-         <h4 id="property-release-date">Eigenschaft: Veröffentlichungsdatum</h4>
+         <h4 id="property-distribution-release-date">Eigenschaft: Veröffentlichungsdatum</h4>
          <table class="definition">
             <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/issued">dct:issued</a></th></tr></thead>
             <tbody>
             <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
             <tr><td class="prop">Definition:</td><td>Datum der Herausgabe / Veröffentlichung der Distribution</td></tr>
-            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
+            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft enthält das Datum der Herausgabe/Emission (z.B. in Form einer Veröffentlichung) der Distribution.</td></tr>
             </tbody>
          </table>
@@ -677,14 +676,14 @@
             <tbody>
             <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
             <tr><td class="prop">Definition:</td><td>Aktualisierungs- bzw. Veränderungsdatum der Distribution</td></tr>
-            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
+            <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code></a> als <code>xsd:date</code> oder <code>xsd:dateTime</code></td></tr>
             <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft erfasst das Datum der letzten Aktualisierung bzw. Modifikation der Distribution. </td></tr>  
             </tbody>
          </table>
        </section>
 
-       <section id="Property:documentType">
-        <h4 id="property-document-type">Eigenschaft: Dokumententyp</h4>
+       <section id="Property:distribution_documentType">
+        <h4 id="property-distribution-document-type">Eigenschaft: Dokumententyp</h4>
         <table class="definition">
           <thead><tr><th>URI:</th><th>plu:docType</th></tr></thead>
           <tbody>
@@ -709,8 +708,8 @@
         </table>
        </section>
 
-       <section id="Property:temporal">
-         <h4 id="property-temporal">Eigenschaft: Zeitbezug</h4>
+       <section id="Property:distribution_temporal">
+         <h4 id="property-distribution-temporal">Eigenschaft: Zeitbezug</h4>
          <table class="definition">
            <thead><tr><th>URI:</th><th>dct:periodOfTime</th></tr></thead>
            <tbody>
@@ -774,14 +773,14 @@
          </table>
        </section>
 
-       <section id="Property:distribution">
-         <h4 id="property-distribution-2">Eigenschaft: Distribution</h4>
+       <section id="Property:processStep_distribution">
+         <h4 id="property-process-step-distribution">Eigenschaft: Distribution</h4>
          <table class="definition">
          <thead><tr><th>URI:</th><th>dcat:distribution</th></tr></thead>
          <tbody>
          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
          <tr><td class="prop">Definition:</td><td>Distribution</td></tr>
-         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/ns/dcat#Distribution"><code>dcat:Distribution</code></td></tr>
+         <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/ns/dcat#Distribution"><code>dcat:Distribution</code></a></td></tr>
          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft verknüpft den Verfahrensschritt mit einer verfügbaren Distribution.</td></tr>
          </tbody>
          </table>
@@ -978,12 +977,12 @@
     </section>
 
     <section id="codelists">
-      <h2 id="codelists">Verwendete Codelisten</h2>
+      <h2>Verwendete Codelisten</h2>
 
       <p>Im Folgenden sind die innerhalb dieses Datenmodells verwendeten Codelisten dokumentiert.</p>
 
       <section id="codelist-pluProcedureType">
-        <h3 id="codelist-pluProcedureType">Codeliste für die Arten von Verfahren zur Aufstellung raumbezogener Planwerke<a class="self-link" href="#codelist-pluProcedureType"></a></h3>
+        <h3>Codeliste für die Arten von Verfahren zur Aufstellung raumbezogener Planwerke<a class="self-link" href="#codelist-pluProcedureType"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
@@ -1003,7 +1002,7 @@
       </section>
 
       <section id="codelist-pluProcedureState">
-        <h3 id="codelist-pluProcedureState">Codeliste für den übergeordneten Status eines Verfahrens<a class="self-link" href="#codelist-pluProcedureState"></a></h3>
+        <h3>Codeliste für den übergeordneten Status eines Verfahrens<a class="self-link" href="#codelist-pluProcedureState"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
@@ -1016,7 +1015,7 @@
       </section>
 
       <section id="codelist-pluPlanState">
-        <h3 id="codelist-pluPlanState">Codeliste für den Status eines Plans<a class="self-link" href="#codelist-pluPlanState"></a></h3>
+        <h3>Codeliste für den Status eines Plans<a class="self-link" href="#codelist-pluPlanState"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
@@ -1028,7 +1027,7 @@
       </section>
 
       <section id="codelist-pluPlanType">
-        <h3 id="codelist-pluPlanType">Codeliste für die Arten von raumbezogenen Planwerken<a class="self-link" href="#codelist-pluPlanType"></a></h3>
+        <h3>Codeliste für die Arten von raumbezogenen Planwerken<a class="self-link" href="#codelist-pluPlanType"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
@@ -1043,12 +1042,11 @@
           <tr><td>other</td> <td>Sonstige raumbezogene Planwerke</td></tr>
           <tr><td>unknown</td> <td>unbekannt</td></tr>
           </tbody>
-          </tbody>
         </table>
       </section>
 
       <section id="codelist-pluProcessStepType">
-        <h3 id="codelist-pluProcessStepType">Codeliste für die Arten von Verfahrensschritten bei raumbezogenen Verfahren<a class="self-link" href="#codelist-pluProcessStepType"></a></h3> <!--ist das auch als Status des Verfahrens zu verstehen?-->
+        <h3>Codeliste für die Arten von Verfahrensschritten bei raumbezogenen Verfahren<a class="self-link" href="#codelist-pluProcessStepType"></a></h3> <!--ist das auch als Status des Verfahrens zu verstehen?-->
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
@@ -1064,7 +1062,7 @@
       </section>
       
       <section id="codelist-pluDocType">
-        <h3 id="codelist-pluDocType">Codeliste für die Arten von Dokumenten<a class="self-link" href="#codelist-pluDocType"></a></h3>
+        <h3>Codeliste für die Arten von Dokumenten<a class="self-link" href="#codelist-pluDocType"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
@@ -1081,7 +1079,7 @@
       </section>
 
       <section id="codelist-pluAuthority">
-        <h3 id="codelist-pluAuthority">Codeliste für die datenhaltenden Stellen<a class="self-link" href="#codelist-pluAuthority"></a></h3>
+        <h3>Codeliste für die datenhaltenden Stellen<a class="self-link" href="#codelist-pluAuthority"></a></h3>
         <table>
           <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
           <tbody>
