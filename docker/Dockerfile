@@ -1,16 +1,20 @@
 FROM alpine:3.18.3
 
 ENV LIGHTTPD_VERSION=1.4.71-r0
+ENV DCATAPPLU_VERSION=0.1.0
+
+RUN addgroup -S --gid 1000 lighttpd \
+    && adduser -S -G lighttpd --uid 1000 lighttpd
+
 RUN apk add --update --no-cache lighttpd=${LIGHTTPD_VERSION} \
     && rm -rf /var/cache/apk/* \
-    && chown lighttpd:lighttpd /usr/sbin/lighttpd
+    && chgrp lighttpd /usr/sbin/lighttpd
 
-COPY --chown=lighttpd:lighttpd ./docker/lighttpd.conf /etc/lighttpd/lighttpd.conf
+COPY --chown=:lighttpd ./docker/lighttpd.conf /etc/lighttpd/lighttpd.conf
 
-ENV DCATAPPLU_VERSION=0.1.0
 WORKDIR /var/www/html
-COPY --chown=lighttpd:lighttpd ./releases/${DCATAPPLU_VERSION}/codelists ./resource
-COPY --chown=lighttpd:lighttpd ./docker/static .
+COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/codelists ./resource
+COPY --chown=:lighttpd ./docker/static .
 
 EXPOSE 8080 443
 
