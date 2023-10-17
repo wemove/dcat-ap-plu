@@ -8,8 +8,8 @@ info:
     url: https://www.wemove.com
     email: contact@wemove.com
   license:
-    name: TODO
-    url: https://dcat-ap-plu.info/tbd
+    name: CC BY 4.0
+    url: https://creativecommons.org/licenses/by/4.0/
 servers:
   - url: '{baseUrl}/v1'
     description: Development server
