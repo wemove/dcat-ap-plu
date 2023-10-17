@@ -1,6 +1,6 @@
 # Changelog
 
-## 2023-xx-xx - v0.1.1
+## xxxx-xx-xx - dev
 
 * [Codelist] Add `authority` codelist
 * [Codelist] Add `plu:docType` - `procedureURL`

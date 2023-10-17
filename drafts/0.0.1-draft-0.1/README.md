@@ -4,7 +4,7 @@ Below you can find instructions regarding the update process and the release pro
 
 ## Update Procedure
 
-If a change to the API is made, make sure this change is reflected in all related resources, where applicable:
+If a change to the API is to be made, make sure this change is reflected in all related resources, where applicable:
 
 - [ ] OpenAPI specification: [api-plu.yml](api-plu.yml)
 - [ ] documentation: [doc-plu.html](doc-plu.html)
@@ -20,14 +20,18 @@ Finally, update the [changelog](../../CHANGELOG.md).
 
 ## Release Procedure
 
+Run [release.sh](release.sh) and follow the instructions.
+
+Alternatively, you can create a manual release:
 - Validate all examples using the `SHACL` shapefile
+- Finalize the [changelog](../../CHANGELOG.md)
 - Create a new folder in [releases](../../releases), named after your new version number (semver)
 - Copy all appropriate files from [drafts/0.0.1-draft-0.1](.) into this new folder
-- In the new version folder, change the following line in `doc-plu.html` (replace `${YOUR_NEW_VERSION}` as appropriate):
-    ```
-    latestVersion: "https://github.com/wemove/dcat-ap-plu/tree/main/releases/${YOUR_NEW_VERSION}
-    ```
-- Amend the [changelog](../../CHANGELOG.md)
-- Update the `DCATAPPLU_VERSION` in the [Dockerfile](../../docker/Dockerfile)
+- In the new version folder, update
+  - the `latestVersion` property in `doc-plu.html`
+  - the `version` property in `api-plu.yml`
+  - the version in `README.md`
+- Also update the `DCATAPPLU_VERSION` in the [Dockerfile](../../docker/Dockerfile)
 - Merge `develop` into `main`
-- Announce new version via mail, ADO
+
+Finally, announce the new version via mail and ADO.

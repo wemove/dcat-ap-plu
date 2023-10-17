@@ -1,7 +1,7 @@
 openapi: 3.0.3
 info:
   title: PLU API
-  version: 0.0.1
+  version: x.y.z
   description: This is the API for the Information System on Planned Land Use. Find information on different types of spatially-related plans and procedures for the production of spatially-related plans.
   contact:
     name: wemove digital solutions GmbH
