@@ -10,7 +10,7 @@
         <owl:versionInfo>1.0</owl:versionInfo>
         <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/authority/1.0/"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
-Zur kodierten Angabe der Bundsländer als datenhaltende Stellen. 
+Zur kodierten Angabe der Bundesländer als datenhaltende Stellen. 
         </rdfs:comment>
     </owl:Ontology>
     <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/authority">
