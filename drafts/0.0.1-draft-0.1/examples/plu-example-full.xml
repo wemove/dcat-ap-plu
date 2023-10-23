@@ -94,8 +94,8 @@
         <dct:title>Test-Dokument</dct:title>
         <dct:description> Test-Dokument</dct:description>
         <dcat:accessURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
-        <dcat:downloadURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>        
-        <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
+        <dcat:downloadURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
+        <dct:format>PDF</dct:format>
         <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#announcement"/>
         <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
     </dcat:Distribution>
@@ -104,7 +104,7 @@
         <dct:description> Test-Dokument</dct:description>
         <dcat:accessURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
         <dcat:downloadURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
-        <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
+        <dct:format>PDF</dct:format>
         <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#announcement"/>
         <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
     </dcat:Distribution>

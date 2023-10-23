@@ -122,7 +122,7 @@
         <dct:title xml:lang="de">Planzeichnung</dct:title>
         <dct:description> Planzeichnung </dct:description>
         <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
-        <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
+        <dct:format>PDF</dct:format>
         <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/a5e07bad-9ba1-11ec-bd63-00505697774f"/>
         <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#planDrawing"/>
         <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
@@ -132,7 +132,7 @@
         <dct:title xml:lang="de">Verordnung</dct:title>
         <dct:description>Hier finden Sie die Verordnung über den Bebauungsplan Altona-Nord 27 / Bahrenfeld 72.</dct:description>
         <dcat:accessURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
-        <dct:format rdf:resource="https://www.iana.org/assignments/media-types/application/pdf"/>
+        <dct:format>PDF</dct:format>
         <dcat:downloadURL rdf:resource="https://bauleitplanung.hamburg.de/file/17b94f6a-28ba-11e7-af94-0050568a354d/bc80330f-963c-11ec-a27b-00505697774f"/>
         <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#unknown"/>
         <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
