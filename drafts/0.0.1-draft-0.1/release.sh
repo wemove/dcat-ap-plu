@@ -74,7 +74,7 @@ fi
 
 # build new version number
 git fetch --prune --tags
-LATEST_VERSION=$(git describe --abbrev=0 --tags)
+LATEST_VERSION=$(git describe --abbrev=0 --tags main)
 VERSION_ARRAY=( ${LATEST_VERSION//./ } )
 ESC_LATEST_VERSION="${VERSION_ARRAY[0]}\.${VERSION_ARRAY[1]}\.${VERSION_ARRAY[2]}"
 case ${VERSION_TYPE} in
