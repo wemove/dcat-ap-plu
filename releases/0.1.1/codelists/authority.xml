@@ -1,0 +1,150 @@
+<rdf:RDF xml:base="https://specs.diplanung.de/resource/authority"
+        xmlns:dc="http://purl.org/dc/elements/1.0/"
+        xmlns:dct="http://purl.org/dc/terms/"
+        xmlns:owl ="http://www.w3.org/2002/07/owl#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#">
+    <owl:Ontology rdf:about="https://specs.diplanung.de/resource/authority">
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/authority/1.0/"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
+Zur kodierten Angabe der Bundesländer als datenhaltende Stellen. 
+        </rdfs:comment>
+    </owl:Ontology>
+    <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/authority">
+        <rdfs:label xml:lang="de">Liste der datenhaltenden Stellen</rdfs:label>
+        <skos:prefLabel xml:lang="de">Liste der datenhaltenden Stellen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">List of authorities</skos:prefLabel>
+        <dct:identifier>https://specs.diplanung.de/resource/authority</dct:identifier>
+    </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#bw">
+        <dc:identifier>bw</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Baden-Württemberg</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Baden-Württemberg</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#bw"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#by">
+        <dc:identifier>by</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Bayern (Freistaat)</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Bavaria (Free State)</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#by"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#be">
+        <dc:identifier>be</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Berlin</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Berlin</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#be"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#bb">
+        <dc:identifier>bb</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Brandenburg</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Brandenburg</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#bb"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#hb">
+        <dc:identifier>hb</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Bremen (Hansestadt)</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Bremen (Hanseatic City)</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#hb"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#hh">
+        <dc:identifier>hh</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Hamburg (Hansestadt)</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Hamburg (Hanseatic City)</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#hh"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#he">
+        <dc:identifier>he</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Hessen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Hesse</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#he"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#mv">
+        <dc:identifier>mv</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Mecklenburg-Vorpommern</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Mecklenburg-Western Pomerania</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#mv"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#ni">
+        <dc:identifier>ni</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Niedersachsen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Lower Saxony</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#ni"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#nw">
+        <dc:identifier>nw</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Nordrhein-Westfalen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">North Rhine-Westfalia</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#nw"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#rp">
+        <dc:identifier>rp</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Rheinland-Pfalz</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Rhineland-Palatinate</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#rp"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#sl">
+        <dc:identifier>sl</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Saarland</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Saarland</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#sl"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#sn">
+        <dc:identifier>sn</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Sachsen (Freistaat)</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Saxony (Free State)</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#sn"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#st">
+        <dc:identifier>st</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Sachsen-Anhalt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Saxony-Anhalt</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#st"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#sh">
+        <dc:identifier>sh</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Schleswig-Holstein</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Schleswig-Holstein</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#sh"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#th">
+        <dc:identifier>th</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Thüringen (Freistaat)</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Thuringia (Free State)</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#th"/>
+    </skos:Concept>
+</rdf:RDF>
