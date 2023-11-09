@@ -14,8 +14,8 @@
 * [Documentation] Fix HTML
 * [API] Add proper license
 * [Deployment] Change lighttpd permissions
-* [API] dcat:Distribution > dct:format now expects a Literal
+* [Spec] `dcat:Distribution` > `dct:format` now expects a Literal
 
-## 2023-08-02 - v0.1.0
+## 2023-08-02 - 0.1.0
 
 * Initial release
