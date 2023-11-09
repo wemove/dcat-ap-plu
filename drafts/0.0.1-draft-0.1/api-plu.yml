@@ -241,6 +241,7 @@ paths:
       operationId: postRecord
       parameters:
         - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/source'
       requestBody:
         required: true
         content:
@@ -300,6 +301,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/recordId'
+        - $ref: '#/components/parameters/source'
       requestBody:
         required: true
         content:
@@ -331,6 +333,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/collectionId'
         - $ref: '#/components/parameters/recordId'
+        - $ref: '#/components/parameters/source'
       responses:
         '200':
           $ref: '#/components/responses/200Success'
@@ -356,6 +359,14 @@ components:
       schema:
         type: string
         example: f08a255e-2c11-49dd-bdf9-88a0dcbe2aa6
+    source:
+      name: source
+      in: query
+      description: The mandatory source parameter denotes the origin point of the dataset. It influences the merging strategy for competing datasets.
+      required: true
+      schema:
+        type: string
+        example: cockpit
     q:
       name: q
       in: query

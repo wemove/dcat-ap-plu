@@ -2,7 +2,7 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [API] Add `source` query parameter to `POST`/`PUT`/`DELETE` endpoints for records
 
 ## 2023-10-26 - 0.1.1
 
