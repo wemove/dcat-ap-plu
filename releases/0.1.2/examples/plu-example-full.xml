@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:adms="http://www.w3.org/ns/adms#"
+    xmlns:dcat="http://www.w3.org/ns/dcat#"
+    xmlns:dcatde="http://dcat-ap.de/def/dcatde/"
+    xmlns:dct="http://purl.org/dc/terms/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:locn="http://www.w3.org/ns/locn#"
+    xmlns:plu="http://specs.diplanung.de/plu/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+    <dcat:Dataset rdf:about="https://dev.informationgrid.eu/trefferanzeige?docuuid=e7ced9a0-1076-4aee-af39-e6a2e7ff30b2">
+        <dct:title>Vollständiger beispielhafter Bebauungsplan</dct:title>
+        <dct:description>
+          Hier steht die Beschreibung eines beispielhaften Bebauungsplanes
+        </dct:description>
+        <dct:issued>2023-01-01T00:00:00.000Z</dct:issued>
+        <dct:modified>2023-03-01T00:00:00.000Z</dct:modified>
+        <dct:identifier>e7ced9a0-1076-4aee-af39-e6a2e7ff30b2</dct:identifier>
+        <adms:identifier rdf:resource="https://specs.diplanung.de/resource/authority#hh/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2"/>
+        <dcat:contactPoint>
+            <vcard:Organization>
+                <vcard:fn>Behörde für beispielhafte Bebauungspläne
+                </vcard:fn>
+                <vcard:hasPostalCode>12345</vcard:hasPostalCode>
+                <vcard:hasStreetAddress>Planstraße 1</vcard:hasStreetAddress>
+                <vcard:hasLocality>Planstadt</vcard:hasLocality>
+                <vcard:hasCountryName>Deutschland</vcard:hasCountryName>
+                <vcard:hasEmail>beispiel@behoerde.de</vcard:hasEmail>
+            </vcard:Organization>
+        </dcat:contactPoint>
+        <plu:procedureType rdf:resource="https://specs.diplanung.de/resource/procedureType#regular"/>
+        <plu:procedureState rdf:resource="https://specs.diplanung.de/resource/procedureState#ongoing"/>
+        <plu:planType rdf:resource="https://specs.diplanung.de/resource/planType#developmentPlan"/>
+        <plu:planTypeFine rdf:resource="https://registry.gdi-de.org/codelist/de.xleitstelle.inspire_plu/PlanTypeNameValue/6_Bebauungsplan#6_3_EinfacherBPlan"/>
+        <plu:planState rdf:resource="https://specs.diplanung.de/resource/planState#inPreparation"/>
+        <plu:procedureStartDate>2023-01-01T00:00:00.000Z</plu:procedureStartDate>
+        <plu:notification>Eine Notiz für Planverfahren</plu:notification>
+        <dct:relation rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=206f1cb5-c021-44ae-842b-8ea148172763"/>
+        <dct:spatial>
+            <dct:Location>
+                <dcat:bbox rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
+                    {"type": "LineString", "coordinates": [[54.9, 14.5], [55.4, 15.3]]}
+                </dcat:bbox>
+                <locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
+                    {"type": "Polygon", "coordinates": [[[55.22, 14.78], [55.2, 14.96], [55.14, 15.01], [55.124, 14.91], [55.102, 14.73], [55.22, 14.78]]]}
+                </locn:geometry>
+                <dcat:centroid rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
+                    {"type": "Point", "coordinates": [55.07, 14.92] }
+                </dcat:centroid>
+                <locn:geographicName>Bornholm</locn:geographicName>
+            </dct:Location>
+        </dct:spatial>
+        <dcat:distribution rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=e7ced9a0-1076-4aee-af39-e6a2e7ff30b/distribution"/>
+        <dct:publisher>
+            <foaf:Agent>
+                <foaf:name>Behörde für beispielhafte Bebauungspläne</foaf:name>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/LocalAuthority"/>
+            </foaf:Agent>
+        </dct:publisher>
+        <dcatde:maintainer>
+            <foaf:Agent>
+                <foaf:name>Behörde für beispielhafte Bebauungspläne</foaf:name>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/LocalAuthority"/>
+            </foaf:Agent>
+        </dcatde:maintainer>
+        <dct:contributor>
+            <foaf:Agent>
+                <foaf:name>Untergeordnete Einheit für bestimmte Bebauungspläne</foaf:name>
+                <dct:type rdf:resource="http://purl.org/adms/publishertype/LocalAuthority"/>
+            </foaf:Agent>
+        </dct:contributor>
+        <plu:processStep rdf:resource="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123"/>
+        <plu:developmentFreezePeriod>
+            <dct:PeriodOfTime>
+                <dcat:startDate>2023-06-30</dcat:startDate>
+                <dcat:endDate>2023-07-31</dcat:endDate>
+            </dct:PeriodOfTime>
+        </plu:developmentFreezePeriod>
+    </dcat:Dataset>
+    <plu:ProcessStep rdf:about="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123">
+        <dct:identifier>ProcStep-0123</dct:identifier>
+        <plu:processStepType rdf:resource="https://specs.diplanung.de/resource/processStepType#earlyInvolveAuth"/>
+        <plu:passNumber>3</plu:passNumber>
+        <dcat:distribution rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=59a5c95b-c144-4b44-afab-e170f968a12e/distribution"/>
+        <dct:temporal>
+            <dct:PeriodOfTime>
+                <dcat:startDate>2023-01-01</dcat:startDate>
+                <dcat:endDate>2023-01-31</dcat:endDate>
+            </dct:PeriodOfTime>
+        </dct:temporal>
+    </plu:ProcessStep>
+    <dcat:Distribution rdf:about="https://dev.informationgrid.eu/trefferanzeige?docuuid=e7ced9a0-1076-4aee-af39-e6a2e7ff30b/distribution">
+        <dct:title>Test-Dokument</dct:title>
+        <dct:description> Test-Dokument</dct:description>
+        <dcat:accessURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
+        <dcat:downloadURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
+        <dct:format>PDF</dct:format>
+        <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#announcement"/>
+        <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
+    </dcat:Distribution>
+    <dcat:Distribution rdf:about="https://dev.informationgrid.eu/trefferanzeige?docuuid=59a5c95b-c144-4b44-afab-e170f968a12e/distribution">
+        <dct:title>Test-Dokument</dct:title>
+        <dct:description> Test-Dokument</dct:description>
+        <dcat:accessURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
+        <dcat:downloadURL rdf:resource="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"/>
+        <dct:format>PDF</dct:format>
+        <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#announcement"/>
+        <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
+    </dcat:Distribution>
+</rdf:RDF>
