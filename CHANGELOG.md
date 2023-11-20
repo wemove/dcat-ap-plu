@@ -1,6 +1,6 @@
 # Changelog
 
-## xxxx-xx-xx - dev
+## 2023-11-20 - 0.1.2
 
 * [API] Add `source` query parameter to `POST`/`PUT`/`DELETE` endpoints for records
 * [Deployment] Upgrade lighttpd

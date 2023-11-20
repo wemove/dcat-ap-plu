@@ -1,0 +1,1218 @@
+openapi: 3.0.3
+info:
+  title: PLU API
+  version: 0.1.2
+  description: This is the API for the Information System on Planned Land Use. Find information on different types of spatially-related plans and procedures for the production of spatially-related plans.
+  contact:
+    name: wemove digital solutions GmbH
+    url: https://www.wemove.com
+    email: contact@wemove.com
+  license:
+    name: CC BY 4.0
+    url: https://creativecommons.org/licenses/by/4.0/
+servers:
+  - url: '{baseUrl}/v1'
+    description: Development server
+tags:
+  - name: Capabilities
+  - name: Collections
+  - name: Records
+paths:
+  /:
+    get:
+      tags:
+        - Capabilities
+      summary: landing page
+      description: |-
+        The landing page provides links to the API definition, the conformance
+        statements and to the catalogs and datasets available.
+      operationId: getLandingPage
+      responses:
+        '200':
+          $ref: '#/components/responses/LandingPage'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+  /conformance:
+    get:
+      tags:
+        - Capabilities
+      summary: information about specifications that this API conforms to
+      description: |-
+        A list of all conformance classes specified in a standard that the
+        server conforms to.
+      operationId: getConformanceDeclaration
+      responses:
+        '200':
+          $ref: '#/components/responses/ConformanceDeclaration'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+  /version:
+    get:
+      tags:
+        - Capabilities
+      summary: version information
+      description:
+        The version number of the current API specification for the Information System on Planned Land Use.
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Version'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+  /collections:
+    get:
+      tags:
+        - Collections
+      summary: the catalogs accessible through this API
+      description:
+        A list of all catalogs that are accessible through this API in DCAT-AP-PLU format via the specified file format
+      operationId: getCollections
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/collections'
+            application/rdf+xml:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    collections:
+                      $ref: '#/components/schemas/collections'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+    post:
+      tags:
+        - Collections
+      summary: post a new collection
+      description:
+        Add the collection specified in the request body
+      operationId: postCollection
+      requestBody:
+        required: true
+        content:
+          application/rdf+xml:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - $ref: '#/components/schemas/collection'
+      responses:
+        '200':
+          $ref: '#/components/responses/200Success'
+        '400':
+          $ref: '#/components/responses/400InvalidInput'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+  /collections/{collectionId}:
+    get:
+      tags:
+        - Collections
+      summary: |-
+        describe the catalog with id `collectionId`
+      operationId: describeCollection
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/collection'
+            application/rdf+xml:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    collection:
+                      $ref: '#/components/schemas/collection'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '415':
+          $ref: '#/components/responses/415UnsupportedMediaType'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+    put:
+      tags:
+        - Collections
+      summary: overwrite an existing collection
+      description: |-
+        Update an existing collection with id `collectionId` by overwriting it.
+        Expects a complete DCAT-AP-PLU document as payload.
+      operationId: putCollection
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+      requestBody:
+        required: true
+        content:
+          application/rdf+xml:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/collection'
+      responses:
+        '200':
+          $ref: '#/components/responses/200Success'
+        '400':
+          $ref: '#/components/responses/400InvalidInput'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+    delete:
+      tags:
+        - Collections
+      summary: delete a single collection
+      description: |-
+        Delete the collection with id `collectionId`.
+      operationId: deleteCollection
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+      responses:
+        '200':
+          $ref: '#/components/responses/200Success'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+  # brauchen wir das noch: /collections/{collectionId}/sortables
+  # evtl. /collections/{collectionId}/queryables
+  /collections/{collectionId}/items:
+    get:
+      tags:
+        - Records
+      summary: fetch records
+      description: |-
+        Fetch records of the catalog with id `collectionId`.
+        The response is a document consisting of records in the catalog.
+        The records included in the response are determined by the server
+        based on the query parameters of the request. To support access to
+        larger collections without overloading the client, the API supports
+        paged access with links to the next page, if more records are selected
+        that the page size.
+        Different parameters can be used to select only a
+        subset of the records in the catalog.
+        The `bbox` parameter matches all records in the catalog that are not associated with a location, too. The
+        `datetime` parameter matches all records in the catalog that are
+        not associated with a time stamp or interval, too.
+        The `limit` parameter may be used to control the subset of the
+        selected records that should be returned in the response, the page size.
+        Each page may include information about the number of selected and
+        returned records (`numberMatched` and `numberReturned`) as well as
+        links to support paging (link relation `next`).
+      operationId: getRecords
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/q'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/rdf+xml:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    collections:
+                      $ref: '#/components/schemas/collections'
+                    records:
+                      $ref: '#/components/schemas/records'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+    post:
+      tags:
+        - Records
+      summary: post a new record
+      description: |-
+        Post a record into the collection with id `collectionId`.
+      operationId: postRecord
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/source'
+      requestBody:
+        required: true
+        content:
+          application/rdf+xml:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/record'
+      responses:
+        '200':
+          $ref: '#/components/responses/200Success'
+        '400':
+          $ref: '#/components/responses/400InvalidInput'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+  /collections/{collectionId}/items/{recordId}:
+    get:
+      tags:
+        - Records
+      summary: fetch a single record
+      description: |-
+        Fetch the record with id `recordId` in the catalog
+        with id `collectionId`.
+      operationId: getRecord
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/recordId'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/rdf+xml:
+              schema:
+                allOf:
+                - $ref: '#/components/schemas/rdf'
+                - type: object
+                  properties:
+                    record:
+                      $ref: '#/components/schemas/record'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+    put:
+      tags:
+        - Records
+      summary: overwrite an existing record
+      description: |-
+        Update an existing record with id `recordId` in the collection with id `collectionId` by overwriting it.
+        Expects a complete DCAT-AP-PLU document as payload.
+      operationId: putRecord
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/recordId'
+        - $ref: '#/components/parameters/source'
+      requestBody:
+        required: true
+        content:
+          application/rdf+xml:
+            schema:
+              allOf:
+              - $ref: '#/components/schemas/rdf'
+              - type: object
+                properties:
+                  record:
+                    $ref: '#/components/schemas/record'
+      responses:
+        '200':
+          $ref: '#/components/responses/200Success'
+        '400':
+          $ref: '#/components/responses/400InvalidInput'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+    delete:
+      tags:
+        - Records
+      summary: delete a single record
+      description: |-
+        Delete the record with id `recordId` in the catalog
+        with id `collectionId`.
+      operationId: deleteRecord
+      parameters:
+        - $ref: '#/components/parameters/collectionId'
+        - $ref: '#/components/parameters/recordId'
+        - $ref: '#/components/parameters/source'
+      responses:
+        '200':
+          $ref: '#/components/responses/200Success'
+        '404':
+          $ref: '#/components/responses/404NotFound'
+        '500':
+          $ref: '#/components/responses/500GenericError'
+components:
+  parameters:
+    collectionId:
+      name: collectionId
+      in: path
+      description: local identifier of a catalog
+      required: true
+      schema:
+        type: string
+        example: hh
+    recordId:
+      name: recordId
+      in: path
+      description: local identifier of a spatial-related plan or procedure
+      required: true
+      schema:
+        type: string
+        example: f08a255e-2c11-49dd-bdf9-88a0dcbe2aa6
+    source:
+      name: source
+      in: query
+      description: The mandatory source parameter denotes the origin point of the dataset. It influences the merging strategy for competing datasets.
+      required: true
+      schema:
+        type: string
+        example: cockpit
+    q:
+      name: q
+      in: query
+      description: The optional q parameter supports keyword searching.  Only records whose text fields contain one or more of the specified search terms are selected.  The specific set of text keys/fields/properties of a record to which the q operator is applied is up to the description of the server.   Implementations should, however, apply the q operator to the title, description and keywords keys/fields/properties.
+      required: false
+      schema:
+        type: array
+        items:
+          type: string
+          minLength: 3
+        example: Hafen-City
+  schemas:
+    agent:
+      description: An agent; i.e. a person or an organisation
+      type: object
+      required:
+        - name
+      properties:
+        name:
+          description: Name of the agent (e.g. full personal name or organisation name)
+          type: string
+          example: Behörde für beispielhafte Bebauungspläne
+          xml:
+            prefix: foaf
+            name: name
+        type:
+          description: Type of the agent
+          type: string
+          example: http://purl.org/adms/publishertype/LocalAuthority
+          format: uri
+          xml:
+            prefix: dct
+            name: type
+      xml:
+        prefix: foaf
+        name: Agent
+    collection:
+      description: |-
+        Information about the catalog with id `collectionId`.
+        The response contains a link to the items in the catalog
+        (path `/collections/{collectionId}/items`, link relation `items`)
+        as well as key information about the catalog. This information
+        includes:
+        * A local identifier for the catalog that is unique for the +
+          catalogue;
+        * An optional title and description for the catalog;
+        * An optional indicator about the type of the items in the catalog +
+          (the default value, if the indicator is not provided, is 'record').
+      type: object
+      required:
+        - description
+        - id
+        - publisher
+        - title
+      properties:
+        id:
+          description: identifier of the catalog used, for example, in URIs
+          type: string
+          example: hh
+          xml:
+            prefix: dct
+            name: identifier
+        title:
+          description: human readable title of the catalog
+          type: string
+          example: Stadt- und Landschaftsplanung Online (Planportal)
+          xml:
+            prefix: dct
+            name: title
+        description:
+          description: a description of the records in the catalog
+          type: string
+          xml:
+            prefix: dct
+            name: description
+        themeTaxonomy:
+          description: Schema for the classification of datasets listed in the catalog
+          type: string
+          example: TODO
+          xml:
+            prefix: dcat
+            name: themeTaxonomy
+        issued:
+          description: Date of creation of this collection.
+          type: string
+          format: date-time
+          example: '2022-06-07T12:22:11Z'
+          xml:
+            prefix: dct
+            name: issued
+        language:
+          description: The language of the collection and its records.
+          type: string
+          example: german
+          xml:
+            prefix: dct
+            name: language
+        modified:
+          description: The most recent date on which the collection was changed.
+          type: string
+          format: date-time
+          example: '2022-06-07T12:22:11Z'
+          xml:
+            prefix: dct
+            name: modified
+        homepage:
+          description: A website with additional information about this collection.
+          type: string
+          format: uri
+          example: https://portal.diplanung.de/my-catalog
+          xml:
+            prefix: foaf
+            name: homepage
+        publisher:
+          description: The publisher of this collection
+          type: object
+          properties:
+            agent:
+              $ref: '#/components/schemas/agent'
+          xml:
+            prefix: dct
+            name: publisher
+      xml:
+        prefix: dcat
+        name: Catalog
+    collections:
+      description: |-
+        The catalogs shared by this API.
+        This resource provides information about and access to these catalogs.
+        The response contains the list of catalogs (itemType=record).
+        For each catalog, a link to the items in the catalog
+        (path `/collections/{collectionId}/items`, link relation `items`) as
+        well as key information about the catalog. This information
+        includes...
+        * A local identifier for the catalog that is unique for the +
+          catalogue;
+        * An optional title and description for the catalog;
+        * An optional extent that can be used to provide an indication of the +
+          spatial and temporal extent of the catalog - typically derived +
+          from the data;
+        * An optional indicator about the type of the items in the catalog +
+          (the default value, if the indicator is not provided, is 'record').
+      type: array
+      items:
+        $ref: '#/components/schemas/collection'
+    confClasses:
+      type: object
+      required:
+        - conformsTo
+      properties:
+        conformsTo:
+          type: array
+          items:
+            type: string
+    distribution:
+      type: object
+      required:
+        - accessURL
+      properties:
+        accessURL:
+          description: URL of the resource providing access to a distribution of the dataset (e.g. landing page)
+          type: string
+          format: uri
+          example: https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
+          xml:
+            prefix: dcat
+            name: accessURL
+        downloadURL:
+          description: URL of a resource that provides a download of a distribution of the dataset
+          type: string
+          format: uri
+          example: https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf
+          xml:
+            prefix: dcat
+            name: downloadURL
+        description:
+          description: Description of the distribution as free text
+          type: string
+          example: Test-Dokument
+          xml:
+            prefix: dct
+            name: description
+        docType:
+          description: Type of document in relation to spatial planning or participation procedures
+          type: string
+          enum: [announcement, explanatoryReport, planDrawing, participationURL, procedureURL, xplanArchive, xplanGML, unknown]
+          example: announcement
+          xml:
+            prefix: plu
+            name: docType
+        format:
+          description: Format in which the distribution is available
+          type: string
+          example: application/pdf
+          xml:
+            prefix: dct
+            name: format
+        issued:
+          description: Date of creation of this distribution
+          type: string
+          format: date-time
+          example: '2023-04-04T00:00:00.000Z'
+          xml:
+            prefix: dct
+            name: issued
+        mapLayerNames:
+          description: Comma-separated list of layer names, e.g. in case this distribution represents a WMS
+          type: string
+          example: map_layer_name,some_other_layer_name
+          xml:
+            prefix: plu
+            name: mapLayerNames
+        modified:
+          description: The most recent date on which the distribution was changed
+          type: string
+          format: date-time
+          example: '2023-04-04T00:00:00.000Z'
+          xml:
+            prefix: dct
+            name: modified
+        title:
+          description: Title of the distribution
+          type: string
+          example: Test-Dokument
+          xml:
+            prefix: dct
+            name: title
+        temporal:
+          description: Period of time during which the distribution is available or time from or until which the distribution is available
+          type: object
+          properties:
+            periodOfTime:
+              $ref: '#/components/schemas/period'
+          xml:
+            prefix: dct
+            name: temporal
+      xml:
+        prefix: dcat
+        name: Distribution
+    Error:
+      description: An error that is returned by the API
+      properties:
+        msg:
+          description: The error message
+          type: string
+          example: A detailed error message
+    landingPage:
+      type: object
+      required:
+        - links
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+    location:
+      type: object
+      example: >
+        <dct:Location>
+          <dcat:bbox rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
+              {"type": "LineString", "coordinates": [[54.9, 14.5], [55.4, 15.3]]}
+          </dcat:bbox>
+          <locn:geometry rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
+              {"type": "Polygon", "coordinates": [[[55.22, 14.78], [55.2, 14.96], [55.14, 15.01], [55.124, 14.91], [55.102, 14.73]]]}
+          </locn:geometry>
+          <dcat:centroid rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">
+              {"type": "Point", "coordinates": [55.07, 14.92] }
+          </dcat:centroid>
+          <locn:geographicName>Bornholm</locn:geographicName>
+        </dct:Location>
+      properties:
+        bbox:
+          description: The bounding box of the dataset
+          type: string
+          # not possible with openapi as of April 2023
+          # type: object
+          # properties:
+          #   typo:
+          #     type: string
+          #     example: https://www.iana.org/assignments/media-types/application/vnd.geo+json
+          #     xml:
+          #       attribute: true
+          #       prefix: rdf
+          #       name: datatype
+          example: '{"type": "LineString", "coordinates": [[54.9, 14.5], [55.4, 15.3]]}'
+          xml:
+            prefix: dcat
+            name: bbox
+        geometry:
+          description: Describes the geometry of the dataset
+          type: string
+          # not possible with openapi as of April 2023
+          # type: object
+          # properties:
+          #   typo:
+          #     type: string
+          #     example: https://www.iana.org/assignments/media-types/application/vnd.geo+json
+          #     xml:
+          #       attribute: true
+          #       prefix: rdf
+          #       name: datatype
+          example: '{"type": "Polygon", "coordinates": [[55.22, 14.78], [55.2, 14.96], [55.14, 15.01], [55.124, 14.91], [55.102, 14.73]]]}'
+          xml:
+            prefix: locn
+            name: geometry
+        centroid:
+          description: The geographic center (centroid) of the dataset's geometry
+          type: string
+          # not possible with openapi as of April 2023
+          # type: object
+          # properties:
+          #   typo:
+          #     type: string
+          #     example: https://www.iana.org/assignments/media-types/application/vnd.geo+json
+          #     xml:
+          #       attribute: true
+          #       prefix: rdf
+          #       name: datatype
+          example: {"type": "Point", "coordinates": [55.07, 14.92] }
+          xml:
+            prefix: dcat
+            name: centroid
+        geographicName:
+          description: Preferred name of the location
+          type: string
+          example: Bornholm
+          xml:
+            prefix: locn
+            name: geographicName
+      xml:
+        prefix: dct
+        name: Location
+    organization:
+      type: object
+      required:
+        - fn
+      properties:
+        fn:
+          type: string
+          example: Behörde für Wasserstraßen (BW) Beispielstadt
+          xml:
+            prefix: vcard
+            name: fn
+        countryName:
+          type: string
+          example: Deutschland
+          xml:
+            prefix: vcard
+            name: hasCountryName
+        locality:
+          type: string
+          example: Beispielstadt
+          xml:
+            prefix: vcard
+            name: hasLocality
+        postalCode:
+          type: string
+          example: 12345
+          xml:
+            prefix: vcard
+            name: hasPostalCode
+        region:
+          type: string
+          example: Hessen
+          xml:
+            prefix: vcard
+            name: hasRegion
+        streetAddress:
+          type: string
+          example: Beispielstraße 42
+          xml:
+            prefix: vcard
+            name: hasStreetAddress
+        email:
+          type: string
+          example: poststelle@bw.beispielstadt.de
+          xml:
+            prefix: vcard
+            name: hasEmail
+        telephone:
+          type: string
+          example: 01234 56789
+          xml:
+            prefix: vcard
+            name: hasTelephone
+        uid:
+          type: string
+          example: 62B5B8AD-DC4B-11D2-9A86-080000507261
+          xml:
+            prefix: vcard
+            name: hasUID
+        url:
+          type: string
+          format: uri
+          example: https://wassserstrassen.beispielstadt.de
+          xml:
+            prefix: vcard
+            name: hasURL
+      xml:
+        prefix: vcard
+        name: Organization
+    period:
+      type: object
+      properties:
+        startDate:
+          description: Start of a time period
+          type: string
+          format: date-time
+          example: 2023-06-30
+          xml:
+            prefix: dcat
+            name: startDate
+        endDate:
+          description: End of a time period
+          type: string
+          format: date-time
+          example: 2023-07-31
+          xml:
+            prefix: dcat
+            name: endDate
+      xml:
+        prefix: dct
+        name: PeriodOfTime
+    person:
+      type: object
+      required:
+        - fn
+      properties:
+        fn:
+          type: string
+          xml:
+            prefix: vcard
+            name: fn
+        countryName:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasCountryName
+        locality:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasLocality
+        postalCode:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasPostalCode
+        region:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasRegion
+        streetAddress:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasStreetAddress
+        email:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasEmail
+        telephone:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasTelephone
+        uid:
+          type: string
+          xml:
+            prefix: vcard
+            name: hasUID
+        url:
+          type: string
+          format: uri
+          xml:
+            prefix: vcard
+            name: hasURL
+      xml:
+        prefix: vcard
+        name: Person
+    processStep:
+      type: object
+      required:
+        - processStepType
+      properties:
+        id:
+          description: Unique identifier of the process step
+          type: string
+          example: ProcStep-0123
+          xml:
+            prefix: dct
+            name: identifier
+        passNumber:
+          description: Pass number of the process step (e.g. in participation procedures)
+          type: string
+          example: 2
+          xml:
+            prefix: plu
+            name: passNumber
+        processStepType:
+          description: Type of the process step for spatial planning and participation procedures
+          type: string
+          enum: [earlyInvolveAuth, earlyPublicPart, publicAgencies, publicDisclosure, internal, completed, unknown]
+          example: earlyInvolveAuth
+          xml:
+            prefix: plu
+            name: processStepType
+        temporal:
+          description: Period in which the process step takes place
+          type: object
+          properties:
+            periodOfTime:
+              $ref: '#/components/schemas/period'
+          xml:
+            prefix: dct
+            name: temporal
+        distribution:
+          description: A distribution referenced by the process step
+          type: array
+          items:
+            properties:
+              distribution:
+                $ref: '#/components/schemas/distribution'
+            xml:
+              prefix: dcat
+              name: distribution
+      xml:
+        prefix: plu
+        name: ProcessStep
+    rdf:
+      description: The RDF root
+      type: object
+      properties:
+        namespace-adms:
+          type: string
+          example: http://www.w3.org/ns/adms#
+          xml:
+            name: xmlns:adms
+            attribute: true
+        namespace-dcat:
+          type: string
+          example: http://www.w3.org/ns/dcat#
+          xml:
+            name: xmlns:dcat
+            attribute: true
+        namespace-dcatde:
+          type: string
+          example: http://dcat-ap.de/def/dcatde/
+          xml:
+            name: xmlns:dcatde
+            attribute: true
+        namespace-dct:
+          type: string
+          example: http://purl.org/dc/terms/
+          xml:
+            name: xmlns:dct
+            attribute: true
+        namespace-foaf:
+          type: string
+          example: http://xmlns.com/foaf/0.1/
+          xml:
+            name: xmlns:foaf
+            attribute: true
+        namespace-gml:
+          type: string
+          example: http://www.opengis.net/gml/3.2#
+          xml:
+            name: xmlns:gml
+            attribute: true
+        namespace-locn:
+          type: string
+          example: http://www.w3.org/ns/locn#
+          xml:
+            name: xmlns:locn
+            attribute: true
+        namespace-plu:
+          type: string
+          example: http://specs.diplanung.de/plu/
+          xml:
+            name: xmlns:plu
+            attribute: true
+        namespace-vcard:
+          type: string
+          example: http://www.w3.org/2006/vcard/ns#
+          xml:
+            name: xmlns:vcard
+            attribute: true
+        namespace-spdx:
+          type: string
+          example: http://spdx.org/rdf/terms#
+          xml:
+            name: xmlns:spdx
+            attribute: true
+      xml:
+        namespace: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+        prefix: rdf
+        name: RDF
+    records:
+      type: array
+      items:
+        $ref: '#/components/schemas/record'
+    record:
+      type: object
+      required:
+        - contact
+        - description
+        - id
+        - planState
+        - procedureState
+        - publisher
+        - spatial
+        - title
+      properties:
+        admsId:
+          description: |-
+            A global, catalog-agnostic identifier comprised of 
+            the ID of the data management authority and the ID of the dataset
+          type: string
+          example: https://specs.diplanung.de/resource/authority#hh/1234-567890abd-9876
+          xml:
+            prefix: adms
+            name: identifier
+        planType:
+          description: Type of the spatial plan
+          type: string
+          enum: [developmentPlan, landUsePlan, urbanPlanningStatutes, specialUrbanPlanningLaw, landscapePlanning, spatialPlan, spatialPlanningProcedure, planApprovalProcedure, other, unknown]
+          example: developmentPlan
+          xml:
+            prefix: plu
+            name: planType
+        planTypeFine:
+          description: Detailed type of the spatial plan
+          type: string
+          example: 6_3_EinfacherBPlan
+          xml:
+            prefix: plu
+            name: planTypeFine
+        procedureType:
+          description: Type of the procedure for the establishment of the spatial plan
+          type: string
+          enum: [regular, simplified, innerDevPlan, outdoorArea, revision, partialExtrapolation, newPreparation, completeExtrapolation, update, newAnnouncement, unknown]
+          example: regular
+          xml:
+            prefix: plu
+            name: procedureType
+        contact:
+          description: Contact for the dataset. Use of vCard is recommended
+          type: object
+          properties:
+            organization:
+              $ref: '#/components/schemas/organization'
+          xml:
+            prefix: dcat
+            name: contactPoint
+        description:
+          description: A description of the dataset as free text
+          type: string
+          example: Eine Beschreibung des Datensatzes
+          xml:
+            prefix: dct
+            name: description
+        id:
+          description: Unique identifier of the record in the context of the respective catalog
+          type: string
+          example: e7ced9a0-1076-4aee-af39-e6a2e7ff30b2
+          xml:
+            prefix: dct
+            name: identifier
+        title:
+          description: Title of the dataset
+          type: string
+          example: Titel des Datensatzes
+          xml:
+            prefix: dct
+            name: title
+        planState:
+          description: Status of the plan
+          type: string
+          enum: [inPreparation, fixed, unknown]
+          example: inPreparation
+          xml:
+            prefix: plu
+            name: planState
+        procedureState:
+          description: Status of the procedure
+          type: string
+          enum: [planned, ongoing, completed, unknown]
+          example: ongoing
+          xml:
+            prefix: plu
+            name: procedureState
+        issued:
+          description: Date of issue / publication of the dataset
+          type: string
+          format: date-time
+          example: 2023-01-01T00:00:00.000Z
+          xml:
+            prefix: dct
+            name: issued
+        modified:
+          description: Date of the last update or modification of the dataset
+          type: string
+          format: date-time
+          example: 2023-03-01T00:00:00.000Z
+          xml:
+            prefix: dct
+            name: modified
+        relation:
+          description: Reference to another dataset
+          type: string
+          example: TODO
+          xml:
+            prefix: dct
+            name: relation
+        procedureStartDate:
+          description: Date of the start of the procedure
+          type: string
+          format: date-time
+          example: 2023-01-01T00:00:00.000Z
+          xml:
+            prefix: plu
+            name: procedureStartDate
+        developmentFreezePeriod:
+          description: Period of a development freeze
+          type: object
+          properties:
+            periodOfTime:
+              $ref: '#/components/schemas/period'
+          xml:
+            prefix: plu
+            name: developmentFreezePeriod
+        publisher:
+          description: The publisher of the dataset
+          type: object
+          properties:
+            agent:
+              $ref: '#/components/schemas/agent'
+          xml:
+            prefix: dct
+            name: publisher
+        maintainer:
+          description: Administrator of the dataset
+          type: array
+          items:
+            properties:
+              agent:
+                $ref: '#/components/schemas/agent'
+            xml:
+              prefix: dcatde
+              name: maintainer
+        contributor:
+          description: Contributor to the dataset
+          type: array
+          items:
+            properties:
+              agent:
+                $ref: '#/components/schemas/agent'
+            xml:
+              prefix: dct
+              name: constributor
+        spatial:
+          description: Spatial reference of the dataset
+          type: object
+          properties:
+            location:
+              $ref: '#/components/schemas/location'
+          xml:
+            prefix: dct
+            name: spatial
+        distribution:
+          description: A distribution referenced by the dataset
+          type: array
+          items:
+            properties:
+              distribution:
+                $ref: '#/components/schemas/distribution'
+            xml:
+              prefix: dcat
+              name: distribution
+        processStep:
+          description: A process step of the process
+          type: array
+          items:
+            properties:
+              distribution:
+                $ref: '#/components/schemas/processStep'
+            xml:
+              prefix: plu
+              name: processStep
+      xml:
+        prefix: dcat
+        name: Dataset
+    Version:
+      type: object
+      description: A version
+      properties:
+        build:
+          type: object
+          description: A build description
+          properties:
+            version:
+              type: string
+            date:
+              type: string
+            commit_id:
+              type: string
+          required:
+            - version
+            - date
+  responses:
+    ConformanceDeclaration:
+      description: |-
+       The URIs of all conformance classes supported by the server. To support "generic" clients that want to access multiple OGC API Records implementations - and not "just" a specific API / server, the server declares the conformance classes it implements and conforms to.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/confClasses'
+        text/html:
+          schema:
+            type: string
+    LandingPage:
+      description: |-
+        The OGC API landing page for the PLU metadata information system. The landing page provides links to the API definition and the Record
+        Collections (path `/collections`), the conformance declaration (path '/conformance') and other resources in the API.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/landingPage'
+        text/html:
+          schema:
+            type: string
+    200Success:
+      description: Successful operation
+    400InvalidInput:
+      description: Invalid input
+    401UnauthorizedRequest:
+      description: Unauthorized request
+    404NotFound:
+      description: Not found
+    415UnsupportedMediaType:
+      description: Unsupported media type
+    500GenericError:
+      description: Unexpected error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
