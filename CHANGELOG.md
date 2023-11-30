@@ -2,7 +2,7 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [Spec] Add new attribute `plu:planName` to `dcat:Dataset`
 
 ## 2023-11-20 - 0.1.2
 

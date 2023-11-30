@@ -991,6 +991,13 @@ components:
           xml:
             prefix: adms
             name: identifier
+        planName:
+          description: Name of the spatial plan
+          type: string
+          example: HafenCity14
+          xml:
+            prefix: plu
+            name: planName
         planType:
           description: Type of the spatial plan
           type: string

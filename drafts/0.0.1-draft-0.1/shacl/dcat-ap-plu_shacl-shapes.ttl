@@ -323,6 +323,10 @@
         sh:path dcat:distribution ;
         sh:class dcat:Distribution ;
     ], [
+        sh:path plu:planName ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+    ], [
         sh:path plu:planType ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;
