@@ -1,0 +1,86 @@
+<rdf:RDF xml:base="https://specs.diplanung.de/resource/docType"
+        xmlns:dc="http://purl.org/dc/elements/1.0/"
+        xmlns:dct="http://purl.org/dc/terms/"
+        xmlns:owl ="http://www.w3.org/2002/07/owl#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#">
+    <owl:Ontology rdf:about="https://specs.diplanung.de/resource/docType">
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/docType/1.0/"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
+Zur kodierten Angabe der Art eines Dokuments:
+        </rdfs:comment>
+    </owl:Ontology>
+    <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/docType">
+        <rdfs:label xml:lang="de">Liste der Arten von Dokumenten</rdfs:label>
+        <skos:prefLabel xml:lang="de">Liste der Arten von Dokumenten</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">List of document types</skos:prefLabel>
+        <dct:identifier>https://specs.diplanung.de/resource/docType</dct:identifier>
+    </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#announcement">
+        <dc:identifier>announcement</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Auslegungsinformationen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Announcement documentation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#announcement"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#explanatoryReport">
+        <dc:identifier>explanatoryReport</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Erläuterungsbericht</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Explanatory report</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#explanatoryReport"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#planDrawing">
+        <dc:identifier>planDrawing</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Planzeichnung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Plan drawing</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#planDrawing"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#participationURL">
+        <dc:identifier>participationURL</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Beteiligungs-URL</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Participation URL</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#participationURL"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#procedureURL">
+        <dc:identifier>procedureURL</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Planverfahrens-URL</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Procedure URL</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#procedureURL"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#xplanArchive">
+        <dc:identifier>xplanArchive</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">XPlan-Archive</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">XPlan archive</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#xplanArchive"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#xplanGML">
+        <dc:identifier>xplanGML</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">XPlan-GML</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">XPlan GML</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#xplanGML"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#unknown">
+        <dc:identifier>unknown</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#unknown"/>
+    </skos:Concept>
+</rdf:RDF>
