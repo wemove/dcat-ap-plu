@@ -1,6 +1,6 @@
 # Changelog
 
-## xxxx-xx-xx - dev
+## 2024-02-07 - 0.1.3
 
 * [Spec] Add new attribute `plu:planName` to `dcat:Dataset`
 
