@@ -1,5 +1,9 @@
 # Changelog
 
+## 2024-02-07 - 0.1.3
+
+* [Spec] Add new attribute `plu:planName` to `dcat:Dataset`
+
 ## 2023-11-20 - 0.1.2
 
 * [API] Add `source` query parameter to `POST`/`PUT`/`DELETE` endpoints for records
