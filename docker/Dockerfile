@@ -14,7 +14,11 @@ COPY --chown=:lighttpd ./docker/lighttpd.conf /etc/lighttpd/lighttpd.conf
 
 WORKDIR /var/www/html
 COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/codelists ./resource
+COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/doc-plu.html ./doc-plu-latest.html
+COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/DCAT-AP-PLU.JPG .
+COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/styles ./styles
 COPY --chown=:lighttpd ./docker/static .
+RUN find . -name "index.html" -exec sed -i "s@{DCATAPPLU_VERSION}@${DCATAPPLU_VERSION}@g" {} +
 
 EXPOSE 8080 443
 
