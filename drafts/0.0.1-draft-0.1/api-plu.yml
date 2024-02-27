@@ -362,7 +362,7 @@ components:
     source:
       name: source
       in: query
-      description: The mandatory source parameter denotes the origin point of the dataset. It influences the merging strategy for competing datasets.
+      description: The mandatory source parameter denotes the origin point of the dataset. It influences the merging strategy for competing datasets. Interpreted values are `cockpit`, `cockpitpro`, `beteiligungsdb`.
       required: true
       schema:
         type: string
