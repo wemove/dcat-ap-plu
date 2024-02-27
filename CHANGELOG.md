@@ -2,7 +2,8 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [Website] Add latest DCAT-AP.PLU online documentation
+* [API] Add possible values for `source` parameter
 
 ## 2024-02-07 - 0.1.3
 
