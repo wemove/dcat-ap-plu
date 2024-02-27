@@ -4,6 +4,7 @@
 
 * [Website] Add latest DCAT-AP.PLU online documentation
 * [API] Add possible values for `source` parameter
+* [Deployment] Update docker base image
 
 ## 2024-02-07 - 0.1.3
 
