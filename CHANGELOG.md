@@ -1,5 +1,12 @@
 # Changelog
 
+## 2024-02-28 - 0.1.4
+
+* [Website] Add latest DCAT-AP.PLU online documentation
+* [API] Add possible values for `source` parameter
+* [Deployment] Update docker base image
+* [Spec] Disable section-linting
+
 ## 2024-02-07 - 0.1.3
 
 * [Spec] Add new attribute `plu:planName` to `dcat:Dataset`
