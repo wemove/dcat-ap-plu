@@ -24,7 +24,7 @@ Zur kodierten Angabe der Art eines Dokuments:
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:prefLabel xml:lang="de">Auslegungsinformationen</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Announcement documentation</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">announcement documentation</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#announcement"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#explanatoryReport">
@@ -32,7 +32,7 @@ Zur kodierten Angabe der Art eines Dokuments:
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:prefLabel xml:lang="de">Erläuterungsbericht</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Explanatory report</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">explanatory report</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#explanatoryReport"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#planDrawing">
@@ -40,7 +40,7 @@ Zur kodierten Angabe der Art eines Dokuments:
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:prefLabel xml:lang="de">Planzeichnung</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Plan drawing</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">plan drawing</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#planDrawing"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#participationURL">
@@ -48,7 +48,7 @@ Zur kodierten Angabe der Art eines Dokuments:
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:prefLabel xml:lang="de">Beteiligungs-URL</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Participation URL</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">participation URL</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#participationURL"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#procedureURL">
@@ -56,7 +56,7 @@ Zur kodierten Angabe der Art eines Dokuments:
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
         <skos:prefLabel xml:lang="de">Planverfahrens-URL</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Procedure URL</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">procedure URL</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#procedureURL"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#xplanArchive">
@@ -74,6 +74,223 @@ Zur kodierten Angabe der Art eines Dokuments:
         <skos:prefLabel xml:lang="de">XPlan-GML</skos:prefLabel>
         <skos:prefLabel xml:lang="en">XPlan GML</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#xplanGML"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#functionalPlan">
+        <dc:identifier>functionalPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Funktionsplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">functional plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#functionalPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#costAssumptionContract">
+        <dc:identifier>costAssumptionContract</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Kostenübernahmevertrag / Vorvertrag</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">cost assumption contract</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#costAssumptionContract"/>
+    </skos:Concept>
+        <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#urbanDevelopmentContract">
+        <dc:identifier>urbanDevelopmentContract</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Städtebaulicher Vertrag</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">urban development contract</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#urbanDevelopmentContract"/>
+    </skos:Concept>
+        <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#implementationContract">
+        <dc:identifier>implementationContract</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Durchführungsvertrag</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">implementation contract</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#implementationContract"/>
+    </skos:Concept>
+        <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#propertyDevelopmentContract">
+        <dc:identifier>propertyDevelopmentContract</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Erschließungsvertrag</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">property development contract</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#propertyDevelopmentContract"/>
+    </skos:Concept>
+    </skos:Concept>
+        <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#contract">
+        <dc:identifier>contract</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Vertrag</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">contract</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#contract"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#expertReport">
+        <dc:identifier>expertReport</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Gutachten</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">expert report</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#expertReport"/>    
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#roughCoordinationPaper">
+        <dc:identifier>roughCoordinationPaper</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Grobabstimmungspapier</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">rough coordination paper</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#roughCoordinationPaper"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#supplementaryDocument">
+        <dc:identifier>supplementaryDocument</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">ergänzende Unterlage</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">supplementary document</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#supplementaryDocument"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#ordinanceDesignation">
+        <dc:identifier>ordinanceDesignation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Verordnung / Festsetzung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">ordinance / designation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#ordinanceDesignation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#coverLetter">
+        <dc:identifier>coverLetter</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Anschreiben</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">cover letter</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#coverLetter"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#coverLetterParticipationProcedure">
+        <dc:identifier>coverLetterParticipationProcedure</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Anschreiben Beteiligungsverfahren</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">cover letter participation procedure</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#coverLetterParticipatioProcedure"/>
+    </skos:Concept>
+        <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#transcript">
+        <dc:identifier>transcript</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Niederschrift</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">transcript</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#transcript"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#summaryStatement">
+        <dc:identifier>summaryStatement</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">zusammenfassende Erklärung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">summary statement</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#summaryStatement"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#finalNotice">
+        <dc:identifier>finalNotice</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Schlussmitteilung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">final notice</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#finalNotice"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#preliminaryPlanningApproval">
+        <dc:identifier>preliminaryPlanningApproval</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Aufstellungsbeschluss</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">preliminary planning approval by resolution</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#preliminaryPlanningApproval"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#decisionForPublicDisplay">
+        <dc:identifier>decisionForPublicDisplay</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Auslegungsbeschluss</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">decision for public display</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#decisionForPublicDisplay"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#declaratoryDecision">
+        <dc:identifier>declaratoryDecision</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">(Plan) Feststellungsbeschluss</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">declaratory decision</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#declaratoryDecision"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#resolutionOnRevocation">
+        <dc:identifier>resolutionOnRevocation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Aufhebungsbeschluss</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">resolution on revocation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#resolutionOnRevocation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#statement">
+        <dc:identifier>statement</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Stellungnahme</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">statement</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#statement"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#publication">
+        <dc:identifier>publication</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Veröffentlichung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">publication</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#publication"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#printedMatter">
+        <dc:identifier>printedMatter</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Drucksache</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">printedMatter</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#printedMatter"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#presentation">
+        <dc:identifier>presentation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Präsentation</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">presentation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#presentation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#substantiation">
+        <dc:identifier>substantiation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Begründung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">substantiation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#substantiation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#internalMemo">
+        <dc:identifier>internalMemo</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">interner Vermerk</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">internal memo</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#internalMemo"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#meetingDocuments">
+        <dc:identifier>meetingDocuments</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Sitzungsunterlagen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">meeting documents</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#meetingDocuments"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#otherDocuments">
+        <dc:identifier>otherDocuments</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">Sonstige Unterlage</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">other documents</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#otherDocuments"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#unknown">
         <dc:identifier>unknown</dc:identifier>
