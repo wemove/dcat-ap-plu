@@ -3,6 +3,7 @@
 ## xxxx-xx-xx - dev
 
 * [Codelist] Extend `plu:docType` to describe values from https://www.xrepository.de/details/urn:xoev-de:xplanverfahren:codeliste:verfahrensunterlagentyp
+* [Website] Fix links to DCAT-AP.PLU documentation
 
 ## 2024-02-28 - 0.1.4
 
