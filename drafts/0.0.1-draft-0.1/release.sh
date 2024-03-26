@@ -74,6 +74,8 @@ fi
 
 # build new version number
 git fetch --prune --tags
+DRAFT_VERSION="../drafts/0.0.1-draft-0.1"
+ESC_DRAFT_VERSION="\.\./drafts/0\.0\.1-draft-0\.1"
 LATEST_VERSION=$(git describe --abbrev=0 --tags main)
 VERSION_ARRAY=( ${LATEST_VERSION//./ } )
 ESC_LATEST_VERSION="${VERSION_ARRAY[0]}\.${VERSION_ARRAY[1]}\.${VERSION_ARRAY[2]}"
@@ -135,7 +137,7 @@ sed -i "s@version: x.y.z@version: ${NEXT_VERSION}@g" releases/${NEXT_VERSION}/ap
 # in the new version folder, change the version in `README.md`
 sed -i "s@DCAT-AP\.PLU v\?${ESC_LATEST_VERSION}@DCAT-AP.PLU ${NEXT_VERSION}@g" releases/${NEXT_VERSION}/README.md
 # update the `DCATAPPLU_VERSION` in the Dockerfile
-sed -i "s@ENV DCATAPPLU_VERSION=${ESC_LATEST_VERSION}@ENV DCATAPPLU_VERSION=${NEXT_VERSION}@g" docker/Dockerfile
+sed -i "s@ENV DCATAPPLU_VERSION=${ESC_DRAFT_VERSION}@ENV DCATAPPLU_VERSION=${NEXT_VERSION}@g" docker/Dockerfile
 
 # commit, merge, tag new release
 echo
@@ -147,9 +149,13 @@ git tag -a ${NEXT_VERSION} -m "Release ${NEXT_VERSION}"
 
 # prepare next dev version
 git checkout develop
+echo -e "\nUpdating changelog ..."
 sed -i "s@# Changelog@# Changelog\n\n## xxxx-xx-xx - dev\n\n...@g" CHANGELOG.md
 git add CHANGELOG.md
-git commit -m "Prepare changelog for development"
+echo -e "\nUpdating version in Dockerfile ..."
+sed -i "s@ENV DCATAPPLU_VERSION=${NEXT_VERSION}@ENV DCATAPPLU_VERSION=${DRAFT_VERSION}@g" docker/Dockerfile
+git add docker/Dockerfile
+git commit -m "Set next development version"
 
 echo -e "\nThe new ${VERSION_TYPE} release ${NEXT_VERSION} has been created locally."
 echo "Next steps:"
