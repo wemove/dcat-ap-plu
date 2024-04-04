@@ -1090,14 +1090,15 @@ components:
           xml:
             prefix: dct
             name: relation
-        procedureStartDate:
-          description: Date of the start of the procedure
-          type: string
-          format: date-time
-          example: 2023-01-01T00:00:00.000Z
+        procedurePeriod:
+          description: Period of the procedure
+          type: object
+          properties:
+            periodOfTime:
+              $ref: '#/components/schemas/period'
           xml:
             prefix: plu
-            name: procedureStartDate
+            name: procedurePeriod
         developmentFreezePeriod:
           description: Period of a development freeze
           type: object
