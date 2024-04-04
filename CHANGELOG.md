@@ -5,13 +5,13 @@
 * [Codelist] Extend `plu:docType` to describe values from https://www.xrepository.de/details/urn:xoev-de:xplanverfahren:codeliste:verfahrensunterlagentyp
 * [Website] Fix links to DCAT-AP.PLU documentation
 * [Deployment] Set draft version for development
+* [Spec] Replace `plu:procedureStartDate` (type `xsd:dateTime`) with `plu:procedurePeriod` (type `dct:PeriodOfTime`)
 
 ## 2024-02-28 - 0.1.4
 
 * [Website] Add latest DCAT-AP.PLU online documentation
 * [API] Add possible values for `source` parameter
 * [Deployment] Update docker base image
-* [Spec] Disable section-linting
 
 ## 2024-02-07 - 0.1.3
 

@@ -35,7 +35,11 @@
         <plu:planType rdf:resource="https://specs.diplanung.de/resource/planType#developmentPlan"/>
         <plu:planTypeFine rdf:resource="https://registry.gdi-de.org/codelist/de.xleitstelle.inspire_plu/PlanTypeNameValue/6_Bebauungsplan#6_3_EinfacherBPlan"/>
         <plu:planState rdf:resource="https://specs.diplanung.de/resource/planState#inPreparation"/>
-        <plu:procedureStartDate>2023-01-01T00:00:00.000Z</plu:procedureStartDate>
+        <plu:procedurePeriod>
+            <dct:PeriodOfTime>
+                <dcat:startDate>2023-01-01T00:00:00.000Z</dcat:startDate>
+            </dct:PeriodOfTime>
+        </plu:procedurePeriod>
         <plu:notification>Eine Notiz für Planverfahren</plu:notification>
         <dct:relation rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=206f1cb5-c021-44ae-842b-8ea148172763"/>
         <dct:spatial>

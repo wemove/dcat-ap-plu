@@ -473,31 +473,31 @@
           </table>
         </section>
 
-        <section id="Property:procedureStartDate">
-          <h4 id="property-procedure-start-date">Eigenschaft: Verfahrensbeginn</h4>
+        <section id="Property:procedurePeriod">
+          <h4 id="property-procedure-period">Eigenschaft: Verfahrenszeitraum</h4>
           <table class="definition">
-          <thead><tr><th>URI:</th><th><a href="http://purl.org/dc/terms/issued">plu:procedureStartDate</a></th></tr></thead>
+          <thead><tr><th>URI:</th><th>plu:procedurePeriod</th></tr></thead>
           <tbody>
-          <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
-          <tr><td class="prop">Definition:</td><td>Verfahrensbeginn</td></tr>
-          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Literal"><code>rdfs:Literal</code> als <code>xsd:date</code> oder <code>xsd:dateTime</code></a></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft enthält das Datum des Verfahrensbeginns.</td></tr>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Empfohlen</td></tr>
+          <tr><td class="prop">Definition:</td><td>Verfahrenszeitraum</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td>dct:PeriodOfTime</td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Diese Eigenschaft beschreibt den Zeitraum des Verfahrens. dct:startDate enthält das Datum des Verfahrensbeginns. Für festgestellte oder untergegangene Pläne enthält dct:endDate das Datum des Verfahrensendes (d.h. der Planfeststellung oder des Untergangs), für Pläne in Aufstellung entfällt dct:endDate.</td></tr>
           </tbody>
           </table>
-       </section>
+        </section>
 
-       <section id="Property:relation">
-        <h4 id="property-relation">Eigenschaft: Verweis</h4>
-        <table class="definition">
-        <thead><tr><th>URI:</th><th>dct:relation</th></tr></thead>
-        <tbody>
-        <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
-        <tr><td class="prop">Definition:</td><td>Verweis auf einen anderen Datensatz.</td></tr>
-        <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
-        <tr><td class="prop">Anwendungshinweis:</td><td>Über diese Eigenschaft kann eine Verknüpfung mit einem anderen Verfahren dargestellt werden.</td></tr>
-        </tbody>
-        </table>
-       </section>
+        <section id="Property:relation">
+          <h4 id="property-relation">Eigenschaft: Verweis</h4>
+          <table class="definition">
+          <thead><tr><th>URI:</th><th>dct:relation</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Verweis auf einen anderen Datensatz.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="http://www.w3.org/2000/01/rdf-schema#Resource"><code>rdfs:Resource</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Über diese Eigenschaft kann eine Verknüpfung mit einem anderen Verfahren dargestellt werden.</td></tr>
+          </tbody>
+          </table>
+        </section>
 
         <section id="Property:location">
           <h4 id="property-location">Eigenschaft: Raumbezug</h4>

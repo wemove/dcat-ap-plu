@@ -72,7 +72,12 @@
         <dct:modified>2022-06-01T00:00:00.000Z</dct:modified>
         <plu:planState rdf:resource="https://specs.diplanung.de/resource/planState#fixed"/>
         <plu:procedureState rdf:resource="https://specs.diplanung.de/resource/procedureState#ongoing"/>
-        <plu:procedureStartDate>2022-04-01T00:00:00.000Z</plu:procedureStartDate>
+        <plu:procedurePeriod>
+            <dct:PeriodOfTime>
+                <dcat:startDate>2022-04-01</dcat:startDate>
+                <dcat:endDate>2022-05-11</dcat:endDate>
+            </dct:PeriodOfTime>
+        </plu:procedurePeriod>
         <dct:relation rdf:resource="http://uvp-verbund.de/trefferanzeige?docuuid=D33223C6-F4A3-40B5-9E69-CED36D2A69A2"/>
         <plu:planType rdf:resource="https://specs.diplanung.de/resource/planType#developmentPlan"/>
         <plu:planTypeFine rdf:resource="https://registry.gdi-de.org/codelist/de.xleitstelle.inspire_plu/PlanTypeNameValue/6_Bebauungsplan#6_3_EinfacherBPlan"/>
