@@ -22,7 +22,7 @@ Finally, update the [changelog](../../CHANGELOG.md).
 
 Run [release.sh](release.sh) and follow the instructions.
 
-Alternatively, you can create a manual release:
+Alternatively, you can manually create a release:
 - Validate all examples using the `SHACL` shapefile
 - Finalize the [changelog](../../CHANGELOG.md)
 - Create a new folder in [releases](../../releases), named after your new version number (semver)
@@ -33,5 +33,6 @@ Alternatively, you can create a manual release:
   - the version in `README.md`
 - Also update the `DCATAPPLU_VERSION` in the [Dockerfile](../../docker/Dockerfile)
 - Merge `develop` into `main`
+- In `develop`, add a new dummy entry to the changelog and revert the changes to the Dockerfile
 
 Finally, announce the new version via mail and ADO.

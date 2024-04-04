@@ -1,12 +1,12 @@
 FROM alpine:3.18.6
 
 ENV LIGHTTPD_VERSION=1.4.73-r0
-ENV DCATAPPLU_VERSION=0.1.4
+ENV DCATAPPLU_VERSION=../drafts/0.0.1-draft-0.1
 
 RUN addgroup -S --gid 1000 lighttpd \
     && adduser -S -G lighttpd --uid 1000 lighttpd
 
-RUN apk add --update --no-cache lighttpd=${LIGHTTPD_VERSION} \
+RUN apk add --update --no-cache lighttpd=${LIGHTTPD_VERSION} curl \
     && rm -rf /var/cache/apk/* \
     && chgrp lighttpd /usr/sbin/lighttpd
 

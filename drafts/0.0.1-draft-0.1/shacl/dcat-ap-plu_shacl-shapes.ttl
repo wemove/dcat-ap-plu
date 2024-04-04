@@ -12,7 +12,7 @@
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 #@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix plu: <http://specs.diplanung.de/plu/>
+@prefix plu: <http://specs.diplanung.de/plu/> .
 #@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
@@ -335,6 +335,10 @@
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;
     ], [
+        sh:path plu:procedurePeriod ;
+        sh:class dct:PeriodOfTime ;
+        sh:maxCount 1 ;
+    ], [
         sh:path plu:procedureType ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;
@@ -367,10 +371,6 @@
         sh:maxCount 1 ;
     ], [
         sh:path plu:notification ;
-        sh:nodeKind sh:Literal ;
-        sh:maxCount 1 ;
-    ], [
-        sh:path plu:procedureStartDate ;
         sh:nodeKind sh:Literal ;
         sh:maxCount 1 ;
     ] ;
