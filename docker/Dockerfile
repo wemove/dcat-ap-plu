@@ -6,7 +6,7 @@ ENV DCATAPPLU_VERSION=../drafts/0.0.1-draft-0.1
 RUN addgroup -S --gid 1000 lighttpd \
     && adduser -S -G lighttpd --uid 1000 lighttpd
 
-RUN apk add --update --no-cache lighttpd=${LIGHTTPD_VERSION} curl \
+RUN apk add --update --no-cache lighttpd=${LIGHTTPD_VERSION} \
     && rm -rf /var/cache/apk/* \
     && chgrp lighttpd /usr/sbin/lighttpd
 
