@@ -560,6 +560,10 @@
         sh:path dct:temporal ;
         sh:class dct:PeriodOfTime ;
         sh:maxCount 1 ;
+    ], [
+        sh:path dct:title ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
     ] ;
     # optional
     sh:property [

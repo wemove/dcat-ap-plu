@@ -885,6 +885,13 @@ components:
           xml:
             prefix: dct
             name: temporal
+        title:
+          description: Title of the processstep
+          type: string
+          example: Titel des Verfahrensschrittes
+          xml:
+            prefix: dct
+            name: title
         distribution:
           description: A distribution referenced by the process step
           type: array

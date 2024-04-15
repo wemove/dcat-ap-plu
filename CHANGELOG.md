@@ -6,6 +6,7 @@
 * [Website] Fix links to DCAT-AP.PLU documentation
 * [Deployment] Set draft version for development
 * [Spec] Replace `plu:procedureStartDate` (type `xsd:dateTime`) with `plu:procedurePeriod` (type `dct:PeriodOfTime`)
+* [Spec] Add new attribute `dct:title` to `plu:ProcessStep`
 
 ## 2024-02-28 - 0.1.4
 
