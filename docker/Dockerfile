@@ -1,6 +1,6 @@
-FROM alpine:3.18.6
+FROM alpine:3.19.1
 
-ENV LIGHTTPD_VERSION=1.4.73-r0
+ENV LIGHTTPD_VERSION=1.4.76-r0
 ENV DCATAPPLU_VERSION=../drafts/0.0.1-draft-0.1
 
 RUN addgroup -S --gid 1000 lighttpd \

@@ -8,6 +8,7 @@
 * [Spec] Replace `plu:procedureStartDate` (type `xsd:dateTime`) with `plu:procedurePeriod` (type `dct:PeriodOfTime`)
 * [Spec] Add new attribute `dct:title` to `plu:ProcessStep`
 * [API] Remove `source` query parameter from `POST`/`PUT`/`DELETE` endpoints for records
+* [Deployment] Update docker base image, lighttpd
 
 ## 2024-02-28 - 0.1.4
 
