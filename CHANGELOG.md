@@ -1,5 +1,9 @@
 # Changelog
 
+## xxxx-xx-xx - dev
+
+...
+
 ## 2024-04-29 - 0.2.0
 
 * [Codelist] Extend `plu:docType` to describe values from https://www.xrepository.de/details/urn:xoev-de:xplanverfahren:codeliste:verfahrensunterlagentyp
