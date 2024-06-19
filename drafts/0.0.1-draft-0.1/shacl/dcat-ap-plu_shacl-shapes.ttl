@@ -78,7 +78,7 @@
 
 
 #-------------------------------------------------------------------------
-# The shapes in this file cover all classes in DCAT-AP-PLU.
+# The shapes in this file cover all classes in DCAT-AP.PLU.
 #
 # 
 #-------------------------------------------------------------------------
