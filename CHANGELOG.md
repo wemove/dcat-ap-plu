@@ -2,7 +2,7 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [Documentation] Fix type links
 
 ## 2024-04-29 - 0.2.0
 
