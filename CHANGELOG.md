@@ -3,6 +3,7 @@
 ## xxxx-xx-xx - dev
 
 * [Documentation] Fix type links
+* [Documentation] Fix ADMS namespace
 
 ## 2024-04-29 - 0.2.0
 
