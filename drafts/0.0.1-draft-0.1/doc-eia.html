@@ -64,7 +64,7 @@
           <tr><td><code>dcat</code></td><td><code>http://www.w3.org/ns/dcat#</code></td></tr>
           <tr><td><code>dct</code></td><td><code>http://purl.org/dc/terms/</code></td></tr>
           <tr><td><code>dctype</code></td><td><code>http://purl.org/dc/dcmitype/</code></td></tr>
-          <tr><td><code>eia</code></td><td><code>TODO</code></td></tr>
+          <tr><td><code>eia</code></td><td><code>http://specs.uvp-verbund.de/eia/</code></td></tr>
           <tr><td><code>foaf</code></td><td><code>http://xmlns.com/foaf/0.1/</code></td></tr>
           <tr><td><code>locn</code></td><td><code>http://www.w3.org/ns/locn#</code></td></tr>
           <tr><td><code>rdf</code></td><td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td></tr>
@@ -391,8 +391,7 @@
          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Art des UVP Verfahrens</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_resource"><code title="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</code></a></td></tr>
-         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. Linienbestimmung, Zulassungsverfahren. Die möglichen Verfahrensarten sind durch eine <a href="#codelist-eiaProcedureType">Codeliste</a> festgelegt.
-         </td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft werden die Verfahren nach ihrer Art kategorisiert, z.B. Linienbestimmung, Zulassungsverfahren. Die möglichen Verfahrensarten sind durch eine <a href="#codelist-eiaProcedureType">Codeliste</a> festgelegt. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.uvp-verbund.de/resource/procedureType#</code> und dem gewünschten Codelistenwert.</td></tr>
          </tbody>
          </table>
        </section>
@@ -590,7 +589,7 @@
           <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
           <tr><td class="prop">Definition:</td><td>Art eines Dokuments im Zusammenhang mit UVP-Verfahren</td></tr>
           <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_resource"><code title="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</code></a></td></tr>
-          <tr><td class="prop">Anwendungshinweis:</td><td>Über den Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem UVP-Verfahren zur Verfügung gestellt werden können, wie z.B. Auslegungsinformationen ("announcement"), Berichte und Emfpehlungen ("reportsRecommendation") oder Entscheidungen ("decision"). Die möglichen Dokumententypen sind durch eine <a href="#codelist-eiaDocType">Codeliste </a> festgelegt.</td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Über den Dokumententyp wird die Art der verfügbaren Dokumente ausgedrückt, die zu einem UVP-Verfahren zur Verfügung gestellt werden können, wie z.B. Auslegungsinformationen ("announcement"), Berichte und Emfpehlungen ("reportsRecommendation") oder Entscheidungen ("decision"). Die Arten von Dokumenten sind durch eine <a href="#codelist-eiaDocType">Codeliste</a> definiert. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.uvp-verbund.de/resource/docType#</code> und dem gewünschten Codelistenwert.</td></tr>
          </tbody>
        </table>
        </section>
@@ -666,7 +665,7 @@
          <tr><td class="prop">Verbindlichkeit:</td><td>Verpflichtend</td></tr>
          <tr><td class="prop">Definition:</td><td>Art des Verfahrensschrittes bei UVP Verfahren</td></tr>
          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_resource"><code title="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</code></a></td></tr>
-         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Verfahrensschrittes bei UVP-Verfahren beschrieben. Die möglichen Arten von Verfahrensschritten sind durch eine <a href="#codelist-eiaProcessStepType">Codeliste</a> definiert. </td></tr>
+         <tr><td class="prop">Anwendungshinweis:</td><td>Mit dieser Eigenschaft wird die Art des Verfahrensschrittes bei UVP-Verfahren beschrieben. Die möglichen Arten von Verfahrensschritten sind durch eine <a href="#codelist-eiaProcessStepType">Codeliste</a> definiert. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.uvp-verbund.de/resource/processStepType#</code> und dem gewünschten Codelistenwert.</td></tr>
          </tbody>
          </table>
        </section>
