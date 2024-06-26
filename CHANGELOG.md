@@ -1,5 +1,9 @@
 # Changelog
 
+## xxxx-xx-xx - dev
+
+...
+
 ## 2024-06-26 - 0.2.1
 
 * [Documentation] Fix type links
