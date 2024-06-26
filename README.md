@@ -14,4 +14,3 @@ DCAT-AP.PLU is an extension of DCAT-AP for describing planned land use datasets.
 ## Licence
 
 DCAT-AP.PLU releases and working drafts are distributed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-

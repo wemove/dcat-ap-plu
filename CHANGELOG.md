@@ -1,5 +1,12 @@
 # Changelog
 
+## 2024-06-26 - 0.2.1
+
+* [Documentation] Fix type links
+* [Documentation] Fix ADMS namespace
+* [Documentation] Move DCAT-AP.EIA files to own repository: https://github.com/wemove/dcat-ap-eia
+* [Deployment] Update docker base image
+
 ## 2024-04-29 - 0.2.0
 
 * [Codelist] Extend `plu:docType` to describe values from https://www.xrepository.de/details/urn:xoev-de:xplanverfahren:codeliste:verfahrensunterlagentyp
