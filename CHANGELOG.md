@@ -5,6 +5,7 @@
 * [Documentation] Fix type links
 * [Documentation] Fix ADMS namespace
 * [Documentation] Move DCAT-AP.EIA files to own repository: https://github.com/wemove/dcat-ap-eia
+* [Deployment] Update docker base image
 
 ## 2024-04-29 - 0.2.0
 
