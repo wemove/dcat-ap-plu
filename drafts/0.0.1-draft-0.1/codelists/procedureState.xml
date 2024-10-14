@@ -43,6 +43,22 @@ Zur kodierten Angabe des übergeordneten Status eines Verfahrens sind folgende O
         <skos:prefLabel xml:lang="en">completed</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState#completed"/>
     </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState#completelyCanceled">
+        <dc:identifier>completelyCanceled</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
+        <skos:prefLabel xml:lang="de">ganz aufgehoben</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">completely canceled</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState#completelyCanceled"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState#discontinued">
+        <dc:identifier>discontinued</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureState"/>
+        <skos:prefLabel xml:lang="de">eingestellt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">discontinued</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureState#discontinued"/>
+    </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureState#unknown">
         <dc:identifier>unknown</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureState"/>

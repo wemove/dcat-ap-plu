@@ -19,6 +19,14 @@ Zur kodierten Angabe des Status eines raumbezogenen Planwerks sind folgende Opti
         <skos:prefLabel xml:lang="en">List of states of a spatial plan</skos:prefLabel>
         <dct:identifier>https://specs.diplanung.de/resource/planState</dct:identifier>
     </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planState#planned">
+        <dc:identifier>planned</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planState"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planState"/>
+        <skos:prefLabel xml:lang="de">simuliert</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">planned</skos:prefLabel>        
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planState#planned"/>
+    </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/planState#inPreparation">
         <dc:identifier>inPreparation</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planState"/>
@@ -34,6 +42,22 @@ Zur kodierten Angabe des Status eines raumbezogenen Planwerks sind folgende Opti
         <skos:prefLabel xml:lang="de">festgesetzt</skos:prefLabel>
         <skos:prefLabel xml:lang="en">fixed</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planState#fixed"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planState#completelyReversed">
+        <dc:identifier>completelyReversed</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planState"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planState"/>
+        <skos:prefLabel xml:lang="de">ganz aufgehoben</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">completely reversed</skos:prefLabel>        
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planState#completelyReversed"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planState#discontinued">
+        <dc:identifier>discontinued</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planState"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planState"/>
+        <skos:prefLabel xml:lang="de">eingestellt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">discontinued</skos:prefLabel>        
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planState#discontinued"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/planState#unknown">
         <dc:identifier>unknown</dc:identifier>
