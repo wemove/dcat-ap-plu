@@ -16,6 +16,7 @@
         </dct:description>
         <dct:issued>2023-01-01T00:00:00.000Z</dct:issued>
         <dct:modified>2023-03-01T00:00:00.000Z</dct:modified>
+        <plu:procedureImportDate>2023-05-01T00:00:00.000Z</plu:procedureImportDate>
         <dct:identifier>e7ced9a0-1076-4aee-af39-e6a2e7ff30b2</dct:identifier>
         <adms:identifier rdf:resource="https://specs.diplanung.de/resource/authority#hh/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2"/>
         <plu:planName>Bebauungsplan123</plu:planName>

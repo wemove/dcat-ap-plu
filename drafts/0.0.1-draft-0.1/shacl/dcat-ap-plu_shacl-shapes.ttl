@@ -362,6 +362,10 @@
         sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
     ], [
+        sh:path plu:procedureImportDate ;
+        sh:shape :DateOrDateTimeDataType_Shape ;
+        sh:maxCount 1 ;
+    ], [
         sh:path dct:relation ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;

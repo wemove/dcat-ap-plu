@@ -1077,6 +1077,14 @@ components:
           xml:
             prefix: dct
             name: modified
+        procedureImportDate:
+          description: Date of the import of the dataset
+          type: string
+          format: date-time
+          example: 2023-05-01T00:00:00.000Z
+          xml:
+            prefix: plu
+            name: procedureImportDate
         relation:
           description: Reference to another dataset
           type: string
