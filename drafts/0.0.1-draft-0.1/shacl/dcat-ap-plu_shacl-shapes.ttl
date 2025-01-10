@@ -176,7 +176,7 @@
         sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
     ] ;
-    # optional 
+    # optional
     sh:property [
         sh:path dcat:record ;
         sh:class dcat:CatalogRecord ;
