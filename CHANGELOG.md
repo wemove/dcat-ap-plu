@@ -4,6 +4,8 @@
 
 * [Codelist] Extend `plu:planState` to describe values `planned`, `completelyReversed`, `discontinued`
 * [Codelist] Extend `plu:procedureState` to describe values `completelyCanceled`, `discontinued`
+* [Spec] Add new attribute `plu:procedureImportDate` to `dcat:Dataset`
+* [Deployment] Update docker base image
 
 ## 2024-06-26 - 0.2.1
 
