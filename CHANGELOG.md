@@ -1,6 +1,6 @@
 # Changelog
 
-## xxxx-xx-xx - dev
+## 2025-02-12 - 0.2.2
 
 * [Codelist] Extend `plu:planState` to describe values `planned`, `completelyReversed`, `discontinued`
 * [Codelist] Extend `plu:procedureState` to describe values `completelyCanceled`, `discontinued`
