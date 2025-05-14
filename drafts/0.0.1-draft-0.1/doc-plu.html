@@ -518,6 +518,19 @@
          </table>
        </section>
 
+        <section id="Property:objective_in_preparation"> 
+          <h4 id="property-objective-in-preparation">Eigenschaft: Ziel in Aufstellung</h4>
+          <table class="definition">
+          <thead><tr><th>URI:</th><th>plu:objectiveInPreparation</th></tr></thead>
+          <tbody>
+          <tr><td class="prop">Verbindlichkeit:</td><td>Optional</td></tr>
+          <tr><td class="prop">Definition:</td><td>Ziele in Aufstellung<br>Dieses Feld beschreibt in Aufstellung befindliche Ziele dieses Raumordnungsplanes.</td></tr>
+          <tr><td class="prop">Typ/Wertebereich:</td><td><a href="https://www.w3.org/TR/rdf-schema/#ch_resource"><code title="http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</code></a></td></tr>
+          <tr><td class="prop">Anwendungshinweis:</td><td>Wenn mehrere Ziele in Aufstellung bestehen, muss diese Eigenschaft wiederholt werden. Die Ziele in Aufstellung sind durch eine <a href="#codelist-pluObjectiveInPreparation">Codeliste</a> definiert. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.diplanung.de/resource/objectiveInPreparation#</code> und dem gewünschten Codelistenwert.</td></tr>
+          </tbody>
+          </table>
+        </section>
+
         <section id="Property:relation">
           <h4 id="property-relation">Eigenschaft: Verweis</h4>
           <table class="definition">
@@ -1194,6 +1207,61 @@
           <tr><td>st</td> <td>Sachsen-Anhalt</td></tr>
           <tr><td>sh</td> <td>Schleswig-Holstein</td></tr>
           <tr><td>th</td> <td>Thüringen (Freistaat)</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="codelist-pluObjectiveInPreparation">
+        <h3>Codeliste für die Ziele in Aufstellung<a class="self-link" href="#codelist-pluObjectiveInPreparation"></a></h3>
+        <table>
+          <thead><tr><th>Code</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+          <tr><td>axis</td> <td>Achse</td></tr>
+          <tr><td>soilProtection</td> <td>Bodenschutz</td></tr>
+          <tr><td>retail</td> <td>Einzelhandel</td></tr>
+          <tr><td>energySupply</td> <td>Energieversorgung</td></tr>
+          <tr><td>wasteManagement</td> <td>Entsorgung</td></tr>
+          <tr><td>recreation</td> <td>Erholung</td></tr>
+          <tr><td>renewableEnergy</td> <td>Erneuerbare Energie</td></tr>
+          <tr><td>forestry</td> <td>Forstwirtschaft</td></tr>
+          <tr><td>openSpace</td> <td>Freiraum</td></tr>
+          <tr><td>functionType</td> <td>Funktionszuweisung</td></tr>
+          <tr><td>genericObject</td> <td>Generisches Objekt</td></tr>
+          <tr><td>waterBody</td> <td>Gewässer</td></tr>
+          <tr><td>border</td> <td>Grenze</td></tr>
+          <tr><td>greenWayGreenBelt</td> <td>Grünzug / Grünzäsur</td></tr>
+          <tr><td>floodProtection</td> <td>Hochwasserschutz</td></tr>
+          <tr><td>industryCommerce</td> <td>Industrie / Gewerbe</td></tr>
+          <tr><td>climateProtection</td> <td>Klimaschutz</td></tr>
+          <tr><td>communication</td> <td>Kommunikation</td></tr>
+          <tr><td>culturalLandscape</td> <td>Kulturlandschaft</td></tr>
+          <tr><td>noiseProtection</td> <td>Lärmschutz / Bauschutz</td></tr>
+          <tr><td>agriculture</td> <td>Landwirtschaft</td></tr>
+          <tr><td>legendItem</td> <td>Legendenobjekt</td></tr>
+          <tr><td>airTraffic</td> <td>Luftverkehr</td></tr>
+          <tr><td>naturalLandscape</td> <td>Natur / Landschaft</td></tr>
+          <tr><td>natureProtectionArea</td> <td>Naturschutzrechtliches Schutzgebiet</td></tr>
+          <tr><td>planningArea</td> <td>Planungsraum</td></tr>
+          <tr><td>cyclePathHikingTrail</td> <td>Radweg / Wanderweg</td></tr>
+          <tr><td>spatialCategory</td> <td>Raumkategorie</td></tr>
+          <tr><td>rawMaterial</td> <td>Rohstoff</td></tr>
+          <tr><td>railTransport</td> <td>Schienenverkehr</td></tr>
+          <tr><td>settlement</td> <td>Siedlung</td></tr>
+          <tr><td>otherInfrastructure</td> <td>Sonstige Infrastruktur</td></tr>
+          <tr><td>otherOpenSpaceProtection</td> <td>Sonstiger Freiraumschutz</td></tr>
+          <tr><td>otherSettlementArea</td> <td>Sonstiger Siedlungsbereich</td></tr>
+          <tr><td>otherTransport</td> <td>Sonstiger Verkehr</td></tr>
+          <tr><td>socialInfrastructure</td> <td>Soziale Infrastruktur</td></tr>
+          <tr><td>restrictedArea</td> <td>Sperrgebiet</td></tr>
+          <tr><td>sportsFacility</td> <td>Sportanlage</td></tr>
+          <tr><td>roadTraffic</td> <td>Straßenverkehr</td></tr>
+          <tr><td>textSegment</td> <td>Textabschnitt</td></tr>
+          <tr><td>traffic</td> <td>Verkehr</td></tr>
+          <tr><td>water</td> <td>Wasser</td></tr>
+          <tr><td>waterTraffic</td> <td>Wasserverkehr</td></tr>
+          <tr><td>waterManagement</td> <td>Wasserwirtschaft</td></tr>
+          <tr><td>residentialArea</td> <td>Wohnen / Siedlung</td></tr>
+          <tr><td>centralPlace</td> <td>Zentraler Ort</td></tr>
           </tbody>
         </table>
       </section>

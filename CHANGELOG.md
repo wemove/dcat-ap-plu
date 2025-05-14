@@ -2,7 +2,8 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [Spec] Add new attribute `plu:objectiveInPreparation` to `dcat:Dataset`
+* [Codelist] Add `objectiveInPreparation` codelist
 
 ## 2025-02-12 - 0.2.2
 

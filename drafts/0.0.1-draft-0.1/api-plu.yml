@@ -1007,6 +1007,13 @@ components:
           xml:
             prefix: plu
             name: planTypeFine
+        objectiveInPreparation:
+          description: Objective in preparation (spatial development planning)
+          type: string
+          example: socialInfrastructure
+          xml:
+            prefix: plu
+            name: objectiveInPreparation
         procedureType:
           description: Type of the procedure for the establishment of the spatial plan
           type: string
