@@ -523,6 +523,13 @@ components:
           xml:
             prefix: dcat
             name: accessURL
+        byteSize:
+          description: The size of the distribution in bytes
+          type: number
+          example: 13264
+          xml:
+            prefix: dcat
+            name: byteSize
         downloadURL:
           description: URL of a resource that provides a download of a distribution of the dataset
           type: string

@@ -2,6 +2,7 @@
 
 ## xxxx-xx-xx - dev
 
+* [Spec] Add new attribute `dcat:byteSize` to `dcat:Distribution`
 * [Spec] Add new attribute `plu:objectiveInPreparation` to `dcat:Dataset`
 * [Codelist] Add `objectiveInPreparation` codelist
 * [Deployment] Update docker base image, always use lighttpd latest
