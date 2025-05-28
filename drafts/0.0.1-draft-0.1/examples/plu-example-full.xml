@@ -83,6 +83,8 @@
                 <dcat:endDate>2023-07-31</dcat:endDate>
             </dct:PeriodOfTime>
         </plu:developmentFreezePeriod>
+        <plu:objectiveInPreparation rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#waterBody"/>
+        <plu:objectiveInPreparation rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#floodProtection"/>
     </dcat:Dataset>
     <plu:ProcessStep rdf:about="https://dev.informationgrid.de/e7ced9a0-1076-4aee-af39-e6a2e7ff30b2/ProcStep-0123">
         <dct:identifier>ProcStep-0123</dct:identifier>
@@ -114,5 +116,6 @@
         <dct:format>PDF</dct:format>
         <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#announcement"/>
         <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
+        <dcat:byteSize>13264</dcat:byteSize>
     </dcat:Distribution>
 </rdf:RDF>
