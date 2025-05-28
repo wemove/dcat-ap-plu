@@ -1,19 +1,26 @@
 # DCAT-AP.PLU scripts
 
+The below scripts can be run independently of each other, or in one swoop via
+
+* [update.sh](update.sh) (Linux/MacOS)
+* [update.bat](update.bat) (Windows)
+
+
 ## Create UML diagram
 
-The diagram is created based on documentation and SHACL shape file.
-* Prerequisite: python
+The diagram is created based on the documentation and the SHACL shape file.
+
+* Prerequisites: python
 
 ```
 ./diagram/create_diagram.sh (Linux/MacOS)
 diagram\create_diagram.bat (Windows)
 ```
 
+
 ## Clean up HTML documentation
 
-
-* Prerequisite: tidy
+* Prerequisites: tidy
 
 ```
 ./tidy/tidy.sh (Linux/MacOS)
