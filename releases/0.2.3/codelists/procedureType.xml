@@ -1,0 +1,110 @@
+<rdf:RDF xml:base="https://specs.diplanung.de/resource/procedureType"
+        xmlns:dc="http://purl.org/dc/elements/1.0/"
+        xmlns:dct="http://purl.org/dc/terms/"
+        xmlns:owl ="http://www.w3.org/2002/07/owl#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#">
+    <owl:Ontology rdf:about="https://specs.diplanung.de/resource/procedureType">
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/procedureType/1.0/"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
+Zur kodierten Angabe der jeweiligen Verfahrensart bei der Aufstellung raumbezogener Planwerke sind folgende Optionen möglich:
+        </rdfs:comment>
+    </owl:Ontology>
+    <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/procedureType">
+        <rdfs:label xml:lang="de">Liste der Verfahrensarten bei der Aufstellung raumbezogener Planwerke</rdfs:label>
+        <skos:prefLabel xml:lang="de">Liste der Verfahrensarten bei der Aufstellung raumbezogener Planwerke</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">List of types of procedures for the preparation of spatial plans</skos:prefLabel>
+        <dct:identifier>https://specs.diplanung.de/resource/procedureType</dct:identifier>
+    </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#regular">
+        <dc:identifier>regular</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">normales Verfahren</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">regular procedure</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#regular"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#simplified">
+        <dc:identifier>simplified</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">vereinfachtes Verfahren</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">simplified procedure</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#simplified"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#innerDevPlan">
+        <dc:identifier>innerDevPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Bebauungsplan der Innenentwicklung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Inner development plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#innerDevPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#outdoorArea">
+        <dc:identifier>outdoorArea</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Einbeziehung von Außenbereichsflächen in das beschleunigte Verfahren</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Inclusion of outdoor areas in the accelerated process</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#outdoorArea"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#revision">
+        <dc:identifier>revision</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Änderung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Revision</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#revision"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#partialExtrapolation">
+        <dc:identifier>partialExtrapolation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Teilfortschreibung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Partial extrapolation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#partialExtrapolation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#newPreparation">
+        <dc:identifier>newPreparation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Neuaufstellung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">New preparation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#newPreparation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#completeExtrapolation">
+        <dc:identifier>completeExtrapolation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Gesamtfortschreibung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Complete extrapolation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#completeExtrapolation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#update">
+        <dc:identifier>update</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Aktualisierung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Update</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#update"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#newAnnouncement">
+        <dc:identifier>newAnnouncement</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Neubekanntmachung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">New announcement</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#newAnnouncement"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#unknown">
+        <dc:identifier>unknown</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#unknown"/>
+    </skos:Concept>
+</rdf:RDF>
