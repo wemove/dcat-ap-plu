@@ -1,6 +1,6 @@
 # Changelog
 
-## xxxx-xx-xx - dev
+## 2025-06-03 - 0.2.3
 
 * [Spec] Add new attribute `dcat:byteSize` to `dcat:Distribution`
 * [Spec] Add new attribute `plu:objectiveInPreparation` to `dcat:Dataset`
