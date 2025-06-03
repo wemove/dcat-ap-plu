@@ -1,0 +1,390 @@
+<rdf:RDF xml:base="https://specs.diplanung.de/resource/objectiveInPreparation"
+        xmlns:dc="http://purl.org/dc/elements/1.0/"
+        xmlns:dct="http://purl.org/dc/terms/"
+        xmlns:owl ="http://www.w3.org/2002/07/owl#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#">
+    <owl:Ontology rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation">
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation/1.0/"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
+Zur kodierten Angabe eines Zieles in Aufstellung (ROG):
+        </rdfs:comment>
+    </owl:Ontology>
+    <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation">
+        <rdfs:label xml:lang="de">Liste der Arten von Dokumenten</rdfs:label>
+        <skos:prefLabel xml:lang="de">Liste der Arten von Dokumenten</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">List of document types</skos:prefLabel>
+        <dct:identifier>https://specs.diplanung.de/resource/objectiveInPreparation</dct:identifier>
+    </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#axis">
+        <dc:identifier>axis</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Achse</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Axis</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#axis"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#soilProtection">
+        <dc:identifier>soilProtection</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Bodenschutz</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Soil protection</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#soilProtection"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#retail">
+        <dc:identifier>retail</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Einzelhandel</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Retail</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#retail"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#energySupply">
+        <dc:identifier>energySupply</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Energieversorgung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Energy supply</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#energySupply"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#wasteManagement">
+        <dc:identifier>wasteManagement</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Entsorgung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Waste management</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#wasteManagement"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#recreation">
+        <dc:identifier>recreation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Erholung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Recreation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#recreation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#renewableEnergy">
+        <dc:identifier>renewableEnergy</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Erneuerbare Energie</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Renewable energy</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#renewableEnergy"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#forestry">
+        <dc:identifier>forestry</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Forstwirtschaft</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Forestry</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#forestry"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#openSpace">
+        <dc:identifier>openSpace</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Freiraum</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Open space</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#openSpace"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#functionType">
+        <dc:identifier>functionType</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Funktionszuweisung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Function type / allocation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#functionType"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#genericObject">
+        <dc:identifier>genericObject</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Generisches Objekt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Generic object</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#genericObject"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#waterBody">
+        <dc:identifier>waterBody</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Gewässer</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Water body</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#waterBody"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#border">
+        <dc:identifier>border</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Grenze</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Border</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#border"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#greenWayGreenBelt">
+        <dc:identifier>greenWayGreenBelt</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Grünzug / Grünzäsur</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Greenway / green belt</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#greenWayGreenBelt"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#floodProtection">
+        <dc:identifier>floodProtection</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Hochwasserschutz</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Flood protection</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#floodProtection"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#industryCommerce">
+        <dc:identifier>industryCommerce</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Industrie / Gewerbe</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Industry / commerce</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#industryCommerce"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#climateProtection">
+        <dc:identifier>climateProtection</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Klimaschutz</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Climate protection</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#climateProtection"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#communication">
+        <dc:identifier>communication</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Kommunikation</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Communication</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#communication"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#culturalLandscape">
+        <dc:identifier>culturalLandscape</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Kulturlandschaft</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Cultural landscape</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#culturalLandscape"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#noiseProtection">
+        <dc:identifier>noiseProtection</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Lärmschutz / Bauschutz</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Noise protection</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#noiseProtection"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#agriculture">
+        <dc:identifier>agriculture</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Landwirtschaft</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Agriculture</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#agriculture"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#legendItem">
+        <dc:identifier>legendItem</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Legendenobjekt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Legend item</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#legendItem"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#airTraffic">
+        <dc:identifier>airTraffic</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Luftverkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Air traffic / aviation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#airTraffic"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#naturalLandscape">
+        <dc:identifier>naturalLandscape</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Natur / Landschaft</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Natural landscape</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#naturalLandscape"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#natureProtectionArea">
+        <dc:identifier>natureProtectionArea</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Naturschutzrechtliches Schutzgebiet</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Legally protected nature conservation area</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#natureProtectionArea"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#planningArea">
+        <dc:identifier>planningArea</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Planungsraum</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Planning area</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#planningArea"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#cyclePathHikingTrail">
+        <dc:identifier>cyclePathHikingTrail</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Radweg / Wanderweg</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Cycle path / hiking trail</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#cyclePathHikingTrail"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#spatialCategory">
+        <dc:identifier>spatialCategory</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Raumkategorie</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Spatial category</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#spatialCategory"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#rawMaterial">
+        <dc:identifier>rawMaterial</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Rohstoff</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Raw material</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#rawMaterial"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#railTransport">
+        <dc:identifier>railTransport</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Schienenverkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Rail transport</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#railTransport"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#settlement">
+        <dc:identifier>settlement</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Siedlung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Settlement</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#settlement"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#otherInfrastructure">
+        <dc:identifier>otherInfrastructure</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Sonstige Infrastruktur</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Other infrastructure</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#otherInfrastructure"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#otherOpenSpaceProtection">
+        <dc:identifier>otherOpenSpaceProtection</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Sonstiger Freiraumschutz</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Other open space protection</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#otherOpenSpaceProtection"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#otherSettlementArea">
+        <dc:identifier>otherSettlementArea</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Sonstiger Siedlungsbereich</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Other settlement area</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#otherSettlementArea"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#otherTransport">
+        <dc:identifier>otherTransport</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Sonstiger Verkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Other transport</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#otherTransport"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#socialInfrastructure">
+        <dc:identifier>socialInfrastructure</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Soziale Infrastruktur</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Social infrastructure</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#socialInfrastructure"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#restrictedArea">
+        <dc:identifier>restrictedArea</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Sperrgebiet</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Restricted area</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#restrictedArea"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#sportsFacility">
+        <dc:identifier>sportsFacility</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Sportanlage</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Sports facility</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#sportsFacility"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#roadTraffic">
+        <dc:identifier>roadTraffic</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Straßenverkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Road traffic</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#roadTraffic"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#textSegment">
+        <dc:identifier>textSegment</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Textabschnitt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Text section / text segment</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#textSegment"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#traffic">
+        <dc:identifier>traffic</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Verkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Traffic / transport</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#traffic"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#water">
+        <dc:identifier>water</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Wasser</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Water</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#water"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#waterTraffic">
+        <dc:identifier>waterTraffic</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Wasserverkehr</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Water traffic</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#waterTraffic"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#waterManagement">
+        <dc:identifier>waterManagement</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Wasserwirtschaft</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Water management</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#waterManagement"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#residentialArea">
+        <dc:identifier>residentialArea</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Wohnen / Siedlung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Residential area / housing estate</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#residentialArea"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/objectiveInPreparation#centralPlace">
+        <dc:identifier>centralPlace</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation"/>
+        <skos:prefLabel xml:lang="de">Zentraler Ort</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Central place</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/objectiveInPreparation#centralPlace"/>
+    </skos:Concept>
+</rdf:RDF>

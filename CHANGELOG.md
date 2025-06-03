@@ -1,5 +1,13 @@
 # Changelog
 
+## 2025-06-03 - 0.2.3
+
+* [Spec] Add new attribute `dcat:byteSize` to `dcat:Distribution`
+* [Spec] Add new attribute `plu:objectiveInPreparation` to `dcat:Dataset`
+* [Codelist] Add `objectiveInPreparation` codelist
+* [Deployment] Update docker base image, always use lighttpd latest
+* [Documentation] Cleanup documentation, automate diagram, refactoring
+
 ## 2025-02-12 - 0.2.2
 
 * [Codelist] Extend `plu:planState` to describe values `planned`, `completelyReversed`, `discontinued`

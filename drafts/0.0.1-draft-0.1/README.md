@@ -2,23 +2,28 @@
 
 Below you can find instructions regarding the update process and the release process.
 
-## Update Procedure
+## Update Process
+
+TODO: verify that the Windows `bat` scripts work
 
 If a change to the API is to be made, make sure this change is reflected in all related resources, where applicable:
 
 - [ ] OpenAPI specification: [api-plu.yml](api-plu.yml)
-- [ ] documentation: [doc-plu.html](doc-plu.html)
-- [ ] UML diagram: [dcat-ap-plu.eapx](dcat-ap-plu.eapx) and [DCAT-AP-PLU.JPG](DCAT-AP-PLU.JPG)
+- [ ] Documentation: [doc-plu.html](doc-plu.html)
 - [ ] SHACL shapefile: [shacl/dcat-ap-plu_shacl-shapes.ttl](shacl/dcat-ap-plu_shacl-shapes.ttl)
-- [ ] [Codelists](codelists)
-- [ ] examples: [examples/plu-example-full.xml](examples/plu-example-full.xml), [examples/plu-example-03.xml](examples/plu-example-03.xml), and remaining
+- [ ] UML diagram: [DCAT-AP-PLU.JPG](DCAT-AP-PLU.JPG)
+  - no manual changes necessary; done via script, see end of paragraph
+- [ ] Codelists: [codelists](codelists)
+- [ ] Examples: [examples/plu-example-full.xml](examples/plu-example-full.xml), [examples/plu-example-03.xml](examples/plu-example-03.xml)
 
-If the changes encompass the `SHACL` shapefile or the examples, ensure that the shapefile still correctly validates them all, e.g. using
-https://www.itb.ec.europa.eu/shacl/any/upload
+After making the changes, run [scripts/update.sh](scripts/update.sh) (Linux) or [scripts/update.bat](scripts/update.bat) (Windows), to
+* tidy up the HTML documentation
+* validate the SHACL shapefile and the examples
+* re-create the UML diagram
 
 Finally, update the [changelog](../../CHANGELOG.md).
 
-## Release Procedure
+## Release Process
 
 Run [release.sh](release.sh) and follow the instructions.
 
