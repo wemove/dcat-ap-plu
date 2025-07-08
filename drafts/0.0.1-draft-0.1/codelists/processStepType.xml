@@ -52,7 +52,7 @@ Zur kodierten Angabe der Art des Verfahrensschrittes:
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/processStepType#publicDisclosure"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/processStepType#internal">
-        <dc:identifier>interal</dc:identifier>
+        <dc:identifier>internal</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/processStepType"/>
         <skos:prefLabel xml:lang="de">Interne Bearbeitung</skos:prefLabel>

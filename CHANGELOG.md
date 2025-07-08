@@ -2,7 +2,7 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [Codelist] Fix typo in `plu:processStepType` - "interal" -> "internal"
 
 ## 2025-06-03 - 0.2.3
 
