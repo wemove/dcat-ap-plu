@@ -132,7 +132,6 @@ cp -r drafts/0.0.1-draft-0.1/examples/plu* releases/${NEXT_VERSION}/examples/
 cp -r drafts/0.0.1-draft-0.1/shacl releases/${NEXT_VERSION}/
 cp -r drafts/0.0.1-draft-0.1/styles releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/api-plu.yml releases/${NEXT_VERSION}/
-cp drafts/0.0.1-draft-0.1/dcat-ap-plu.eapx releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/DCAT-AP-PLU.JPG releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/doc-plu.html releases/${NEXT_VERSION}/
 cp releases/${LATEST_VERSION}/README.md releases/${NEXT_VERSION}/
