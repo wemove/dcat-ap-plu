@@ -132,14 +132,18 @@ cp -r drafts/0.0.1-draft-0.1/examples/plu* releases/${NEXT_VERSION}/examples/
 cp -r drafts/0.0.1-draft-0.1/shacl releases/${NEXT_VERSION}/
 cp -r drafts/0.0.1-draft-0.1/styles releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/api-plu.yml releases/${NEXT_VERSION}/
-cp drafts/0.0.1-draft-0.1/dcat-ap-plu.eapx releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/DCAT-AP-PLU.JPG releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/doc-plu.html releases/${NEXT_VERSION}/
 cp releases/${LATEST_VERSION}/README.md releases/${NEXT_VERSION}/
 
 echo -e "Updating version in files ..."
-# in the new version folder, change the `latestVersion` property in `doc-plu.html`
+# in the new version folder, change `doc-plu.html`
+# ... set `latestVersion`
 sed -i "s@latestVersion: \".*\",@latestVersion: \"https://github.com/wemove/dcat-ap-plu/tree/main/releases/${NEXT_VERSION}\",@g" releases/${NEXT_VERSION}/doc-plu.html
+# ... replace `specStatus` with `publishDate`
+sed -i "s@specStatus: \"unofficial\",@publishDate: \"$(date + '%Y-%m-%d')\",@g" releases/${NEXT_VERSION}/doc-plu.html
+# ... add "override" to #sotd
+sed -i "s@<section id=\"sotd\" class=\"introductory\">@<section id=\"sotd\" class=\"introductory override\">@g" your_file.html
 # in the new version folder, change the `version` property in `api-plu.yml`
 sed -i "s@version: x.y.z@version: ${NEXT_VERSION}@g" releases/${NEXT_VERSION}/api-plu.yml
 # in the new version folder, change the version in `README.md`
