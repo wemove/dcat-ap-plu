@@ -1,5 +1,10 @@
 # Changelog
 
+## 2025-10-30 - 0.2.4
+
+* [Codelist] Fix typo in `plu:processStepType` - "interal" -> "internal"
+* [Website] Include and link to previous releases
+
 ## 2025-06-03 - 0.2.3
 
 * [Spec] Add new attribute `dcat:byteSize` to `dcat:Distribution`

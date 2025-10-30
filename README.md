@@ -8,7 +8,7 @@ DCAT-AP.PLU is an extension of DCAT-AP for describing planned land use datasets.
 - [Working Drafts](./drafts/): Working drafts including revisions to the latest DCAT-AP.PLU release. They include
     - OpenAPI specification (`YAML`)
     - ReSpec documentation (`HTML`)
-    - UML diagram (`JPG` and `EAPX`)
+    - UML diagram (`JPG`)
     - SHACL shapefiles (`TTL`) and examples (`XML`)
 
 ## Licence

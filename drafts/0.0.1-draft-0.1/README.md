@@ -2,7 +2,7 @@
 
 Below you can find instructions regarding the update process and the release process.
 
-## Update Process
+## Update Procedure
 
 TODO: verify that the Windows `bat` scripts work
 
@@ -23,7 +23,7 @@ After making the changes, run [scripts/update.sh](scripts/update.sh) (Linux) or 
 
 Finally, update the [changelog](../../CHANGELOG.md).
 
-## Release Process
+## Release Procedure
 
 Run [release.sh](release.sh) and follow the instructions.
 
