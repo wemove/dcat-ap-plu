@@ -2,7 +2,7 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [Spec] Clarify CRS usage expectation for geographic properties
 
 ## 2025-10-30 - 0.2.4
 
