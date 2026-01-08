@@ -1,0 +1,28 @@
+resources:
+  repositories:
+    - repository: pipelines
+      type: git
+      name: DiPlan Betrieb/pipelines
+
+extends:
+  template: container/publish/stages.yaml@pipelines
+  parameters:
+    imageName: diplan-metadaten/specs
+    buildSteps:
+      - script: |
+          HASH=$(git rev-parse --short=8 HEAD)
+          if [[ "$BUILD_SOURCEBRANCH" == "refs/heads/main" ]]; then
+            VERSION=$(grep "ENV DCATAPPLU_VERSION=" docker/Dockerfile | cut -d'=' -f2)
+          elif [[ "$BUILD_SOURCEBRANCH" == "refs/heads/develop" ]]; then
+            VERSION="latest"
+          elif [[ "$BUILD_SOURCEBRANCH" == refs/heads/feature/* ]]; then
+            FEATURE_NAME="$(echo "$BUILD_SOURCEBRANCH" | cut -d'/' -f4)"
+            VERSION="${FEATURE_NAME}-${HASH}"
+          else
+            VERSION="unknown-${HASH}"
+          fi
+          echo "##vso[task.setvariable variable=IMAGE_TAG]${VERSION}"
+    # postBuildSteps:
+    #   - task: Kubernetes@1
+    #     command: rollout
+    #     arguments: restart deployment/my-app
