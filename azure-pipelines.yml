@@ -12,7 +12,7 @@ extends:
       - script: |
           HASH=$(git rev-parse --short=8 HEAD)
           if [[ "$BUILD_SOURCEBRANCH" == "refs/heads/main" ]]; then
-            VERSION=$(grep "ENV DCATAPPLU_VERSION=" docker/Dockerfile | cut -d'=' -f2)
+            VERSION=$(grep "ENV DCATAPPLU_VERSION=" Dockerfile | cut -d'=' -f2)
           elif [[ "$BUILD_SOURCEBRANCH" == "refs/heads/develop" ]]; then
             VERSION="latest"
           elif [[ "$BUILD_SOURCEBRANCH" == refs/heads/feature/* ]]; then

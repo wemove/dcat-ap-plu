@@ -36,7 +36,7 @@ Alternatively, you can manually create a release:
   - the `latestVersion` property in `doc-plu.html`
   - the `version` property in `api-plu.yml`
   - the version in `README.md`
-- Also update the `DCATAPPLU_VERSION` in the [Dockerfile](../../docker/Dockerfile)
+- Also update the `DCATAPPLU_VERSION` in the [Dockerfile](../../Dockerfile)
 - Merge `develop` into `main`
 - In `develop`, add a new dummy entry to the changelog and revert the changes to the Dockerfile
 

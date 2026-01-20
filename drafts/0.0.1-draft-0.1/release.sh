@@ -149,7 +149,7 @@ sed -i "s@version: x.y.z@version: ${NEXT_VERSION}@g" releases/${NEXT_VERSION}/ap
 # in the new version folder, change the version in `README.md`
 sed -i "s@DCAT-AP\.PLU v\?${ESC_LATEST_VERSION}@DCAT-AP.PLU ${NEXT_VERSION}@g" releases/${NEXT_VERSION}/README.md
 # update the `DCATAPPLU_VERSION` in the Dockerfile
-sed -i "s@ENV DCATAPPLU_VERSION=${ESC_DRAFT_VERSION}@ENV DCATAPPLU_VERSION=${NEXT_VERSION}@g" docker/Dockerfile
+sed -i "s@ENV DCATAPPLU_VERSION=${ESC_DRAFT_VERSION}@ENV DCATAPPLU_VERSION=${NEXT_VERSION}@g" Dockerfile
 
 # commit, merge, tag new release
 echo
@@ -165,8 +165,8 @@ echo -e "\nUpdating changelog ..."
 sed -i "s@# Changelog@# Changelog\n\n## xxxx-xx-xx - dev\n\n...@g" CHANGELOG.md
 git add CHANGELOG.md
 echo -e "\nUpdating version in Dockerfile ..."
-sed -i "s@ENV DCATAPPLU_VERSION=${NEXT_VERSION}@ENV DCATAPPLU_VERSION=${DRAFT_VERSION}@g" docker/Dockerfile
-git add docker/Dockerfile
+sed -i "s@ENV DCATAPPLU_VERSION=${NEXT_VERSION}@ENV DCATAPPLU_VERSION=${DRAFT_VERSION}@g" Dockerfile
+git add Dockerfile
 git commit -m "Set next development version"
 
 echo -e "\nThe new ${VERSION_TYPE} release ${NEXT_VERSION} has been created locally."
