@@ -1,5 +1,11 @@
 # Changelog
 
+## 2026-01-21 - 0.2.5
+
+* [Spec] Clarify CRS usage expectation for geographic properties
+* [Deployment] Update docker base image, move Dockerfile
+* [Deployment] Add `azure-pipelines.yml`
+
 ## 2025-10-30 - 0.2.4
 
 * [Codelist] Fix typo in `plu:processStepType` - "interal" -> "internal"
