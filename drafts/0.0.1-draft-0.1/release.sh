@@ -162,7 +162,7 @@ sed -i "s@latestVersion: \".*\",@latestVersion: \"https://github.com/wemove/dcat
 # ... replace `specStatus` with `publishDate`
 sed -i "s@specStatus: \"unofficial\",@publishDate: \"$(date + '%Y-%m-%d')\",@g" releases/${NEXT_VERSION}/doc-plu.html
 # ... add "override" to #sotd
-sed -i "s@<section id=\"sotd\" class=\"introductory\">@<section id=\"sotd\" class=\"introductory override\">@g" your_file.html
+sed -i "s@<section id=\"sotd\" class=\"introductory\">@<section id=\"sotd\" class=\"introductory override\">@g" releases/${NEXT_VERSION}/doc-plu.html
 # in the new version folder, change the `version` property in `api-plu.yml`
 sed -i "s@version: x.y.z@version: ${NEXT_VERSION}@g" releases/${NEXT_VERSION}/api-plu.yml
 # in the new version folder, change the version in `README.md`
