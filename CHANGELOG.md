@@ -1,5 +1,9 @@
 # Changelog
 
+## xxxx-xx-xx - dev
+
+...
+
 ## 2026-01-21 - 0.2.5
 
 * [Spec] Clarify CRS usage expectation for geographic properties
