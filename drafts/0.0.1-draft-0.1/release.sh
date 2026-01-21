@@ -28,21 +28,24 @@ validate_example() {
 
 
 # make sure we're on develop
-echo -n "Checking if on branch \"develop\" ... "
-if [ "$(git branch --show-current)" == "develop" ]; then
+echo -n "Checking if on branch \"develop\"... "
+CURRENT_BRANCH=$(git branch --show-current)
+if [ "$CURRENT_BRANCH" == "develop" ]; then
     echo "ok"
 else
-    echo "fail"
+    echo -e "fail\n"
+    echo "TODO: Manually checkout \"develop\"."
     echo "Aborting release"
     exit 1
 fi
 
 # check if the working tree is clean
-echo -n "Checking working tree ... "
+echo -n "Checking working tree... "
 if [ -z "$(git status --porcelain)" ]; then
     echo "clean"
 else
     echo "dirty"
+    echo "TODO: Manually commit/stash/clean changes."
     echo "Aborting release"
     exit 1
 fi
@@ -54,7 +57,7 @@ for file in "$(dirname "$0")/examples"/*; do
     if [[ $filename != plu* ]]; then
         continue
     fi
-    echo -n "  validating $file ... "
+    echo -n "  validating $file... "
     if validate_example "$file"; then
         echo "ok"
     else
@@ -65,10 +68,26 @@ for file in "$(dirname "$0")/examples"/*; do
 done
 
 # do not automatically tidy the documentation, but check if it is tidy
-echo -e "Validating documentation tidiness..."
+echo -n "Validating documentation tidiness... "
 diff $(dirname "$0")/doc-plu.html <(tidy -config $(dirname "$0")/scripts/tidy/tidy.config -quiet $(dirname "$0")/doc-plu.html)
-if [ $? -ne 0 ]; then
-    echo "Documentation is not formatted, please run tidy (scripts/tidy). Aborting..."
+if [ $? -eq 0 ]; then
+    echo "ok"
+else
+    echo -e "fail\n"
+    echo "TODO: Run tidy (scripts/tidy)."
+    echo "Aborting release"
+    exit 1
+fi
+
+# check if a merge will be conflict-free
+echo -n "Checking if merge with main is conflict-free... "
+git fetch ado main > /dev/null 2>&1
+if git merge-tree --write-tree ado/main develop > /dev/null 2>&1; then
+    echo "ok"
+else
+    echo -e "fail\n"
+    echo "TODO: Manually merge ado/main into develop."
+    echo "Aborting release"
     exit 1
 fi
 
@@ -126,7 +145,7 @@ sed -i "s@## xxxx-xx-xx - dev@## $(date --iso-8601) - ${NEXT_VERSION}@g" CHANGEL
 mkdir -p releases/${NEXT_VERSION}/examples
 
 # copy all appropriate files from drafts/0.0.1-draft-0.1 into this new folder
-echo -e "\nCopying files from drafts/0.0.1-draft-0.1 to releases/${NEXT_VERSION} ..."
+echo -e "\nCopying files from drafts/0.0.1-draft-0.1 to releases/${NEXT_VERSION}..."
 cp -r drafts/0.0.1-draft-0.1/codelists releases/${NEXT_VERSION}/
 cp -r drafts/0.0.1-draft-0.1/examples/plu* releases/${NEXT_VERSION}/examples/
 cp -r drafts/0.0.1-draft-0.1/shacl releases/${NEXT_VERSION}/
@@ -136,7 +155,7 @@ cp drafts/0.0.1-draft-0.1/DCAT-AP-PLU.JPG releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/doc-plu.html releases/${NEXT_VERSION}/
 cp releases/${LATEST_VERSION}/README.md releases/${NEXT_VERSION}/
 
-echo -e "Updating version in files ..."
+echo -e "Updating version in files..."
 # in the new version folder, change `doc-plu.html`
 # ... set `latestVersion`
 sed -i "s@latestVersion: \".*\",@latestVersion: \"https://github.com/wemove/dcat-ap-plu/tree/main/releases/${NEXT_VERSION}\",@g" releases/${NEXT_VERSION}/doc-plu.html
@@ -161,10 +180,10 @@ git tag -a ${NEXT_VERSION} -m "Release ${NEXT_VERSION}"
 
 # prepare next dev version
 git checkout develop
-echo -e "\nUpdating changelog ..."
+echo -e "\nUpdating changelog..."
 sed -i "s@# Changelog@# Changelog\n\n## xxxx-xx-xx - dev\n\n...@g" CHANGELOG.md
 git add CHANGELOG.md
-echo -e "\nUpdating version in Dockerfile ..."
+echo -e "\nUpdating version in Dockerfile..."
 sed -i "s@ENV DCATAPPLU_VERSION=${NEXT_VERSION}@ENV DCATAPPLU_VERSION=${DRAFT_VERSION}@g" Dockerfile
 git add Dockerfile
 git commit -m "Set next development version"
