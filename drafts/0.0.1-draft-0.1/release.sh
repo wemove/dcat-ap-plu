@@ -50,6 +50,31 @@ else
     exit 1
 fi
 
+# check if ado remote is configured
+echo -n "Checking if ado connection is configured... "
+if git ls-remote --exit-code ado > /dev/null 2>&1; then
+    echo "ok"
+else
+    echo -e "fail\n"
+    echo "TODO: Add git remote \"ado\" pointing to the Azure DevOps repository."
+    echo "Aborting release"
+    exit 1
+fi
+
+# check if a merge will be conflict-free
+echo -n "Checking if merge with main is conflict-free... "
+git fetch ado main > /dev/null 2>&1
+if git merge-tree --write-tree ado/main develop > /dev/null 2>&1; then
+    echo "ok"
+else
+    echo -e "fail\n"
+    echo "TODO: Manually merge ado/main into develop."
+    echo "Aborting release"
+    exit 1
+fi
+
+echo -en "\nRunning pre-release tests..."
+
 # validate all PLU examples using the `SHACL` shapefile
 echo -e "Validating PLU examples..."
 for file in "$(dirname "$0")/examples"/*; do
@@ -79,31 +104,21 @@ else
     exit 1
 fi
 
-# check if a merge will be conflict-free
-echo -n "Checking if merge with main is conflict-free... "
-git fetch ado main > /dev/null 2>&1
-if git merge-tree --write-tree ado/main develop > /dev/null 2>&1; then
-    echo "ok"
-else
-    echo -e "fail\n"
-    echo "TODO: Manually merge ado/main into develop."
-    echo "Aborting release"
-    exit 1
-fi
+# latest version
+LATEST_VERSION=$(git show ado/main:CHANGELOG.md | grep -m 1 -E "^## [0-9]{4}-[0-9]{2}-[0-9]{2} - " | sed 's@.* - @@')
+echo -e "\nLatest released version is ${LATEST_VERSION}"
 
 # choose new version type
-echo -en "\nWhich version do you want to release [major, minor, bugfix]? "
+echo -en "\nWhich version do you want to release [major, minor, patch]? "
 read VERSION_TYPE
-if [ "${VERSION_TYPE}" != "major" ] && [ "${VERSION_TYPE}" != "minor" ] && [ "${VERSION_TYPE}" != "bugfix" ]; then
-    echo "Version has to be one of [major, minor, bugfix], aborting..."
+if [ "${VERSION_TYPE}" != "major" ] && [ "${VERSION_TYPE}" != "minor" ] && [ "${VERSION_TYPE}" != "patch" ]; then
+    echo "Version has to be one of [major, minor, patch], aborting..."
     exit 1
 fi
 
 # build new version number
-git fetch --prune --tags
 DRAFT_VERSION="../drafts/0.0.1-draft-0.1"
 ESC_DRAFT_VERSION="\.\./drafts/0\.0\.1-draft-0\.1"
-LATEST_VERSION=$(git describe --abbrev=0 --tags main)
 VERSION_ARRAY=( ${LATEST_VERSION//./ } )
 ESC_LATEST_VERSION="${VERSION_ARRAY[0]}\.${VERSION_ARRAY[1]}\.${VERSION_ARRAY[2]}"
 case ${VERSION_TYPE} in
@@ -116,17 +131,15 @@ case ${VERSION_TYPE} in
         ((VERSION_ARRAY[1]++))
         VERSION_ARRAY[2]=0
         ;;
-    "bugfix")
+    "patch")
         ((VERSION_ARRAY[2]++))
         ;;
 esac
 NEXT_VERSION="${VERSION_ARRAY[0]}.${VERSION_ARRAY[1]}.${VERSION_ARRAY[2]}"
 
-echo -e "\nCurrent version is ${LATEST_VERSION}"
-echo -e "Preparing to release new ${VERSION_TYPE} version ${NEXT_VERSION}"
-echo -en "\nContinue [y/n]? "
+echo -en "Preparing to release new ${VERSION_TYPE} version ${NEXT_VERSION}, continue [Y/n]? "
 read CONTINUE_RELEASE
-if [ "${CONTINUE_RELEASE}" != "y" ]; then
+if [[ "${CONTINUE_RELEASE}" != "y" && "${CONTINUE_RELEASE}" != "Y" && "${CONTINUE_RELEASE}" != "" ]]; then
     echo "You cancelled the release process, aborting..."
     exit 1
 fi
@@ -134,13 +147,15 @@ fi
 # go to project root
 pushd "$(dirname "$0")/../../" > /dev/null || exit 1
 
-# set the new version in changelog (first check if it is up-to-date)
+# check if changelog format is consistent and set the new version in changelog
 if ! grep -Fq "## xxxx-xx-xx - dev" CHANGELOG.md; then
     echo "The changelog must contain the line \"## xxxx-xx-xx - dev\", aborting..."
     exit 1
 fi
-sed -i "s@## xxxx-xx-xx - dev@## $(date --iso-8601) - ${NEXT_VERSION}@g" CHANGELOG.md
 
+# prepare release
+echo -e "\nUpdating changelog..."
+sed -i "s@## xxxx-xx-xx - dev@## $(date --iso-8601) - ${NEXT_VERSION}@g" CHANGELOG.md
 # create a new folder in releases, named after the new version number (semver)
 mkdir -p releases/${NEXT_VERSION}/examples
 
@@ -174,6 +189,8 @@ sed -i "s@ENV DCATAPPLU_VERSION=${ESC_DRAFT_VERSION}@ENV DCATAPPLU_VERSION=${NEX
 echo
 git add .
 git commit -m "Prepare for ${NEXT_VERSION} release"
+
+# merge, tag new release
 git checkout main
 git merge --no-ff -m "Release ${NEXT_VERSION}" develop
 git tag -a ${NEXT_VERSION} -m "Release ${NEXT_VERSION}"
@@ -189,6 +206,3 @@ git add Dockerfile
 git commit -m "Set next development version"
 
 echo -e "\nThe new ${VERSION_TYPE} release ${NEXT_VERSION} has been created locally."
-echo "Next steps:"
-echo "- Push the local release to github: git push --follow-tags origin main develop"
-echo "- Announce new version via mail and ADO"

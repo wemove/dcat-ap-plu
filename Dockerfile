@@ -12,6 +12,7 @@ RUN apk add --update --no-cache lighttpd \
     && chgrp lighttpd /usr/sbin/lighttpd
 
 COPY --chown=:lighttpd ./docker/lighttpd.conf /etc/lighttpd/lighttpd.conf
+COPY --chown=:lighttpd ./docker/mime-types.conf /etc/lighttpd/mime-types.conf
 
 WORKDIR /var/www/html
 COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/codelists ./resource

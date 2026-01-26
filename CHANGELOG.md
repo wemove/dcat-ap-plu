@@ -2,7 +2,7 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [Deployment] Fix lighttpd mime-types
 
 ## 2026-01-21 - 0.2.5
 
