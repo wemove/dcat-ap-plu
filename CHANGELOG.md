@@ -1,5 +1,9 @@
 # Changelog
 
+## xxxx-xx-xx - dev
+
+...
+
 ## 2026-01-27 - 0.2.6
 
 * [Deployment] Fix lighttpd mime-types
