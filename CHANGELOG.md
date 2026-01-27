@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-01-27 - 0.2.6
+
+* [Deployment] Fix lighttpd mime-types
+
 ## 2026-01-21 - 0.2.5
 
 * [Spec] Clarify CRS usage expectation for geographic properties

@@ -1,7 +1,7 @@
 FROM alpine:3.23.2
 
 # ENV LIGHTTPD_VERSION=1.4.76-r0
-ENV DCATAPPLU_VERSION=0.2.5
+ENV DCATAPPLU_VERSION=0.2.6
 
 RUN addgroup -S --gid 1000 lighttpd \
     && adduser -S -G lighttpd --uid 1000 lighttpd
@@ -12,6 +12,7 @@ RUN apk add --update --no-cache lighttpd \
     && chgrp lighttpd /usr/sbin/lighttpd
 
 COPY --chown=:lighttpd ./docker/lighttpd.conf /etc/lighttpd/lighttpd.conf
+COPY --chown=:lighttpd ./docker/mime-types.conf /etc/lighttpd/mime-types.conf
 
 WORKDIR /var/www/html
 COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/codelists ./resource
