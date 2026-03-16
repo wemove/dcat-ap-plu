@@ -75,6 +75,22 @@ Zur kodierten Angabe der Art eines Dokuments:
         <skos:prefLabel xml:lang="en">XPlan GML</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#xplanGML"/>
     </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#xtrasseDrawing">
+        <dc:identifier>xtrasseDrawing</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">XTrasse-Zeichnung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">XTrasse Drawing</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#xtrasseDrawing"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#xtrasseGML">
+        <dc:identifier>xtrasseGML</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/docType"/>
+        <skos:prefLabel xml:lang="de">XTrasse-GML</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">XTrasse GML</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/docType#xtrasseGML"/>
+    </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/docType#functionalPlan">
         <dc:identifier>functionalPlan</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/docType"/>

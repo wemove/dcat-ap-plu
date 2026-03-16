@@ -2,7 +2,7 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [Codelist] Add `plu:docType` - `xtrasseGML`, `xtrasseDrawing`
 
 ## 2026-01-27 - 0.2.6
 
