@@ -58,6 +58,8 @@
             </dct:Location>
         </dct:spatial>
         <dcat:distribution rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=e7ced9a0-1076-4aee-af39-e6a2e7ff30b/distribution"/>
+        <dcat:distribution rdf:resource="https://bauleitplanung.hamburg.de/planzeichnung"/>
+        <dcat:distribution rdf:resource="https://default.cockpit.integration.diplanung.de/api/cockpit/verfahren/6004_TA_Base_8ce9d940-07a9-4d8e-80ec-783d9e0e31e0"/>
         <dct:publisher>
             <foaf:Agent>
                 <foaf:name>Behörde für beispielhafte Bebauungspläne</foaf:name>
@@ -117,5 +119,22 @@
         <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#announcement"/>
         <dct:modified>2023-04-04T00:00:00.000Z</dct:modified>
         <dcat:byteSize>13264</dcat:byteSize>
+    </dcat:Distribution>
+    <dcat:Distribution rdf:about="https://bauleitplanung.hamburg.de/planzeichnung">
+        <dct:title xml:lang="de">XTrasse-Zeichnung der Planfesstellung 6004_TA_Base_8ce9d940-07a9-4d8e-80ec-783d9e0e31e0</dct:title>
+        <dct:description>6004_TA_Base_8ce9d940-07a9-4d8e-80ec-783d9e0e31e0</dct:description>
+        <dcat:accessURL rdf:resource="https://default.xtrasse.develop.diplanung.de/oapi/collections/PFS_Plan/items/e1fcce25-3ff7-4f6c-ab4f-9106a459aa8f?f=html"/>
+        <dct:format>OAF</dct:format>
+        <dcat:downloadURL rdf:resource="https://default.cockpit.integration.diplanung.de/api/cockpit/verfahren/6004_TA_Base_8ce9d940-07a9-4d8e-80ec-783d9e0e31e0/xtrasse.gml"/>
+        <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#xtrasseDrawing"/>
+    </dcat:Distribution>
+    <dcat:Distribution rdf:about="https://default.cockpit.integration.diplanung.de/api/cockpit/verfahren/6004_TA_Base_8ce9d940-07a9-4d8e-80ec-783d9e0e31e0">
+        <dct:title xml:lang="de">XTrasse001.gml</dct:title>
+        <dcat:accessURL rdf:resource="https://default.cockpit.integration.diplanung.de/api/cockpit/verfahren/6004_TA_Base_8ce9d940-07a9-4d8e-80ec-783d9e0e31e0/xtrasse.gml"/>
+        <dct:format>GML</dct:format>
+        <dcat:downloadURL rdf:resource="https://default.cockpit.integration.diplanung.de/api/cockpit/verfahren/6004_TA_Base_8ce9d940-07a9-4d8e-80ec-783d9e0e31e0/xtrasse.gml"/>
+        <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-11-05</dct:modified>
+        <dct:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-11-05</dct:issued>
+        <plu:docType rdf:resource="https://specs.diplanung.de/resource/docType#xtrasseGML"/>
     </dcat:Distribution>
 </rdf:RDF>
