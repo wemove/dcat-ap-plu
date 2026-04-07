@@ -7,6 +7,7 @@
 * [Spec] Add new attribute `plu:procedureSubject` to `dcat:Dataset`
 * [Codelist] Add `procedureSubject` codelist
 * [Spec] Add new attribute `plu:hasObjectives` to `dcat:Dataset`, deprecate `plu:objectiveInPreparation`
+* [Deployment] Update docker base image
 
 ## 2026-01-27 - 0.2.6
 
