@@ -10,7 +10,7 @@
         <owl:versionInfo>1.0</owl:versionInfo>
         <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/authority/1.0/"/>
         <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
-Zur kodierten Angabe der Bundesländer als datenhaltende Stellen. 
+Zur kodierten Angabe der Bundesländer und der Bundesrepublik Deutschland als datenhaltende Stellen.
         </rdfs:comment>
     </owl:Ontology>
     <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/authority">
@@ -50,6 +50,14 @@ Zur kodierten Angabe der Bundesländer als datenhaltende Stellen.
         <skos:prefLabel xml:lang="de">Brandenburg</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Brandenburg</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#bb"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#bund">
+        <dc:identifier>bund</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/authority"/>
+        <skos:prefLabel xml:lang="de">Bundesrepublik Deutschland</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Federal Republic of Germany</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/authority#bund"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/authority#hb">
         <dc:identifier>hb</dc:identifier>

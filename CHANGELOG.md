@@ -3,6 +3,7 @@
 ## xxxx-xx-xx - dev
 
 * [Codelist] Add `plu:docType` - `xtrasseGML`, `xtrasseDrawing`
+* [Codelist] Add entry `bund` to codelist `authority`
 
 ## 2026-01-27 - 0.2.6
 
