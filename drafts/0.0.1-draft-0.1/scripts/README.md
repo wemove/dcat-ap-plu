@@ -10,7 +10,7 @@ The below scripts can be run independently of each other, or in one swoop via
 
 The diagram is created based on the documentation and the SHACL shape file.
 
-* Prerequisites: python
+* Prerequisites: python, loaded `requirements.txt`
 
 ```
 ./diagram/create_diagram.sh (Linux/MacOS)
