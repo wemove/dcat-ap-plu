@@ -7,8 +7,8 @@
 * [Spec] Add new attribute `plu:procedureSubject` to `dcat:Dataset`
 * [Codelist] Add `procedureSubject` codelist
 * [Deployment] Update docker base image
-* [Codelist] Add entry "spatialImpactAssessment" to codelist `planType`
-* [Codelist] Add ROP entries to codelist `planType`
+* [Codelist] Replace entry "spatialPlanningProcedure" with "spatialImpactAssessment" in codelist `planType`
+* [Codelist] Replace entry "spatialPlan" with detailed ROP entries in codelist `planType`
 * [Codelist] Amend `procedureType` codelist
 * [Spec] Add new attribute `plu:objectivesSpecificationDate` to `dcat:Dataset`, deprecate `plu:objectiveInPreparation`
 * [Website] Fix links

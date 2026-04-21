@@ -155,14 +155,6 @@ Zur kodierten Angabe der Art des raumbezogenen Planwerks:
         <skos:prefLabel xml:lang="en">Regional sectoral territorial partial spatial plan</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#regionalSectoralTerritorialPartialSpatialPlan"/>
     </skos:Concept>
-    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#spatialPlanningProcedure">
-        <dc:identifier>spatialPlanningProcedure</dc:identifier>
-        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
-        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
-        <skos:prefLabel xml:lang="de">Raumordnungsverfahren</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Spatial planning procedure</skos:prefLabel>
-        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#spatialPlanningProcedure"/>
-    </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#spatialImpactAssessment">
         <dc:identifier>spatialImpactAssessment</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
