@@ -67,6 +67,14 @@ Zur kodierten Angabe der jeweiligen Verfahrensart bei der Aufstellung raumbezoge
         <skos:prefLabel xml:lang="en">Partial extrapolation</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#partialExtrapolation"/>
     </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#partialPreparation">
+        <dc:identifier>partialPreparation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Änderung / Teilfortschreibung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Revision / Partial extrapolation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#partialPreparation"/>
+    </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#newPreparation">
         <dc:identifier>newPreparation</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
@@ -83,6 +91,14 @@ Zur kodierten Angabe der jeweiligen Verfahrensart bei der Aufstellung raumbezoge
         <skos:prefLabel xml:lang="en">Complete extrapolation</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#completeExtrapolation"/>
     </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#fullPreparation">
+        <dc:identifier>fullPreparation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Aufstellung / Gesamtfortschreibung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Preparation / Complete extrapolation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#fullPreparation"/>
+    </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#update">
         <dc:identifier>update</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
@@ -98,6 +114,14 @@ Zur kodierten Angabe der jeweiligen Verfahrensart bei der Aufstellung raumbezoge
         <skos:prefLabel xml:lang="de">Neubekanntmachung</skos:prefLabel>
         <skos:prefLabel xml:lang="en">New announcement</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#newAnnouncement"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#supplementary">
+        <dc:identifier>supplementary</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureType"/>
+        <skos:prefLabel xml:lang="de">Ergänzendes Verfahren (nach § 11 Abs. 6 ROG)</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Supplementary procedure (pursuant to § 11 para. 6 ROG)</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureType#supplementary"/>
     </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureType#unknown">
         <dc:identifier>unknown</dc:identifier>

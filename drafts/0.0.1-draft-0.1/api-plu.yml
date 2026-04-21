@@ -1024,7 +1024,7 @@ components:
         procedureType:
           description: Type of the procedure for the establishment of the spatial plan
           type: string
-          enum: [regular, simplified, innerDevPlan, outdoorArea, revision, partialExtrapolation, newPreparation, completeExtrapolation, update, newAnnouncement, unknown]
+          enum: [regular, simplified, innerDevPlan, outdoorArea, revision, partialExtrapolation, partialPreparation, newPreparation, completeExtrapolation, fullPreparation, update, newAnnouncement, supplementary, unknown]
           example: regular
           xml:
             prefix: plu
