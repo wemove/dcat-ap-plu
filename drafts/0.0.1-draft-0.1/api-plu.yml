@@ -1021,6 +1021,14 @@ components:
           xml:
             prefix: plu
             name: objectiveInPreparation
+        objectivesSpecificationDate:
+          description: Date of the specification of the objectives for the spatial plan
+          type: string
+          format: date-time
+          example: 2023-01-01
+          xml:
+            prefix: plu
+            name: objectivesSpecificationDate
         procedureType:
           description: Type of the procedure for the establishment of the spatial plan
           type: string

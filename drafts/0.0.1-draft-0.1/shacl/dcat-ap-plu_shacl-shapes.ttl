@@ -369,6 +369,10 @@
         sh:path plu:objectiveInPreparation ;
         sh:nodeKind sh:BlankNodeOrIRI ;
     ], [
+        sh:path plu:objectivesSpecificationDate ;
+        sh:shape :DateOrDateTimeDataType_Shape ;
+        sh:maxCount 1 ;
+    ], [
         sh:path dct:relation ;
         sh:nodeKind sh:BlankNodeOrIRI ;
         sh:maxCount 1 ;

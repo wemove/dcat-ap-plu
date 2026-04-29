@@ -1259,13 +1259,47 @@
                         <tr>
                             <td class="prop">Anwendungshinweis:</td>
                             <td>
-                                ⚠️ <strong>Dieses Feld ist deprecated.</strong> Stattdessen sollte <a href="#property-has-objectives">plu:hasObjectives</a>
-                                verwendet werden.<br>
+                                ⚠️ <strong>Dieses Feld ist deprecated.</strong> Stattdessen sollte <a href=
+                                "#property-objectives-specification-date">plu:objectivesSpecificationDate</a> verwendet werden.<br>
                                 <br>
                                 Wenn mehrere Ziele in Aufstellung bestehen, muss diese Eigenschaft wiederholt werden. Die Ziele in Aufstellung sind durch eine
                                 <a href="#codelist-pluObjectiveInPreparation">Codeliste</a> definiert. Der zu verwendende IRI in der rdf:resource setzt sich
                                 zusammen aus <code>https://specs.diplanung.de/resource/objectiveInPreparation#</code> und dem gewünschten Codelistenwert.
                             </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="Property:objectives_specification_date">
+                <h4 id="property-objectives-specification-date">Eigenschaft: Datum für Ziele in Aufstellung</h4>
+                <table class="definition">
+                    <thead>
+                        <tr>
+                            <th>URI:</th>
+                            <th>plu:objectivesSpecificationDate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="prop">Verbindlichkeit:</td>
+                            <td>Optional</td>
+                        </tr>
+                        <tr>
+                            <td class="prop">Definition:</td>
+                            <td>Datum für Ziele in Aufstellung<br>
+                            Für einen Raumordnungsplan beschreibt dieses Feld das Datum, zu dem die Ziele in Aufstellung hinreichend konkretisiert sind.</td>
+                        </tr>
+                        <tr>
+                            <td class="prop">Typ/Wertebereich:</td>
+                            <td>
+                                <a href="https://www.w3.org/TR/rdf-schema/#ch_literal"><code title=
+                                "http://www.w3.org/2000/01/rdf-schema#Literal">rdfs:Literal</code></a> als <code>xsd:date</code> oder <code>xsd:dateTime</code>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="prop">Anwendungshinweis:</td>
+                            <td>Wenn die Ziele in Aufstellung hinreichend konkretisiert sind, muss dieses Feld mit einem entsprechenden Datum befüllt
+                            werden.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -3061,7 +3095,8 @@
             </table>
         </section>
         <section id="codelist-pluObjectiveInPreparation">
-            <h3>Codeliste für die Ziele in Aufstellung<a class="self-link" href="#codelist-pluObjectiveInPreparation"></a></h3>
+            <h3>⚠️ <strong>[Deprecated]</strong> Codeliste für die Ziele in Aufstellung<a class="self-link" href=
+            "#codelist-pluObjectiveInPreparation"></a></h3>
             <table>
                 <thead>
                     <tr>
