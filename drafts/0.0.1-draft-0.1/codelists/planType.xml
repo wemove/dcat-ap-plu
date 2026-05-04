@@ -75,6 +75,14 @@ Zur kodierten Angabe der Art des raumbezogenen Planwerks:
         <skos:prefLabel xml:lang="en">Spatial planning procedure</skos:prefLabel>
         <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#spatialPlanningProcedure"/>
     </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#spatialImpactAssessment">
+        <dc:identifier>spatialImpactAssessment</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Raumverträglichkeitsprüfung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Spatial impact assessment</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#spatialImpactAssessment"/>
+    </skos:Concept>
     <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#planApprovalProcedure">
         <dc:identifier>planApprovalProcedure</dc:identifier>
         <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>

@@ -1002,7 +1002,7 @@ components:
         planType:
           description: Type of the spatial plan
           type: string
-          enum: [developmentPlan, landUsePlan, urbanPlanningStatutes, specialUrbanPlanningLaw, landscapePlanning, spatialPlan, spatialPlanningProcedure, planApprovalProcedure, other, unknown]
+          enum: [developmentPlan, landUsePlan, urbanPlanningStatutes, specialUrbanPlanningLaw, landscapePlanning, spatialPlan, spatialPlanningProcedure, spatialImpactAssessment, planApprovalProcedure, other, unknown]
           example: developmentPlan
           xml:
             prefix: plu
