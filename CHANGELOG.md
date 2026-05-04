@@ -12,6 +12,7 @@
 * [Codelist] Amend `procedureType` codelist
 * [Spec] Add new attribute `plu:objectivesSpecificationDate` to `dcat:Dataset`, deprecate `plu:objectiveInPreparation`
 * [Website] Fix links
+* [Deployment] Update packages
 
 ## 2026-01-27 - 0.2.6
 
