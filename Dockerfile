@@ -1,4 +1,4 @@
-FROM alpine:3.23.3
+FROM alpine:3.23.4
 
 # ENV LIGHTTPD_VERSION=1.4.76-r0
 ENV DCATAPPLU_VERSION=../drafts/0.0.1-draft-0.1
