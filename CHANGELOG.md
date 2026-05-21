@@ -1,5 +1,9 @@
 # Changelog
 
+## xxxx-xx-xx - dev
+
+...
+
 ## 2026-05-21 - 0.3.0
 
 * [Codelist] Add entries "xtrasseGML", "xtrasseDrawing" to codelist `docType`
