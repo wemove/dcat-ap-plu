@@ -1,0 +1,70 @@
+<rdf:RDF xml:base="https://specs.diplanung.de/resource/procedureSubject"
+        xmlns:dc="http://purl.org/dc/elements/1.0/"
+        xmlns:dct="http://purl.org/dc/terms/"
+        xmlns:owl ="http://www.w3.org/2002/07/owl#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#">
+    <owl:Ontology rdf:about="https://specs.diplanung.de/resource/procedureSubject">
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/procedureSubject/1.0/"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
+Zur kodierten Angabe des Verfahrensgegenstandes bei Raumverträglichkeitsprüfungen sind folgende Optionen möglich:
+        </rdfs:comment>
+    </owl:Ontology>
+    <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/procedureSubject">
+        <rdfs:label xml:lang="de">Liste der Verfahrensgegenstände für Raumverträglichkeitsprüfungen</rdfs:label>
+        <skos:prefLabel xml:lang="de">Liste der Verfahrensgegenstände für Raumverträglichkeitsprüfungen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">List of procedure subjects for territorial impact assessments</skos:prefLabel>
+        <dct:identifier>https://specs.diplanung.de/resource/procedureSubject</dct:identifier>
+    </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureSubject#waterManagement">
+        <dc:identifier>waterManagement</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:prefLabel xml:lang="de">Wasserwirtschaftliches Vorhaben</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Water management</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureSubject#waterManagement"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureSubject#transportation">
+        <dc:identifier>transportation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:prefLabel xml:lang="de">Verkehrsvorhaben</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Transportation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureSubject#transportation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureSubject#utilityLine">
+        <dc:identifier>utilityLine</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:prefLabel xml:lang="de">Leitungsvorhaben</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Utility line</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureSubject#utilityLine"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureSubject#energyGeneration">
+        <dc:identifier>energyGeneration</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:prefLabel xml:lang="de">Vorhaben Energie- und Wärmeerzeugung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Energy generation</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureSubject#energyGeneration"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureSubject#urbanDevelopment">
+        <dc:identifier>urbanDevelopment</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:prefLabel xml:lang="de">Bauvorhaben</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Urban development</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureSubject#urbanDevelopment"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/procedureSubject#rawMaterialExtraction">
+        <dc:identifier>rawMaterialExtraction</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/procedureSubject"/>
+        <skos:prefLabel xml:lang="de">Rohstoffabbauvorhaben</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Raw material extraction</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/procedureSubject#rawMaterialExtraction"/>
+    </skos:Concept>
+</rdf:RDF>

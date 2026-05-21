@@ -1,0 +1,190 @@
+<rdf:RDF xml:base="https://specs.diplanung.de/resource/planType"
+        xmlns:dc="http://purl.org/dc/elements/1.0/"
+        xmlns:dct="http://purl.org/dc/terms/"
+        xmlns:owl ="http://www.w3.org/2002/07/owl#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#">
+    <owl:Ontology rdf:about="https://specs.diplanung.de/resource/planType">
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/planType/1.0/"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
+Zur kodierten Angabe der Art des raumbezogenen Planwerks:
+        </rdfs:comment>
+    </owl:Ontology>
+    <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/planType">
+        <rdfs:label xml:lang="de">Liste der Arten raumbezogener Planwerke</rdfs:label>
+        <skos:prefLabel xml:lang="de">Liste der Arten raumbezogener Planwerke</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">List of types of spatial plans</skos:prefLabel>
+        <dct:identifier>https://specs.diplanung.de/resource/planType</dct:identifier>
+    </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#developmentPlan">
+        <dc:identifier>developmentPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Bebauungsplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Development plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#developmentPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#landUsePlan">
+        <dc:identifier>landUsePlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Flaechennutzungsplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Land use plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#landUsePlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#urbanPlanningStatutes">
+        <dc:identifier>urbanPlanningStatutes</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Städtebauliche Satzungen</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Urban planning statutes</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#urbanPlanningStatutes"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#specialUrbanPlanningLaw">
+        <dc:identifier>specialUrbanPlanningLaw</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Planwerke besonderes Städtebaurecht</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Plans under special urban planning law</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#specialUrbanPlanningLaw"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#landscapePlanning">
+        <dc:identifier>landscapePlanning</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Planwerke der Landschaftsplanung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Landscape planning</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#landscapePlanning"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#federalComprehensiveSpatialPlan">
+        <dc:identifier>federalComprehensiveSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Bundesebene Gesamtplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Federal comprehensive spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#federalComprehensiveSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#federalTerritorialPartialSpatialPlan">
+        <dc:identifier>federalTerritorialPartialSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Bundesebene Räumlicher Teilplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Federal territorial partial spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#federalTerritorialPartialSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#federalSectoralPartialSpatialPlan">
+        <dc:identifier>federalSectoralPartialSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Bundesebene Sachlicher Teilplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Federal sectoral partial spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#federalSectoralPartialSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#federalSectoralTerritorialPartialSpatialPlan">
+        <dc:identifier>federalSectoralTerritorialPartialSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Bundesebene Sachlicher und räuml. Teilplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Federal sectoral territorial partial spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#federalSectoralTerritorialPartialSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#stateComprehensiveSpatialPlan">
+        <dc:identifier>stateComprehensiveSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Landesebene Gesamtplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">State comprehensive spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#stateComprehensiveSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#stateTerritorialPartialSpatialPlan">
+        <dc:identifier>stateTerritorialPartialSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Landesebene Räumlicher Teilplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">State territorial partial spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#stateTerritorialPartialSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#stateSectoralPartialSpatialPlan">
+        <dc:identifier>stateSectoralPartialSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Landesebene Sachlicher Teilplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">State sectoral partial spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#stateSectoralPartialSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#stateSectoralTerritorialPartialSpatialPlan">
+        <dc:identifier>stateSectoralTerritorialPartialSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Landesebene Sachlicher und räuml. Teilplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">State sectoral territorial partial spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#stateSectoralTerritorialPartialSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#regionalComprehensiveSpatialPlan">
+        <dc:identifier>regionalComprehensiveSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Regionaler Gesamtplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Regional comprehensive spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#regionalComprehensiveSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#regionalTerritorialPartialSpatialPlan">
+        <dc:identifier>regionalTerritorialPartialSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Regionaler räumlicher Teilplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Regional territorial partial spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#regionalTerritorialPartialSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#regionalSectoralPartialSpatialPlan">
+        <dc:identifier>regionalSectoralPartialSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Regionaler sachlicher Teilplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Regional sectoral partial spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#regionalSectoralPartialSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#regionalSectoralTerritorialPartialSpatialPlan">
+        <dc:identifier>regionalSectoralTerritorialPartialSpatialPlan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Regionaler sachlicher und räumlicher Teilplan</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Regional sectoral territorial partial spatial plan</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#regionalSectoralTerritorialPartialSpatialPlan"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#spatialImpactAssessment">
+        <dc:identifier>spatialImpactAssessment</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Raumverträglichkeitsprüfung</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Spatial impact assessment</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#spatialImpactAssessment"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#planApprovalProcedure">
+        <dc:identifier>planApprovalProcedure</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Planfeststellungsverfahren</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Plan approval procedure</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#planApprovalProcedure"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#other">
+        <dc:identifier>other</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">Sonstige raumbezogene Planwerke</skos:prefLabel>
+        <skos:prefLabel xml:lang="de">Other spatial plans</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#other"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/planType#unknown">
+        <dc:identifier>unknown</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/planType"/>
+        <skos:prefLabel xml:lang="de">unbekannt</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">unknown</skos:prefLabel>
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/planType#unknown"/>
+    </skos:Concept>
+</rdf:RDF>
