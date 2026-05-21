@@ -1,5 +1,19 @@
 # Changelog
 
+## 2026-05-21 - 0.3.0
+
+* [Codelist] Add entries "xtrasseGML", "xtrasseDrawing" to codelist `docType`
+* [Codelist] Add entry "bund" to codelist `authority`
+* [Spec] Add new attribute `plu:procedureSubject` to `dcat:Dataset`
+* [Codelist] Add `procedureSubject` codelist
+* [Deployment] Update docker base image
+* [Codelist] Replace entry "spatialPlanningProcedure" with "spatialImpactAssessment" in codelist `planType`
+* [Codelist] Replace entry "spatialPlan" with detailed ROP entries in codelist `planType`
+* [Codelist] Amend `procedureType` codelist
+* [Spec] Add new attribute `plu:objectivesSpecificationDate` to `dcat:Dataset`, deprecate `plu:objectiveInPreparation`
+* [Website] Fix links
+* [Deployment] Update packages
+
 ## 2026-01-27 - 0.2.6
 
 * [Deployment] Fix lighttpd mime-types

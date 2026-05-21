@@ -1,6 +1,6 @@
 #!/bin/env sh
 cd "$(dirname "$0")"
-python -m venv venv
+python3 -m venv venv
 . venv/bin/activate
 pip install -q -r requirements.txt
-python create_diagram.py
+python3 create_diagram.py

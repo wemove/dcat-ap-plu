@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 from collections import defaultdict
 from model import requirements, UML_Class, UML_Property, UML_Relation, UML_Template
-from rdflib import BNode, Graph, Literal, RDF, RDFS, SH, URIRef
+from rdflib import Graph, SH
 
 # change working directory to script directory
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
@@ -107,12 +107,16 @@ def extract_uml(uri: str):
         properties = class_section.select('section[id^="Property:"]')
         for property_section in properties:
             property_name = property_section.select_one('th:nth-child(2)').text.strip()
+            is_deprecated = '[Deprecated]' in property_section.select_one('h4').text.strip()
             requirement = requirements[property_section.select_one('tr:nth-child(1) td:nth-child(2)').text.strip()]
             if property_name in relations: # and (uml_classes[relations[property_name].target_id].properties) > 0:
                 uml_relation = relations[property_name]
                 uml_relation.property.requirement = requirement
                 uml_relations.append(uml_relation)
             else:
+                if is_deprecated:
+                    print(f"Warning: Property '{property_name}' of class '{class_id}' is deprecated; excluding from image.")
+                    continue
                 cardinality = cardinalities[class_id]['properties'][property_name]
                 uml_property = UML_Property(property_name, cardinality, requirement)
                 uml_class.add_property(uml_property)

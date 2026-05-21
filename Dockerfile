@@ -1,7 +1,7 @@
-FROM alpine:3.23.2
+FROM alpine:3.23.4
 
 # ENV LIGHTTPD_VERSION=1.4.76-r0
-ENV DCATAPPLU_VERSION=0.2.6
+ENV DCATAPPLU_VERSION=0.3.0
 
 RUN addgroup -S --gid 1000 lighttpd \
     && adduser -S -G lighttpd --uid 1000 lighttpd
