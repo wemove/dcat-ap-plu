@@ -1,0 +1,23 @@
+# OS-independent entry point for the toolchain in Dockerfile.
+# Requires Docker Desktop (Windows/macOS) or Docker Engine + the compose
+# plugin (Linux). Run from this scripts/ folder, on any OS:
+#
+#   docker compose run --rm scripts
+#
+# ...to run update.sh, or override the command to run a single sub-script,
+# e.g.:
+#
+#   docker compose run --rm scripts sh scripts/tidy/tidy.sh
+#   docker compose run --rm scripts sh scripts/diagram/create_diagram.sh
+#   docker compose run --rm scripts sh scripts/validation/validate_shacl.sh
+#   docker compose run --rm scripts sh scripts/validation/validate_examples.sh
+
+services:
+  scripts:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /work
+    volumes:
+      - ..:/work
+    command: sh scripts/update.sh
