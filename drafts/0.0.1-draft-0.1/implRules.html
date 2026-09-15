@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <title>Konventionenhandbuch zu Metadatenmodell für raumbezogene Planwerke - DCAT-AP.PLU</title>
+        <script src="https://www.w3.org/Tools/respec/respec-w3c" class="remove" defer></script>
+        <script class="remove">
+        var respecConfig = {
+            latestVersion: "https://github.com/wemove/dcat-ap-plu/tree/main/drafts",
+            specStatus: "unofficial",
+            shortName: "DCAT-AP.PLU",
+            editors: [
+                {
+                    name: "Armin Arndt",
+                    company: "wemove digital solutions GmbH"
+                },
+                {
+                    name: "Erik-Lân Do Dinh",
+                    company: "wemove digital solutions GmbH"
+                },
+                {
+                    name: "Ilona Westram",
+                    company: "wemove digital solutions GmbH"
+                },
+                {
+                    name: "Joachim Müller",
+                    company: "wemove digital solutions GmbH"
+                },
+            ],
+            lint: {
+                "required-sections": false
+            }
+        };
+        </script>
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
+        <link rel="stylesheet" type="text/css" href="styles/small.css" media="only all and (max-width: 649px)">
+    </head>
+  <body>
+    <section id="abstract">
+      <p>Dieses Dokument beschreibt die verbindlichen Konventionen zur Anwendung des Metdatenmodells <b>DCAT-AP.PLU</b>. Es ergänzt das Datenmodell um Regeln, die über die reine Schema-Definition hinausgehen.</p>
+    </section>
+        <section id="sotd" class="introductory">
+        <div class="draft">
+            <p>Dieses Dokument ist ein Entwurf einer Spezifikation zur Beschreibung von Metadaten raumbezogener Planwerke sowie Beteiligungsverfahren zur
+            Aufstellung raumbezogener Planwerke.</p>
+        </div>
+        <div class="release">
+            <h2>Status dieses Dokuments</h2>
+            <p>Dieses Dokument ist eine Spezifikation zur Beschreibung von Metadaten raumbezogener Planwerke sowie Beteiligungsverfahren zur Aufstellung
+            raumbezogener Planwerke.</p>
+        </div>
+    </section>
+    <section id="einleitung-und-geltungsbereich">
+        <h2>Einleitung und Geltungsbereich</h2>
+        <p>
+            Während die Spezifikation für das Metadatenmodell <b>DCAT-AP.DE</b> die Struktur der Daten beschreibt (Felder, Typen,
+            Beziehungen), legt dieses Dokument fest,
+        </p>
+        <ul>
+            <li>welche Konventionen bei der Erweiterung des Modells einzuhalten sind,</li>
+            <li>welche Prüfungen auf die Daten angewendet werden, und</li>
+            <li>wie diese Prüfungen sich zueinander verhalten (Schema-Ebene vs. fachliche Ebene).</li>
+        </ul>
+    </section>
+    <section id="validierungskonzept">
+        <h2>Validierungskonzept</h2>
+        <p>Die Validierung erfolgt in zwei klar getrennten Ebenen. Diese Trennung ist bewusst gewählt: die Schema-Validierung prüft <i>Form</i>, die fachlichen Prüfungen prüfen <i>Plausibilität und Kontext</i>.</p>
+        <section id="ebene-1-schema-validierung">
+            <h3>Ebene 1: Schema-Validierung</h3>
+            <p>Die Schema-Validierung stellt sicher, dass ein Datensatz strukturell dem Datenmodell entspricht: korrekte Feldnamen, korrekte Datentypen, Pflichtfelder vorhanden, keine unbekannten Zusatzfelder. Sie beantwortet die Frage: <b>„Ist das Dokument syntaktisch gültig?“</b></p>
+            <p>Beispiel: Ein Feld Datum muss dem ISO-Format entsprechen. Ob das Datum inhaltlich plausibel ist, prüft das Schema nicht.</p>
+        </section>
+        <section id="ebene-2-zusatzliche-fachliche-prufungen">
+            <h3>Ebene 2: Zusätzliche fachliche Prüfungen</h3>
+            <p>Zusätzlich zur Schema-Validierung gelten fachliche Prüfregeln, die nicht (oder nur schwer) im Schema selbst abbildbar sind. Diese Prüfungen beantworten die Frage: <b>„Ist der Wert inhaltlich plausibel und zulässig?“</b></p>
+            <section id="datum">
+                <h4>Datum</h4>
+                <p>TODO</p>
+            </section>
+            <section id="bbox">
+                <h4>Bounding-Box</h4>
+                <p>TODO</p>
+            </section>
+        </section>
+        <section id="verhaltnis-der-beiden-ebenen">
+            <h3>Verhältnis der beiden Ebenen</h3>
+            <p>Schema-Validierung und fachliche Prüfungen laufen nacheinander:</p>
+            <ol>
+                <li>Ein Datensatz wird zunächst gegen das Schema geprüft. Schlägt dies fehl, werden die fachlichen Prüfungen nicht mehr ausgeführt.</li>
+                <li>Erst ein schema-gültiger Datensatz durchläuft die fachlichen Prüfungen.</li>
+                <li>Verletzungen beider Ebenen werden unterschiedlich behandelt/gemeldet (siehe <a href="#fehlerbehandlung">Fehlerbehandlung</a>).</li>
+            </ol>
+        </section>
+    </section>
+    <section id="fehlerbehandlung">
+        <h2>Fehlerbehandlung</h2>
+        <p>TODO: Beschreibt hier, wie Schema-Fehler und fachliche Fehler unterschieden gemeldet werden, z. B. unterschiedliche Fehlercodes oder Schweregrade (hart ablehnend vs. Warnung).</p>
+    </section>
+  </body>
+</html>

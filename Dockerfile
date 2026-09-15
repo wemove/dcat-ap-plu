@@ -17,6 +17,7 @@ COPY --chown=:lighttpd ./docker/mime-types.conf /etc/lighttpd/mime-types.conf
 WORKDIR /var/www/html
 COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/codelists ./resource
 COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/doc-plu.html ./doc-plu-latest.html
+COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/implRules.html ./implRules-latest.html
 COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/DCAT-AP-PLU.JPG .
 COPY --chown=:lighttpd ./releases/${DCATAPPLU_VERSION}/styles ./styles
 COPY --chown=:lighttpd ./releases ./releases
@@ -24,8 +25,12 @@ COPY --chown=:lighttpd ./docker/static .
 RUN find . -name "index.html" -exec sed -i "s@{DCATAPPLU_VERSION}@${DCATAPPLU_VERSION}@g" {} + && \
     for version in $(ls -d ./releases/* | xargs -n 1 basename); do \
         list_items="${list_items}<li><a href=\"./${version}/\" title=\"Dokumentation zu DCAT-AP.PLU Release ${version}\">${version}</a></li>"; \
-    done && echo "list_items: ${list_items}" && \
-    sed -i "s@{RELEASES}@${list_items}@" ./index.html
+        if [ -f "./releases/${version}/implRules.html" ]; then \
+            implrules_list_items="${implrules_list_items}<li><a href=\"./${version}/implRules.html\" title=\"Konventionenhandbuch zu DCAT-AP.PLU Release ${version}\">${version}</a></li>"; \
+        fi; \
+    done && echo "list_items: ${list_items}" && echo "implrules_list_items: ${implrules_list_items}" && \
+    sed -i "s@{RELEASES}@${list_items}@" ./index.html && \
+    sed -i "s@{IMPLRULES_RELEASES}@${implrules_list_items}@" ./index.html
 
 EXPOSE 8080 443
 

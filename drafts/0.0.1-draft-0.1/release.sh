@@ -104,6 +104,17 @@ else
     exit 1
 fi
 
+echo -n "Validating implementation rules tidiness... "
+diff $(dirname "$0")/implRules.html <(tidy -config $(dirname "$0")/scripts/tidy/tidy.config -quiet $(dirname "$0")/implRules.html)
+if [ $? -eq 0 ]; then
+    echo "ok"
+else
+    echo -e "fail\n"
+    echo "TODO: Run tidy (scripts/tidy)."
+    echo "Aborting release"
+    exit 1
+fi
+
 # latest version
 LATEST_VERSION=$(git show ado/main:CHANGELOG.md | grep -m 1 -E "^## [0-9]{4}-[0-9]{2}-[0-9]{2} - " | sed 's@.* - @@')
 echo -e "\nLatest released version is ${LATEST_VERSION}"
@@ -168,6 +179,7 @@ cp -r drafts/0.0.1-draft-0.1/styles releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/api-plu.yml releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/DCAT-AP-PLU.JPG releases/${NEXT_VERSION}/
 cp drafts/0.0.1-draft-0.1/doc-plu.html releases/${NEXT_VERSION}/
+cp drafts/0.0.1-draft-0.1/implRules.html releases/${NEXT_VERSION}/
 cp releases/${LATEST_VERSION}/README.md releases/${NEXT_VERSION}/
 
 echo -e "Updating version in files..."
@@ -175,9 +187,16 @@ echo -e "Updating version in files..."
 # ... set `latestVersion`
 sed -i "s@latestVersion: \".*\",@latestVersion: \"https://github.com/wemove/dcat-ap-plu/tree/main/releases/${NEXT_VERSION}\",@g" releases/${NEXT_VERSION}/doc-plu.html
 # ... replace `specStatus` with `publishDate`
-sed -i "s@specStatus: \"unofficial\",@publishDate: \"$(date + '%Y-%m-%d')\",@g" releases/${NEXT_VERSION}/doc-plu.html
+sed -i "s@specStatus: \"unofficial\",@publishDate: \"$(date +'%Y-%m-%d')\",@g" releases/${NEXT_VERSION}/doc-plu.html
 # ... add "override" to #sotd
 sed -i "s@<section id=\"sotd\" class=\"introductory\">@<section id=\"sotd\" class=\"introductory override\">@g" releases/${NEXT_VERSION}/doc-plu.html
+# in the new version folder, change `implRules.html`
+# ... set `latestVersion`
+sed -i "s@latestVersion: \".*\",@latestVersion: \"https://github.com/wemove/dcat-ap-plu/tree/main/releases/${NEXT_VERSION}\",@g" releases/${NEXT_VERSION}/implRules.html
+# ... replace `specStatus` with `publishDate`
+sed -i "s@specStatus: \"unofficial\",@publishDate: \"$(date +'%Y-%m-%d')\",@g" releases/${NEXT_VERSION}/implRules.html
+# ... add "override" to #sotd
+sed -i "s@<section id=\"sotd\" class=\"introductory\">@<section id=\"sotd\" class=\"introductory override\">@g" releases/${NEXT_VERSION}/implRules.html
 # in the new version folder, change the `version` property in `api-plu.yml`
 sed -i "s@version: x.y.z@version: ${NEXT_VERSION}@g" releases/${NEXT_VERSION}/api-plu.yml
 # in the new version folder, change the version in `README.md`
