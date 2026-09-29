@@ -366,11 +366,6 @@
         sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
     ],
-    # DEPRECATED
-    [
-        sh:path plu:objectiveInPreparation ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
-    ],
     [
         sh:path plu:objectivesSpecificationDate ;
         sh:shape :DateOrDateTimeDataType_Shape ;

@@ -3,6 +3,7 @@
 ## xxxx-xx-xx - dev
 
 * [Spec] Replace `dct:relation` with `dcat:qualifiedRelation`
+* [Spec] Remove `plu:objectiveInPreparation`
 
 ## 2026-05-21 - 0.3.0
 
