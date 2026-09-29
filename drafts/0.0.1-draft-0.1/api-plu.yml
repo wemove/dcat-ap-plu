@@ -1107,13 +1107,15 @@ components:
           xml:
             prefix: plu
             name: procedureImportDate
-        relation:
+        qualifiedRelation:
           description: Reference to another dataset
-          type: string
-          example: TODO
+          type: object
+          properties:
+            relationShip:
+              $ref: '#/components/schemas/relationShip'
           xml:
-            prefix: dct
-            name: relation
+            prefix: dcat
+            name: qualifiedRelation
         procedurePeriod:
           description: Period of the procedure
           type: object
@@ -1193,6 +1195,26 @@ components:
       xml:
         prefix: dcat
         name: Dataset
+    relationShip:
+      type: object
+      required:
+        - relation
+        - hadRole
+      properties:
+        relation:
+          description: The resource related to the source resource.
+          type: string
+          xml:
+            prefix: dct
+            name: relation
+        hadRole:
+          description: The function of an entity or agent with respect to another entity or resource.
+          type: string
+          enum: [plan, participation]
+          example: https://specs.diplanung.de/resource/hadRole#plan
+          xml:
+            prefix: dcat
+            name: hadRole
     Version:
       type: object
       description: A version

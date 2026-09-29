@@ -376,8 +376,8 @@
         sh:shape :DateOrDateTimeDataType_Shape ;
         sh:maxCount 1 ;
     ], [
-        sh:path dct:relation ;
-        sh:nodeKind sh:BlankNodeOrIRI ;
+        sh:path dcat:qualifiedRelation ;
+        sh:class dcat:Relationship ;
         sh:maxCount 1 ;
     ], [
         sh:path plu:developmentFreezePeriod ;
@@ -597,18 +597,18 @@
     sh:ignoredProperties (rdf:type) ;
     sh:targetClass plu:ProcessStep .
 
-# :Relationship_Shape
-#     a sh:NodeShape ;
-#     sh:name "Relationship"@en ;
-#     sh:property [
-#         sh:class dcat:Role ;
-#         sh:minCount 1 ;
-#         sh:path dct:relation ;
-#         sh:severity sh:Violation
-#     ], [
-#         sh:minCount 1 ;
-#         sh:nodeKind :DcatResource_Shape ;
-#         sh:path dcat:hadRole ;
-#         sh:severity sh:Violation
-#     ] ;
-#     sh:targetClass dcat:Relationship .
+:Relationship_Shape
+    a sh:NodeShape ;
+    sh:name "Relationship"@en ;
+    sh:property [
+        sh:minCount 1 ;
+        sh:path dct:relation ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+    ], [
+        sh:minCount 1 ;
+        sh:path dcat:hadRole ;
+        sh:nodeKind sh:BlankNodeOrIRI ;
+    ] ;
+    sh:closed true ;
+    sh:ignoredProperties (rdf:type) ;
+    sh:targetClass dcat:Relationship .

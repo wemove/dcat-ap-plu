@@ -42,7 +42,12 @@
             </dct:PeriodOfTime>
         </plu:procedurePeriod>
         <plu:notification>Eine Notiz für Planverfahren</plu:notification>
-        <dct:relation rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=206f1cb5-c021-44ae-842b-8ea148172763"/>
+        <dcat:qualifiedRelation>
+            <dcat:Relationship>
+                <dct:relation rdf:resource="https://dev.informationgrid.eu/trefferanzeige?docuuid=206f1cb5-c021-44ae-842b-8ea148172763"/>
+                <dcat:hadRole rdf:resource="https://specs.diplanung.de/resource/relationRole#plan"/>
+            </dcat:Relationship>
+        </dcat:qualifiedRelation>
         <dct:spatial>
             <dct:Location>
                 <dcat:bbox rdf:datatype="https://www.iana.org/assignments/media-types/application/vnd.geo+json">

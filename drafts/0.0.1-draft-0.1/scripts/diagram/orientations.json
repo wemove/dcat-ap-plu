@@ -15,6 +15,7 @@
     "dcatDistribution-dctPeriodOfTime-dct:temporal": "down",
     "pluProcessStep-dcatDistribution-dcat:distribution": "up",
     "pluProcessStep-dctPeriodOfTime-dct:temporal": "right",
+    "dcatDataset-dcatRelationship-dcat:qualifiedRelation": "down",
 
     "dcatDistribution-pluProcessStep-hidden": "[hidden]left",
     "dctLocation-dcatDataset-hidden": "[hidden]down"

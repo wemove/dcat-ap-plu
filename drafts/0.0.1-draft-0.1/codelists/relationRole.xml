@@ -1,0 +1,38 @@
+<rdf:RDF xml:base="https://specs.diplanung.de/resource/relationRole"
+        xmlns:dc="http://purl.org/dc/elements/1.0/"
+        xmlns:dct="http://purl.org/dc/terms/"
+        xmlns:owl ="http://www.w3.org/2002/07/owl#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+        xmlns:skos-xl="http://www.w3.org/2008/05/skos-xl#">
+    <owl:Ontology rdf:about="https://specs.diplanung.de/resource/relationRole">
+        <owl:versionInfo>1.0</owl:versionInfo>
+        <owl:versionIRI rdf:resource="https://specs.diplanung.de/resource/relationRole/1.0/"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2000/01/rdf-schema#Literal">
+Zur kodierten Angabe der Rolle eines Datensatzes in einer qualifizierten Beziehung zu einem anderen Datensatz.
+        </rdfs:comment>
+    </owl:Ontology>
+    <skos:ConceptScheme rdf:about="https://specs.diplanung.de/resource/relationRole">
+        <rdfs:label xml:lang="de">Liste der möglichen Rollen eines Datensatzes</rdfs:label>
+        <skos:prefLabel xml:lang="de">Liste der möglichen Rollen eines Datensatzes</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">List of roles of a dataset</skos:prefLabel>
+        <dct:identifier>https://specs.diplanung.de/resource/relationRole</dct:identifier>
+    </skos:ConceptScheme>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/relationRole#participation">
+        <dc:identifier>participation</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/relationRole"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/relationRole"/>
+        <skos:prefLabel xml:lang="de">Beteiligungsverfahren</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Participation Procedure</skos:prefLabel>        
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/relationRole#participation"/>
+    </skos:Concept>
+    <skos:Concept rdf:about="https://specs.diplanung.de/resource/relationRole#plan">
+        <dc:identifier>plan</dc:identifier>
+        <skos:topConceptOf rdf:resource="https://specs.diplanung.de/resource/relationRole"/>
+        <skos:inScheme rdf:resource="https://specs.diplanung.de/resource/relationRole"/>
+        <skos:prefLabel xml:lang="de">Planverfahren</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Plan Procedure</skos:prefLabel>        
+        <skos:exactMatch rdf:resource="https://specs.diplanung.de/resource/relationRole#plan"/>
+    </skos:Concept>
+</rdf:RDF>

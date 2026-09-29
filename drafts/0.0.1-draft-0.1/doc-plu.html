@@ -1304,13 +1304,13 @@
                     </tbody>
                 </table>
             </section>
-            <section id="Property:relation">
-                <h4 id="property-relation">Eigenschaft: Verweis</h4>
+            <section id="Property:qualified_relation">
+                <h4 id="property-qualified-relation">Eigenschaft: Verweis</h4>
                 <table class="definition">
                     <thead>
                         <tr>
                             <th>URI:</th>
-                            <th>dct:relation</th>
+                            <th>dcat:qualifiedRelation</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1325,13 +1325,13 @@
                         <tr>
                             <td class="prop">Typ/Wertebereich:</td>
                             <td>
-                                <a href="https://www.w3.org/TR/rdf-schema/#ch_resource"><code title=
-                                "http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</code></a>
+                                <a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Relationship"><code>dcat:Relationship</code></a>
                             </td>
                         </tr>
                         <tr>
                             <td class="prop">Anwendungshinweis:</td>
-                            <td>Über diese Eigenschaft kann eine Verknüpfung mit einem anderen Verfahren dargestellt werden.</td>
+                            <td>Über diese Eigenschaft kann eine Verknüpfung mit einem anderen Verfahren dargestellt werden, z.B. von einem
+                            Beteiligungsverfahren auf ein Planverfahren.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -2606,6 +2606,97 @@
                 </table>
             </section>
         </section>
+        <section id="Class:QualifiedRelation">
+            <h3 id="class-qualified-relation">Klasse: Qualifizierte Beziehung</h3>
+            <table class="definition">
+                <thead>
+                    <tr>
+                        <th>URI der Klasse:</th>
+                        <th>dcat:Relationship</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="prop">Verbindlichkeit:</td>
+                        <td>Optional</td>
+                    </tr>
+                    <tr>
+                        <td class="prop">Definition:</td>
+                        <td>Link zu einer Beschreibung (in Form der Klasse <code>dcat:Relationship</code>) einer Beziehung zu einer anderen Ressource.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <section id="Property:relation">
+                <h4 id="property-relation">Eigenschaft: Relation</h4>
+                <table class="definition">
+                    <thead>
+                        <tr>
+                            <th>URI:</th>
+                            <th>dct:relation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="prop">Verbindlichkeit:</td>
+                            <td>Verpflichtend</td>
+                        </tr>
+                        <tr>
+                            <td class="prop">Definition:</td>
+                            <td>Diese Eigenschaft enthält die URL zu einem verknüpften Datensatz.</td>
+                        </tr>
+                        <tr>
+                            <td class="prop">Typ/Wertebereich:</td>
+                            <td>
+                                <a href="https://www.w3.org/TR/rdf-schema/#ch_resource"><code title=
+                                "http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</code></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="prop">Anwendungshinweis:</td>
+                            <td>Im Falle eines Planverfahrens kann diese Eigenschaft genutzt werden, um ein zugehöriges Beteiligungsverfahren zu verknüpfen. In
+                            diesem Fall wird die URL des Beteiligungsverfahrens als Wert angegeben. Auch der entgegengesetzte Fall ist möglich.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section id="Property:had_role">
+                <h4 id="property-had-role">Eigenschaft: hadRole</h4>
+                <table class="definition">
+                    <thead>
+                        <tr>
+                            <th>URI:</th>
+                            <th>dcat:hadRole</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="prop">Verbindlichkeit:</td>
+                            <td>Verpflichtend</td>
+                        </tr>
+                        <tr>
+                            <td class="prop">Definition:</td>
+                            <td>Diese Eigenschaft beschreibt die Funktion dieses Datensatzes in Bezug auf den verknüpften Datensatz.</td>
+                        </tr>
+                        <tr>
+                            <td class="prop">Typ/Wertebereich:</td>
+                            <td>
+                                <a href="https://www.w3.org/TR/rdf-schema/#ch_resource"><code title=
+                                "http://www.w3.org/2000/01/rdf-schema#Resource">rdfs:Resource</code></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="prop">Anwendungshinweis:</td>
+                            <td>
+                                Mit dieser Eigenschaft wird die Funktion dieses Datensatzes in Bezug auf den verknüpften Datensatz ausgedrückt, z.B.
+                                Planverfahren oder Beteiligungsverfahren. Die möglichen Werte sind in einer <a href="#codelist-pluRelationRole">Codeliste</a>
+                                festgelegt. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus
+                                <code>https://specs.diplanung.de/resource/relationRole#</code> und dem gewünschten Codelistenwert.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
     </section>
     <section id="codelists">
         <h2>Verwendete Codelisten</h2>
@@ -3369,6 +3460,27 @@
                     <tr>
                         <td>rawMaterialExtraction</td>
                         <td>Rohstoffabbauvorhaben</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="codelist-pluRelationRole">
+            <h3>Codeliste für die Rolle/Funktion eines Datensatzes<a class="self-link" href="#codelist-pluRelationRole"></a></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Beschreibung</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>plan</td>
+                        <td>Planverfahren</td>
+                    </tr>
+                    <tr>
+                        <td>participation</td>
+                        <td>Beteiligungsverfahren</td>
                     </tr>
                 </tbody>
             </table>

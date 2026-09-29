@@ -2,7 +2,7 @@
 
 ## xxxx-xx-xx - dev
 
-...
+* [Spec] Replace `dct:relation` with `dcat:qualifiedRelation`
 
 ## 2026-05-21 - 0.3.0
 
