@@ -75,7 +75,10 @@ def extract_cardinalities_from_shacl(shacl_path):
 
             if class_constraint_list:
                 target_class = get_class_id_from_url(class_constraint_list[0])
-                orientation = orientations[f'{class_id}-{target_class}-{property_name}']
+                try:
+                    orientation = orientations[f'{class_id}-{target_class}-{property_name}']
+                except KeyError:
+                    raise KeyError(f"Orientation for relation '{class_id}-{target_class}-{property_name}' not found in orientations.json")
                 shapes[class_id]['relations'][property_name] = UML_Relation(class_id, target_class, UML_Property(property_name, cardinality, ''), orientation)
             else:
                 shapes[class_id]['properties'][property_name] = cardinality
