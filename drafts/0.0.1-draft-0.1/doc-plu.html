@@ -1285,7 +1285,7 @@
                         <tr>
                             <td class="prop">Typ/Wertebereich:</td>
                             <td>
-                                <a href="https://www.w3.org/TR/vocab-dcat-3/#Class:Relationship"><code>dcat:Relationship</code></a>
+                                <a href="#Class:QualifiedRelation"><code>dcat:Relationship</code></a>
                             </td>
                         </tr>
                         <tr>
@@ -2613,8 +2613,11 @@
                         </tr>
                         <tr>
                             <td class="prop">Anwendungshinweis:</td>
-                            <td>Im Falle eines Planverfahrens kann diese Eigenschaft genutzt werden, um ein zugehöriges Beteiligungsverfahren zu verknüpfen. In
-                            diesem Fall wird die URL des Beteiligungsverfahrens als Wert angegeben. Auch der entgegengesetzte Fall ist möglich.</td>
+                            <td>Beschreibt der Datensatz ein Planverfahren, kann diese Eigenschaft genutzt werden um ein zugehöriges Beteiligungsverfahren zu
+                            verknüpfen. In diesem Fall wird die URL des Beteiligungsverfahrens als Wert angegeben. Die URL muss dabei dieser Form entsprechen:
+                            <code>https://portal.{UMGEBUNG}.diplanung.de/details/{PLANVERFAHREN_ID}</code><br>
+                            Auch der entgegengesetzte Fall ist möglich, also die Verknüpfung eines vorliegenden Beteiligungsverfahrens mit einem zugehörigen
+                            Planverfahren.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -2635,7 +2638,7 @@
                         </tr>
                         <tr>
                             <td class="prop">Definition:</td>
-                            <td>Diese Eigenschaft beschreibt die Funktion dieses Datensatzes in Bezug auf den verknüpften Datensatz.</td>
+                            <td>Diese Eigenschaft beschreibt die Funktion des verknüpften Datensatzes in Bezug auf diesen Datensatz.</td>
                         </tr>
                         <tr>
                             <td class="prop">Typ/Wertebereich:</td>
@@ -2647,10 +2650,11 @@
                         <tr>
                             <td class="prop">Anwendungshinweis:</td>
                             <td>
-                                Mit dieser Eigenschaft wird die Funktion dieses Datensatzes in Bezug auf den verknüpften Datensatz ausgedrückt, z.B.
-                                Planverfahren oder Beteiligungsverfahren. Die möglichen Werte sind in einer <a href="#codelist-pluRelationRole">Codeliste</a>
-                                festgelegt. Der zu verwendende IRI in der rdf:resource setzt sich zusammen aus
-                                <code>https://specs.diplanung.de/resource/relationRole#</code> und dem gewünschten Codelistenwert.
+                                Mit dieser Eigenschaft wird die Funktion des verknüpften Datensatzes ausgedrückt. Falls <code>dct:relation</code> auf ein
+                                Planverfahren verweist muss dies in hadRole mit <code>https://specs.diplanung.de/resource/relationRole#plan</code>
+                                gekennzeichnet werden. Die möglichen Werte sind in einer <a href="#codelist-pluRelationRole">Codeliste</a> festgelegt. Der zu
+                                verwendende IRI in der rdf:resource setzt sich zusammen aus <code>https://specs.diplanung.de/resource/relationRole#</code> und
+                                dem gewünschten Codelistenwert.
                             </td>
                         </tr>
                     </tbody>
